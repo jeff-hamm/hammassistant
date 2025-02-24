@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.HassModel.CodeGenerator", "..\submodules\netdaemon\src\HassModel\NetDaemon.HassModel.CodeGenerator\NetDaemon.HassModel.CodeGenerator.csproj", "{084505EF-79A9-49D0-B629-E0B75CC4F648}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.HassModel", "..\submodules\netdaemon\src\HassModel\NetDaemon.HassModel\NetDaemon.HassModel.csproj", "{9913C013-E1E7-4512-8807-9E9004AD4ADA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.Client", "..\submodules\netdaemon\src\Client\NetDaemon.HassClient\NetDaemon.Client.csproj", "{AA73F3CA-D95D-45EB-95DF-C8F5752EC515}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.HassModel.Tests", "..\submodules\netdaemon\src\HassModel\NetDaemon.HassModel.Tests\NetDaemon.HassModel.Tests.csproj", "{B4B91613-E0D8-483A-85F8-59C127E04A46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.HassModel.Integration", "..\submodules\netdaemon\src\HassModel\NetDaemon.HassModel.Integration\NetDaemon.HassModel.Integration.csproj", "{54A32F05-5AA6-4BB8-8747-DC10C46F0D35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.Extensions.Observables", "..\submodules\NetDaemon.Extensions.Observables\src\NetDaemon.Extensions.Observables\NetDaemon.Extensions.Observables.csproj", "{F9CB20B6-9B50-4771-8336-F901376F84E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.Extensions.Logging", "..\submodules\netdaemon\src\Extensions\NetDaemon.Extensions.Logging\NetDaemon.Extensions.Logging.csproj", "{EB795741-9B8B-4A7C-BC69-7937A514C553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.Runtime", "..\submodules\netdaemon\src\Runtime\NetDaemon.Runtime\NetDaemon.Runtime.csproj", "{9A79A71B-E6C9-4614-BDF2-514D968361FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.AppModel", "..\submodules\netdaemon\src\AppModel\NetDaemon.AppModel\NetDaemon.AppModel.csproj", "{BBF43BF9-C445-4D65-AEF4-AC11CB2C7E53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NetDaemon", "NetDaemon", "{C559B8B1-B30E-411A-BF76-81A775A7BF3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{CFE86D2F-2EBF-4272-85E5-7A1744E740F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.Extensions.SourceGen", "NetDaemon.Extensions.SourceGen\NetDaemon.Extensions.SourceGen.csproj", "{48EAA9FC-095F-4E51-8A8E-2A3A1AC1EB93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hammassistant", "Hammassistant\Hammassistant.csproj", "{9D438714-6E9D-49EE-95B2-D1F934D42680}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.Extensions.Hammlet", "NetDaemon.Extensions.Hammlet\NetDaemon.Extensions.Hammlet.csproj", "{763E1E1A-142E-4477-9D83-6DD9206E4382}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{084505EF-79A9-49D0-B629-E0B75CC4F648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{084505EF-79A9-49D0-B629-E0B75CC4F648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{084505EF-79A9-49D0-B629-E0B75CC4F648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{084505EF-79A9-49D0-B629-E0B75CC4F648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9913C013-E1E7-4512-8807-9E9004AD4ADA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9913C013-E1E7-4512-8807-9E9004AD4ADA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9913C013-E1E7-4512-8807-9E9004AD4ADA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9913C013-E1E7-4512-8807-9E9004AD4ADA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA73F3CA-D95D-45EB-95DF-C8F5752EC515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA73F3CA-D95D-45EB-95DF-C8F5752EC515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA73F3CA-D95D-45EB-95DF-C8F5752EC515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA73F3CA-D95D-45EB-95DF-C8F5752EC515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4B91613-E0D8-483A-85F8-59C127E04A46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4B91613-E0D8-483A-85F8-59C127E04A46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4B91613-E0D8-483A-85F8-59C127E04A46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4B91613-E0D8-483A-85F8-59C127E04A46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A32F05-5AA6-4BB8-8747-DC10C46F0D35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A32F05-5AA6-4BB8-8747-DC10C46F0D35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A32F05-5AA6-4BB8-8747-DC10C46F0D35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A32F05-5AA6-4BB8-8747-DC10C46F0D35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9CB20B6-9B50-4771-8336-F901376F84E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9CB20B6-9B50-4771-8336-F901376F84E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9CB20B6-9B50-4771-8336-F901376F84E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9CB20B6-9B50-4771-8336-F901376F84E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB795741-9B8B-4A7C-BC69-7937A514C553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB795741-9B8B-4A7C-BC69-7937A514C553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB795741-9B8B-4A7C-BC69-7937A514C553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB795741-9B8B-4A7C-BC69-7937A514C553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A79A71B-E6C9-4614-BDF2-514D968361FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A79A71B-E6C9-4614-BDF2-514D968361FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A79A71B-E6C9-4614-BDF2-514D968361FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A79A71B-E6C9-4614-BDF2-514D968361FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBF43BF9-C445-4D65-AEF4-AC11CB2C7E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBF43BF9-C445-4D65-AEF4-AC11CB2C7E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBF43BF9-C445-4D65-AEF4-AC11CB2C7E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBF43BF9-C445-4D65-AEF4-AC11CB2C7E53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48EAA9FC-095F-4E51-8A8E-2A3A1AC1EB93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48EAA9FC-095F-4E51-8A8E-2A3A1AC1EB93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48EAA9FC-095F-4E51-8A8E-2A3A1AC1EB93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48EAA9FC-095F-4E51-8A8E-2A3A1AC1EB93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D438714-6E9D-49EE-95B2-D1F934D42680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D438714-6E9D-49EE-95B2-D1F934D42680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D438714-6E9D-49EE-95B2-D1F934D42680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D438714-6E9D-49EE-95B2-D1F934D42680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{763E1E1A-142E-4477-9D83-6DD9206E4382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{763E1E1A-142E-4477-9D83-6DD9206E4382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{763E1E1A-142E-4477-9D83-6DD9206E4382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{763E1E1A-142E-4477-9D83-6DD9206E4382}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9913C013-E1E7-4512-8807-9E9004AD4ADA} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
+		{AA73F3CA-D95D-45EB-95DF-C8F5752EC515} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
+		{B4B91613-E0D8-483A-85F8-59C127E04A46} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
+		{54A32F05-5AA6-4BB8-8747-DC10C46F0D35} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
+		{F9CB20B6-9B50-4771-8336-F901376F84E6} = {CFE86D2F-2EBF-4272-85E5-7A1744E740F0}
+		{EB795741-9B8B-4A7C-BC69-7937A514C553} = {CFE86D2F-2EBF-4272-85E5-7A1744E740F0}
+		{9A79A71B-E6C9-4614-BDF2-514D968361FF} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
+		{BBF43BF9-C445-4D65-AEF4-AC11CB2C7E53} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
+		{763E1E1A-142E-4477-9D83-6DD9206E4382} = {CFE86D2F-2EBF-4272-85E5-7A1744E740F0}
+	EndGlobalSection
+EndGlobal

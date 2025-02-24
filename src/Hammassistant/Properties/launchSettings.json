@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Hammlet": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "CONFIG_ROOT": "../Environments/Hammlet"
+      }
+    }
+  }
+}

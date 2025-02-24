@@ -1,0 +1,183 @@
+clusters:
+  - cluster_id: "0x0006"
+    title: On/Off
+    name: on_off
+    attributes:
+    "0x0000":
+        attribute_id: "0x0000"
+        attribute_name: on_off
+        value_type:
+        - "0x10"
+        - Bool
+        - Discrete
+        access: READ|REPORT
+        access_acl: 5
+        attribute_value: 1
+  - cluster_id: "0x0008"
+        title: Level control
+        name: level
+        attributes:
+        "0x0000":
+            attribute_id: "0x0000"
+            attribute_name: current_level
+            value_type:
+            - "0x20"
+            - uint8_t
+            - Analog
+            access: READ|REPORT
+            access_acl: 5
+            attribute_value: 76
+cluster_id: "0x0300"
+          title: Color Control
+          name: light_color
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: current_hue
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x0001":
+              attribute_id: "0x0001"
+              attribute_name: current_saturation
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x0003":
+              attribute_id: "0x0003"
+              attribute_name: current_x
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 45494
+            "0x0004":
+              attribute_id: "0x0004"
+              attribute_name: current_y
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 19418
+            "0x0007":
+              attribute_id: "0x0007"
+              attribute_name: color_temperature
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 450
+            "0x0008":
+              attribute_id: "0x0008"
+              attribute_name: color_mode
+              value_type:
+                - "0x30"
+                - enum8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+            "0x000f":
+              attribute_id: "0x000f"
+              attribute_name: options
+              value_type:
+                - "0x18"
+                - bitmap8
+                - Discrete
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 0
+            "0x4000":
+              attribute_id: "0x4000"
+              attribute_name: enhanced_current_hue
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0x4001":
+              attribute_id: "0x4001"
+              attribute_name: enhanced_color_mode
+              value_type:
+                - "0x30"
+                - enum8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+            "0x400a":
+              attribute_id: "0x400a"
+              attribute_name: color_capabilities
+              value_type:
+                - "0x19"
+                - bitmap16
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 27
+            "0x400b":
+              attribute_id: "0x400b"
+              attribute_name: color_temp_physical_min
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x400c":
+              attribute_id: "0x400c"
+              attribute_name: color_temp_physical_max
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x400d":
+              attribute_id: "0x400d"
+              attribute_name: couple_color_temp_to_level_min
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 254
+            "0x4010":
+              attribute_id: "0x4010"
+              attribute_name: start_up_color_temperature
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 157
+
+
+                /*
+
+                action: zha_toolkit.conf_report
+data:
+  ieee: light.tzb210_tmi0rihb_ts0505b_light
+  cluster: 768
+  min_interval: 1
+  attribute: color_temperature
+  max_interval: 1
+  reportable_change: 1
+  expect_reply: true
+*.

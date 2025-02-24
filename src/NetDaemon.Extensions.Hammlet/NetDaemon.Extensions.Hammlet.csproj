@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
+    <PackageReference Include="dotenv.net" Version="3.2.1" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.2" />
+    <PackageReference Include="NetDaemon.AppModel" Version="25.6.0" />
+    <PackageReference Include="NetDaemon.Extensions.Mqtt" Version="25.6.0" />
+    <PackageReference Include="NetDaemon.Runtime" Version="25.6.0" />
+    <PackageReference Include="NetDaemon.HassModel" Version="25.6.0" />
+    <PackageReference Include="NetDaemon.Client" Version="25.6.0" />
+    <PackageReference Include="NetDaemon.Extensions.Scheduling" Version="25.6.0" />
+    <PackageReference Include="NetDaemon.Extensions.Logging" Version="25.6.0" />
+    <PackageReference Include="NetDaemon.Extensions.Tts" Version="25.6.0" />
+    <PackageReference Include="Vogen" Version="7.0.0" />
+    <PackageReference Include="Destructurama.ByIgnoring" Version="4.0.1" />
+    <PackageReference Include="PuppeteerExtraSharp" Version="2.0.0" />
+    <PackageReference Include="PuppeteerSharp" Version="20.1.2" />
+    <PackageReference Include="Serilog.CustomDestructurePolicy" Version="1.0.1" />
+    <PackageReference Include="Serilog.FluentDestructuring" Version="1.0.1" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="9.0.0" />
+    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="9.0.2" />
+    <PackageReference Include="TakasakiStudio.PuppeteerExtraSharp" Version="1.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\NetDaemon.Extensions.Observables\src\NetDaemon.Extensions.Observables\NetDaemon.Extensions.Observables.csproj" />
+  </ItemGroup>
+
+</Project>

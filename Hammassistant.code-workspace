@@ -1,0 +1,39 @@
+{
+	"folders": [
+		{
+			"name": "Hammassistant",
+			"path": "./src"
+		},
+		{
+			"path": "D:/OneDrive/Documents/Powershell"
+		},
+		{
+			"path": "./submodules/netdaemon"
+		},
+		{
+			"path": "Z:/"
+		},
+	],
+	"settings": {
+		"task.allowAutomaticTasks": "on",
+		"task.verboseLogging": true,
+		"platformio-ide.autoPreloadEnvTasks": false,
+		"terminal.integrated.profiles.windows": {
+			"HaPowerShell": {
+				"path": "pwsh.exe",
+				"args": [
+					"-noexit",
+					"-file",
+					"${workspaceFolder:Hammassistant}/Config.ps1"
+				]
+			}
+		},
+		"terminal.integrated.defaultProfile.windows": "HaPowerShell",
+		"files.associations": {
+			"*.yaml": "home-assistant"
+		},
+		"vscode-home-assistant.hostUrl": "http://${Env:HomeAssistant__Host}:${Env:HomeAssistant__Port}",
+		"vscode-home-assistant.longLivedAccessToken": "${Env:HomeAssistant__Token}",
+		"postman.settings.dotenv-detection-notification-visibility": false
+	}
+}

@@ -1,0 +1,7 @@
+DimmerSync:
+  DimmerId: "light.mikaela_dimmer"
+  PressBrightness: 20
+  TickBrightness: 2
+  TargetLightId: "light.mikaela_s_room"
+  UpButtonId: null
+  DownButtonId: null
