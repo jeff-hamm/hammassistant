@@ -45,22 +45,22 @@ public static class Config
             }
             else
             {
-                logger.Debug("Found {envFile} from environment variable {EnvName}",envFile,ConfigEnvPathVariable);
+                logger.Verbose("Found {envFile} from environment variable {EnvName}",envFile,ConfigEnvPathVariable);
             }
         }
         else
         {
-            logger.Debug("Found {envFile} from args parameter --{ParamName}",envFile,ConfigEnvArg);
+            logger.Verbose("Found {envFile} from args parameter --{ParamName}",envFile,ConfigEnvArg);
         }
 
         if (File.Exists(envFile))
         {
-            logger.Debug("Env file {envFile} exists, loading it", envFile);
+            logger.Verbose("Env file {envFile} exists, loading it", envFile);
             DotEnv.Fluent().WithEnvFiles(envFile).WithOverwriteExistingVars().Load();
         }
         else
         {
-            logger.Debug("Env file {envFile} does not exist, skipping loading", envFile);
+            logger.Verbose("Env file {envFile} does not exist, skipping loading", envFile);
         }
 
         if (!EnvReader.TryGetStringValue(AppConfigFolderVariable, out var appPath))
@@ -71,18 +71,18 @@ public static class Config
                 
                 if (Directory.EnumerateFiles(envPath, "*.y*", SearchOption.AllDirectories).Any())
                 {
-                    logger.Debug("Found {appPath} from envPath {EnvPath}", appPath, envPath);
+                    logger.Verbose("Found {appPath} from envPath {EnvPath}", appPath, envPath);
                     System.Environment.SetEnvironmentVariable(AppConfigFolderVariable, envPath);
                 }
                 else
                 {
-                    logger.Debug("No yaml files found in {EnvPath}, skipping setting {AppConfigFolderVariable}", envPath, AppConfigFolderVariable);
+                    logger.Verbose("No yaml files found in {EnvPath}, skipping setting {AppConfigFolderVariable}", envPath, AppConfigFolderVariable);
                 }
             }
         }
         else
         {
-            logger.Debug("Found {appPath} from environment variable {EnvName}", appPath, AppConfigFolderVariable);
+            logger.Verbose("Found {appPath} from environment variable {EnvName}", appPath, AppConfigFolderVariable);
         }
         @this.ConfigureHostConfiguration(cb => cb.AddEnvironmentVariables());
         @this.ConfigureAppConfiguration(cb => cb.AddEnvironmentVariables());

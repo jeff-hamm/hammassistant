@@ -9,6 +9,7 @@ function logs() {
 }
 
 function restart() {
+    trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
     logs -f &
     background_pid=$!
     bashio $nd_src/restart.sh

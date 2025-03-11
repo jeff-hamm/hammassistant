@@ -90,7 +90,7 @@
     </ItemGroup> -->
 
     <PropertyGroup>
-      <NetDaemon__ApplicationConfigurationFolder Condition="'$(NetDaemon__ApplicationConfigurationFolder)' == ''">.\Config</NetDaemon__ApplicationConfigurationFolder>
+      <NetDaemon__ApplicationConfigurationFolder Condition="'$(NetDaemon__ApplicationConfigurationFolder)' == ''">$(MSBuildProjectDir)\Config</NetDaemon__ApplicationConfigurationFolder>
     </PropertyGroup>
     <!--<Target Name="CopyCustomContent" BeforeTargets="AfterBuild">
       <ItemGroup>
@@ -101,10 +101,10 @@
     </Target>-->
     <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
       <ItemGroup>
-            <ApplicationConfigurationFiles Include="$(NetDaemon__ApplicationConfigurationFolder)\**\*.*"/>
+            <ApplicationConfigurationFiles Include="$(NetDaemon__ApplicationConfigurationFolder)\**\*.*" />
         </ItemGroup>
-        <Message Text="Publishing from $(NetDaemon__ApplicationConfigurationFolder) to $(PublishDir)\Config" Importance="high" />
-      <Copy SourceFiles="@(ApplicationConfigurationFiles)" DestinationFolder="$(PublishDir)\Config" SkipUnchangedFiles="true" />
+        <Message Text="Publishing application configuration from $(NetDaemon__ApplicationConfigurationFolder) to $(PublishDir)"  />
+      <Copy SourceFiles="@(ApplicationConfigurationFiles)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="true" />
     </Target>
   <PropertyGroup>
     <DomainPrimitiveGenerator_GenerateSwaggerConverters>false</DomainPrimitiveGenerator_GenerateSwaggerConverters>
