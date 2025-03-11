@@ -12,14 +12,17 @@ using NetDaemon.Extensions.Tts;
 using NetDaemon.HassModel.Entities;
 using NetDaemon.Runtime;
 using Serilog;
+using Serilog.Events;
 
 #pragma warning disable CA1812
 
 
 // Initialize early, without access to configuration or services
 Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
+    .Enrich.FromLogContext()
     .WriteTo.Console() // + file or centralized logging
-    .CreateLogger();
+    .CreateBootstrapLogger();
 
 try
 {

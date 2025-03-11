@@ -17,5 +17,21 @@ function restart() {
 }
 
 function publish() {
-    dotnet publish "$nd_src/src/Hammassistant/Hammassistant.csproj" -c Release -o "$nd_path"
+    rm -rf "$nd_path/*"
+    dotnet publish "$nd_src/src/Hammassistant/Hammassistant.csproj" -c Release -o "$nd_path" -p:NetDaemon__ApplicationConfigurationFolder=$NetDaemon__ApplicationConfigurationFolder $@
+    restart
+}
+
+function update() {
+    git pull --recurse-submodules
+    if [ ! -z $ZSH_CUSTOM ]; then
+        target_file=$ZSH_CUSTOM/nd_functions.zsh
+    else
+        target_file=~/nd_functions.zsh
+    fi
+    echo "export nd_src=$nd_src" > "$target_file"
+    echo "export nd_config_path=$nd_config_path" >> "$target_file"
+    echo "export NetDaemon__ApplicationConfigurationFolder=$nd_config_path" >> "$target_file"
+    cat "$nd_src/nd_functions.sh" >> "$target_file"
+    publish $@
 }

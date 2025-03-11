@@ -33,19 +33,56 @@ public static class Config
     public const string ConfigEnvArg = "env";
     public static IHostBuilder UseTheHammlet(this IHostBuilder @this, params string[] args)
     {
+        var logger = Log.Logger;
         var argString = $"--{ConfigEnvArg}=";
-        if (args.Where(a => a.StartsWith(argString)).Select(a => a.Substring(argString.Length))
+        if (args.Where(a => a.StartsWith(argString))
+                .Select(a => a.Substring(argString.Length))
                 .FirstOrDefault(File.Exists) is not { } envFile)
+        {
             if (!EnvReader.TryGetStringValue(ConfigEnvPathVariable, out envFile))
+            {
                 envFile = Directory.GetCurrentDirectory() + "/.env";
+            }
+            else
+            {
+                logger.Debug("Found {envFile} from environment variable {EnvName}",envFile,ConfigEnvPathVariable);
+            }
+        }
+        else
+        {
+            logger.Debug("Found {envFile} from args parameter --{ParamName}",envFile,ConfigEnvArg);
+        }
 
-        if(File.Exists(envFile ))
-            DotEnv.Fluent().WithEnvFiles(envFile).Load();
+        if (File.Exists(envFile))
+        {
+            logger.Debug("Env file {envFile} exists, loading it", envFile);
+            DotEnv.Fluent().WithEnvFiles(envFile).WithOverwriteExistingVars().Load();
+        }
+        else
+        {
+            logger.Debug("Env file {envFile} does not exist, skipping loading", envFile);
+        }
+
         if (!EnvReader.TryGetStringValue(AppConfigFolderVariable, out var appPath))
         {
-            if (Path.GetDirectoryName(envFile) is {} envPath &&
-                new DirectoryInfo(envPath) is { Exists: true } i && i.EnumerateFiles().Any(f => f.Extension is ".yaml" or ".yml"))
-                System.Environment.SetEnvironmentVariable(AppConfigFolderVariable, envPath);
+            if (Path.GetDirectoryName(envFile) is { } envPath &&
+                Directory.Exists(envPath))
+            {
+                
+                if (Directory.EnumerateFiles(envPath, "*.y*", SearchOption.AllDirectories).Any())
+                {
+                    logger.Debug("Found {appPath} from envPath {EnvPath}", appPath, envPath);
+                    System.Environment.SetEnvironmentVariable(AppConfigFolderVariable, envPath);
+                }
+                else
+                {
+                    logger.Debug("No yaml files found in {EnvPath}, skipping setting {AppConfigFolderVariable}", envPath, AppConfigFolderVariable);
+                }
+            }
+        }
+        else
+        {
+            logger.Debug("Found {appPath} from environment variable {EnvName}", appPath, AppConfigFolderVariable);
         }
         @this.ConfigureHostConfiguration(cb => cb.AddEnvironmentVariables());
         @this.ConfigureAppConfiguration(cb => cb.AddEnvironmentVariables());

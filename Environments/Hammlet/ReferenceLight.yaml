@@ -1,4 +1,4 @@
-Hammlet.ReferenceLight:
+ReferenceLight:
   EntityId: "light.reference_light_4"
   TrackedEntities:
     - "light.color_bulbs"

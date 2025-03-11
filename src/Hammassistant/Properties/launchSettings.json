@@ -3,13 +3,15 @@
     "Hammlet": {
       "commandName": "Project",
       "environmentVariables": {
-        "NetDaemon__EnvFile": "D:\\OneDrive\\Projects\\Home\\Hammlet\\Environments\\Hammlet\\.env"
+        "NetDaemon__EnvFile": "D:\\OneDrive\\Projects\\Home\\Hammlet\\Environments\\Hammlet\\.env",
+        "NetDaemon__ApplicationConfigurationFolder": "D:/OneDrive/Projects/Home/Hammlet/Environments/Hammlet"
       }
     },
     "Dreamhouse": {
       "commandName": "Project",
       "environmentVariables": {
-        "NetDaemon__EnvFile": "D:\\OneDrive\\Projects\\Home\\Hammlet\\Environments\\Dreamhouse\\.env"
+        "NetDaemon__EnvFile": "D:\\OneDrive\\Projects\\Home\\Hammlet\\Environments\\Dreamhouse\\.env",
+        "NetDaemon__ApplicationConfigurationFolder": "D:/OneDrive/Projects/Home/Hammlet/Environments/Dreamhouse"
       }
     }
   }
