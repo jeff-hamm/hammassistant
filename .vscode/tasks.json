@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure Hammassistant",
+            "type": "shell",
+            "command": "${workspaceFolder:Hammassistant}/Config.ps1",
+            "args": [
+                "${input:haName}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+        },
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo ${workspaceFolder}"
+        }
+    ],
+    "inputs": [
+        {
+            "type": "pickString",
+            "id": "haName",
+            "description": "What home assistant instance are you on?",
+            "options": [
+                "hammlet",
+                "dreamhouse",
+            ],
+            "default": "hammlet"
+        }
+    ]
+}

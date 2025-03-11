@@ -31,6 +31,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hammassistant", "Hammassist
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDaemon.Extensions.Hammlet", "NetDaemon.Extensions.Hammlet\NetDaemon.Extensions.Hammlet.csproj", "{763E1E1A-142E-4477-9D83-6DD9206E4382}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{60F4FF1D-3807-4AAA-8D36-6559D1A6DDEF}"
+	ProjectSection(SolutionItems) = preProject
+		..\Config.ps1 = ..\Config.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hammlet", "Hammlet", "{FC32F8D2-72CF-439F-B6A6-5AC7A3FD02B1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Environments\Hammlet\.env = ..\Environments\Hammlet\.env
+		..\Environments\Hammlet\DimmerSync.yaml = ..\Environments\Hammlet\DimmerSync.yaml
+		..\Environments\Hammlet\ReferenceLight.yaml = ..\Environments\Hammlet\ReferenceLight.yaml
+		..\Environments\Hammlet\SceneSelector.yaml = ..\Environments\Hammlet\SceneSelector.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dreamhouse", "Dreamhouse", "{A5825D61-11EF-45CE-A934-DBE62360C32C}"
+	ProjectSection(SolutionItems) = preProject
+		..\Environments\Dreamhouse\.env = ..\Environments\Dreamhouse\.env
+		..\Environments\Dreamhouse\DimmerSync.yaml = ..\Environments\Dreamhouse\DimmerSync.yaml
+		..\Environments\Dreamhouse\ReferenceLight.yaml = ..\Environments\Dreamhouse\ReferenceLight.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,5 +119,7 @@ Global
 		{9A79A71B-E6C9-4614-BDF2-514D968361FF} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
 		{BBF43BF9-C445-4D65-AEF4-AC11CB2C7E53} = {C559B8B1-B30E-411A-BF76-81A775A7BF3A}
 		{763E1E1A-142E-4477-9D83-6DD9206E4382} = {CFE86D2F-2EBF-4272-85E5-7A1744E740F0}
+		{FC32F8D2-72CF-439F-B6A6-5AC7A3FD02B1} = {60F4FF1D-3807-4AAA-8D36-6559D1A6DDEF}
+		{A5825D61-11EF-45CE-A934-DBE62360C32C} = {60F4FF1D-3807-4AAA-8D36-6559D1A6DDEF}
 	EndGlobalSection
 EndGlobal

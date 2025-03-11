@@ -28,7 +28,7 @@ public record StateChangeEvent<TData>(StateChange StateChange, TData Data);
 public class ButtonTiming
 {
     //public const long DefaultDoublePressMilliseconds = DefaultPressDelay-DefaultDebounceTimeMilliseconds;
-    public const long DefaultPressDelay = 800;
+    public const long DefaultPressDelay = 350;
     public const long DefaultHoldingMilliseconds = 500;
     public const long DefaultLongPressMilliseconds = 1000;
     public const long DebounceTimeMilliseconds = 50;

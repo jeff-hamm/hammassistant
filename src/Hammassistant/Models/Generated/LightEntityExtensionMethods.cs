@@ -151,7 +151,7 @@ public static class LightEntityExtensionMethods
     ///<param name="flash"></param>
     public static void TurnOn(this ILightEntityCore target, double? transition = null, IReadOnlyCollection<int>? rgbColor = null, object? kelvin = null, double? brightnessPct = null, double? brightnessStepPct = null, string? effect = null, object? rgbwColor = null, object? rgbwwColor = null, object? colorName = null, object? hsColor = null, object? xyColor = null, object? colorTemp = null, double? brightness = null, double? brightnessStep = null, object? white = null, string? profile = null, object? flash = null)
     {
-        target.CallService("turn_on", new LightTurnOnParameters { Transition = transition, RgbColor = rgbColor, Kelvin = kelvin, BrightnessPct = brightnessPct, BrightnessStepPct = brightnessStepPct, Effect = effect, RgbwColor = rgbwColor, RgbwwColor = rgbwwColor, ColorName = colorName, HsColor = hsColor, XyColor = xyColor, ColorTemp = colorTemp, Brightness = brightness, BrightnessStep = brightnessStep, White = white, Profile = profile, Flash = flash });
+        target.CallService("turn_on", new LightTurnOnParameters { Transition = transition, RgbColor = rgbColor, ColorTempKelvin = kelvin, BrightnessPct = brightnessPct, BrightnessStepPct = brightnessStepPct, Effect = effect, RgbwColor = rgbwColor, RgbwwColor = rgbwwColor, ColorName = colorName, HsColor = hsColor, XyColor = xyColor, ColorTemp = colorTemp, Brightness = brightness, BrightnessStep = brightnessStep, White = white, Profile = profile, Flash = flash });
     }
 
     ///<summary>Turns on one or more lights and adjusts their properties, even when they are turned on already.</summary>
@@ -175,6 +175,6 @@ public static class LightEntityExtensionMethods
     ///<param name="flash"></param>
     public static void TurnOn(this IEnumerable<ILightEntityCore> target, double? transition = null, IReadOnlyCollection<int>? rgbColor = null, object? kelvin = null, double? brightnessPct = null, double? brightnessStepPct = null, string? effect = null, object? rgbwColor = null, object? rgbwwColor = null, object? colorName = null, object? hsColor = null, object? xyColor = null, object? colorTemp = null, double? brightness = null, double? brightnessStep = null, object? white = null, string? profile = null, object? flash = null)
     {
-        target.CallService("turn_on", new LightTurnOnParameters { Transition = transition, RgbColor = rgbColor, Kelvin = kelvin, BrightnessPct = brightnessPct, BrightnessStepPct = brightnessStepPct, Effect = effect, RgbwColor = rgbwColor, RgbwwColor = rgbwwColor, ColorName = colorName, HsColor = hsColor, XyColor = xyColor, ColorTemp = colorTemp, Brightness = brightness, BrightnessStep = brightnessStep, White = white, Profile = profile, Flash = flash });
+        target.CallService("turn_on", new LightTurnOnParameters { Transition = transition, RgbColor = rgbColor, ColorTempKelvin = kelvin, BrightnessPct = brightnessPct, BrightnessStepPct = brightnessStepPct, Effect = effect, RgbwColor = rgbwColor, RgbwwColor = rgbwwColor, ColorName = colorName, HsColor = hsColor, XyColor = xyColor, ColorTemp = colorTemp, Brightness = brightness, BrightnessStep = brightnessStep, White = white, Profile = profile, Flash = flash });
     }
 }

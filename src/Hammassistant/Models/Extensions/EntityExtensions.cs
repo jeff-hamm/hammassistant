@@ -8,6 +8,7 @@ namespace HassModel;
 public static class EntityExtensions
 {
         
+    public static string Domain(this Entity entity) => EntityId.From(entity.EntityId).Domain ?? "";
     public static EventEntity Event(this IHaContext @this, EntityId entityId) =>
         @this.Entity<EventEntity>(entityId.InDomain("event"));
     public static IEnumerable<EventEntity> Events(this IHaContext @this, IEnumerable<string> entityIds) =>

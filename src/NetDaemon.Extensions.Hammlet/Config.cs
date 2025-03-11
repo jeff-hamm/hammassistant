@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NetDaemon.AppModel;
 using NetDaemon.Extensions.Hammlet.Model;
 using NetDaemon.Extensions.Hammlet.Services;
 using NetDaemon.Extensions.Logging;
@@ -15,6 +16,7 @@ using Serilog;
 using Serilog.Events;
 using Serilog.Extensions.Hosting;
 using Serilog.Extensions.Logging;
+using Serilog.Formatting.Compact;
 using Vogen;
 
 [assembly: Vogen.VogenDefaults(
@@ -26,15 +28,27 @@ namespace NetDaemon.Extensions.Hammlet;
 
 public static class Config
 {
-    public const string ConfigEnvPathVariable = "CONFIG_ENV_PATH";
+    public const string ConfigEnvPathVariable = "CONFIG_ROOT";
     public const string ConfigEnvArg = "env";
     public static IHostBuilder UseTheHammlet(this IHostBuilder @this, params string[] args)
     {
         var argString = $"--{ConfigEnvArg}=";
-        if (args.Where(a => a.StartsWith(argString)).Select(a => a.Substring(argString.Length)).FirstOrDefault(f => File.Exists(f)) is {} envPath)
+        if (args.Where(a => a.StartsWith(argString)).Select(a => a.Substring(argString.Length)).FirstOrDefault(File.Exists) is {} envPath)
             DotEnv.Fluent().WithEnvFiles(envPath).Load();
-        else if (EnvReader.TryGetStringValue(ConfigEnvPathVariable, out envPath) && File.Exists(envPath))
-            DotEnv.Fluent().WithEnvFiles(envPath).Load();
+        else if (EnvReader.TryGetStringValue(ConfigEnvPathVariable, out envPath) && File.Exists(envPath + "/.env"))
+            DotEnv.Fluent().WithEnvFiles(envPath + "/.env").Load();
+        if (Directory.Exists(envPath))
+        {
+            var cfgFolder = $"NetDaemon__{nameof(AppConfigurationLocationSetting.ApplicationConfigurationFolder)}";
+            if (!EnvReader.TryGetStringValue(cfgFolder, out var appPath))
+            {
+                //@this.ConfigureHostConfiguration(cb =>
+                //    cb.AddInMemoryCollection([new KeyValuePair<string, string?>(cfgFolder.Replace("__",ConfigurationPath.KeyDelimiter), envPath)]));
+                //@this.ConfigureAppConfiguration(cb =>
+                //    cb.AddInMemoryCollection([new KeyValuePair<string, string?>(cfgFolder.Replace("__",ConfigurationPath.KeyDelimiter), envPath)]));
+                System.Environment.SetEnvironmentVariable(cfgFolder, envPath);
+            }
+        }
         @this.ConfigureHostConfiguration(cb => cb.AddEnvironmentVariables());
         @this.ConfigureAppConfiguration(cb => cb.AddEnvironmentVariables());
         return @this.UseTheHammletLogging();

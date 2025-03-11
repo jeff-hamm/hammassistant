@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\netdaemon\src\Client\NetDaemon.HassClient\NetDaemon.Client.csproj" />
-    <ProjectReference Include="..\netdaemon\src\Extensions\NetDaemon.Extensions.Logging\NetDaemon.Extensions.Logging.csproj" />
-    <ProjectReference Include="..\netdaemon\src\HassModel\NetDaemon.HassModel.CodeGenerator\NetDaemon.HassModel.CodeGenerator.csproj" />
+    <ProjectReference Include="..\..\submodules\netdaemon\src\Client\NetDaemon.HassClient\NetDaemon.Client.csproj" />
+    <ProjectReference Include="..\..\submodules\netdaemon\src\Extensions\NetDaemon.Extensions.Logging\NetDaemon.Extensions.Logging.csproj" />
+    <ProjectReference Include="..\..\submodules\netdaemon\src\HassModel\NetDaemon.HassModel.CodeGenerator\NetDaemon.HassModel.CodeGenerator.csproj" />
   </ItemGroup>
 
 </Project>

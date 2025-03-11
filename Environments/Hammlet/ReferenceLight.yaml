@@ -1,5 +1,5 @@
-ReferenceLight:
-  EntityId: "light.reference_light"
+Hammlet.ReferenceLight:
+  EntityId: "light.reference_light_4"
   TrackedEntities:
     - "light.color_bulbs"
     - "light.bedroom_fan_light"

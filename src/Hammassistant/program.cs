@@ -27,7 +27,7 @@ try
         .UseTheHammlet()
         .UseNetDaemonAppSettings()
         .UseNetDaemonRuntime()
-//        .UseNetDaemonMqttEntityManagement()
+        .UseNetDaemonMqttEntityManagement()
         .UseNetDaemonTextToSpeech()
         .ConfigureServices((_, services) =>
             services

@@ -22,7 +22,7 @@ public class TurnOnParameterBuilder(LightEntity entity)
     }
     public TurnOnParameterBuilder WithKelvin(double kelvin)
     {
-        _parameters = _parameters with { Kelvin = kelvin };
+        _parameters = _parameters with { ColorTempKelvin = kelvin };
         return this;
     }
     public TurnOnParameterBuilder WithBrightnessPct(double brightnessPct)

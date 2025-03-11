@@ -2,7 +2,7 @@
 	"folders": [
 		{
 			"name": "Hammassistant",
-			"path": "./src"
+			"path": "."
 		},
 		{
 			"path": "D:/OneDrive/Documents/Powershell"
@@ -18,17 +18,6 @@
 		"task.allowAutomaticTasks": "on",
 		"task.verboseLogging": true,
 		"platformio-ide.autoPreloadEnvTasks": false,
-		"terminal.integrated.profiles.windows": {
-			"HaPowerShell": {
-				"path": "pwsh.exe",
-				"args": [
-					"-noexit",
-					"-file",
-					"${workspaceFolder:Hammassistant}/Config.ps1"
-				]
-			}
-		},
-		"terminal.integrated.defaultProfile.windows": "HaPowerShell",
 		"files.associations": {
 			"*.yaml": "home-assistant"
 		},

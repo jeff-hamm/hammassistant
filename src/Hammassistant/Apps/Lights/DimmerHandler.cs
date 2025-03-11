@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Hammlet.Apps.SceneOnButton;
 using Hammlet.Extensions;
+using Hammlet.Models.Enums;
 using Hammlet.Models.Extensions;
 using Hammlet.NetDaemon.Extensions;
 using Hammlet.NetDaemon.Models;
@@ -31,6 +32,7 @@ internal class DimmerHandler(
     AsyncServiceCaller serviceCaller,
     BinarySensorEntities binarySensors,
     EventEntities eventEntities,
+    LightEntities lights,
     ILogger<DimmerHandler> logger,
     IScheduler scheduler,
     IAppConfig<DimmerSync> appCfg) : IAsyncInitializable, IAsyncDisposable
@@ -139,7 +141,7 @@ internal class DimmerHandler(
                         await CallServiceAsyc(entity, "turn_off", s => s.IsOff(),
                             new LightTurnOffParameters()
                             {
-                                Transition = 0
+                                Transition = 1
                             },
                             cancellationToken).ConfigureAwait(false);
                         DstState = new();
@@ -154,15 +156,19 @@ internal class DimmerHandler(
                             await CallServiceAsyc(entity, "turn_on", s => s.IsOn(),
                                 new LightTurnOnParameters()
                                 {
-                                    Transition = 0,
-                                    ColorTemp = DstState.ColorTemp
+                                    Transition = cfg.Transition,
+                                    ColorTemp = DstState.ColorTemp,
+                                    Brightness = cfg.DefaultBrightness
                                 },
                                 cancellationToken).ConfigureAwait(false);
+                            if (cfg.DefaultBrightness.HasValue)
+                                _expectedBrightness = cfg.DefaultBrightness.Value;
                             DstState = new();
                             continue;
                         }
                         else
                         {
+                            _expectedBrightness = (int?)entity.EntityState?.Attributes?.Brightness ?? _expectedBrightness;
                             logger.LogDebug("Entity was on, continuing with transition");
                         }
                     }
@@ -178,9 +184,9 @@ internal class DimmerHandler(
                     var data = new LightTurnOnParameters()
                     {
 //                        Transition = cfg.DimmerDelay/1000,
-                        Kelvin = k,
+                        ColorTempKelvin = k,
                         ColorTemp = r,
-                        Transition = 0,
+                        Transition = cfg.Transition,
                         Brightness =_expectedBrightness = newBrightness
                     };
                     if (logger.IsEnabled(LogLevel.Debug) && entity.Attributes is {} existing)
@@ -264,7 +270,11 @@ internal class DimmerHandler(
                         if (!TargetEntity.IsOn())
                             SetState(true);
                         else
+                        {
+                            _expectedBrightness = (int?)TargetEntity.EntityState?.Attributes?.Brightness ?? _expectedBrightness;
                             SetBrightness(50);
+                        }
+
                         break;
                     case 2:
                         ToggleWarm(TargetEntity);
@@ -328,7 +338,6 @@ internal class DimmerHandler(
 //                logger.LogDebug("Waiting for minTime {minTime} after {elapsed}", minTime.Value.TotalMilliseconds, (DateTimeOffset.UtcNow - start).TotalMilliseconds);
                 await Task.Delay(minTime.Value - (DateTimeOffset.UtcNow - start), token);
             }
-
         }
         finally
         {

@@ -14,21 +14,22 @@
       <Compile Remove="Models\Framework\**" />
       <Compile Remove="Models\Reference\**" />
       <Compile Remove="NetDaemon.Extensions.Hammlet\**" />
+      <Compile Remove="Scripts\**" />
       <EmbeddedResource Remove="Data\**" />
       <EmbeddedResource Remove="Models\Framework\**" />
       <EmbeddedResource Remove="Models\Reference\**" />
       <EmbeddedResource Remove="NetDaemon.Extensions.Hammlet\**" />
+      <EmbeddedResource Remove="Scripts\**" />
       <None Remove="Data\**" />
       <None Remove="Models\Framework\**" />
       <None Remove="Models\Reference\**" />
       <None Remove="NetDaemon.Extensions.Hammlet\**" />
+      <None Remove="Scripts\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Apps\Lights\WatchForReferenceLights.yaml" />
       <None Remove="Config\DimmerSync.yaml" />
-      <None Remove="Scripts\Dreamhouse\.env" />
-      <None Remove="Scripts\Hammlet\.env" />
     </ItemGroup>
 
     <ItemGroup>
@@ -36,12 +37,7 @@
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
       <Content Remove="Data\**" />
-      <Content Include="Scripts\Dreamhouse\.env">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
-      <Content Include="Scripts\Hammlet\.env">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+      <Content Remove="Scripts\**" />
     </ItemGroup>
     
     <ItemGroup>
@@ -71,16 +67,28 @@
         <PackageReference Include="NetDaemon.Extensions.Logging" Version="25.6.0" />
         <PackageReference Include="NetDaemon.Extensions.Tts" Version="25.6.0" />
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
-        <PackageReference Include="Vogen" Version="7.0.0" />
+
     </ItemGroup>
         
     <ItemGroup>
-      <Page Include="Scripts\Hammlet\.env" />
+      <ProjectReference Include="..\..\submodules\NetDaemon.Extensions.Observables\src\NetDaemon.Extensions.Observables\NetDaemon.Extensions.Observables.csproj" />
+      <ProjectReference Include="..\NetDaemon.Extensions.Hammlet\NetDaemon.Extensions.Hammlet.csproj" />
     </ItemGroup>
         
     <ItemGroup>
-      <ProjectReference Include="..\submodules\NetDaemon.Extensions.Observables\src\NetDaemon.Extensions.Observables\NetDaemon.Extensions.Observables.csproj" />
-      <ProjectReference Include="NetDaemon.Extensions.Hammlet\NetDaemon.Extensions.Hammlet.csproj" />
+      <Folder Include="Environment\" />
+    </ItemGroup>
+        
+    <ItemGroup>
+      <Content Include="..\..\Environments\Hammlet\DimmerSync.yaml" Link="Environment\DimmerSync.yaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+        
+    <ItemGroup>
+      <Content Include="..\..\Environments\Hammlet\ReferenceLight.yaml" Link="Environment\ReferenceLight.yaml" >
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
   <PropertyGroup>
     <DomainPrimitiveGenerator_GenerateSwaggerConverters>false</DomainPrimitiveGenerator_GenerateSwaggerConverters>

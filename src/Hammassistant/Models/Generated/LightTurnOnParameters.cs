@@ -41,8 +41,8 @@ public partial record LightTurnOnParameters
     public IReadOnlyCollection<int>? RgbColor { get; init; }
 
     ///<summary>Color temperature in Kelvin.</summary>
-    [JsonPropertyName("kelvin")]
-    public object? Kelvin { get; init; }
+    [JsonPropertyName("color_temp_kelvin")]
+    public object? ColorTempKelvin { get; init; }
 
     ///<summary>Number indicating the percentage of full brightness, where 0 turns the light off, 1 is the minimum brightness, and 100 is the maximum brightness.</summary>
     [JsonPropertyName("brightness_pct")]

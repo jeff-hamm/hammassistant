@@ -108,6 +108,6 @@ public partial class LightServices
     ///<param name="flash"></param>
     public void TurnOn(ServiceTarget target, double? transition = null, IReadOnlyCollection<int>? rgbColor = null, object? kelvin = null, double? brightnessPct = null, double? brightnessStepPct = null, string? effect = null, object? rgbwColor = null, object? rgbwwColor = null, object? colorName = null, object? hsColor = null, object? xyColor = null, object? colorTemp = null, double? brightness = null, double? brightnessStep = null, object? white = null, string? profile = null, object? flash = null)
     {
-        _haContext.CallService("light", "turn_on", target, new LightTurnOnParameters { Transition = transition, RgbColor = rgbColor, Kelvin = kelvin, BrightnessPct = brightnessPct, BrightnessStepPct = brightnessStepPct, Effect = effect, RgbwColor = rgbwColor, RgbwwColor = rgbwwColor, ColorName = colorName, HsColor = hsColor, XyColor = xyColor, ColorTemp = colorTemp, Brightness = brightness, BrightnessStep = brightnessStep, White = white, Profile = profile, Flash = flash });
+        _haContext.CallService("light", "turn_on", target, new LightTurnOnParameters { Transition = transition, RgbColor = rgbColor, ColorTempKelvin = kelvin, BrightnessPct = brightnessPct, BrightnessStepPct = brightnessStepPct, Effect = effect, RgbwColor = rgbwColor, RgbwwColor = rgbwwColor, ColorName = colorName, HsColor = hsColor, XyColor = xyColor, ColorTemp = colorTemp, Brightness = brightness, BrightnessStep = brightnessStep, White = white, Profile = profile, Flash = flash });
     }
 }

@@ -3,7 +3,13 @@
     "Hammlet": {
       "commandName": "Project",
       "environmentVariables": {
-        "CONFIG_ROOT": "../Environments/Hammlet"
+        "CONFIG_ROOT": "D:\\OneDrive\\Projects\\Home\\Hammlet\\Environments\\Hammlet"
+      }
+    },
+    "Dreamhouse": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "CONFIG_ROOT": "D:\\OneDrive\\Projects\\Home\\Hammlet\\Environments\\Dreamhouse"
       }
     }
   }
