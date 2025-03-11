@@ -20,14 +20,20 @@ function restart() {
 
 function publish() {
     rm -rf "$nd_path/*"
-    dotnet publish "$nd_src/src/Hammassistant/Hammassistant.csproj" -c Release -o "$nd_path" -p:NetDaemon__ApplicationConfigurationFolder=$NetDaemon__ApplicationConfigurationFolder -tl:off $@ || exit 1
+    dotnet publish "$nd_src/src/Hammassistant/Hammassistant.csproj" -c Release -o "$nd_path" -p:NetDaemon__ApplicationConfigurationFolder=$NetDaemon__ApplicationConfigurationFolder -tl:off $@
+    if [ $? -ne 0 ]; then
+        return
+    fi
     restart
 }
 
 function update() {
     pushd $nd_src
-    git pull --recurse-submodules || { popd; exit 1; }
-
+    git pull --recurse-submodules
+    if [ $? -ne 0 ]; then
+        popd
+        return
+    fi
     if [ ! -z $ZSH_CUSTOM ]; then
         target_file=$ZSH_CUSTOM/nd_functions.zsh
     else
