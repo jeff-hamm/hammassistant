@@ -37,5 +37,6 @@ function update() {
     echo "export nd_config_path=$nd_config_path" >> "$target_file"
     echo "export NetDaemon__ApplicationConfigurationFolder=$nd_config_path" >> "$target_file"
     cat "$nd_src/nd_functions.sh" >> "$target_file"
+    source "$target_file"
     publish $@
 }
