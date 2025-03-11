@@ -18,16 +18,15 @@ function restart() {
 }
 
 function publish() {
-    set -e
     rm -rf "$nd_path/*"
-    dotnet publish "$nd_src/src/Hammassistant/Hammassistant.csproj" -c Release -o "$nd_path" -p:NetDaemon__ApplicationConfigurationFolder=$NetDaemon__ApplicationConfigurationFolder $@
+    dotnet publish "$nd_src/src/Hammassistant/Hammassistant.csproj" -c Release -o "$nd_path" -p:NetDaemon__ApplicationConfigurationFolder=$NetDaemon__ApplicationConfigurationFolder -tl:off $@ || exit 1
     restart
 }
 
 function update() {
-    set -e
-    cd $nd_src
-    git pull --recurse-submodules
+    pushd $nd_src
+    git pull --recurse-submodules || { popd; exit 1; }
+
     if [ ! -z $ZSH_CUSTOM ]; then
         target_file=$ZSH_CUSTOM/nd_functions.zsh
     else
@@ -38,5 +37,6 @@ function update() {
     echo "export NetDaemon__ApplicationConfigurationFolder=$nd_config_path" >> "$target_file"
     cat "$nd_src/nd_functions.sh" >> "$target_file"
     source "$target_file"
+    popd
     publish $@
 }
