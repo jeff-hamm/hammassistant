@@ -77,6 +77,7 @@ public static class Config
     {
         @this.AddScoped<AsyncServiceCaller>();
         @this.AddScoped<IAsyncHaContext, AsyncHaContext>();
+        @this.AddTransient(typeof(IAppConfig<>), typeof(HammassistantAppConfig<>));
         return @this;
 
     }
