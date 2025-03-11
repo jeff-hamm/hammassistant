@@ -18,12 +18,14 @@ function restart() {
 }
 
 function publish() {
+    set -e
     rm -rf "$nd_path/*"
     dotnet publish "$nd_src/src/Hammassistant/Hammassistant.csproj" -c Release -o "$nd_path" -p:NetDaemon__ApplicationConfigurationFolder=$NetDaemon__ApplicationConfigurationFolder $@
     restart
 }
 
 function update() {
+    set -e
     cd $nd_src
     git pull --recurse-submodules
     if [ ! -z $ZSH_CUSTOM ]; then
