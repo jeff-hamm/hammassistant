@@ -8,7 +8,6 @@
         <RootNamespace>Hammlet</RootNamespace>
         <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     </PropertyGroup>
-
     <ItemGroup>
       <Compile Remove="Data\**" />
       <Compile Remove="Models\Framework\**" />
@@ -29,7 +28,6 @@
 
     <ItemGroup>
       <None Remove="Apps\Lights\WatchForReferenceLights.yaml" />
-      <None Remove="Config\DimmerSync.yaml" />
     </ItemGroup>
 
     <ItemGroup>
@@ -75,10 +73,10 @@
       <ProjectReference Include="..\NetDaemon.Extensions.Hammlet\NetDaemon.Extensions.Hammlet.csproj" />
     </ItemGroup>
         
+<!--         
     <ItemGroup>
       <Folder Include="Environment\" />
     </ItemGroup>
-        
     <ItemGroup>
       <Content Include="..\..\Environments\Hammlet\DimmerSync.yaml" Link="Environment\DimmerSync.yaml">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -89,7 +87,15 @@
       <Content Include="..\..\Environments\Hammlet\ReferenceLight.yaml" Link="Environment\ReferenceLight.yaml" >
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
-    </ItemGroup>
+    </ItemGroup> -->
+
+    <PropertyGroup>
+      <NetDaemon__ApplicationConfigurationFolder Condition="'$(NetDaemon__ApplicationConfigurationFolder)' == ''">.\Config</NetDaemon__ApplicationConfigurationFolder>
+    </PropertyGroup>
+    <Target Name="CopyCustomContent" BeforeTargets="AfterPublish">
+      <Copy SourceFiles="@(NetDaemon__ApplicationConfigurationFolder)" DestinationFolder="$(OutDir)\Config" SkipUnchangedFiles="true" />
+    </Target>
+
   <PropertyGroup>
     <DomainPrimitiveGenerator_GenerateSwaggerConverters>false</DomainPrimitiveGenerator_GenerateSwaggerConverters>
   </PropertyGroup>

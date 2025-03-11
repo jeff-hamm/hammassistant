@@ -26,16 +26,16 @@ using Reactive.Boolean;
 namespace Hammlet.Apps.Lights;
 
 [NetDaemonApp]
-internal class DimmerHandler(
+internal class DimmerSync(
     IAsyncHaContext ha,
     IHomeAssistantRunner hassRunner,
     AsyncServiceCaller serviceCaller,
     BinarySensorEntities binarySensors,
     EventEntities eventEntities,
     LightEntities lights,
-    ILogger<DimmerHandler> logger,
+    ILogger<DimmerSync> logger,
     IScheduler scheduler,
-    IAppConfig<DimmerSync> appCfg) : IAsyncInitializable, IAsyncDisposable
+    IAppConfig<DimmerSyncConfig> appCfg) : IAsyncInitializable, IAsyncDisposable
 {
 
 
@@ -229,7 +229,7 @@ internal class DimmerHandler(
     private readonly System.Reactive.Disposables.CompositeDisposable _disposables = new();
 
 
-    private DimmerSync Initialize()
+    private DimmerSyncConfig Initialize()
     {
         var cfg = appCfg.Value;
 //        cfg.DimmerId = "light.liminal_dimmer";
@@ -308,7 +308,7 @@ internal class DimmerHandler(
     private LightEntity TargetEntity => ha.LightEntity(appCfg.Value.TargetLightId);
 
 
-    private IDisposable EnableDimmer(BinarySensorEntity upButton, DimmerSync cfg, bool dimming) => upButton.ToBooleanObservable()
+    private IDisposable EnableDimmer(BinarySensorEntity upButton, DimmerSyncConfig cfg, bool dimming) => upButton.ToBooleanObservable()
             .Throttle(cfg.Timing.DebounceTime)
             .WhenTrueFor(cfg.Timing.HoldDelay, scheduler)
             .SubscribeSafe(v => { IsDimming = (v ? dimming : null); });

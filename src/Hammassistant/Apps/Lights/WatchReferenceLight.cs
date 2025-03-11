@@ -27,7 +27,7 @@ public class WatchReferenceLight(IHaContext ha,
     ILogger<WatchReferenceLight> logger,
     IMqttEntityManager entityManager, 
     IHaRegistry registry,
-    IAppConfig<ReferenceLight> config) : IAsyncInitializable
+    IAppConfig<ReferenceLightConfig> config) : IAsyncInitializable
 {
     private LightEntity[]? _trackedEntities;
 

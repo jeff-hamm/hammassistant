@@ -17,7 +17,7 @@ public class SceneOnButton
     };
 
     public SceneOnButton(IHaContext ha, IEntityFactory entityFactory, EventEntities events, LightEntities lights, ILogger<SceneOnButton> logger,
-        IAppConfig<SceneSelector> config)
+        IAppConfig<SceneSelectorConfig> config)
     {
         var buttonEvents = ha.Events(config.Value.ButtonEventIds)
             .StateChanges()

@@ -2,9 +2,9 @@
 using Hammlet.NetDaemon.Models;
 using NetDaemon.Extensions.Hammlet;
 
-namespace Hammlet;
+namespace Hammlet.Apps.Lights;
 
-public class DimmerSync
+public class DimmerSyncConfig
 {
     public string DimmerId { get; set; } = "light.mikaela_dimmer";
     public int PressBrightness { get; set; } = 10;

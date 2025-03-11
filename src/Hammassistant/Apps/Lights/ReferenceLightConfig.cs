@@ -1,6 +1,6 @@
-namespace Hammlet;
+namespace Hammlet.Apps.Lights;
 
-public class ReferenceLight
+public class ReferenceLightConfig
 {
     internal Guid Id { get; } = Guid.NewGuid();
     public string EntityId { get; set; } = "light.reference_light";

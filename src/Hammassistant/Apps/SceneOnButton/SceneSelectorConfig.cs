@@ -1,10 +1,9 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Hammlet.Apps.SceneOnButton;
 using Hammlet.NetDaemon.Models;
 
-namespace Hammlet;
+namespace Hammlet.Apps.SceneOnButton;
 
 public enum ButtonAction
 {
@@ -12,12 +11,12 @@ public enum ButtonAction
     Toggle
 }
 
-public class SceneSelector
+public class SceneSelectorConfig
 {
     internal Guid Id { get; } = Guid.NewGuid();
     public string TargetEntityId { get; set; } = "light.kitchen";
 
-    public IEnumerable<string> ButtonEventIds => 
+    public IEnumerable<string> ButtonEventIds =>
         Buttons.Select(button => $"{EventIdPrefix}{button.EventIndex}");
 
     public IEnumerable<LightButtonConfig> Buttons

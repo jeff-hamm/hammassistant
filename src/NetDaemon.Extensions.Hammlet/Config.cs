@@ -28,26 +28,24 @@ namespace NetDaemon.Extensions.Hammlet;
 
 public static class Config
 {
-    public const string ConfigEnvPathVariable = "CONFIG_ROOT";
+    public const string ConfigEnvPathVariable = "NetDaemon__EnvFile";
+    public const string AppConfigFolderVariable = $"NetDaemon__{nameof(AppConfigurationLocationSetting.ApplicationConfigurationFolder)}";
     public const string ConfigEnvArg = "env";
     public static IHostBuilder UseTheHammlet(this IHostBuilder @this, params string[] args)
     {
         var argString = $"--{ConfigEnvArg}=";
-        if (args.Where(a => a.StartsWith(argString)).Select(a => a.Substring(argString.Length)).FirstOrDefault(File.Exists) is {} envPath)
-            DotEnv.Fluent().WithEnvFiles(envPath).Load();
-        else if (EnvReader.TryGetStringValue(ConfigEnvPathVariable, out envPath) && File.Exists(envPath + "/.env"))
-            DotEnv.Fluent().WithEnvFiles(envPath + "/.env").Load();
-        if (Directory.Exists(envPath))
+        if (args.Where(a => a.StartsWith(argString)).Select(a => a.Substring(argString.Length))
+                .FirstOrDefault(File.Exists) is not { } envFile)
+            if (!EnvReader.TryGetStringValue(ConfigEnvPathVariable, out envFile))
+                envFile = Directory.GetCurrentDirectory() + "/.env";
+
+        if(File.Exists(envFile ))
+            DotEnv.Fluent().WithEnvFiles(envFile).Load();
+        if (!EnvReader.TryGetStringValue(AppConfigFolderVariable, out var appPath))
         {
-            var cfgFolder = $"NetDaemon__{nameof(AppConfigurationLocationSetting.ApplicationConfigurationFolder)}";
-            if (!EnvReader.TryGetStringValue(cfgFolder, out var appPath))
-            {
-                //@this.ConfigureHostConfiguration(cb =>
-                //    cb.AddInMemoryCollection([new KeyValuePair<string, string?>(cfgFolder.Replace("__",ConfigurationPath.KeyDelimiter), envPath)]));
-                //@this.ConfigureAppConfiguration(cb =>
-                //    cb.AddInMemoryCollection([new KeyValuePair<string, string?>(cfgFolder.Replace("__",ConfigurationPath.KeyDelimiter), envPath)]));
-                System.Environment.SetEnvironmentVariable(cfgFolder, envPath);
-            }
+            if (Path.GetDirectoryName(envFile) is {} envPath &&
+                new DirectoryInfo(envPath) is { Exists: true } i && i.EnumerateFiles().Any(f => f.Extension is ".yaml" or ".yml"))
+                System.Environment.SetEnvironmentVariable(AppConfigFolderVariable, envPath);
         }
         @this.ConfigureHostConfiguration(cb => cb.AddEnvironmentVariables());
         @this.ConfigureAppConfiguration(cb => cb.AddEnvironmentVariables());

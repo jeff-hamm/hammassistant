@@ -1,7 +1,6 @@
-using Hammlet.Apps.SceneOnButton;
 using Hammlet.NetDaemon.Models;
 
-namespace Hammlet;
+namespace Hammlet.Apps.SceneOnButton;
 
 public partial record LightButtonConfig
 {
