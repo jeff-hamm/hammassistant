@@ -15,6 +15,7 @@ function restart() {
     trap "trap - SIGINT SIGTERM EXIT && kill $background_pid" SIGINT SIGTERM EXIT
     bashio $nd_src/restart.sh
     sleep 10
+    kill $background_pid
     export background_pid=
 }
 
