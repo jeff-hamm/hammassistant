@@ -23,6 +23,7 @@ function publish() {
 }
 
 function update() {
+    cd $nd_src
     git pull --recurse-submodules
     if [ ! -z $ZSH_CUSTOM ]; then
         target_file=$ZSH_CUSTOM/nd_functions.zsh

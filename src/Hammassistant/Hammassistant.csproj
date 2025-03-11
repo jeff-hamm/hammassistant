@@ -92,10 +92,20 @@
     <PropertyGroup>
       <NetDaemon__ApplicationConfigurationFolder Condition="'$(NetDaemon__ApplicationConfigurationFolder)' == ''">.\Config</NetDaemon__ApplicationConfigurationFolder>
     </PropertyGroup>
-    <Target Name="CopyCustomContent" BeforeTargets="AfterPublish">
-      <Copy SourceFiles="@(NetDaemon__ApplicationConfigurationFolder)" DestinationFolder="$(OutDir)\Config" SkipUnchangedFiles="true" />
+    <!--<Target Name="CopyCustomContent" BeforeTargets="AfterBuild">
+      <ItemGroup>
+            <ApplicationConfigurationFiles Include="$(NetDaemon__ApplicationConfigurationFolder)\**\*.*"/>
+        </ItemGroup>
+        <Message Text="Build from $(NetDaemon__ApplicationConfigurationFolder) to $(OutDir)\Config" Importance="high" />
+      <Copy SourceFiles="@(ApplicationConfigurationFiles)" DestinationFolder="$(OutDir)\Config" SkipUnchangedFiles="true" />
+    </Target>-->
+    <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
+      <ItemGroup>
+            <ApplicationConfigurationFiles Include="$(NetDaemon__ApplicationConfigurationFolder)\**\*.*"/>
+        </ItemGroup>
+        <Message Text="Publishing from $(NetDaemon__ApplicationConfigurationFolder) to $(PublishDir)\Config" Importance="high" />
+      <Copy SourceFiles="@(ApplicationConfigurationFiles)" DestinationFolder="$(PublishDir)\Config" SkipUnchangedFiles="true" />
     </Target>
-
   <PropertyGroup>
     <DomainPrimitiveGenerator_GenerateSwaggerConverters>false</DomainPrimitiveGenerator_GenerateSwaggerConverters>
   </PropertyGroup>

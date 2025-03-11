@@ -32,7 +32,7 @@ internal class HammassistantAppConfig<T> : IAppConfig<T> where T : class, new()
         else
         {
             logger.LogDebug("Found configuration for {Type}", typeof(T).FullName);
-            Value = config.Get<T>(provider) ?? new T();
+            Value = section.Get<T>(provider) ?? new T();
         }
     }
 
