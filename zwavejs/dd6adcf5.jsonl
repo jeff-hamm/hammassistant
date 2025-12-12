@@ -1,0 +1,46 @@
+{"k":"cacheFormat","v":2}
+{"k":"node.1.isListening","v":true}
+{"k":"node.1.isFrequentListening","v":false}
+{"k":"node.1.isRouting","v":true}
+{"k":"node.1.supportedDataRates","v":[40000,100000]}
+{"k":"node.1.protocolVersion","v":3}
+{"k":"node.1.nodeType","v":"Controller"}
+{"k":"node.1.supportsSecurity","v":false}
+{"k":"node.1.supportsBeaming","v":true}
+{"k":"node.1.deviceClass","v":{"basic":2,"generic":2,"specific":1}}
+{"k":"node.1.interviewStage","v":"Complete"}
+{"k":"node.1.deviceConfigHash","v":"$v2$q64FAA=="}
+{"k":"node.2.isListening","v":false}
+{"k":"node.2.isFrequentListening","v":false}
+{"k":"node.2.isRouting","v":true}
+{"k":"node.2.supportedDataRates","v":[100000]}
+{"k":"node.2.protocolVersion","v":3}
+{"k":"node.2.nodeType","v":"End Node"}
+{"k":"node.2.supportsSecurity","v":false}
+{"k":"node.2.supportsBeaming","v":true}
+{"k":"node.2.deviceClass","v":{"basic":4,"generic":24,"specific":0}}
+{"k":"node.2.interviewStage","v":"ProtocolInfo"}
+{"k":"node.3.isListening","v":false}
+{"k":"node.3.isFrequentListening","v":false}
+{"k":"node.3.isRouting","v":true}
+{"k":"node.3.supportedDataRates","v":[]}
+{"k":"node.3.protocolVersion","v":3}
+{"k":"node.3.nodeType","v":"End Node"}
+{"k":"node.3.supportsSecurity","v":false}
+{"k":"node.3.supportsBeaming","v":true}
+{"k":"node.3.deviceClass","v":{"basic":4,"generic":7,"specific":1}}
+{"k":"node.3.interviewStage","v":"ProtocolInfo"}
+{"k":"node.256.isListening","v":true}
+{"k":"node.256.isFrequentListening","v":false}
+{"k":"node.256.isRouting","v":false}
+{"k":"node.256.supportedDataRates","v":[100000]}
+{"k":"node.256.protocolVersion","v":3}
+{"k":"node.256.nodeType","v":"End Node"}
+{"k":"node.256.supportsSecurity","v":true}
+{"k":"node.256.supportsBeaming","v":false}
+{"k":"node.256.deviceClass","v":{"basic":3,"generic":17,"specific":0}}
+{"k":"node.256.interviewStage","v":"ProtocolInfo"}
+{"k":"node.2.lastSeen","v":1765541677092}
+{"k":"node.2.endpoint.0.commandClass.0x84","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
+{"k":"node.2.lastSeen","v":1765541678084}
+{"k":"node.2.lastSeen","v":1765541678828}

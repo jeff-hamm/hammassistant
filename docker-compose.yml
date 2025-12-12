@@ -39,10 +39,15 @@ services:
   # Home Assistant Core
   # ============================================
   homeassistant:
-    container_name: homeassistant
+    container_name: hammassistant
+    hostname: hammassistant
     image: ghcr.io/home-assistant/home-assistant:latest
     restart: unless-stopped
     privileged: true
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_ADMIN
     networks:
       ha_network:
         mac_address: ${NETWORK_MAC}
@@ -54,7 +59,7 @@ services:
       - /run/dbus:/run/dbus:ro
     # Bluetooth via DBus (BlueZ on host)
     # BlueZ installed and auto-starts on boot via boot.d/install-bluez.sh
-    # No device passthrough needed - HA uses DBus to communicate with bluetoothd
+    # Requires NET_ADMIN, NET_RAW, and SYS_ADMIN capabilities for full BLE support
     # depends_on:
     #   - mosquitto
     #   - zwavejs
@@ -95,7 +100,9 @@ services:
       - ${COMPOSE_ROOT}/zwavejs:/usr/src/app/store
     devices:
       # Zooz 800 Z-Wave Stick (1a86:55d4) -> /dev/ttyACM0
-      - /dev/ttyACM0:/dev/zwave
+      # Udev rule creates /dev/zwave symlink for convenience
+      # Udev rule location: /etc/udev/rules.d/99-zwave-stick.rules
+      - /dev/zwave:/dev/zwave
     tty: true
     stop_signal: SIGINT
 

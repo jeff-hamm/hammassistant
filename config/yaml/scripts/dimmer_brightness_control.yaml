@@ -26,35 +26,20 @@ dimmer_rotate_control:
       default: 3
     state_actions:
       description: List of custom state/action pairs (optional)
-      example: 
-        - state: long_press
-          action: button.press
-          target:
-            entity_id: button.my_phone_play_sound
-        - state: double_press
-          sequence:
-            - action: light.turn_on
-              target:
-                entity_id: light.some_light
+      example: "[{'state': 'long_press', 'action': 'button.press', 'target': {'entity_id': 'button.my_phone_play_sound'}}]"
       required: false
   sequence:
     - if:
       - condition: template
-        value_template: "{{ toggle_state is defined and toggle_state != none }}"
-      - condition: state
-        entity_id: "{{ event_entity }}"
-        state: "{{ toggle_state }}"
-        attribute: event_type
+        value_template: "{{ toggle_state is defined and toggle_state != none and state_attr(event_entity, 'event_type') == toggle_state }}"
       then:
       - action: light.toggle
         target:
           entity_id: "{{ target_light }}"
       - stop: "Handled toggle"
     - if:
-      - condition: state
-        entity_id: "{{ event_entity }}"
-        state: "{{ dim_state }}"
-        attribute: event_type
+      - condition: template
+        value_template: "{{ state_attr(event_entity, 'event_type') == dim_state }}"
       then:
       - action: light.turn_on
         data:
@@ -63,10 +48,8 @@ dimmer_rotate_control:
           entity_id: "{{ target_light }}"
       - stop: "Handled dim"
     - if:
-      - condition: state
-        entity_id: "{{ event_entity }}"
-        state: "{{ brighten_state }}"
-        attribute: event_type
+      - condition: template
+        value_template: "{{ state_attr(event_entity, 'event_type') == brighten_state }}"
       then:
       - action: light.turn_on
         data:
@@ -82,20 +65,12 @@ dimmer_rotate_control:
           for_each: "{{ state_actions }}"
           sequence:
           - if:
-            - condition: state
-              entity_id: "{{ event_entity }}"
-              state: "{{ repeat.item.state }}"
-              attribute: event_type
+            - condition: template
+              value_template: "{{ state_attr(event_entity, 'event_type') == repeat.item.state }}"
             then:
-            - choose:
-              - conditions:
-                - condition: template
-                  value_template: "{{ repeat.item.sequence is defined }}"
-                sequence: "{{ repeat.item.sequence }}"
-              default:
-              - action: "{{ repeat.item.action }}"
-                data: "{{ repeat.item.data | default({}) }}"
-                target: "{{ repeat.item.target | default({}) }}"
+            - action: "{{ repeat.item.action }}"
+              data: "{{ repeat.item.data | default({}) }}"
+              target: "{{ repeat.item.target | default({}) }}"
 
 dimmer_brightness_control:
   fields:

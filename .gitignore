@@ -207,6 +207,7 @@ zwavejs/store/*.jsonl
 zwavejs/store/*.values.jsonl
 zwavejs/store/*.metadata.jsonl
 zwavejs/store/nodes.json
+zwavejs/.config-db
 mosquitto/data/system_user.json
 mosquitto/data/*.db
 
