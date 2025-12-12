@@ -78,6 +78,7 @@ ipch/
 _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
+*.dll
 
 # Click-Once directory
 publish/
@@ -145,3 +146,132 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore log files
+*.log
+*.log.*
+
+# Ignore temporary files
+*.tmp
+*.swp
+*.swo
+
+# Ignore Docker-related files
+*.env
+*.env.*
+*.bak
+docker-compose.override.yml
+
+# Ignore Home Assistant database files
+home-assistant_v2.db
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
+*.db
+*.db-shm
+*.db-wal
+
+# Ignore Home Assistant .storage directory (contains tokens, sessions, registry)
+.storage/
+**/.storage/
+
+# Ignore Home Assistant state and cache files
+.cloud/
+tts/
+**/.cache/
+
+# Ignore backups and media
+backup/
+media/
+**/backups/
+
+# Ignore custom components cache
+custom_components/__pycache__/
+
+# Ignore SSL certificates
+ssl/
+certbot/
+
+# Ignore secrets file
+secrets.yaml
+**/secrets.yaml
+esphome/secrets.yaml
+
+# Ignore sensitive configuration files with credentials
+zwavejs/store/users.json
+zwavejs/store/settings.json
+zwavejs/store/*.jsonl
+zwavejs/store/*.values.jsonl
+zwavejs/store/*.metadata.jsonl
+zwavejs/store/nodes.json
+mosquitto/data/system_user.json
+mosquitto/data/*.db
+
+# Ignore Google service account credentials
+**/google_service_account.json
+**/client_secret*.json
+
+# Ignore private keys and certificates
+*.pem
+*.key
+!*.pub.key
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# Ignore Zigbee2MQTT backup configs (may contain passwords)
+**/zigbee2mqtt/configuration*.yaml
+
+# Ignore Android TV remote keys
+**/*_remote_key.pem
+**/*_remote_cert.pem
+
+# Ignore all .env files (already covered but being explicit)
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!.env.template
+
+# Ignore other sensitive or temporary files
+*.pid
+*.lock
+*.tar.gz
+*.zip
+
+# Ignore runtime and ephemeral files
+*.sock
+*.socket
+core
+core.*
+
+# Ignore Zigbee/ZWave network state files
+zigbee.db
+zwavejs/cache/
+zwave_device_config.db*
+
+# Ignore ESPHome build artifacts
+esphome/.esphome/
+esphome/**/.pioenvs/
+esphome/**/.pio/
+
+# Ignore Piper/Whisper models and cache
+piper/models/
+whisper/models*/
+whisper/cache/
+
+# Ignore Docker volumes and persistent data
+**/data/
+volumes/
+!**/data/.gitkeep
+
+# Ignore logs from all services
+logs/
+**/logs/
+*.log
+*.log.*
