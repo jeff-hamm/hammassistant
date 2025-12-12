@@ -262,6 +262,8 @@ esphome/**/.pio/
 
 # Ignore Piper/Whisper models and cache
 piper/models/
+piper/*.onnx
+piper/*.onnx.json
 whisper/models*/
 whisper/cache/
 
