@@ -1,0 +1,265 @@
+# Home Assistant Docker Setup - Migrated from HAOS VM
+# Migrated on: 2025-12-11
+#
+# IMPORTANT: Before starting these containers, ensure:
+#   1. The hammassistant VM is STOPPED (virsh destroy hammassistant)
+#   2. USB devices will become available on host after VM shutdown
+#
+# USB Devices:
+#   - Z-Wave: Zooz 800 Z-Wave Stick (1a86:55d4) -> /dev/ttyACM0
+#   - Bluetooth: TP-Link Bluetooth USB Adapter (2357:0604)
+#
+# Networking:
+#   - Uses macvlan with VM's original MAC address (52:54:00:e6:10:bc)
+#   - Should receive same DHCP IP as VM had
+#   - Home Assistant will be accessible at the assigned IP
+#
+# Usage:
+#   cd /mnt/pool/appdata/hammassistant-new
+#   docker compose up -d
+#   docker compose logs -f homeassistant
+#
+# Original HAOS addons migrated:
+#   - Z-Wave JS UI (a0d7b954_zwavejs2mqtt)
+#   - Zigbee2MQTT (45df7312_zigbee2mqtt) - Uses remote coordinator at 192.168.1.174:6638
+#   - Mosquitto broker (core_mosquitto)
+#   - ESPHome (5c53de3b_esphome)
+#   - Matter Server (core_matter_server)
+#   - Cloudflared (9074a9fa_cloudflared)
+#   - NetDaemon V5 (c6a2317c_netdaemon5)
+#   - Whisper/Piper/OpenWakeWord (voice assistant stack)
+
+networks:
+  ha_network:
+    external: true
+    name: ${NETWORK_NAME}
+
+services:
+  # ============================================
+  # Home Assistant Core
+  # ============================================
+  homeassistant:
+    container_name: homeassistant
+    image: ghcr.io/home-assistant/home-assistant:latest
+    restart: unless-stopped
+    privileged: true
+    networks:
+      ha_network:
+        mac_address: ${NETWORK_MAC}
+        ipv4_address: ${NETWORK_IP}
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${COMPOSE_ROOT}/config:/config
+      - /run/dbus:/run/dbus:ro
+    # Bluetooth via DBus (BlueZ on host)
+    # BlueZ installed and auto-starts on boot via boot.d/install-bluez.sh
+    # No device passthrough needed - HA uses DBus to communicate with bluetoothd
+    # depends_on:
+    #   - mosquitto
+    #   - zwavejs
+    #   - zigbee2mqtt
+
+  # ============================================
+  # MQTT Broker
+  # ============================================
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:2
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    # ports:
+    #   - "1883:1883"
+    #   - "9001:9001"
+    volumes:
+      - ${COMPOSE_ROOT}/mosquitto/config:/mosquitto/config
+      - ${COMPOSE_ROOT}/mosquitto/data:/mosquitto/data
+      - ${COMPOSE_ROOT}/mosquitto/log:/mosquitto/log
+    environment:
+      - TZ=${TZ}
+
+  # ============================================
+  # Z-Wave JS UI
+  # ============================================
+  zwavejs:
+    container_name: zwavejs
+    image: zwavejs/zwave-js-ui:latest
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    # ports:
+    #   - "8091:8091"   # Web UI
+    #   - "3000:3000"   # WebSocket for HA
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${COMPOSE_ROOT}/zwavejs:/usr/src/app/store
+    devices:
+      # Zooz 800 Z-Wave Stick (1a86:55d4) -> /dev/ttyACM0
+      - /dev/ttyACM0:/dev/zwave
+    tty: true
+    stop_signal: SIGINT
+
+  # ============================================
+  # Zigbee2MQTT
+  # Uses remote coordinator at 192.168.1.174:6638 (no local USB)
+  # ============================================
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt:latest
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    # ports:
+    #   - "8099:8099"   # Web frontend
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${COMPOSE_ROOT}/config/zigbee2mqtt:/app/data
+    depends_on:
+      - mosquitto
+
+  # ============================================
+  # ESPHome
+  # ============================================
+  esphome:
+    container_name: esphome
+    image: ghcr.io/esphome/esphome:latest
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    # ports:
+    #   - "6052:6052"   # Web dashboard
+    environment:
+      - TZ=${TZ}
+      - ESPHOME_DASHBOARD_USE_PING=true
+    volumes:
+      - ${COMPOSE_ROOT}/esphome:/config
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - homeassistant
+
+  # ============================================
+  # Matter Server
+  # ============================================
+  matter-server:
+    container_name: matter-server
+    image: ghcr.io/home-assistant-libs/python-matter-server:stable
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    # ports:
+    #   - "5580:5580"   # Matter server API
+    security_opt:
+      - apparmor=unconfined
+    volumes:
+      - ${COMPOSE_ROOT}/matter-server:/data
+      - /run/dbus:/run/dbus:ro
+    environment:
+      - TZ=${TZ}
+    depends_on:
+      - homeassistant
+
+  # ============================================
+  # NetDaemon V5 (.NET 9)
+  # ============================================
+  netdaemon:
+    container_name: netdaemon
+    image: netdaemon/netdaemon5:latest
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    profiles:
+      - netdaemon
+    environment:
+      - TZ=${TZ}
+      - HOMEASSISTANT__HOST=localhost
+      - HOMEASSISTANT__PORT=8123
+      - HOMEASSISTANT__TOKEN=${HA_TOKEN}
+      - NetDaemon__ApplicationAssembly=/data/Hammassistant.dll
+      - Logging__LogLevel__Default=Information
+    volumes:
+      - ${COMPOSE_ROOT}/netdaemon:/data
+    depends_on:
+      - homeassistant
+  # # ============================================
+  # # Cloudflared Tunnel
+  # # ============================================
+  # cloudflared:
+  #   container_name: cloudflared
+  #   image: cloudflare/cloudflared:latest
+  #   restart: unless-stopped
+  #   network_mode: host
+  #   command: tunnel run
+  #   environment:
+  #     - TZ=${TZ}
+  #     - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
+  #   # Note: You'll need to set up a new tunnel or migrate the token
+  #   # Original hostnames:
+  #   #   - hammlet.infinitebutts.com -> HA
+  #   #   - proxmox.infinitebutts.com -> https://192.168.1.201:8006
+  #   #   - network.infinitebutts.com -> http://192.168.1.254
+  #   #   - jumpdrive.infinitebutts.com -> http://192.168.1.216
+  #   #   - jumpcloud.infinitebutts.com -> http://192.168.1.186
+  #   #   - archive.infinitebutts.com -> http://192.168.1.190:8000
+  #   #   - hifijumper.infinitebutts.com -> http://192.168.1.127
+  #   #   - jumpflix.infinitebutts.com -> http://192.168.1.99:8096
+  #   #   - jumptube.infinitebutts.com -> http://192.168.1.205:8096
+  #   #   - jumpdock.infinitebutts.com -> http://192.168.1.99:9120
+  #   #   - jackett.infinitebutts.com -> http://192.168.1.218:9117
+  #   #   - vpn.infinitebutts.com -> http://192.168.1.226:8090
+  #   #   - jumptorrents.infinitebutts.com -> http://192.168.1.99:8080
+  #   #   - jumpphotos.infinitebutts.com -> http://192.168.1.253:2283
+  #   #   - jumparr.infinitebutts.com -> http://192.168.1.99:8989
+  #   #   - jumpflx.infinitebutts.com -> http://192.168.1.99:5055
+  #   #   - junmpradarr.infinitebutts.com -> http://192.168.1.99:7878
+  #   #   - prowlarr.infinitebutts.com -> http://192.168.1.99:9696
+  #   #   - library.infinitebutts.com -> http://192.168.1.99:5299
+
+
+  # ============================================
+  # Voice Assistant Stack
+  # ============================================
+  whisper:
+    container_name: whisper
+    image: rhasspy/wyoming-whisper:latest
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    profiles:
+      - voice-assistant
+    # ports:
+    #   - "10300:10300"
+    command: --model small-int8 --language en
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${COMPOSE_ROOT}/whisper:/data
+    depends_on:
+      - homeassistant
+
+  piper:
+    container_name: piper
+    image: rhasspy/wyoming-piper:latest
+    restart: unless-stopped
+    profiles:
+      - voice-assistant
+    network_mode: "service:homeassistant"
+    # ports:
+    #   - "10200:10200"
+    command: --voice en_US-lessac-medium
+    environment:
+      - TZ=${TZ}
+    volumes:
+      - ${COMPOSE_ROOT}/piper:/data
+    depends_on:
+      - homeassistant
+
+  openwakeword:
+    container_name: openwakeword
+    image: rhasspy/wyoming-openwakeword:latest
+    restart: unless-stopped
+    network_mode: "service:homeassistant"
+    profiles:
+      - voice-assistant
+    # ports:
+    #   - "10400:10400"
+    command: --preload-model ok_nabu
+    environment:
+      - TZ=${TZ}
+    depends_on:
+      - homeassistant

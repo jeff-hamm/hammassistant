@@ -1,0 +1,29 @@
+esphome:
+  name: deleteme
+  friendly_name: Deleteme
+
+esp8266:
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "zvLj1BFMkE0pzzc+2ZwFUZAIrwn57Mn+ONIuz4C4vCw="
+
+ota:
+  password: "bf50b82efce171d8b6e5a9b00d3e0641"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Deleteme Fallback Hotspot"
+    password: "5oNh7uwiTFBi"
+
+captive_portal:
+    

@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NetDaemon.Extensions.Observables</name>
+    </assembly>
+    <members>
+        <member name="M:NetDaemon.Extensions.Observables.BooleanObservableExtensions.SubscribeOpenClosed(System.IObservable{System.Boolean},System.Action,System.Action)">
+            <summary>
+            Subscribes actions to be executed when the observable emits true (open) or false (closed).
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.BooleanObservableExtensions.SubscribeOpen(System.IObservable{System.Boolean},System.Action)">
+            <summary>
+            Subscribes an action to be executed when the observable emits true (open).
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.BooleanObservableExtensions.SubscribeClosed(System.IObservable{System.Boolean},System.Action)">
+            <summary>
+            Subscribes an action to be executed when the observable emits true (closed).
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.BooleanObservableExtensions.SubscribeOnOff(System.IObservable{System.Boolean},System.Action,System.Action)">
+            <summary>
+            Subscribes actions to be executed when the observable emits true (on) or false (off).
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.BooleanObservableExtensions.SubscribeOn(System.IObservable{System.Boolean},System.Action)">
+            <summary>
+            Subscribes an action to be executed when the observable emits true (on).
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.BooleanObservableExtensions.SubscribeOff(System.IObservable{System.Boolean},System.Action)">
+            <summary>
+            Subscribes an action to be executed when the observable emits false (off).
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeOpenClosed(NetDaemon.HassModel.Entities.Entity,System.Action,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the open or closed state of an entity.
+            Initial state is also taken into account, meaning an action might execute immediately if the entity is currently open or closed.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeOpen(NetDaemon.HassModel.Entities.Entity,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the open state of an entity.
+            Initial state is also taken into account, meaning the action might execute immediately if the entity is currently open.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeClosed(NetDaemon.HassModel.Entities.Entity,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the closed state of an entity.
+            Initial state is also taken into account, meaning the action might execute immediately if the entity is currently closed.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeOnOff(NetDaemon.HassModel.Entities.Entity,System.Action,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the on or off state of an entity.
+            Initial state is also taken into account, meaning an action might execute immediately if the entity is currently on or off.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeOn(NetDaemon.HassModel.Entities.Entity,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the on state of an entity.
+            Initial state is also taken into account, meaning the action might execute immediately if the entity is currently on.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeOff(NetDaemon.HassModel.Entities.Entity,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the off state of an entity.
+            Initial state is also taken into account, meaning the action might execute immediately if the entity is currently off.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeTrueFalse(NetDaemon.HassModel.Entities.Entity,System.Action,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the on or off state of an entity.
+            Initial state is also taken into account, meaning an action might execute immediately if the entity is currently on or off.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeTrueFalse(NetDaemon.HassModel.Entities.Entity,System.Action,System.Action,System.Func{NetDaemon.HassModel.Entities.EntityState,System.Boolean})">
+            <summary>
+            Subscribes actions to be executed on the result of the predicate applied to the state of an entity.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            A null entity state (typically received when an entity is removed) is filtered out so the predicate doesn't have to handle null values.
+            Initial state is also taken into account, meaning an action might execute immediately.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeTrueFalse``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2},System.Action,System.Action,System.Func{``1,System.Boolean})">
+            <summary>
+            Subscribes actions to be executed on the result of the predicate applied to the state of an entity.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            A null entity state (typically received when an entity is removed) is filtered out so the predicate doesn't have to handle null values.
+            Initial state is also taken into account, meaning an action might execute immediately.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeTrue(NetDaemon.HassModel.Entities.Entity,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the on state of an entity.
+            Initial state is also taken into account, meaning the action might execute immediately if the entity is currently on.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.SubscribeFalse(NetDaemon.HassModel.Entities.Entity,System.Action)">
+            <summary>
+            Subscribes actions to be executed on the off state of an entity.
+            Initial state is also taken into account, meaning the action might execute immediately if the entity is currently off.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToOpenClosedObservable(NetDaemon.HassModel.Entities.Entity)">
+            <summary>
+            <para>
+            Returns a boolean observable that emits true when the entity opens and emits false when the entity closes.
+            The observable is distinct until changed. Other state changes are ignored.
+            </para>
+            <para>
+            State changes other than open or closed (on or off on the entity) are ignored. This also includes a null entity state. This is typically received when an entity is removed. This will not be emitted in the observable.
+            </para>
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToOnOffObservable(NetDaemon.HassModel.Entities.Entity)">
+            <summary>
+            <para>
+            Returns a boolean observable that emits true when the entity turns on and emits false when the entity turns off.
+            The observable is distinct until changed. Other state changes are ignored.
+            </para>
+            <para>
+            State changes other than on or off are ignored. This also includes a null entity state. This is typically received when an entity is removed. This will not be emitted in the observable.
+            </para>
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToBooleanObservable(NetDaemon.HassModel.Entities.Entity)">
+            <summary>
+            <para>
+            Returns a boolean observable that emits true when the entity turns on and emits false when the entity turns off.
+            The observable is distinct until changed. Other state changes are ignored.
+            </para>
+            <para>
+            State changes other than on or off are ignored. This also includes a null entity state. This is typically received when an entity is removed. This will not be emitted in the observable.
+            </para>
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToBooleanObservable(NetDaemon.HassModel.Entities.Entity,System.Func{NetDaemon.HassModel.Entities.EntityState,System.Boolean})">
+            <summary>
+            Returns a boolean observable that reflects the result of the provided predicate on the new state of the provided entity.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            The observable is distinct until changed. A null entity state (typically received when an entity is removed) is filtered out so the predicate doesn't have to handle null values.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToBooleanObservable``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2},System.Func{``1,System.Boolean})">
+            <summary>
+            Returns a boolean observable that reflects the result of the provided predicate on the new state of the provided entity.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            The observable is distinct until changed. A null entity state (typically received when an entity is removed) is filtered out so the predicate doesn't have to handle null values.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToChangesOnlyBooleanObservable(NetDaemon.HassModel.Entities.Entity)">
+            <summary>
+            <para>
+            Returns a boolean observable that emits true when the entity turns on and emits false when the entity turns off.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            The observable only emits changes and will not emit the initial state.
+            The observable is distinct until changed. Other state changes are ignored.
+            </para>
+            <para>
+            State changes other than on or off are ignored. This also includes a null entity state. This is typically received when an entity is removed. This will not be emitted in the observable.
+            </para>
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToChangesOnlyBooleanObservable(NetDaemon.HassModel.Entities.Entity,System.Func{NetDaemon.HassModel.Entities.EntityState,System.Boolean})">
+            <summary>
+            Returns a boolean observable that reflects the result of the provided predicate on the new state of the provided entity.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            The observable only emits changes and will not emit the initial state.
+            The observable is distinct until changed. A null entity state (typically received when an entity is removed) is filtered out so the predicate doesn't have to handle null values.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.ToChangesOnlyBooleanObservable``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2},System.Func{``1,System.Boolean})">
+            <summary>
+            Returns a boolean observable that reflects the result of the provided predicate on the new state of the provided entity.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            The observable only emits changes and will not emit the initial state.
+            The observable is distinct until changed. A null entity state (typically received when an entity is removed) is filtered out so the predicate doesn't have to handle null values.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.LimitOpenDuration(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that will automatically emit "false" if <paramref name="entity"/> does not emit a closed (false) itself within <paramref name="timeSpan"/> after emitting open (true).
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "false" even if the time did not pass during runtime.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.LimitOnDuration(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that will automatically emit "false" if <paramref name="entity"/> does not emit an off (false) itself within <paramref name="timeSpan"/> after emitting on (true).
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "false" even if the time did not pass during runtime.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.LimitTrueDuration(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that will automatically emit "false" if <paramref name="entity"/> does not emit an off (false) itself within <paramref name="timeSpan"/> after emitting on (true).
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "false" even if the time did not pass during runtime.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.LimitTrueDuration(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Func{NetDaemon.HassModel.Entities.EntityState,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that will automatically emit "false" if <paramref name="predicate"/> applied to the state of <paramref name="entity"/> does not emit a "false" itself within <paramref name="timeSpan"/> after emitting "true".
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "false" even if the time did not pass during runtime.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.LimitTrueDuration``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2},System.TimeSpan,System.Func{``1,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that will automatically emit "false" if <paramref name="predicate"/> applied to the state of <paramref name="entity"/> does not emit a "false" itself within <paramref name="timeSpan"/> after emitting "true".
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "false" even if the time did not pass during runtime.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.PersistOpenFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that delays the first closed (false) that is emitted after an open (true) by <paramref name="entity"/> for a duration of <paramref name="timeSpan"/>.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.PersistOnFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that delays the first off (false) that is emitted after an on (true) by <paramref name="entity"/> for a duration of <paramref name="timeSpan"/>.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.PersistTrueFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that delays the first off (false) that is emitted after an on (true) by <paramref name="entity"/> for a duration of <paramref name="timeSpan"/>.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.PersistTrueFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Func{NetDaemon.HassModel.Entities.EntityState,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that delays the first "false" that is emitted after a "true" by <paramref name="predicate"/> applied to the state of <paramref name="entity"/> for a duration of <paramref name="timeSpan"/>.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.PersistTrueFor``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2},System.TimeSpan,System.Func{``1,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that delays the first "false" that is emitted after a "true" by <paramref name="predicate"/> applied to the state of <paramref name="entity"/> for a duration of <paramref name="timeSpan"/>.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.OpenForAtLeast(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that won't emit "false" for at least <paramref name="timeSpan"/> after an initial open (true) is emitted by <paramref name="entity"/>.
+            If a closed (false) is emitted during the <paramref name="timeSpan"/>, it will be emitted immediately after the timer is completed.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.OnForAtLeast(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that won't emit "false" for at least <paramref name="timeSpan"/> after an initial on (true) is emitted by <paramref name="entity"/>.
+            If an off (false) is emitted during the <paramref name="timeSpan"/>, it will be emitted immediately after the timer is completed.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.TrueForAtLeast(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that won't emit "false" for at least <paramref name="timeSpan"/> after an initial on (true) is emitted by <paramref name="entity"/>.
+            If an off (false) is emitted during the <paramref name="timeSpan"/>, it will be emitted immediately after the timer is completed.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.TrueForAtLeast(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Func{NetDaemon.HassModel.Entities.EntityState,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that won't emit "false" for at least <paramref name="timeSpan"/> after an initial "true" is emitted by the <paramref name="predicate"/> applied to the state of <paramref name="entity"/>.
+            If the <paramref name="predicate"/> emits "false" during the <paramref name="timeSpan"/>, it will be emitted immediately after the timer is completed.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.TrueForAtLeast``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2},System.TimeSpan,System.Func{``1,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that won't emit "false" for at least <paramref name="timeSpan"/> after an initial "true" is emitted by the <paramref name="predicate"/> applied to the state of <paramref name="entity"/>.
+            If the <paramref name="predicate"/> emits "false" during the <paramref name="timeSpan"/>, it will be emitted immediately after the timer is completed.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.WhenOpenFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that emits "true" once <paramref name="entity"/> does not emit closed (false) for a minimum of <paramref name="timeSpan"/>.
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "true" even if the time did not pass during runtime.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.WhenOnFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that emits "true" once <paramref name="entity"/> does not emit off (false) for a minimum of <paramref name="timeSpan"/>.
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "true" even if the time did not pass during runtime.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.WhenTrueFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that emits "true" once <paramref name="entity"/> does not emit off (false) for a minimum of <paramref name="timeSpan"/>.
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "true" even if the time did not pass during runtime.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.WhenTrueFor(NetDaemon.HassModel.Entities.Entity,System.TimeSpan,System.Func{NetDaemon.HassModel.Entities.EntityState,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that emits "true" once <paramref name="predicate"/> applied to the state of <paramref name="entity"/> does not emit "false" for a minimum of <paramref name="timeSpan"/>.
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "true" even if the time did not pass during runtime.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.WhenTrueFor``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2},System.TimeSpan,System.Func{``1,System.Boolean},System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Returns an observable that emits "true" once <paramref name="predicate"/> applied to the state of <paramref name="entity"/> does not emit "false" for a minimum of <paramref name="timeSpan"/>.
+            This method takes into account <c>EntityState.LastChanged</c>, meaning the returned observable can emit "true" even if the time did not pass during runtime.
+            Predicate will be evaluated on all state changes, including attribute changes.
+            Resulting observable is distinct.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.Stateful(NetDaemon.HassModel.Entities.Entity)">
+            <summary>
+            Returns an observable that emits the entity's current state upon subscribing and will emit state changes where State.New != State.Old
+            </summary>
+            <remarks>
+            As of NetDaemon version 25.5.0, the method <c>StateChangesWithCurrent</c> provides the same functionality. 
+            </remarks>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.Stateful``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2})">
+            <summary>
+            Returns an observable that emits the entity's current state upon subscribing and will emit state changes where State.New != State.Old
+            </summary>
+            <remarks>
+            As of NetDaemon version 25.5.0, the method <c>StateChangesWithCurrent</c> provides the same functionality. 
+            </remarks>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.StatefulAll(NetDaemon.HassModel.Entities.Entity)">
+            <summary>
+            Returns an observable that emits the entity's current state upon subscribing and will emit all state changes, including attribute changes.
+            </summary>
+            <remarks>
+            As of NetDaemon version 25.5.0, the method <c>StateAllChangesWithCurrent</c> provides the same functionality. 
+            </remarks>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.EntityExtensions.StatefulAll``3(NetDaemon.HassModel.Entities.Entity{``0,``1,``2})">
+            <summary>
+            Returns an observable that emits the entity's current state upon subscribing and will emit all state changes, including attribute changes.
+            </summary>
+            <remarks>
+            As of NetDaemon version 25.5.0, the method <c>StateAllChangesWithCurrent</c> provides the same functionality. 
+            </remarks>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.ObservableExtensions.RepeatWhenEntitiesBecomeAvailable``1(System.IObservable{``0},NetDaemon.HassModel.Entities.Entity[])">
+            <summary>
+            Returns an observable that emits the same result as the source observable, but will repeat the last result when one of the provided entities becomes available.
+            </summary>
+        </member>
+        <member name="M:NetDaemon.Extensions.Observables.ObservableExtensions.RepeatWhenEntitiesBecomeAvailable``1(System.IObservable{``0},System.Collections.Generic.IEnumerable{NetDaemon.HassModel.Entities.Entity})">
+            <summary>
+            Returns an observable that emits the same result as the source observable, but will repeat the last result when one of the provided entities becomes available.
+            </summary>
+        </member>
+    </members>
+</doc>

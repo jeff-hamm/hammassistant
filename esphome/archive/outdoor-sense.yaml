@@ -1,0 +1,32 @@
+esphome:
+  name: outdoor-sense
+  friendly_name: Outdoor Sense
+
+esp32:
+  board: esp32-c3-devkitm-1
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "Qs5g3/7kszyDfjadJjZ9coZwCCK2kw8QVrWNDu4BGtM="
+
+ota:
+  - platform: esphome
+    password: "b22bf1045aaf03e46956f443fadd487d"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Outdoor-Sense Fallback Hotspot"
+    password: "xf0ORnV5oaaQ"
+
+captive_portal:
+    

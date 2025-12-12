@@ -1,0 +1,12 @@
+ReferenceLight:
+  EntityId: "light.reference_light_4"
+  TrackedEntities:
+    - "light.color_bulbs"
+    - "light.bedroom_fan_light"
+    - "light.hammlet_bathroom"
+    - "light.hammlet_pantry"
+    - "light.kitchen_ceiling"
+    - "light.kitchen_light2"
+    - "light.liminal_ceiling"
+    - "light.living_fan"
+    - "light.plant_lamp"

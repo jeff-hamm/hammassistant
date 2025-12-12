@@ -1,0 +1,14 @@
+substitutions:
+  name: hammlights-1
+  description: "Hammlights 1"
+  encryption_key: "sQ+pBRSTFl9kvsRp4TbTPnl05JnyYyPV+6G1Gl/G+kg="
+  ota_password: "ab313d4581d86dfe6aab6008528c7503"
+  num_leds: "300"
+  pin: "D4"
+
+  
+esp8266:
+  board: d1_mini
+
+packages:
+  common: !include led.template.yaml

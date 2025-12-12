@@ -1,0 +1,13 @@
+substitutions:
+  encryption_key: "CTG4K0q9Ibmi0myy5d7kNmY1GRpRFHUah6juOxrHktg="
+  name: spamheart
+  description: "Spamheart"
+  num_leds: "410"
+  pin: "D4"
+
+  
+esp8266:
+  board: d1_mini
+
+packages:
+  common: !include rgb.led.template.yaml

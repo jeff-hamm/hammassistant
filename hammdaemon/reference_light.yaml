@@ -1,0 +1,747 @@
+zha_toolkit_version: v1.1.25
+zigpy_version: 0.74.0
+zigpy_rf_version: 0.42.6
+ieee_org: light.tzb210_tmi0rihb_ts0505b_light
+ieee: a4:c1:38:db:f3:ff:f7:ee
+command: scan_device
+command_data: null
+start_time: "2025-01-15T10:17:47.384751+00:00"
+errors: []
+params:
+  dir: 0
+  tries: 1
+  expect_reply: true
+  args: []
+  kwargs: {}
+  read_before_write: true
+  read_after_write: true
+scan:
+  ieee: a4:c1:38:db:f3:ff:f7:ee
+  nwk: "0x4796"
+  model: TS0505B
+  manufacturer: _TZB210_tmi0rihb
+  manufacturer_id: "0x4417"
+  endpoints:
+    - id: 1
+      device_type: "0x010d"
+      profile: "0x0104"
+      in_clusters:
+        "0x0000":
+          cluster_id: "0x0000"
+          title: Basic
+          name: basic
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: zcl_version
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 3
+            "0x0001":
+              attribute_id: "0x0001"
+              attribute_name: app_version
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 65
+            "0x0002":
+              attribute_id: "0x0002"
+              attribute_name: stack_version
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0x0003":
+              attribute_id: "0x0003"
+              attribute_name: hw_version
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+            "0x0004":
+              attribute_id: "0x0004"
+              attribute_name: manufacturer
+              value_type:
+                - "0x42"
+                - CharacterString
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: _TZB210_tmi0rihb
+            "0x0005":
+              attribute_id: "0x0005"
+              attribute_name: model
+              value_type:
+                - "0x42"
+                - CharacterString
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: TS0505B
+            "0x0006":
+              attribute_id: "0x0006"
+              attribute_name: date_code
+              value_type:
+                - "0x42"
+                - CharacterString
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: ""
+            "0x0007":
+              attribute_id: "0x0007"
+              attribute_name: power_source
+              value_type:
+                - "0x30"
+                - enum8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+            "0xffde":
+              attribute_id: "0xffde"
+              attribute_name: "65502"
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 13
+            "0xffe2":
+              attribute_id: "0xffe2"
+              attribute_name: "65506"
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 54
+            "0xffe3":
+              attribute_id: "0xffe3"
+              attribute_name: "65507"
+              value_type:
+                - "0x48"
+                - Array
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 2
+            "0xfffe":
+              attribute_id: "0xfffe"
+              attribute_name: reporting_status
+              value_type:
+                - "0x30"
+                - enum8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+          commands_received: {}
+          commands_generated: {}
+        "0x0003":
+          cluster_id: "0x0003"
+          title: Identify
+          name: identify
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: identify_time
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 0
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+          commands_received: {}
+          commands_generated: {}
+        "0x0004":
+          cluster_id: "0x0004" 
+          title: Groups
+          name: groups
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: name_support
+              value_type:
+                - "0x18"
+                - bitmap8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 2
+          commands_received: {}
+          commands_generated: {}
+        "0x0005":
+          cluster_id: "0x0005"
+          title: Scenes
+          name: scenes
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: count
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0x0001":
+              attribute_id: "0x0001"
+              attribute_name: current_scene
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0x0002":
+              attribute_id: "0x0002"
+              attribute_name: current_group
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0x0003":
+              attribute_id: "0x0003"
+              attribute_name: scene_valid
+              value_type:
+                - "0x10"
+                - Bool
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0x0004":
+              attribute_id: "0x0004"
+              attribute_name: name_support
+              value_type:
+                - "0x18"
+                - bitmap8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 2
+          commands_received: {}
+          commands_generated: {}
+        "0x0006":
+          cluster_id: "0x0006"
+          title: On/Off
+          name: on_off
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: on_off
+              value_type:
+                - "0x10"
+                - Bool
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+            "0xf000":
+              attribute_id: "0xf000"
+              attribute_name: "61440"
+              value_type:
+                - "0x23"
+                - uint32_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 0
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 2
+          commands_received: {}
+          commands_generated: {}
+        "0x0008":
+          cluster_id: "0x0008"
+          title: Level control
+          name: level
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: current_level
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 76
+            "0x000f":
+              attribute_id: "0x000f"
+              attribute_name: options
+              value_type:
+                - "0x18"
+                - bitmap8
+                - Discrete
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 0
+            "0xf000":
+              attribute_id: "0xf000"
+              attribute_name: "61440"
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 299
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+          commands_received: {}
+          commands_generated: {}
+        "0x0300":
+          cluster_id: "0x0300"
+          title: Color Control
+          name: light_color
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: current_hue
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x0001":
+              attribute_id: "0x0001"
+              attribute_name: current_saturation
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x0003":
+              attribute_id: "0x0003"
+              attribute_name: current_x
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 45494
+            "0x0004":
+              attribute_id: "0x0004"
+              attribute_name: current_y
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 19418
+            "0x0007":
+              attribute_id: "0x0007"
+              attribute_name: color_temperature
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 450
+            "0x0008":
+              attribute_id: "0x0008"
+              attribute_name: color_mode
+              value_type:
+                - "0x30"
+                - enum8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+            "0x000f":
+              attribute_id: "0x000f"
+              attribute_name: options
+              value_type:
+                - "0x18"
+                - bitmap8
+                - Discrete
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 0
+            "0x4000":
+              attribute_id: "0x4000"
+              attribute_name: enhanced_current_hue
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+            "0x4001":
+              attribute_id: "0x4001"
+              attribute_name: enhanced_color_mode
+              value_type:
+                - "0x30"
+                - enum8
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 1
+            "0x400a":
+              attribute_id: "0x400a"
+              attribute_name: color_capabilities
+              value_type:
+                - "0x19"
+                - bitmap16
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 27
+            "0x400b":
+              attribute_id: "0x400b"
+              attribute_name: color_temp_physical_min
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x400c":
+              attribute_id: "0x400c"
+              attribute_name: color_temp_physical_max
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0x400d":
+              attribute_id: "0x400d"
+              attribute_name: couple_color_temp_to_level_min
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 254
+            "0x4010":
+              attribute_id: "0x4010"
+              attribute_name: start_up_color_temperature
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|WRITE|REPORT
+              access_acl: 7
+              attribute_value: 157
+            "0xe000":
+              attribute_id: "0xe000"
+              attribute_name: "57344"
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0xe100":
+              attribute_id: "0xe100"
+              attribute_name: "57600"
+              value_type:
+                - "0x25"
+                - uint48_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0xf000":
+              attribute_id: "0xf000"
+              attribute_name: "61440"
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0xf003":
+              attribute_id: "0xf003"
+              attribute_name: "61443"
+              value_type:
+                - "0x48"
+                - Array
+                - Discrete
+              access: READ|REPORT
+              access_acl: 5
+            "0xf004":
+              attribute_id: "0xf004"
+              attribute_name: "61444"
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+            "0xf102":
+              attribute_id: "0xf102"
+              attribute_name: "61698"
+              value_type:
+                - "0x48"
+                - Array
+                - Discrete
+              access: READ|WRITE|REPORT
+              access_acl: 7
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 2
+          commands_received: {}
+          commands_generated: {}
+        "0x1000":
+          cluster_id: "0x1000"
+          title: LightLink
+          name: lightlink
+          attributes: {}
+          commands_received: {}
+          commands_generated: {}
+        "0xef00":
+          cluster_id: "0xef00"
+          title: Cluster
+          name: null
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: "0"
+              value_type:
+                - "0x20"
+                - uint8_t
+                - Analog
+              access: READ|REPORT
+              access_acl: 5
+              attribute_value: 0
+          commands_received: {}
+          commands_generated: {}
+      out_clusters:
+        "0x000a":
+          cluster_id: "0x000a"
+          title: Time
+          name: time
+          attributes:
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 1
+          commands_received: {}
+          commands_generated: {}
+        "0x0019":
+          cluster_id: "0x0019"
+          title: Ota
+          name: ota
+          attributes:
+            "0x0000":
+              attribute_id: "0x0000"
+              attribute_name: upgrade_server_id
+              value_type:
+                - "0xf0"
+                - EUI64
+                - Discrete
+              access: READ
+              access_acl: 1
+              attribute_value:
+                - 255
+                - 255
+                - 255
+                - 255
+                - 255
+                - 255
+                - 255
+                - 255
+            "0x0001":
+              attribute_id: "0x0001"
+              attribute_name: file_offset
+              value_type:
+                - "0x23"
+                - uint32_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 4294967295
+            "0x0002":
+              attribute_id: "0x0002"
+              attribute_name: current_file_version
+              value_type:
+                - "0x23"
+                - uint32_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 65
+            "0x0003":
+              attribute_id: "0x0003"
+              attribute_name: current_zigbee_stack_version
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 2
+            "0x0004":
+              attribute_id: "0x0004"
+              attribute_name: downloaded_file_version
+              value_type:
+                - "0x23"
+                - uint32_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 4294967295
+            "0x0005":
+              attribute_id: "0x0005"
+              attribute_name: downloaded_zigbee_stack_version
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 65535
+            "0x0006":
+              attribute_id: "0x0006"
+              attribute_name: image_upgrade_status
+              value_type:
+                - "0x30"
+                - enum8
+                - Discrete
+              access: READ
+              access_acl: 1
+              attribute_value: 0
+            "0x0007":
+              attribute_id: "0x0007"
+              attribute_name: manufacturer_id
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 4417
+            "0x0008":
+              attribute_id: "0x0008"
+              attribute_name: image_type_id
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 65535
+            "0x0009":
+              attribute_id: "0x0009"
+              attribute_name: minimum_block_req_delay
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 0
+            "0xfffd":
+              attribute_id: "0xfffd"
+              attribute_name: cluster_revision
+              value_type:
+                - "0x21"
+                - uint16_t
+                - Analog
+              access: READ
+              access_acl: 1
+              attribute_value: 3
+          commands_received: {}
+          commands_generated: {}
+    - id: 242
+      device_type: "0x0061"
+      profile: "0xa1e0"
+success: true

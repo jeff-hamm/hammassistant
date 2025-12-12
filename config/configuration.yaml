@@ -1,0 +1,10 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+# Additional integrations
+
+homeassistant:
+  packages: 
+    !include yaml/index.yaml
+    
+automation ui: !include automations.yaml
+scene: !include scenes.yaml

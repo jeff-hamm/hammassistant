@@ -1,0 +1,7 @@
+DimmerSync:
+  DimmerId: "light.liminal_dimmer"
+  PressBrightness: 40
+  TickBrightness: 15
+  TargetLightId: "light.liminal_ceiling"
+  UpButtonId: null
+  DownButtonId: null
