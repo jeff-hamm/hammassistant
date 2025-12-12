@@ -1,0 +1,8 @@
+
+- cal_id: AQMkADAwATNiZmYAZC04OTFkLTM3NGYtMDACLTAwCgBGAAADh0Cfk-VHvkicWeJkBHpGzgcAHXKAQr-Izky5aAzEiarn9gAAAgEGAAAAHXKAQr-Izky5aAzEiarn9gAAAI4io2EAAAA=
+  entities:
+  - device_id: Calendar
+    end_offset: 24
+    name: Calendar
+    start_offset: 0
+    track: true

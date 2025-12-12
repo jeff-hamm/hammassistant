@@ -1,0 +1,3004 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "trace.saved_traces",
+  "data": {
+    "automation.shellies_announce": [
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "7abf9876b28f3f83bc0f5a4b89e8276b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T16:00:00.266564+00:00",
+            "finish": "2025-09-20T16:00:00.320892+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/1": [
+              {
+                "path": "trigger/1",
+                "timestamp": "2025-09-20T16:00:00.268955+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_announce",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_announce",
+                      "last_triggered": "2025-09-20T15:00:00.257237+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Shellies Announce"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.670783+00:00",
+                    "last_reported": "2025-09-20T15:00:00.270712+00:00",
+                    "last_updated": "2025-09-20T15:00:00.270712+00:00",
+                    "context": {
+                      "id": "01K5KT77KVQYVB21KFVM85NVXA",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "1",
+                    "idx": "1",
+                    "alias": null,
+                    "platform": "time_pattern",
+                    "now": "2025-09-20T09:00:00.265954-07:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T16:00:00.281887+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5KXN38AJN1PX0MYB92Z4NHM",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "mqtt",
+                    "service": "publish",
+                    "service_data": {
+                      "topic": "shellies/command",
+                      "payload": "announce"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_announce",
+            "alias": "Shellies Announce",
+            "trigger": [
+              {
+                "platform": "homeassistant",
+                "event": "start"
+              },
+              {
+                "platform": "time_pattern",
+                "hours": "/1"
+              }
+            ],
+            "action": {
+              "data": {
+                "topic": "shellies/command",
+                "payload": "announce"
+              },
+              "action": "mqtt.publish"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5KXN38AJN1PX0MYB92Z4NHM",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "7abf9876b28f3f83bc0f5a4b89e8276b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T16:00:00.266564+00:00",
+            "finish": "2025-09-20T16:00:00.320892+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "b940bf370ddb5255cd255bcf61c082a0",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T17:00:00.253638+00:00",
+            "finish": "2025-09-20T17:00:00.281237+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/1": [
+              {
+                "path": "trigger/1",
+                "timestamp": "2025-09-20T17:00:00.253893+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_announce",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_announce",
+                      "last_triggered": "2025-09-20T16:00:00.269614+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Shellies Announce"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.670783+00:00",
+                    "last_reported": "2025-09-20T16:00:00.309212+00:00",
+                    "last_updated": "2025-09-20T16:00:00.309212+00:00",
+                    "context": {
+                      "id": "01K5KXN38AJN1PX0MYB92Z4NHM",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "1",
+                    "idx": "1",
+                    "alias": null,
+                    "platform": "time_pattern",
+                    "now": "2025-09-20T10:00:00.250536-07:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T17:00:00.260222+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5M12YVX7N2B1QGDX6R96W13",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "mqtt",
+                    "service": "publish",
+                    "service_data": {
+                      "topic": "shellies/command",
+                      "payload": "announce"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_announce",
+            "alias": "Shellies Announce",
+            "trigger": [
+              {
+                "platform": "homeassistant",
+                "event": "start"
+              },
+              {
+                "platform": "time_pattern",
+                "hours": "/1"
+              }
+            ],
+            "action": {
+              "data": {
+                "topic": "shellies/command",
+                "payload": "announce"
+              },
+              "action": "mqtt.publish"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5M12YVX7N2B1QGDX6R96W13",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "b940bf370ddb5255cd255bcf61c082a0",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T17:00:00.253638+00:00",
+            "finish": "2025-09-20T17:00:00.281237+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "3b9ecaaf412d2ebec3cabb9832d28094",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T18:00:00.256838+00:00",
+            "finish": "2025-09-20T18:00:00.298870+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/1": [
+              {
+                "path": "trigger/1",
+                "timestamp": "2025-09-20T18:00:00.257082+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_announce",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_announce",
+                      "last_triggered": "2025-09-20T17:00:00.254603+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Shellies Announce"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.670783+00:00",
+                    "last_reported": "2025-09-20T17:00:00.277975+00:00",
+                    "last_updated": "2025-09-20T17:00:00.277975+00:00",
+                    "context": {
+                      "id": "01K5M12YVX7N2B1QGDX6R96W13",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "1",
+                    "idx": "1",
+                    "alias": null,
+                    "platform": "time_pattern",
+                    "now": "2025-09-20T11:00:00.256083-07:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T18:00:00.280551+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5M4GTG0W7ZTCFYYC11TEREG",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "mqtt",
+                    "service": "publish",
+                    "service_data": {
+                      "topic": "shellies/command",
+                      "payload": "announce"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_announce",
+            "alias": "Shellies Announce",
+            "trigger": [
+              {
+                "platform": "homeassistant",
+                "event": "start"
+              },
+              {
+                "platform": "time_pattern",
+                "hours": "/1"
+              }
+            ],
+            "action": {
+              "data": {
+                "topic": "shellies/command",
+                "payload": "announce"
+              },
+              "action": "mqtt.publish"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5M4GTG0W7ZTCFYYC11TEREG",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "3b9ecaaf412d2ebec3cabb9832d28094",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T18:00:00.256838+00:00",
+            "finish": "2025-09-20T18:00:00.298870+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "78a13aa76256b121a62509f91de58eed",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T19:00:00.251813+00:00",
+            "finish": "2025-09-20T19:00:00.294156+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/1": [
+              {
+                "path": "trigger/1",
+                "timestamp": "2025-09-20T19:00:00.252125+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_announce",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_announce",
+                      "last_triggered": "2025-09-20T18:00:00.257804+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Shellies Announce"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.670783+00:00",
+                    "last_reported": "2025-09-20T18:00:00.294513+00:00",
+                    "last_updated": "2025-09-20T18:00:00.294513+00:00",
+                    "context": {
+                      "id": "01K5M4GTG0W7ZTCFYYC11TEREG",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "1",
+                    "idx": "1",
+                    "alias": null,
+                    "platform": "time_pattern",
+                    "now": "2025-09-20T12:00:00.251079-07:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T19:00:00.264949+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5M7YP3VD2E5GN1JWS7RK1P1",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "mqtt",
+                    "service": "publish",
+                    "service_data": {
+                      "topic": "shellies/command",
+                      "payload": "announce"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_announce",
+            "alias": "Shellies Announce",
+            "trigger": [
+              {
+                "platform": "homeassistant",
+                "event": "start"
+              },
+              {
+                "platform": "time_pattern",
+                "hours": "/1"
+              }
+            ],
+            "action": {
+              "data": {
+                "topic": "shellies/command",
+                "payload": "announce"
+              },
+              "action": "mqtt.publish"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5M7YP3VD2E5GN1JWS7RK1P1",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "78a13aa76256b121a62509f91de58eed",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T19:00:00.251813+00:00",
+            "finish": "2025-09-20T19:00:00.294156+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "6e1d2441469f9bf94be67d7bad7c62dc",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T20:00:00.251751+00:00",
+            "finish": "2025-09-20T20:00:00.271495+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/1": [
+              {
+                "path": "trigger/1",
+                "timestamp": "2025-09-20T20:00:00.252070+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_announce",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_announce",
+                      "last_triggered": "2025-09-20T19:00:00.259186+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Shellies Announce"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.670783+00:00",
+                    "last_reported": "2025-09-20T19:00:00.290153+00:00",
+                    "last_updated": "2025-09-20T19:00:00.290153+00:00",
+                    "context": {
+                      "id": "01K5M7YP3VD2E5GN1JWS7RK1P1",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "1",
+                    "idx": "1",
+                    "alias": null,
+                    "platform": "time_pattern",
+                    "now": "2025-09-20T13:00:00.251152-07:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T20:00:00.253788+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5MBCHQVG0A8PXD7MD7FMYRB",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "mqtt",
+                    "service": "publish",
+                    "service_data": {
+                      "topic": "shellies/command",
+                      "payload": "announce"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_announce",
+            "alias": "Shellies Announce",
+            "trigger": [
+              {
+                "platform": "homeassistant",
+                "event": "start"
+              },
+              {
+                "platform": "time_pattern",
+                "hours": "/1"
+              }
+            ],
+            "action": {
+              "data": {
+                "topic": "shellies/command",
+                "payload": "announce"
+              },
+              "action": "mqtt.publish"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5MBCHQVG0A8PXD7MD7FMYRB",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "6e1d2441469f9bf94be67d7bad7c62dc",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T20:00:00.251751+00:00",
+            "finish": "2025-09-20T20:00:00.271495+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_announce",
+          "trigger": "time pattern"
+        }
+      }
+    ],
+    "automation.1737539346394": [
+      {
+        "extended_dict": {
+          "last_step": "action/1",
+          "run_id": "ba01a93a818b16c6830eb7b08bb075c5",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T03:43:29.298721+00:00",
+            "finish": "2025-09-20T03:43:29.327739+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1737539346394",
+          "trigger": "Home Assistant starting",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T03:43:29.299061+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.set_default_theme_on_start",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1737539346394",
+                      "last_triggered": "2025-09-20T02:40:55.944531+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Set default theme on start"
+                    },
+                    "last_changed": "2025-09-20T03:43:19.894963+00:00",
+                    "last_reported": "2025-09-20T03:43:19.894963+00:00",
+                    "last_updated": "2025-09-20T03:43:19.894963+00:00",
+                    "context": {
+                      "id": "01K5JKG6TP92XTQCXKNSBVWGP7",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "homeassistant",
+                    "event": "start",
+                    "description": "Home Assistant starting"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T03:43:29.315810+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5JKGG0JX5WMHNG35HM9KMA6",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "frontend",
+                    "service": "set_theme",
+                    "service_data": {
+                      "name": "jumper-dark-mode-blue-red",
+                      "mode": "dark"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-09-20T03:43:29.318589+00:00",
+                "result": {
+                  "params": {
+                    "domain": "frontend",
+                    "service": "set_theme",
+                    "service_data": {
+                      "mode": "dark",
+                      "name": "jumper-dark-mode-blue-red"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1737539346394",
+            "alias": "Set default theme on start",
+            "description": "",
+            "triggers": [
+              {
+                "event": "start",
+                "trigger": "homeassistant"
+              }
+            ],
+            "actions": [
+              {
+                "data": {
+                  "name": "jumper-dark-mode-blue-red",
+                  "mode": "dark"
+                },
+                "action": "frontend.set_theme"
+              },
+              {
+                "data": {
+                  "mode": "dark",
+                  "name": "jumper-dark-mode-blue-red"
+                },
+                "action": "frontend.set_theme"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5JKGG0JX5WMHNG35HM9KMA6",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/1",
+          "run_id": "ba01a93a818b16c6830eb7b08bb075c5",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T03:43:29.298721+00:00",
+            "finish": "2025-09-20T03:43:29.327739+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1737539346394",
+          "trigger": "Home Assistant starting"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/1",
+          "run_id": "87ebc8795af5cd72eb0462581ed9108c",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T03:56:54.643701+00:00",
+            "finish": "2025-09-20T03:56:54.654918+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1737539346394",
+          "trigger": "Home Assistant starting",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T03:56:54.643820+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.set_default_theme_on_start",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1737539346394",
+                      "last_triggered": "2025-09-20T03:43:29.314706+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Set default theme on start"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.684952+00:00",
+                    "last_reported": "2025-09-20T03:56:22.684952+00:00",
+                    "last_updated": "2025-09-20T03:56:22.684952+00:00",
+                    "context": {
+                      "id": "01K5JM838WR2XYH0T5G44QHG5G",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "homeassistant",
+                    "event": "start",
+                    "description": "Home Assistant starting"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T03:56:54.649839+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5JM92FKSBZ3TB720NFXHDS6",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "frontend",
+                    "service": "set_theme",
+                    "service_data": {
+                      "name": "jumper-dark-mode-blue-red",
+                      "mode": "dark"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-09-20T03:56:54.652375+00:00",
+                "result": {
+                  "params": {
+                    "domain": "frontend",
+                    "service": "set_theme",
+                    "service_data": {
+                      "mode": "dark",
+                      "name": "jumper-dark-mode-blue-red"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1737539346394",
+            "alias": "Set default theme on start",
+            "description": "",
+            "triggers": [
+              {
+                "event": "start",
+                "trigger": "homeassistant"
+              }
+            ],
+            "actions": [
+              {
+                "data": {
+                  "name": "jumper-dark-mode-blue-red",
+                  "mode": "dark"
+                },
+                "action": "frontend.set_theme"
+              },
+              {
+                "data": {
+                  "mode": "dark",
+                  "name": "jumper-dark-mode-blue-red"
+                },
+                "action": "frontend.set_theme"
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5JM92FKSBZ3TB720NFXHDS6",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/1",
+          "run_id": "87ebc8795af5cd72eb0462581ed9108c",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T03:56:54.643701+00:00",
+            "finish": "2025-09-20T03:56:54.654918+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1737539346394",
+          "trigger": "Home Assistant starting"
+        }
+      }
+    ],
+    "automation.shellies_discovery": [
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "3e267eefe7aa5438ff07b79767f09aaf",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T16:00:00.432748+00:00",
+            "finish": "2025-09-20T16:00:02.493645+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T16:00:00.433196+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_discovery",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_discovery",
+                      "last_triggered": "2025-09-20T15:00:00.329116+00:00",
+                      "mode": "queued",
+                      "current": 0,
+                      "max": 999,
+                      "friendly_name": "Shellies Discovery"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.671994+00:00",
+                    "last_reported": "2025-09-20T15:00:01.843384+00:00",
+                    "last_updated": "2025-09-20T15:00:01.843384+00:00",
+                    "context": {
+                      "id": "01K5KT77P5XPKT7PFJNXTDGVD6",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "mqtt",
+                    "topic": "shellies/announce",
+                    "payload": "{\"id\":\"shellydimmer2-485519F9B355\",\"model\":\"SHDM-2\",\"mac\":\"485519F9B355\",\"ip\":\"192.168.1.171\",\"new_fw\":false,\"fw_ver\":\"20230913-114008/v1.14.0-gcb84623\"}",
+                    "qos": 0,
+                    "description": "mqtt topic shellies/announce",
+                    "payload_json": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "model": "SHDM-2",
+                      "mac": "485519F9B355",
+                      "ip": "192.168.1.171",
+                      "new_fw": false,
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623"
+                    }
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-09-20T16:00:00.433364+00:00",
+                "result": {
+                  "result": true,
+                  "entities": []
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T16:00:00.439905+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5KXN3DDVB60SCE9Z8P0B941",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "python_script",
+                    "service": "shellies_discovery",
+                    "service_data": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "mac": "485519F9B355",
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623",
+                      "model": "SHDM-2",
+                      "mode": "",
+                      "host": "192.168.1.171"
+                    },
+                    "target": {}
+                  },
+                  "running_script": true
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_discovery",
+            "alias": "Shellies Discovery",
+            "mode": "queued",
+            "max": 999,
+            "trigger": {
+              "platform": "mqtt",
+              "topic": "shellies/announce"
+            },
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ trigger.payload_json.gen is not defined }}"
+              }
+            ],
+            "action": {
+              "data": {
+                "id": "{{ trigger.payload_json.id }}",
+                "mac": "{{ trigger.payload_json.mac }}",
+                "fw_ver": "{{ trigger.payload_json.fw_ver }}",
+                "model": "{{ trigger.payload_json.model | default }}",
+                "mode": "{{ trigger.payload_json.mode | default }}",
+                "host": "{{ trigger.payload_json.ip }}"
+              },
+              "action": "python_script.shellies_discovery"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5KXN3DDVB60SCE9Z8P0B941",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "3e267eefe7aa5438ff07b79767f09aaf",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T16:00:00.432748+00:00",
+            "finish": "2025-09-20T16:00:02.493645+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "e7ed24d0b05c851dc92ead809d2cca65",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T17:00:00.351557+00:00",
+            "finish": "2025-09-20T17:00:01.863946+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T17:00:00.351879+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_discovery",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_discovery",
+                      "last_triggered": "2025-09-20T16:00:00.438939+00:00",
+                      "mode": "queued",
+                      "current": 0,
+                      "max": 999,
+                      "friendly_name": "Shellies Discovery"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.671994+00:00",
+                    "last_reported": "2025-09-20T16:00:02.485558+00:00",
+                    "last_updated": "2025-09-20T16:00:02.485558+00:00",
+                    "context": {
+                      "id": "01K5KXN3DDVB60SCE9Z8P0B941",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "mqtt",
+                    "topic": "shellies/announce",
+                    "payload": "{\"id\":\"shellydimmer2-485519F9B355\",\"model\":\"SHDM-2\",\"mac\":\"485519F9B355\",\"ip\":\"192.168.1.171\",\"new_fw\":false,\"fw_ver\":\"20230913-114008/v1.14.0-gcb84623\"}",
+                    "qos": 0,
+                    "description": "mqtt topic shellies/announce",
+                    "payload_json": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "model": "SHDM-2",
+                      "mac": "485519F9B355",
+                      "ip": "192.168.1.171",
+                      "new_fw": false,
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623"
+                    }
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-09-20T17:00:00.357855+00:00",
+                "result": {
+                  "result": true,
+                  "entities": []
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T17:00:00.368376+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5M12YYZ08QM0FSGY4XK0XRP",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "python_script",
+                    "service": "shellies_discovery",
+                    "service_data": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "mac": "485519F9B355",
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623",
+                      "model": "SHDM-2",
+                      "mode": "",
+                      "host": "192.168.1.171"
+                    },
+                    "target": {}
+                  },
+                  "running_script": true
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_discovery",
+            "alias": "Shellies Discovery",
+            "mode": "queued",
+            "max": 999,
+            "trigger": {
+              "platform": "mqtt",
+              "topic": "shellies/announce"
+            },
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ trigger.payload_json.gen is not defined }}"
+              }
+            ],
+            "action": {
+              "data": {
+                "id": "{{ trigger.payload_json.id }}",
+                "mac": "{{ trigger.payload_json.mac }}",
+                "fw_ver": "{{ trigger.payload_json.fw_ver }}",
+                "model": "{{ trigger.payload_json.model | default }}",
+                "mode": "{{ trigger.payload_json.mode | default }}",
+                "host": "{{ trigger.payload_json.ip }}"
+              },
+              "action": "python_script.shellies_discovery"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5M12YYZ08QM0FSGY4XK0XRP",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "e7ed24d0b05c851dc92ead809d2cca65",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T17:00:00.351557+00:00",
+            "finish": "2025-09-20T17:00:01.863946+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "2fcd561f7cd5ec72dcce4d87cb61498c",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T18:00:00.357848+00:00",
+            "finish": "2025-09-20T18:00:02.303193+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T18:00:00.358168+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_discovery",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_discovery",
+                      "last_triggered": "2025-09-20T17:00:00.365366+00:00",
+                      "mode": "queued",
+                      "current": 0,
+                      "max": 999,
+                      "friendly_name": "Shellies Discovery"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.671994+00:00",
+                    "last_reported": "2025-09-20T17:00:01.858448+00:00",
+                    "last_updated": "2025-09-20T17:00:01.858448+00:00",
+                    "context": {
+                      "id": "01K5M12YYZ08QM0FSGY4XK0XRP",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "mqtt",
+                    "topic": "shellies/announce",
+                    "payload": "{\"id\":\"shellydimmer2-485519F9B355\",\"model\":\"SHDM-2\",\"mac\":\"485519F9B355\",\"ip\":\"192.168.1.171\",\"new_fw\":false,\"fw_ver\":\"20230913-114008/v1.14.0-gcb84623\"}",
+                    "qos": 0,
+                    "description": "mqtt topic shellies/announce",
+                    "payload_json": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "model": "SHDM-2",
+                      "mac": "485519F9B355",
+                      "ip": "192.168.1.171",
+                      "new_fw": false,
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623"
+                    }
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-09-20T18:00:00.358379+00:00",
+                "result": {
+                  "result": true,
+                  "entities": []
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T18:00:00.360552+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5M4GTK54BHC8PPAXFEXNAZW",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "python_script",
+                    "service": "shellies_discovery",
+                    "service_data": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "mac": "485519F9B355",
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623",
+                      "model": "SHDM-2",
+                      "mode": "",
+                      "host": "192.168.1.171"
+                    },
+                    "target": {}
+                  },
+                  "running_script": true
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_discovery",
+            "alias": "Shellies Discovery",
+            "mode": "queued",
+            "max": 999,
+            "trigger": {
+              "platform": "mqtt",
+              "topic": "shellies/announce"
+            },
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ trigger.payload_json.gen is not defined }}"
+              }
+            ],
+            "action": {
+              "data": {
+                "id": "{{ trigger.payload_json.id }}",
+                "mac": "{{ trigger.payload_json.mac }}",
+                "fw_ver": "{{ trigger.payload_json.fw_ver }}",
+                "model": "{{ trigger.payload_json.model | default }}",
+                "mode": "{{ trigger.payload_json.mode | default }}",
+                "host": "{{ trigger.payload_json.ip }}"
+              },
+              "action": "python_script.shellies_discovery"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5M4GTK54BHC8PPAXFEXNAZW",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "2fcd561f7cd5ec72dcce4d87cb61498c",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T18:00:00.357848+00:00",
+            "finish": "2025-09-20T18:00:02.303193+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "a8233a9e05527ccd50b9448d7c783369",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T19:00:00.338318+00:00",
+            "finish": "2025-09-20T19:00:02.288222+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T19:00:00.345423+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_discovery",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_discovery",
+                      "last_triggered": "2025-09-20T18:00:00.359613+00:00",
+                      "mode": "queued",
+                      "current": 0,
+                      "max": 999,
+                      "friendly_name": "Shellies Discovery"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.671994+00:00",
+                    "last_reported": "2025-09-20T18:00:02.297837+00:00",
+                    "last_updated": "2025-09-20T18:00:02.297837+00:00",
+                    "context": {
+                      "id": "01K5M4GTK54BHC8PPAXFEXNAZW",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "mqtt",
+                    "topic": "shellies/announce",
+                    "payload": "{\"id\":\"shellydimmer2-485519F9B355\",\"model\":\"SHDM-2\",\"mac\":\"485519F9B355\",\"ip\":\"192.168.1.171\",\"new_fw\":false,\"fw_ver\":\"20230913-114008/v1.14.0-gcb84623\"}",
+                    "qos": 0,
+                    "description": "mqtt topic shellies/announce",
+                    "payload_json": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "model": "SHDM-2",
+                      "mac": "485519F9B355",
+                      "ip": "192.168.1.171",
+                      "new_fw": false,
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623"
+                    }
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-09-20T19:00:00.345542+00:00",
+                "result": {
+                  "result": true,
+                  "entities": []
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T19:00:00.347497+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5M7YP6CZJC19BD1YM5HGZQE",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "python_script",
+                    "service": "shellies_discovery",
+                    "service_data": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "mac": "485519F9B355",
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623",
+                      "model": "SHDM-2",
+                      "mode": "",
+                      "host": "192.168.1.171"
+                    },
+                    "target": {}
+                  },
+                  "running_script": true
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_discovery",
+            "alias": "Shellies Discovery",
+            "mode": "queued",
+            "max": 999,
+            "trigger": {
+              "platform": "mqtt",
+              "topic": "shellies/announce"
+            },
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ trigger.payload_json.gen is not defined }}"
+              }
+            ],
+            "action": {
+              "data": {
+                "id": "{{ trigger.payload_json.id }}",
+                "mac": "{{ trigger.payload_json.mac }}",
+                "fw_ver": "{{ trigger.payload_json.fw_ver }}",
+                "model": "{{ trigger.payload_json.model | default }}",
+                "mode": "{{ trigger.payload_json.mode | default }}",
+                "host": "{{ trigger.payload_json.ip }}"
+              },
+              "action": "python_script.shellies_discovery"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5M7YP6CZJC19BD1YM5HGZQE",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "a8233a9e05527ccd50b9448d7c783369",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T19:00:00.338318+00:00",
+            "finish": "2025-09-20T19:00:02.288222+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "ba90b8d04220fb8ebb08b006939e42f5",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T20:00:00.301499+00:00",
+            "finish": "2025-09-20T20:00:01.577093+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T20:00:00.301822+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.shellies_discovery",
+                    "state": "on",
+                    "attributes": {
+                      "id": "shellies_discovery",
+                      "last_triggered": "2025-09-20T19:00:00.346553+00:00",
+                      "mode": "queued",
+                      "current": 0,
+                      "max": 999,
+                      "friendly_name": "Shellies Discovery"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.671994+00:00",
+                    "last_reported": "2025-09-20T19:00:02.272487+00:00",
+                    "last_updated": "2025-09-20T19:00:02.272487+00:00",
+                    "context": {
+                      "id": "01K5M7YP6CZJC19BD1YM5HGZQE",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "mqtt",
+                    "topic": "shellies/announce",
+                    "payload": "{\"id\":\"shellydimmer2-485519F9B355\",\"model\":\"SHDM-2\",\"mac\":\"485519F9B355\",\"ip\":\"192.168.1.171\",\"new_fw\":false,\"fw_ver\":\"20230913-114008/v1.14.0-gcb84623\"}",
+                    "qos": 0,
+                    "description": "mqtt topic shellies/announce",
+                    "payload_json": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "model": "SHDM-2",
+                      "mac": "485519F9B355",
+                      "ip": "192.168.1.171",
+                      "new_fw": false,
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623"
+                    }
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-09-20T20:00:00.301951+00:00",
+                "result": {
+                  "result": true,
+                  "entities": []
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T20:00:00.303859+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5MBCHSD74R9JQX6E6PG4G70",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "python_script",
+                    "service": "shellies_discovery",
+                    "service_data": {
+                      "id": "shellydimmer2-485519F9B355",
+                      "mac": "485519F9B355",
+                      "fw_ver": "20230913-114008/v1.14.0-gcb84623",
+                      "model": "SHDM-2",
+                      "mode": "",
+                      "host": "192.168.1.171"
+                    },
+                    "target": {}
+                  },
+                  "running_script": true
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "shellies_discovery",
+            "alias": "Shellies Discovery",
+            "mode": "queued",
+            "max": 999,
+            "trigger": {
+              "platform": "mqtt",
+              "topic": "shellies/announce"
+            },
+            "condition": [
+              {
+                "condition": "template",
+                "value_template": "{{ trigger.payload_json.gen is not defined }}"
+              }
+            ],
+            "action": {
+              "data": {
+                "id": "{{ trigger.payload_json.id }}",
+                "mac": "{{ trigger.payload_json.mac }}",
+                "fw_ver": "{{ trigger.payload_json.fw_ver }}",
+                "model": "{{ trigger.payload_json.model | default }}",
+                "mode": "{{ trigger.payload_json.mode | default }}",
+                "host": "{{ trigger.payload_json.ip }}"
+              },
+              "action": "python_script.shellies_discovery"
+            }
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5MBCHSD74R9JQX6E6PG4G70",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "ba90b8d04220fb8ebb08b006939e42f5",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T20:00:00.301499+00:00",
+            "finish": "2025-09-20T20:00:01.577093+00:00"
+          },
+          "domain": "automation",
+          "item_id": "shellies_discovery",
+          "trigger": "mqtt topic shellies/announce"
+        }
+      }
+    ],
+    "automation.1730512640141": [
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "df2dce260f5d911cfec822d0bbd6cb15",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T04:12:47.472076+00:00",
+            "finish": "2025-09-20T04:12:47.496752+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1730512640141",
+          "trigger": "state of media_player.hammlet_oled_tv",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T04:12:47.472177+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.turn_on_speakers_when_things_come_online",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1730512640141",
+                      "last_triggered": "2025-09-19T05:57:31.080096+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Turn On speakers when things come online"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.681861+00:00",
+                    "last_reported": "2025-09-20T03:56:22.681861+00:00",
+                    "last_updated": "2025-09-20T03:56:22.681861+00:00",
+                    "context": {
+                      "id": "01K5JM838SX3PZVWZZ0SQRQTBX",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "media_player.hammlet_oled_tv",
+                    "from_state": {
+                      "entity_id": "media_player.hammlet_oled_tv",
+                      "state": "off",
+                      "attributes": {
+                        "assumed_state": true,
+                        "device_class": "tv",
+                        "friendly_name": "TV",
+                        "supported_features": 24509
+                      },
+                      "last_changed": "2025-09-20T03:55:48.568156+00:00",
+                      "last_reported": "2025-09-20T03:56:54.637905+00:00",
+                      "last_updated": "2025-09-20T03:56:54.637905+00:00",
+                      "context": {
+                        "id": "01K5JM92FD24Y01X5PC72KG7BQ",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "media_player.hammlet_oled_tv",
+                      "state": "on",
+                      "attributes": {
+                        "source_list": [
+                          "HBO Max",
+                          "HDMI 1",
+                          "HDMI 4",
+                          "Max",
+                          "Netflix",
+                          "Prime Video",
+                          "Sharp Sound Bar",
+                          "YouTube",
+                          "YouTube TV"
+                        ],
+                        "volume_level": 0.27,
+                        "is_volume_muted": false,
+                        "source": "Sharp Sound Bar",
+                        "sound_output": "external_arc",
+                        "assumed_state": true,
+                        "device_class": "tv",
+                        "friendly_name": "TV",
+                        "supported_features": 24509
+                      },
+                      "last_changed": "2025-09-20T04:12:47.465982+00:00",
+                      "last_reported": "2025-09-20T04:12:47.465982+00:00",
+                      "last_updated": "2025-09-20T04:12:47.465982+00:00",
+                      "context": {
+                        "id": "01K5JN64Z96V6C8NBR7MDQV683",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of media_player.hammlet_oled_tv"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T04:12:47.475445+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5JN64ZGY2BX93FS07P9SJAH",
+                    "parent_id": "01K5JN64Z96V6C8NBR7MDQV683",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "switch",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "switch.speakers"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1730512640141",
+            "alias": "Turn On speakers when things come online",
+            "description": "",
+            "triggers": [
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "media_player.hammlet_oled_tv",
+                  "media_player.hammlet_cast"
+                ],
+                "from": "off"
+              },
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "media_player.hammlet_cast"
+                ],
+                "from": "idle"
+              }
+            ],
+            "conditions": [],
+            "actions": [
+              {
+                "action": "switch.turn_on",
+                "metadata": {},
+                "data": {},
+                "target": {
+                  "entity_id": "switch.speakers"
+                }
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5JN64ZGY2BX93FS07P9SJAH",
+            "parent_id": "01K5JN64Z96V6C8NBR7MDQV683",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "df2dce260f5d911cfec822d0bbd6cb15",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T04:12:47.472076+00:00",
+            "finish": "2025-09-20T04:12:47.496752+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1730512640141",
+          "trigger": "state of media_player.hammlet_oled_tv"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "64ad7dfb4f78cb3c163f32de77e36c59",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T05:17:57.099583+00:00",
+            "finish": "2025-09-20T05:17:57.114207+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1730512640141",
+          "trigger": "state of media_player.hammlet_oled_tv",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T05:17:57.099668+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.turn_on_speakers_when_things_come_online",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1730512640141",
+                      "last_triggered": "2025-09-20T04:12:47.474532+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Turn On speakers when things come online"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.681861+00:00",
+                    "last_reported": "2025-09-20T04:12:47.492779+00:00",
+                    "last_updated": "2025-09-20T04:12:47.492779+00:00",
+                    "context": {
+                      "id": "01K5JN64ZGY2BX93FS07P9SJAH",
+                      "parent_id": "01K5JN64Z96V6C8NBR7MDQV683",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "media_player.hammlet_oled_tv",
+                    "from_state": {
+                      "entity_id": "media_player.hammlet_oled_tv",
+                      "state": "off",
+                      "attributes": {
+                        "source_list": [
+                          "HBO Max",
+                          "HDMI 1",
+                          "HDMI 4",
+                          "Max",
+                          "Netflix",
+                          "Prime Video",
+                          "Sharp Sound Bar",
+                          "YouTube",
+                          "YouTube TV"
+                        ],
+                        "assumed_state": true,
+                        "device_class": "tv",
+                        "friendly_name": "TV",
+                        "supported_features": 24509
+                      },
+                      "last_changed": "2025-09-20T05:17:45.987936+00:00",
+                      "last_reported": "2025-09-20T05:17:45.987936+00:00",
+                      "last_updated": "2025-09-20T05:17:45.987936+00:00",
+                      "context": {
+                        "id": "01K5JRX4432MYJ6HVF211CVEDD",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "media_player.hammlet_oled_tv",
+                      "state": "on",
+                      "attributes": {
+                        "source_list": [
+                          "HBO Max",
+                          "HDMI 1",
+                          "HDMI 4",
+                          "Max",
+                          "Netflix",
+                          "Prime Video",
+                          "Sharp Sound Bar",
+                          "YouTube",
+                          "YouTube TV"
+                        ],
+                        "volume_level": 0.27,
+                        "is_volume_muted": false,
+                        "source": "Sharp Sound Bar",
+                        "sound_output": "external_arc",
+                        "assumed_state": true,
+                        "device_class": "tv",
+                        "friendly_name": "TV",
+                        "supported_features": 24509
+                      },
+                      "last_changed": "2025-09-20T05:17:57.096076+00:00",
+                      "last_reported": "2025-09-20T05:17:57.096076+00:00",
+                      "last_updated": "2025-09-20T05:17:57.096076+00:00",
+                      "context": {
+                        "id": "01K5JRXEZ81QXRN4FEYXGV0T96",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of media_player.hammlet_oled_tv"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T05:17:57.100414+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5JRXEZBA474VSC3B0QAT2H6",
+                    "parent_id": "01K5JRXEZ81QXRN4FEYXGV0T96",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "switch",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "switch.speakers"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1730512640141",
+            "alias": "Turn On speakers when things come online",
+            "description": "",
+            "triggers": [
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "media_player.hammlet_oled_tv",
+                  "media_player.hammlet_cast"
+                ],
+                "from": "off"
+              },
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "media_player.hammlet_cast"
+                ],
+                "from": "idle"
+              }
+            ],
+            "conditions": [],
+            "actions": [
+              {
+                "action": "switch.turn_on",
+                "metadata": {},
+                "data": {},
+                "target": {
+                  "entity_id": "switch.speakers"
+                }
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5JRXEZBA474VSC3B0QAT2H6",
+            "parent_id": "01K5JRXEZ81QXRN4FEYXGV0T96",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "64ad7dfb4f78cb3c163f32de77e36c59",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T05:17:57.099583+00:00",
+            "finish": "2025-09-20T05:17:57.114207+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1730512640141",
+          "trigger": "state of media_player.hammlet_oled_tv"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "e264b6e71acd013cc359a00e1023f29b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T09:00:32.418290+00:00",
+            "finish": "2025-09-20T09:00:32.422017+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1730512640141",
+          "trigger": "state of media_player.hammlet_oled_tv",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T09:00:32.418493+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.turn_on_speakers_when_things_come_online",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1730512640141",
+                      "last_triggered": "2025-09-20T05:17:57.099938+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Turn On speakers when things come online"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.681861+00:00",
+                    "last_reported": "2025-09-20T05:17:57.106193+00:00",
+                    "last_updated": "2025-09-20T05:17:57.106193+00:00",
+                    "context": {
+                      "id": "01K5JRXEZBA474VSC3B0QAT2H6",
+                      "parent_id": "01K5JRXEZ81QXRN4FEYXGV0T96",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "media_player.hammlet_oled_tv",
+                    "from_state": {
+                      "entity_id": "media_player.hammlet_oled_tv",
+                      "state": "off",
+                      "attributes": {
+                        "source_list": [
+                          "HBO Max",
+                          "HDMI 1",
+                          "HDMI 4",
+                          "Max",
+                          "Netflix",
+                          "Prime Video",
+                          "Sharp Sound Bar",
+                          "YouTube",
+                          "YouTube TV"
+                        ],
+                        "sound_output": "external_arc",
+                        "assumed_state": true,
+                        "device_class": "tv",
+                        "friendly_name": "TV",
+                        "supported_features": 24509
+                      },
+                      "last_changed": "2025-09-20T09:00:03.750979+00:00",
+                      "last_reported": "2025-09-20T09:00:03.750979+00:00",
+                      "last_updated": "2025-09-20T09:00:03.750979+00:00",
+                      "context": {
+                        "id": "01K5K5M1ZYG794Z6C1CVV9F4YV",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "media_player.hammlet_oled_tv",
+                      "state": "on",
+                      "attributes": {
+                        "source_list": [
+                          "HBO Max",
+                          "HDMI 1",
+                          "HDMI 4",
+                          "Max",
+                          "Netflix",
+                          "Prime Video",
+                          "Sharp Sound Bar",
+                          "YouTube",
+                          "YouTube TV"
+                        ],
+                        "volume_level": 0.27,
+                        "is_volume_muted": false,
+                        "source": "Sharp Sound Bar",
+                        "sound_output": "external_arc",
+                        "assumed_state": true,
+                        "device_class": "tv",
+                        "friendly_name": "TV",
+                        "supported_features": 24509
+                      },
+                      "last_changed": "2025-09-20T09:00:32.410905+00:00",
+                      "last_reported": "2025-09-20T09:00:32.410905+00:00",
+                      "last_updated": "2025-09-20T09:00:32.410905+00:00",
+                      "context": {
+                        "id": "01K5K5N18T2BCSG25XGBK34SPX",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of media_player.hammlet_oled_tv"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T09:00:32.419892+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5K5N18WH8MG5R9SNPCFEW2G",
+                    "parent_id": "01K5K5N18T2BCSG25XGBK34SPX",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "switch",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "switch.speakers"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1730512640141",
+            "alias": "Turn On speakers when things come online",
+            "description": "",
+            "triggers": [
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "media_player.hammlet_oled_tv",
+                  "media_player.hammlet_cast"
+                ],
+                "from": "off"
+              },
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "media_player.hammlet_cast"
+                ],
+                "from": "idle"
+              }
+            ],
+            "conditions": [],
+            "actions": [
+              {
+                "action": "switch.turn_on",
+                "metadata": {},
+                "data": {},
+                "target": {
+                  "entity_id": "switch.speakers"
+                }
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5K5N18WH8MG5R9SNPCFEW2G",
+            "parent_id": "01K5K5N18T2BCSG25XGBK34SPX",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "e264b6e71acd013cc359a00e1023f29b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T09:00:32.418290+00:00",
+            "finish": "2025-09-20T09:00:32.422017+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1730512640141",
+          "trigger": "state of media_player.hammlet_oled_tv"
+        }
+      }
+    ],
+    "automation.1742786991496": [
+      {
+        "extended_dict": {
+          "last_step": "action/3",
+          "run_id": "d8c9c74854dd67e8668c9168d30a52e2",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T05:30:00.286520+00:00",
+            "finish": "2025-09-20T05:30:00.762209+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1742786991496",
+          "trigger": "time",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T05:30:00.286662+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.transition_late_11pm",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1742786991496",
+                      "last_triggered": "2025-09-19T05:30:00.257991+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Transition: Late (11pm)"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.690401+00:00",
+                    "last_reported": "2025-09-20T03:56:22.690401+00:00",
+                    "last_updated": "2025-09-20T03:56:22.690401+00:00",
+                    "context": {
+                      "id": "01K5JM83929EBF2JG9VQTRQ4DG",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "time",
+                    "now": "2025-09-19T22:30:00.285878-07:00",
+                    "description": "time",
+                    "entity_id": null
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T05:30:00.288814+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5JSKH6YYWRVT36ZF76A0DX2",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "input_select",
+                    "service": "select_option",
+                    "service_data": {
+                      "option": "Late",
+                      "entity_id": [
+                        "input_select.lighting_mode"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_select.lighting_mode"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-09-20T05:30:00.295597+00:00",
+                "result": {
+                  "params": {
+                    "domain": "scene",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "scene.night"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-09-20T05:30:00.337051+00:00",
+                "result": {
+                  "params": {
+                    "domain": "light",
+                    "service": "turn_off",
+                    "service_data": {
+                      "transition": 120,
+                      "label_id": [
+                        "turn_off_late"
+                      ]
+                    },
+                    "target": {
+                      "label_id": [
+                        "turn_off_late"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/3": [
+              {
+                "path": "action/3",
+                "timestamp": "2025-09-20T05:30:00.755788+00:00",
+                "result": {
+                  "enabled": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1742786991496",
+            "alias": "Transition: Late (11pm)",
+            "description": "",
+            "triggers": [
+              {
+                "at": "22:30:00",
+                "trigger": "time"
+              }
+            ],
+            "conditions": [],
+            "actions": [
+              {
+                "target": {
+                  "entity_id": "input_select.lighting_mode"
+                },
+                "data": {
+                  "option": "Late"
+                },
+                "action": "input_select.select_option"
+              },
+              {
+                "metadata": {},
+                "action": "scene.turn_on",
+                "data": {},
+                "target": {
+                  "entity_id": "scene.night"
+                }
+              },
+              {
+                "action": "light.turn_off",
+                "metadata": {},
+                "data": {
+                  "transition": 120
+                },
+                "target": {
+                  "label_id": "turn_off_late"
+                },
+                "enabled": true
+              },
+              {
+                "action": "script.ashley_s_light_fader",
+                "metadata": {},
+                "data": {
+                  "lampBrightnessScale": "zeroToTwoFiftyFive",
+                  "transitionTime": {
+                    "hours": 0,
+                    "minutes": 30,
+                    "seconds": 0
+                  },
+                  "easingTypeInput": "auto",
+                  "endBrightnessPercent": 0,
+                  "endBrightnessEntityScale": "zeroToOneHundred",
+                  "autoCancelThreshold": 10,
+                  "shouldStopIfTheLampIsTurnedOffDuringTheFade": true,
+                  "stopEntity": "input_boolean.disable_turn_off_late",
+                  "shouldResetTheStopEntityToOffAtStart": true,
+                  "shouldInvertTheValueOfTheStopEntity": false,
+                  "minimumStepDelayInMilliseconds": 100,
+                  "shouldTryToUseNativeLampTransitionsToo": false,
+                  "isDebugMode": false,
+                  "targets": {
+                    "entity_id": [
+                      "light.hammscape"
+                    ]
+                  }
+                },
+                "enabled": false
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5JSKH6YYWRVT36ZF76A0DX2",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/3",
+          "run_id": "d8c9c74854dd67e8668c9168d30a52e2",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T05:30:00.286520+00:00",
+            "finish": "2025-09-20T05:30:00.762209+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1742786991496",
+          "trigger": "time"
+        }
+      }
+    ],
+    "automation.1710324303315": [
+      {
+        "extended_dict": {
+          "last_step": "action/2",
+          "run_id": "c752694e061689029f67c16532b615c3",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T09:00:00.110614+00:00",
+            "finish": "2025-09-20T09:00:01.137845+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1710324303315",
+          "trigger": "time",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T09:00:00.110698+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.lighting_turn_off_at_2am",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1710324303315",
+                      "last_triggered": "2025-09-14T09:00:00.515196+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Transition: Bedtime (2am)"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.674865+00:00",
+                    "last_reported": "2025-09-20T03:56:22.674865+00:00",
+                    "last_updated": "2025-09-20T03:56:22.674865+00:00",
+                    "context": {
+                      "id": "01K5JM838JGR1HMVWM8YXHHKTZ",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "time",
+                    "now": "2025-09-20T02:00:00.110057-07:00",
+                    "description": "time",
+                    "entity_id": null
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T09:00:00.112040+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5K5M1QEQT2378Q0VHQRV70J",
+                    "parent_id": null,
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "input_select",
+                    "service": "select_option",
+                    "service_data": {
+                      "option": "Off",
+                      "entity_id": [
+                        "input_select.lighting_mode"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "input_select.lighting_mode"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-09-20T09:00:00.117385+00:00",
+                "child_id": {
+                  "domain": "automation",
+                  "item_id": "1710323727833",
+                  "run_id": "e459307955e903752d44e7c7cd461e27"
+                },
+                "result": {
+                  "params": {
+                    "domain": "scene",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "scene.all_off"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-09-20T09:00:00.934041+00:00",
+                "result": {
+                  "params": {
+                    "domain": "light",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "label_id": [
+                        "turn_off_sleep"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1710324303315",
+            "alias": "Transition: Bedtime (2am)",
+            "description": "",
+            "triggers": [
+              {
+                "at": "02:00:00",
+                "trigger": "time"
+              }
+            ],
+            "conditions": [],
+            "actions": [
+              {
+                "target": {
+                  "entity_id": "input_select.lighting_mode"
+                },
+                "data": {
+                  "option": "Off"
+                },
+                "action": "input_select.select_option"
+              },
+              {
+                "metadata": {},
+                "target": {
+                  "entity_id": "scene.all_off"
+                },
+                "action": "scene.turn_on",
+                "data": {}
+              },
+              {
+                "action": "light.turn_off",
+                "metadata": {},
+                "data": {},
+                "target": {
+                  "label_id": "turn_off_sleep"
+                }
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5K5M1QEQT2378Q0VHQRV70J",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/2",
+          "run_id": "c752694e061689029f67c16532b615c3",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-09-20T09:00:00.110614+00:00",
+            "finish": "2025-09-20T09:00:01.137845+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1710324303315",
+          "trigger": "time"
+        }
+      }
+    ],
+    "automation.1710323727833": [
+      {
+        "extended_dict": {
+          "last_step": "action/1/entity_id/0",
+          "run_id": "e459307955e903752d44e7c7cd461e27",
+          "state": "stopped",
+          "script_execution": "aborted",
+          "timestamp": {
+            "start": "2025-09-20T09:00:00.125819+00:00",
+            "finish": "2025-09-20T09:00:00.913740+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1710323727833",
+          "trigger": "state of input_select.lighting_mode",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T09:00:00.125921+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.lighting_mode_off",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1710323727833",
+                      "last_triggered": "2025-09-14T09:00:00.596876+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "lighting mode: Off"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.673063+00:00",
+                    "last_reported": "2025-09-20T03:56:22.673063+00:00",
+                    "last_updated": "2025-09-20T03:56:22.673063+00:00",
+                    "context": {
+                      "id": "01K5JM838HPHB7RJ4FBC56QXFT",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": "lighting mode: Off",
+                    "platform": "state",
+                    "entity_id": "input_select.lighting_mode",
+                    "from_state": {
+                      "entity_id": "input_select.lighting_mode",
+                      "state": "Late",
+                      "attributes": {
+                        "options": [
+                          "Sunset",
+                          "Bright",
+                          "Off",
+                          "Evenink",
+                          "Late"
+                        ],
+                        "editable": true,
+                        "friendly_name": "lighting_mode"
+                      },
+                      "last_changed": "2025-09-20T05:30:00.290228+00:00",
+                      "last_reported": "2025-09-20T05:30:00.290228+00:00",
+                      "last_updated": "2025-09-20T05:30:00.290228+00:00",
+                      "context": {
+                        "id": "01K5JSKH6YYWRVT36ZF76A0DX2",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "input_select.lighting_mode",
+                      "state": "Off",
+                      "attributes": {
+                        "options": [
+                          "Sunset",
+                          "Bright",
+                          "Off",
+                          "Evenink",
+                          "Late"
+                        ],
+                        "editable": true,
+                        "friendly_name": "lighting_mode"
+                      },
+                      "last_changed": "2025-09-20T09:00:00.116334+00:00",
+                      "last_reported": "2025-09-20T09:00:00.116334+00:00",
+                      "last_updated": "2025-09-20T09:00:00.116334+00:00",
+                      "context": {
+                        "id": "01K5K5M1QEQT2378Q0VHQRV70J",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of input_select.lighting_mode"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T09:00:00.127496+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5K5M1QXKQ26TH351MXGSD0K",
+                    "parent_id": "01K5K5M1QEQT2378Q0VHQRV70J",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "params": {
+                    "domain": "scene",
+                    "service": "turn_on",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "scene.all_off"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-09-20T09:00:00.854544+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/1/entity_id/0": [
+              {
+                "path": "action/1/entity_id/0",
+                "timestamp": "2025-09-20T09:00:00.854873+00:00",
+                "error": "In 'state' condition: unknown entity binary_sensor.projector_ping"
+              }
+            ]
+          },
+          "config": {
+            "id": "1710323727833",
+            "alias": "lighting mode: Off",
+            "description": "",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": [
+                  "input_select.lighting_mode"
+                ],
+                "to": "Off",
+                "alias": "lighting mode: Off"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "metadata": {},
+                "target": {
+                  "entity_id": "scene.all_off"
+                },
+                "action": "scene.turn_on"
+              },
+              {
+                "condition": "state",
+                "entity_id": "binary_sensor.projector_ping",
+                "state": "on"
+              },
+              {
+                "data": {},
+                "action": "script.toggle_projector"
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5K5M1QXKQ26TH351MXGSD0K",
+            "parent_id": "01K5K5M1QEQT2378Q0VHQRV70J",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/1/entity_id/0",
+          "run_id": "e459307955e903752d44e7c7cd461e27",
+          "state": "stopped",
+          "script_execution": "aborted",
+          "timestamp": {
+            "start": "2025-09-20T09:00:00.125819+00:00",
+            "finish": "2025-09-20T09:00:00.913740+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1710323727833",
+          "trigger": "state of input_select.lighting_mode"
+        }
+      }
+    ],
+    "automation.1737204555543": [
+      {
+        "extended_dict": {
+          "last_step": "action/0",
+          "run_id": "a4ff5ffbdae076ebe6f537d2527a2270",
+          "state": "stopped",
+          "script_execution": "aborted",
+          "timestamp": {
+            "start": "2025-09-20T10:52:41.440637+00:00",
+            "finish": "2025-09-20T10:52:41.948729+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1737204555543",
+          "trigger": "state of event.liminal_dimmer_button_0",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-09-20T10:52:41.440714+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.double_tap_dimmer",
+                    "state": "on",
+                    "attributes": {
+                      "id": "1737204555543",
+                      "last_triggered": "2025-09-14T14:09:20.390501+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Double Tap Dimmer"
+                    },
+                    "last_changed": "2025-09-20T03:56:22.684231+00:00",
+                    "last_reported": "2025-09-20T03:56:22.684231+00:00",
+                    "last_updated": "2025-09-20T03:56:22.684231+00:00",
+                    "context": {
+                      "id": "01K5JM838W7GMCTRGK9PXQQ7DW",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "event.liminal_dimmer_button_0",
+                    "from_state": {
+                      "entity_id": "event.liminal_dimmer_button_0",
+                      "state": "2025-09-14T14:09:20.361+00:00",
+                      "attributes": {
+                        "event_types": [
+                          "SS",
+                          "L",
+                          "LS",
+                          "SL",
+                          "S",
+                          "SSS"
+                        ],
+                        "event_type": "S",
+                        "device_class": "button",
+                        "friendly_name": "Liminal Dimmer Button 0"
+                      },
+                      "last_changed": "2025-09-20T03:56:23.559414+00:00",
+                      "last_reported": "2025-09-20T03:56:23.559414+00:00",
+                      "last_updated": "2025-09-20T03:56:23.559414+00:00",
+                      "context": {
+                        "id": "01K5JM84476XY23XRVHFWH69QT",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "event.liminal_dimmer_button_0",
+                      "state": "2025-09-20T10:52:41.438+00:00",
+                      "attributes": {
+                        "event_types": [
+                          "SS",
+                          "L",
+                          "LS",
+                          "SL",
+                          "S",
+                          "SSS"
+                        ],
+                        "event_type": "S",
+                        "device_class": "button",
+                        "friendly_name": "Liminal Dimmer Button 0"
+                      },
+                      "last_changed": "2025-09-20T10:52:41.439046+00:00",
+                      "last_reported": "2025-09-20T10:52:41.439046+00:00",
+                      "last_updated": "2025-09-20T10:52:41.439046+00:00",
+                      "context": {
+                        "id": "01K5KC2CJZ7RV2XN9B98PN93RW",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of event.liminal_dimmer_button_0"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-09-20T10:52:41.441633+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01K5KC2CK0EBMCEFAZ844KVYXV",
+                    "parent_id": "01K5KC2CJZ7RV2XN9B98PN93RW",
+                    "user_id": null
+                  },
+                  "wait": {
+                    "remaining": 0.0,
+                    "completed": false,
+                    "trigger": null
+                  }
+                },
+                "error": "TimeoutError",
+                "result": {
+                  "wait": {
+                    "remaining": 0.0,
+                    "completed": false,
+                    "trigger": null
+                  },
+                  "timeout": true
+                }
+              }
+            ]
+          },
+          "config": {
+            "id": "1737204555543",
+            "alias": "Double Tap Dimmer",
+            "description": "",
+            "triggers": [
+              {
+                "trigger": "state",
+                "entity_id": [
+                  "event.liminal_dimmer_button_0"
+                ]
+              }
+            ],
+            "conditions": [],
+            "actions": [
+              {
+                "wait_for_trigger": [
+                  {
+                    "trigger": "state",
+                    "entity_id": [
+                      "event.liminal_dimmer_button_0"
+                    ]
+                  }
+                ],
+                "timeout": {
+                  "hours": 0,
+                  "minutes": 0,
+                  "seconds": 0.5
+                },
+                "continue_on_timeout": false
+              },
+              {
+                "type": "turn_on",
+                "device_id": "76e04c15cf4e7bb980732aaf004b3500",
+                "entity_id": "c63544f0c83e54597fd5c49af59700da",
+                "domain": "light",
+                "brightness_pct": 100
+              }
+            ],
+            "mode": "single"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01K5KC2CK0EBMCEFAZ844KVYXV",
+            "parent_id": "01K5KC2CJZ7RV2XN9B98PN93RW",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0",
+          "run_id": "a4ff5ffbdae076ebe6f537d2527a2270",
+          "state": "stopped",
+          "script_execution": "aborted",
+          "timestamp": {
+            "start": "2025-09-20T10:52:41.440637+00:00",
+            "finish": "2025-09-20T10:52:41.948729+00:00"
+          },
+          "domain": "automation",
+          "item_id": "1737204555543",
+          "trigger": "state of event.liminal_dimmer_button_0"
+        }
+      }
+    ]
+  }
+}

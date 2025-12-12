@@ -1,0 +1,30 @@
+esphome:
+  name: clinthat
+  friendly_name: ClintHat
+
+esp8266:
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "YggZoa3fQA0Wa0x7FCm82IWurzUkTKujBa0qPA343xU="
+
+ota:
+  - platform: esphome
+    password: "4d407c750d06fc8f1e01cdc0b9a110ad"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Clinthat Fallback Hotspot"
+    password: "9DAAtAkV0bpW"
+
+captive_portal:
+    

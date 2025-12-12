@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.yaml": "home-assistant"
+    },
+    "files.exclude": {
+        "**/.git": false,
+        "**/.hg": false,
+        "**/.svn": false
+    },
+    "search.useIgnoreFiles": false
+}

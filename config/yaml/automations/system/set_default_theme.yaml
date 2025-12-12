@@ -1,0 +1,15 @@
+id: '1737539346394'
+alias: Set default theme on start
+description: ''
+triggers:
+- event: start
+  trigger: homeassistant
+actions:
+- data:
+    name: jumper-dark-mode-blue-red
+    mode: dark
+  action: frontend.set_theme
+- data:
+    mode: dark
+    name: jumper-dark-mode-blue-red
+  action: frontend.set_theme

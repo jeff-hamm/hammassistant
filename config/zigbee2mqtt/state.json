@@ -1,0 +1,84 @@
+{
+    "1": {
+        "state": "ON",
+        "brightness": 2,
+        "color_mode": "xy",
+        "color": {
+            "x": 0.164,
+            "y": 0.196,
+            "hue": 221,
+            "saturation": 94,
+            "h": 221,
+            "s": 94
+        },
+        "color_temp": 153
+    },
+    "2": {
+        "state": "ON",
+        "brightness": 43,
+        "color_mode": "color_temp",
+        "color": {
+            "x": 0.5267,
+            "y": 0.4133,
+            "hue": 25,
+            "saturation": 95,
+            "h": 25,
+            "s": 95
+        },
+        "color_temp": 500
+    },
+    "0xa4c1380cf616e594": {
+        "temperature": 24.3,
+        "battery": 22,
+        "battery_state": "medium",
+        "temperature_unit": "fahrenheit",
+        "linkquality": 255,
+        "soil_moisture": 51
+    },
+    "0x28dba7fffe829ea9": {
+        "state": "OFF",
+        "power_on_behavior": "off",
+        "update": {
+            "state": "idle",
+            "installed_version": 4110,
+            "latest_version": 4110
+        },
+        "linkquality": 188
+    },
+    "0x0cae5ffffeb646a6": {
+        "state": "ON",
+        "power_on_behavior": "previous",
+        "update": {
+            "state": "idle",
+            "installed_version": 4110,
+            "latest_version": 4110
+        },
+        "linkquality": 136
+    },
+    "0x28dba7fffe829183": {
+        "state": "ON",
+        "power_on_behavior": "off",
+        "update": {
+            "state": "idle",
+            "installed_version": 4110,
+            "latest_version": 4110
+        },
+        "linkquality": 188
+    },
+    "0xa4c1383bcd4c2065": {
+        "temperature": 36.9,
+        "battery": 13,
+        "battery_state": "low",
+        "temperature_unit": "fahrenheit",
+        "soil_moisture": 9,
+        "linkquality": 152
+    },
+    "0xa4c1388cd45b293d": {
+        "temperature": 21.5,
+        "battery": 35,
+        "battery_state": "medium",
+        "temperature_unit": "celsius",
+        "soil_moisture": 100,
+        "linkquality": 84
+    }
+}

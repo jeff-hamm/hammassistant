@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01JCD9J0CY5WGF3JG4MAF3N3HT",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "spamheart-4",
+      "friendly_name": "Spamheart Vein",
+      "mac_address": "C8:C9:A3:33:C8:DB",
+      "compilation_time": "Jan  8 2025, 20:17:43",
+      "model": "d1_mini",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2024.12.2",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 80,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": "",
+      "bluetooth_mac_address": ""
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "update": [],
+    "light": [
+      {
+        "object_id": "spamheart_vein",
+        "key": 904011047,
+        "name": "Spamheart Vein",
+        "unique_id": "spamheart-4lightspamheart_vein",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "supported_color_modes": [
+          35
+        ],
+        "min_mireds": 0.0,
+        "max_mireds": 0.0,
+        "effects": [
+          "None",
+          "Pulse",
+          "Color Wipe",
+          "Twinkle",
+          "Random Twinkle",
+          "Fireworks",
+          "Addressable Flicker"
+        ],
+        "legacy_supports_brightness": true,
+        "legacy_supports_rgb": true,
+        "legacy_supports_white_value": false,
+        "legacy_supports_color_temperature": false
+      }
+    ]
+  }
+}

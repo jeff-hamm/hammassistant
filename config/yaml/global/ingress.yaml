@@ -1,0 +1,29 @@
+serilog:
+  title: Logs
+  require_admin: true
+  icon: mdi:file-document
+  url: http://192.168.1.179:8341/
+
+proxmox:
+  require_admin: true
+  title: Proxmox
+  work_mode: iframe
+  icon: mdi:server
+  url: https://192.168.1.201:8006
+
+fileserver:
+  require_admin: true
+  title: FileServer
+  icon: mdi:server
+  url: http://192.168.1.189
+
+jumpcloud:
+  require_admin: true
+  title: JumpCloud
+  icon: mdi:cloud
+  url: http://192.168.1.186
+  rewrite:
+    - mode: header
+      name: "Location"
+      match: ^(\w+://[^/]+)?/(.*)$
+      replace: \1/api/ingress/jumpcloud/\2

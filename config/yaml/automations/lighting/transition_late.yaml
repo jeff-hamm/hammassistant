@@ -1,0 +1,49 @@
+id: '1742786991496'
+alias: 'Transition: Late (11pm)'
+description: ''
+triggers:
+- at: '22:30:00'
+  trigger: time
+conditions: []
+actions:
+- target:
+    entity_id: input_select.lighting_mode
+  data:
+    option: Late
+  action: input_select.select_option
+- metadata: {}
+  action: scene.turn_on
+  data: {}
+  target:
+    entity_id: scene.night
+- action: light.turn_off
+  metadata: {}
+  data:
+    transition: 120
+  target:
+    label_id: turn_off_late
+  enabled: true
+- action: script.ashley_s_light_fader
+  metadata: {}
+  data:
+    lampBrightnessScale: zeroToTwoFiftyFive
+    transitionTime:
+      hours: 0
+      minutes: 30
+      seconds: 0
+    easingTypeInput: auto
+    endBrightnessPercent: 0
+    endBrightnessEntityScale: zeroToOneHundred
+    autoCancelThreshold: 10
+    shouldStopIfTheLampIsTurnedOffDuringTheFade: true
+    stopEntity: input_boolean.disable_turn_off_late
+    shouldResetTheStopEntityToOffAtStart: true
+    shouldInvertTheValueOfTheStopEntity: false
+    minimumStepDelayInMilliseconds: 100
+    shouldTryToUseNativeLampTransitionsToo: false
+    isDebugMode: false
+    targets:
+      entity_id:
+      - light.hammscape
+  enabled: false
+mode: single

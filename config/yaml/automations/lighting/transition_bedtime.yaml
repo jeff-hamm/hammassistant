@@ -1,0 +1,24 @@
+id: '1710324303315'
+alias: 'Transition: Bedtime (2am)'
+description: ''
+triggers:
+- at: 02:00:00
+  trigger: time
+conditions: []
+actions:
+- target:
+    entity_id: input_select.lighting_mode
+  data:
+    option: 'Off'
+  action: input_select.select_option
+- metadata: {}
+  target:
+    entity_id: scene.all_off
+  action: scene.turn_on
+  data: {}
+- action: light.turn_off
+  metadata: {}
+  data: {}
+  target:
+    label_id: turn_off_sleep
+mode: single

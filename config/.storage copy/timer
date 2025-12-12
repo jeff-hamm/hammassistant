@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "timer",
+  "data": {
+    "items": [
+      {
+        "id": "iceblast_timer",
+        "name": "Iceblast Timer",
+        "duration": "0:15:00",
+        "icon": "mdi:snowflake",
+        "restore": false
+      }
+    ]
+  }
+}

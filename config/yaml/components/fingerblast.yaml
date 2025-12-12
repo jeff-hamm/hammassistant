@@ -1,0 +1,134 @@
+input_boolean:
+  finger_loop:
+    name: Repeat Fingerblaster
+
+    icon: mdi:repeat
+    initial: off
+
+input_datetime:
+  fingerblast_time:
+    name: Fingerblast Time
+
+    has_date: false
+    has_time: true
+    initial: '00:15:00'
+
+
+timer:
+  fingerblast_timer:
+
+    name: Fingerblast Timer
+    icon: mdi:snowflake
+ 
+script:
+  fingerblast_handler:
+    alias: "Fingerblaster Timer Fix"
+    icon: mdi:hand-pointing-right
+
+    mode: single
+    sequence:
+      - variables:
+          last_pressed: >
+            {{ (now() - states('button.fingerblaster') | as_datetime).total_seconds() | int }}
+          is_old: >
+            {{ last_pressed > (states('input_datetime.fingerblast_time') | as_timedelta).total_seconds() }}
+      - if:
+          - condition: state
+            entity_id: timer.fingerblast_timer
+            state: active
+        then:
+          - service: timer.pause
+            target:
+              entity_id: timer.fingerblast_timer
+          - if:
+              - condition: template
+                value_template: >
+                  {{ last_pressed + (state_attr('timer.fingerblast_timer', 'remaining') | as_timedelta).total_seconds() > (states('input_datetime.fingerblast_time') | as_timedelta).total_seconds() }}
+            then:
+              - service: timer.cancel
+                target:
+                  entity_id: timer.fingerblast_timer
+            else:
+              - service: timer.change
+                data:
+                  duration: "{{ last_pressed }}"
+                target:
+                  entity_id: timer.fingerblast_timers
+      - if:
+        - condition: not
+          conditions:
+            - condition: state
+              entity_id: timer.fingerblast_timer
+              state: active
+        then:
+          - service: timer.start
+            target:
+              entity_id: timer.fingerblast_timer
+          - service: timer.change
+            data:
+              duration: "{{ last_pressed * -1 }}"
+            target:
+              entity_id: timer.fingerblast_timer
+
+automation:
+  - alias: "Fingerblaster Timer"
+
+    description: ""
+    mode: single
+    triggers:
+      - trigger: state
+        entity_id:
+          - button.fingerblaster
+    conditions: []
+    variables:
+      timeout_duration: 86400
+      seconds_since_last_press: >
+        {{ ((trigger.to_state.state | as_datetime) - (trigger.from_state.state | as_datetime)).total_seconds() | int }}
+      is_new_loop: >
+        {{ seconds_since_last_press > timeout_duration or (not is_state('timer.fingerblast_timer', 'active') and not is_state('timer.fingerblast_timer', 'paused')) }}
+      is_fingerblasting: >
+        {{ is_state('timer.fingerblast_timer', 'active') }}
+    actions:
+    - if:
+        - condition: template
+          value_template: "{{ is_new_loop }}"
+      then:
+        - service: timer.start
+          metadata: {}
+          data:
+            duration: "{{ states('input_datetime.fingerblast_time') }}" 
+          target:
+            entity_id: timer.fingerblast_timer
+      else:
+        - if:
+            - condition: template
+              value_template: "{{ is_fingerblasting }}"
+          then:
+            - service: timer.pause
+              target:
+                entity_id: timer.fingerblast_timer
+          else:
+            - service: timer.start
+              target:
+                entity_id: timer.fingerblast_timer
+
+  - alias: "Fingerblaster Auto-loop"
+
+    description: "Auto-loop fingerblaster when timer finishes"
+    mode: single
+    triggers:
+      - trigger: event
+        event_type: timer.finished
+        event_data:
+          entity_id: timer.fingerblast_timer
+    conditions:
+      - condition: state
+        entity_id: input_boolean.finger_loop
+        state: "on"
+    actions:
+      - delay:
+          seconds: 5
+      - service: button.press
+        target:
+          entity_id: button.fingerblaster
+

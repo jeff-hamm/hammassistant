@@ -1,0 +1,1574 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.dashboard_entrypanel",
+  "data": {
+    "config": {
+      "button_card_templates": {
+        "switch_slider": {
+          "styles": {
+            "card": [
+              {
+                "box-shadow": "none;"
+              },
+              {
+                "overflow": "unset"
+              }
+            ],
+            "name": [
+              {
+                "color": "white"
+              }
+            ],
+            "label": [
+              {
+                "color": "yellow"
+              }
+            ],
+            "custom_fields": {
+              "slider": [
+                {
+                  "filter": "opacity(80%)"
+                },
+                {
+                  "overflow": "unset"
+                },
+                {
+                  "color": "rgb(3, 169, 244)"
+                }
+              ]
+            },
+            "grid": [
+              {
+                "grid-template-areas": "\"n\" \"i\" \"l\" \"slider\""
+              },
+              {
+                "grid-template-columns": "1fr"
+              },
+              {
+                "grid-template-rows": "min-content fr min-content min-content"
+              }
+            ]
+          },
+          "size": "60%",
+          "state": [
+            {
+              "value": "off"
+            },
+            {
+              "value": "on"
+            },
+            {
+              "value": "unavailable"
+            }
+          ],
+          "hold_action": {
+            "action": "more-info"
+          },
+          "double_tap_action": {
+            "action": "more-info"
+          }
+        },
+        "template_switch_slider": {
+          "template": "switch_slider"
+        },
+        "fan_slider": {
+          "type": "tile",
+          "features": [
+            {
+              "type": "fan-speed"
+            }
+          ],
+          "styles": {
+            "card": [
+              {
+                "box-shadow": "none;"
+              },
+              {
+                "overflow": "unset"
+              }
+            ],
+            "name": [
+              {
+                "color": "white"
+              }
+            ],
+            "label": [
+              {
+                "color": "yellow"
+              }
+            ],
+            "custom_fields": {
+              "slider": [
+                {
+                  "filter": "opacity(80%)"
+                },
+                {
+                  "overflow": "unset"
+                },
+                {
+                  "color": "rgb(3, 169, 244)"
+                }
+              ]
+            },
+            "grid": [
+              {
+                "grid-template-areas": "\"n\" \"i\" \"l\" \"speed\" \"slider\""
+              },
+              {
+                "grid-template-columns": "1fr"
+              },
+              {
+                "grid-template-rows": "min-content fr fr min-content min-content"
+              }
+            ]
+          },
+          "size": "60%",
+          "hold_action": {
+            "action": "more-info"
+          },
+          "double_tap_action": {
+            "action": "more-info"
+          }
+        },
+        "standard": {
+          "size": "56%",
+          "styles": {
+            "card": [
+              {
+                "align-items": "flex-end"
+              }
+            ],
+            "label": [
+              {
+                "align-items": "flex-end"
+              }
+            ],
+            "icon": [
+              {
+                "color": "var(--state-icon-color)"
+              }
+            ]
+          },
+          "tap_action": {
+            "action": "toggle"
+          },
+          "hold_action": {
+            "action": "more-info"
+          },
+          "double_tap_action": {
+            "action": "more-info"
+          }
+        },
+        "toggle_small": {
+          "template": "toggle_button",
+          "size": "34%"
+        },
+        "toggle_button": {
+          "size": "80%",
+          "styles": {
+            "card": [
+              {
+                "box-shadow": "none;"
+              },
+              {
+                "overflow": "unset"
+              }
+            ],
+            "name": [
+              {
+                "color": "white"
+              }
+            ],
+            "label": [
+              {
+                "color": "yellow"
+              }
+            ]
+          },
+          "tap_action": {
+            "action": "toggle"
+          },
+          "hold_action": {
+            "action": "more-info"
+          },
+          "double_tap_action": {
+            "action": "more-info"
+          }
+        },
+        "glance_state_button": {
+          "template": "standard",
+          "label": "[[[ \n  if (entity.state && entity.state != \"unknown\")\n    return entity.state + entity.attributes.unit_of_measurement\n  else\n    return \"Unknown\"\n]]]\n",
+          "show_label": true
+        },
+        "toggle_select": {
+          "template": "standard",
+          "tap_action": {
+            "action": "call-service",
+            "service": "script.turn_on",
+            "service_data": {
+              "entity_id": "script.toggle_input",
+              "variables": {
+                "entity_id": "[[[ return entity.entity_id ]]]",
+                "option_name": "[[[ return variables.option_name ]]]"
+              }
+            }
+          },
+          "name": "[[[ return variables.option_name ]]]",
+          "state": [
+            {
+              "value": "[[[ return variables.option_name ]]]",
+              "styles": {
+                "card": [
+                  {
+                    "color": "var(--state-active-color)"
+                  }
+                ],
+                "icon": [
+                  {
+                    "color": "var(--state-active-color)"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "decluttering_templates": {
+        "light_info_toggle": {
+          "card": {
+            "type": "custom:more-info-card-toggle",
+            "entity": "[[entity]]",
+            "title": "[[title]]",
+            "card_mod": {
+              "style": {
+                ".": "state-card-content, h1.card-header {\n  display:none;\n}\n",
+                "more-info-light$": "ha-paper-dropdown-menu, ha-attributes,ha-labeled-slider[value=\"0\"],hr {\n  display:none;\n}\n.content > * {\n  margin: 10px 0px !important;\n}\n",
+                "more-info-light$ ha-labeled-slider": {
+                  "$": ".title {\n  display: none;\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "light_info": {
+          "card": {
+            "type": "custom:more-info-card",
+            "entity": "[[entity]]",
+            "title": "[[title]]",
+            "card_mod": {
+              "style": {
+                ".": "state-card-content, h1.card-header {\n  display:none;\n}\n",
+                "more-info-light$": "ha-button-toggle-group, ha-paper-dropdown-menu, ha-attributes {\n  display:none;\n}\nha-labeled-slider[value=\"0\"] {\n  display: none;\n}\nhr {\n  display: none;\n}\n.content > * {\n  margin: 10px 0px !important;\n}\n",
+                "more-info-light$ ha-labeled-slider": {
+                  "$": ".title {\n  display: none;\n}\n"
+                }
+              }
+            }
+          }
+        },
+        "color_temp_slider": {
+          "card": {
+            "type": "custom:slider-button-card",
+            "entity": "[[entity]]",
+            "slider": {
+              "direction": "left-right",
+              "background": "solid",
+              "use_state_color": true,
+              "use_percentage_bg_opacity": true,
+              "show_track": true,
+              "toggle_on_click": false,
+              "force_square": false,
+              "attribute": "color_temp"
+            },
+            "show_name": true,
+            "show_state": false,
+            "compact": false,
+            "icon": {
+              "show": true,
+              "use_state_color": true,
+              "tap_action": {
+                "action": "more-info"
+              },
+              "icon": ""
+            },
+            "action_button": {
+              "mode": "toggle",
+              "icon": "mdi:power",
+              "show": true,
+              "show_spinner": true,
+              "tap_action": {
+                "action": "toggle"
+              }
+            }
+          }
+        }
+      },
+      "views": [
+        {
+          "title": "Home",
+          "path": "index",
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:digital-clock",
+                  "secondLineFormat": ""
+                },
+                {
+                  "show_current": true,
+                  "show_forecast": false,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_the_hammlet",
+                  "forecast_type": "hourly"
+                },
+                {
+                  "type": "custom:mini-media-player",
+                  "entity": "media_player.hammlet_cast",
+                  "group": false,
+                  "volume_stateless": false,
+                  "sound_mode": "full",
+                  "info": "short",
+                  "artwork": "full-cover",
+                  "toggle_power": true,
+                  "replace_mute": "next",
+                  "layout_options": {
+                    "grid_columns": "full"
+                  }
+                },
+                {
+                  "type": "custom:button-card",
+                  "entity": "switch.speakers",
+                  "template": "toggle_small",
+                  "layout_options": {
+                    "grid_columns": 2,
+                    "grid_rows": 2
+                  }
+                },
+                {
+                  "type": "custom:button-card",
+                  "entity": "media_player.hammlet_oled_tv",
+                  "template": "toggle_small",
+                  "layout_options": {
+                    "grid_columns": 2,
+                    "grid_rows": 2
+                  }
+                },
+                {
+                  "type": "custom:config-template-card",
+                  "entities": [
+                    "input_select.sound_mode"
+                  ],
+                  "card": {
+                    "type": "custom:collapsable-cards",
+                    "title": "${'Sound Mode\\:\\ ' + states['input_select.sound_mode'].state}",
+                    "cards": [
+                      {
+                        "type": "custom:select-list-card",
+                        "entity": "input_select.sound_mode",
+                        "size": "10%",
+                        "show_toggle": true,
+                        "scroll_to_selected": true
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "custom:collapsable-cards",
+                  "title": "Youtube Music",
+                  "defaultOpen": "contain-toggled",
+                  "cards": [
+                    {
+                      "type": "custom:polr-ytube-playing-card",
+                      "entity_id": "media_player.ytube_music_player"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mini-media-player",
+                      "entity": "media_player.hammlet_oled_tv",
+                      "group": true,
+                      "volume_stateless": true,
+                      "sound_mode": "icon",
+                      "info": "short",
+                      "artwork": "none",
+                      "source": "icon",
+                      "toggle_power": true
+                    }
+                  ],
+                  "layout_options": {
+                    "grid_columns": 1,
+                    "grid_rows": "auto"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "fan.living_fan",
+                      "template": "fan_slider",
+                      "custom_fields": {
+                        "speed": {
+                          "card": {
+                            "type": "custom:fan-percent-button-row",
+                            "entity": "fan.living_fan",
+                            "name": " ",
+                            "icon": "void"
+                          }
+                        },
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.living_fan_2"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.living",
+                      "template": "fan_slider",
+                      "size": "45%",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.living"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.tentacle_lamp",
+                      "icon": "mdi:jellyfish-outline",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.tentacle_lamp"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.living_fan",
+                      "icon": "mdi:ceiling-fan-light",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.living_fan"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.stripper_light",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "input_number.stripper_light_brightness"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.plant_lamp",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.plant_lamp"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.hammlet_extra",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.hammlet_extra"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.succulent_lamp",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.succulent_lamp"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "mdi:filmstrip",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Bright"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "scene.all_off",
+                      "template": "standard",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "scene.turn_on",
+                        "service_data": {
+                          "entity_id": "scene.all_off"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "mdi:weather-sunset",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Sunset"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Evenink",
+                      "icon": "mdi:weather-night",
+                      "entity": "input_select.lighting_mode",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Evenink"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.pantry",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.hammlet_pantry"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.kitchen_light",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.kitchen_light"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.hammlet_bathroom",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.hammlet_bathroom"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "light.kitchen_light",
+                      "custom_fields": {
+                        "slider": {
+                          "card": {
+                            "hide_state": true,
+                            "type": "custom:slider-entity-row",
+                            "full_row": true,
+                            "entity": "light.kitchen_light"
+                          }
+                        }
+                      },
+                      "template": "template_switch_slider"
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:mini-media-player",
+                  "entity": "media_player.hammlet_cast_remote",
+                  "artwork": "cover-fit",
+                  "group": false,
+                  "replace_mute": "next"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:collapsable-cards",
+                  "title": "To-Do List",
+                  "cards": [
+                    {
+                      "type": "todo-list",
+                      "entity": "todo.hammlet_things_jeff_hamm",
+                      "card_mod": {
+                        "style": {
+                          "ha-textfield": {
+                            ".": "ha-card.type-todo-list {\n  overflow: hidden\n}\nha-card.type-todo-list div.header {\n  display: none;\n}\nha-check-list-item.editRow.completed {\n  display: none;\n}\n:host {\n  --mdc-checkbox-ripple-size: 33px;\n}\nha-check-list-item {\n  min-height: 28px !important;\n}\n    \n"
+                          }
+                        }
+                      }
+                    }
+                  ],
+                  "layout_options": {
+                    "grid_columns": 4,
+                    "grid_rows": 8
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Remote Controls",
+          "path": "remote-controls",
+          "type": "sections",
+          "max_columns": 2,
+          "dense_section_placement": true,
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:lg-remote-control",
+                  "entity": "media_player.hammlet_oled_tv",
+                  "mac": "64:cb:e9:9b:73:24",
+                  "name": "TV"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:firemote-card",
+                  "entity": "media_player.hammlet_cast",
+                  "device_family": "chromecast",
+                  "device_type": "chromecast-4k",
+                  "compatibility_mode": "default",
+                  "android_tv_remote_entity": "remote.hammlet_cast",
+                  "defaultRemoteStyle_override": "",
+                  "visible_name_text": "Hammcast"
+                }
+              ]
+            }
+          ],
+          "cards": []
+        },
+        {
+          "title": "Home2",
+          "path": "home",
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:digital-clock",
+                  "secondLineFormat": ""
+                },
+                {
+                  "show_current": true,
+                  "show_forecast": false,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_the_hammlet",
+                  "forecast_type": "hourly"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "mdi:weather-sunset",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Sunset"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Evenink",
+                      "icon": "mdi:weather-night",
+                      "entity": "input_select.lighting_mode",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Evenink"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "hass:brightness-7",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Bright"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Night",
+                      "icon": "mdi:weather-night",
+                      "entity": "input_select.lighting_mode",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Night"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "mdi:filmstrip",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Movie"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "scene.all_off",
+                      "template": "standard",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "scene.turn_on",
+                        "service_data": {
+                          "entity_id": "scene.all_off"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.tentacle_lamp",
+                          "icon": "mdi:jellyfish-outline",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.tentacle_lamp"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.hammlet_living_fan_light",
+                          "icon": "mdi:ceiling-fan-light",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.hammlet_living_fan_light"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.stripper_light",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "input_number.stripper_light_brightness"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.plant_lamp",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.plant_lamp"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "binary_sensor.projector_ping",
+                          "icon": "mdi:projector",
+                          "name": "Projector",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.toggle_projector"
+                          },
+                          "hold_action": {
+                            "action": "more-info"
+                          },
+                          "double_tap_action": {
+                            "action": "more-info"
+                          }
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "switch.speakers",
+                          "size": "40%",
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "media-control",
+                      "entity": "media_player.hammlet_cast"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.hammlet_bathroom",
+                          "icon": "mdi:ceiling-light",
+                          "name": "Bathroom",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.hammlet_bathroom"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.bedroom_fan_light",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.bedroom_fan_light"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.pantry_ceiling",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.pantry_ceiling"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.kitchen_ceiling",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.kitchen_ceiling"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "More",
+          "path": "more",
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "iframe",
+                  "url": "https://manager.filimin.com/products/390145/edit",
+                  "aspect_ratio": "50%",
+                  "title": "Mom Lamp"
+                },
+                {
+                  "type": "tile",
+                  "entity": "todo.honk_eclipse_jeff_hamm"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                },
+                {
+                  "type": "tile",
+                  "entity": "light.default_light"
+                },
+                {
+                  "type": "tile",
+                  "entity": "select.default_light_color_power_on_behavior"
+                },
+                {
+                  "type": "tile",
+                  "entity": "switch.default_light_do_not_disturb"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "LEDS",
+          "path": "leds",
+          "cards": [
+            {
+              "shorten_cards": true,
+              "consolidate_entities": false,
+              "child_card": false,
+              "hide_header": false,
+              "show_header_icon": true,
+              "header": "",
+              "color_wheel": true,
+              "persist_features": true,
+              "brightness": true,
+              "color_temp": true,
+              "white_value": true,
+              "color_picker": true,
+              "speed": true,
+              "intensity": true,
+              "force_features": false,
+              "show_slider_percent": true,
+              "full_width_sliders": true,
+              "brightness_icon": "weather-sunny",
+              "white_icon": "file-word-box",
+              "temperature_icon": "thermometer",
+              "speed_icon": "speedometer",
+              "intensity_icon": "transit-connection-horizontal",
+              "type": "custom:light-entity-card",
+              "entity": "light.hammlights_1_hammlights_1",
+              "effects_list": true
+            },
+            {
+              "shorten_cards": true,
+              "consolidate_entities": false,
+              "child_card": false,
+              "hide_header": false,
+              "show_header_icon": true,
+              "header": "",
+              "color_wheel": true,
+              "persist_features": true,
+              "brightness": true,
+              "color_temp": true,
+              "white_value": true,
+              "color_picker": true,
+              "speed": true,
+              "intensity": true,
+              "force_features": false,
+              "show_slider_percent": true,
+              "full_width_sliders": true,
+              "brightness_icon": "weather-sunny",
+              "white_icon": "file-word-box",
+              "temperature_icon": "thermometer",
+              "speed_icon": "speedometer",
+              "intensity_icon": "transit-connection-horizontal",
+              "type": "custom:light-entity-card",
+              "entity": "light.hammlights_2_hammlights_2",
+              "effects_list": true
+            },
+            {
+              "shorten_cards": true,
+              "consolidate_entities": false,
+              "child_card": false,
+              "hide_header": false,
+              "show_header_icon": false,
+              "header": "",
+              "color_wheel": true,
+              "persist_features": true,
+              "brightness": true,
+              "color_temp": true,
+              "white_value": true,
+              "color_picker": true,
+              "speed": true,
+              "intensity": true,
+              "force_features": false,
+              "show_slider_percent": true,
+              "full_width_sliders": true,
+              "brightness_icon": "weather-sunny",
+              "white_icon": "file-word-box",
+              "temperature_icon": "thermometer",
+              "speed_icon": "speedometer",
+              "intensity_icon": "transit-connection-horizontal",
+              "type": "custom:light-entity-card",
+              "entity": "light.hammlights_hammlights",
+              "effects_list": true
+            }
+          ]
+        },
+        {
+          "title": "Misc",
+          "path": "misc",
+          "badges": [],
+          "cards": [
+            {
+              "type": "entities",
+              "entities": [
+                "remote.hammlet_tv",
+                "remote.ir_blaster"
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "switch.hammet_bt_proxy_ble_gateway_discovery"
+              ]
+            },
+            {
+              "type": "light",
+              "entity": "light.living"
+            },
+            {
+              "type": "entities",
+              "entities": [
+                "light.demoled1_esp8266_demo_led_1"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "sections",
+          "title": "Test",
+          "path": "test",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "New section"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Test2",
+          "path": "test2",
+          "type": "custom:vertical-layout",
+          "cards": [
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "custom:digital-clock",
+                  "secondLineFormat": ""
+                },
+                {
+                  "show_current": true,
+                  "show_forecast": false,
+                  "type": "weather-forecast",
+                  "entity": "weather.forecast_the_hammlet",
+                  "forecast_type": "hourly"
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "mdi:weather-sunset",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Sunset"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Evenink",
+                      "icon": "mdi:weather-night",
+                      "entity": "input_select.lighting_mode",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Evenink"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "hass:brightness-7",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Bright"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "name": "Night",
+                      "icon": "mdi:weather-night",
+                      "entity": "input_select.lighting_mode",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Night"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "horizontal-stack",
+                  "cards": [
+                    {
+                      "type": "custom:button-card",
+                      "entity": "input_select.lighting_mode",
+                      "icon": "mdi:filmstrip",
+                      "template": "toggle_select",
+                      "variables": {
+                        "option_name": "Movie"
+                      }
+                    },
+                    {
+                      "type": "custom:button-card",
+                      "entity": "scene.all_off",
+                      "template": "standard",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "scene.turn_on",
+                        "service_data": {
+                          "entity_id": "scene.all_off"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.tentacle_lamp",
+                          "icon": "mdi:jellyfish-outline",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.tentacle_lamp"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.hammlet_living_fan_light",
+                          "icon": "mdi:ceiling-fan-light",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.hammlet_living_fan_light"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.stripper_light",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.stripper_light"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.plant_lamp",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.plant_lamp"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "binary_sensor.projector_ping",
+                          "icon": "mdi:projector",
+                          "name": "Projector",
+                          "size": "40%",
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "script.toggle_projector"
+                          },
+                          "hold_action": {
+                            "action": "more-info"
+                          },
+                          "double_tap_action": {
+                            "action": "more-info"
+                          }
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "switch.speakers",
+                          "size": "40%",
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "media-control",
+                      "entity": "media_player.hammlet_tv_2"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "vertical-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.hammlet_bathroom",
+                          "icon": "mdi:ceiling-light",
+                          "name": "Bathroom",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.hammlet_bathroom"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.bedroom_fan_light",
+                          "name": "Bedroom",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.bedroom_fan_light"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "horizontal-stack",
+                      "cards": [
+                        {
+                          "type": "custom:button-card",
+                          "entity": "light.pantry_ceiling",
+                          "custom_fields": {
+                            "slider": {
+                              "card": {
+                                "hide_state": true,
+                                "type": "custom:slider-entity-row",
+                                "full_row": true,
+                                "entity": "light.pantry_ceiling"
+                              }
+                            }
+                          },
+                          "template": "template_switch_slider"
+                        },
+                        {
+                          "type": "custom:button-card",
+                          "icon": "mdi:void",
+                          "size": "55%",
+                          "template": "template_switch_slider"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Notes",
+          "path": "notes2",
+          "type": "sections",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "markdown",
+                  "content": "Use https://pvvx.github.io/ATC_MiThermometer/TelinkMiFlasher.html with #enable-web-bluetooth-new-permissions-backend in chrome://flags to find mac\n\nIf Connect & Activate work, just use the generated key. \n\nIf not, Use python .\\get_beacon_key.py \"A4:C1:38:92:9E:2D\" 950\nfrom https://github.com/rexbut/mikettle/blob/master/get_beacon_key.py to get v2/v3 encryption key\n\nUse xiaomi ble integration with 24 digit key plus 'ffffffff' to pair",
+                  "title": "Yeelight BLE Notes"
+                },
+                {
+                  "type": "markdown",
+                  "content": "custom modes are stored at  /etc/beocreate/beo-listening-modes\ncurrent mode is listed at /etc/beocreate/beosonic.json",
+                  "title": "Beocreate notes"
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": []
+            }
+          ],
+          "cards": []
+        },
+        {
+          "type": "panel",
+          "path": "",
+          "theme": "default-theme",
+          "subview": true,
+          "cards": [
+            {
+              "alert_classes": [],
+              "sensor_classes": [
+                "temperature",
+                "humidity",
+                "illuminance"
+              ],
+              "features_position": "bottom",
+              "display_type": "picture",
+              "type": "area",
+              "area": "living_room",
+              "color": "",
+              "features": [
+                {
+                  "type": "area-controls",
+                  "controls": [
+                    "light"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

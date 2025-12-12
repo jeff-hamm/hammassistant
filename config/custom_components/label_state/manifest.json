@@ -1,0 +1,14 @@
+{
+  "domain": "label_state",
+  "name": "Label State",
+  "codeowners": [
+    "@andrew-codechimp"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/andrew-codechimp/HA-Label-State",
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/andrew-codechimp/HA-Label-State/issues",
+  "requirements": [],
+  "version": "1.2.0"
+}

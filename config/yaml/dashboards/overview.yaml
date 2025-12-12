@@ -1,0 +1,1400 @@
+background: var(--background-image)
+card_mod:
+  style: |
+    .bubble-icon-container {
+      transform: scale(5.2);
+    }
+decluttering_templates:
+  bubble_slider:
+    card:
+      type: custom:bubble-card
+      card_type: button
+      entity: '[[entity]]'
+      button_type: slider
+      grid_options:
+        columns: 6
+        rows: 2
+      card_layout: large
+      tap_action:
+        action: toggle
+      double_tap_action:
+        action: more-info
+      hold_action:
+        action: more-info
+      styles: |-
+        .bubble-button-card {
+          --mdc-icon-size: 60px !important;
+          grid-template-columns: calc(var(--mdc-icon-size)+8) 1fr auto auto !important;
+        }
+        .bubble-sub-button-container {
+          margin-top: 15px !important;
+        }
+        .bubble-icon-container {
+          --mdc-icon-size: 60px !important;
+          padding: 8px;
+        }
+        .bubble-icon {
+          --mdc-icon-size: 50px !important;
+        }
+        .bubble-name-container {
+          line-height: 22px !important;
+        }
+        .bubble-name {
+          font-size: 20px !important;
+        }
+      show_name: true
+      scrolling_effect: false
+      AlternativeLayout: false
+      tap_to_slide: true
+      slider_live_update: true
+  bubble_slider_large:
+    card:
+      type: custom:bubble-card
+      card_type: button
+      button_type: slider
+      entity: '[[entity]]'
+      force_icon: true
+      show_name: true
+      show_icon: true
+      show_state: false
+      sub_button: '[[sub_button]]'
+      tap_action:
+        action: toggle
+      hold_action:
+        action: more-info
+      double_tap_action:
+        action: assist
+      card_layout: large-sub-buttons-grid
+      show_last_changed: false
+      show_attribute: false
+      slider_live_update: true
+      attribute: brightness
+      styles: |
+        .bubble-icon {
+          --mdc-icon-size: 60px !important;
+        }
+        .entity-label-warm.background-on {
+          --bubble-sub-button-light-background-color: rgba(255, 137, 14) !important;
+        }
+        .bubble-range-fill {
+          background-color: ${
+          (function () {
+            if(state  !== 'on') return 'var(--bubble-sub-button-background-color, var(--bubble-icon-background-color, var(--bubble-secondary-background-color, var(--card-background-color, var(--ha-card-background)))))'
+            var color;
+            var labelColor;
+            console.log(icon)
+            var onIcons=subButtonIcon?.map(i => 
+              [i.parentElement, 
+                hass.entities[i.parentElement?.getAttribute("data-entity")],
+                hass.states[i.parentElement?.getAttribute("data-entity")]])
+              ?.filter(d =>
+              d[0] != null && d[1] != null && d[2].state == 'on');
+            console.log(icon)
+              
+            if(onIcons == null || onIcons.length==0 ) {
+             onIcons = 
+               [
+               [icon.parentElement,
+                hass.entities[icon.parentElement?.getAttribute("data-entity")],
+                hass.states[icon.parentElement?.getAttribute("data-entity")]]
+                ]?.filter(d =>
+              d[0] != null && d[1] != null && d[2].state == 'on');
+            }
+            console.log(onIcons);
+            onIcons.forEach((d) => {
+                  var realColor = d[2].attributes.rgb_color != null 
+                    || d[2].attributes.rgbw_color;
+                  if(realColor) {
+                    color=realColor;
+                  }
+                  d[1].labels?.forEach(l => {
+                  labelColor = "rgba(255, 137, 14)";
+                  d[0].classList.add('entity-label-' + l);
+                })});
+            if(onIcons && onIcons.length) {
+              if(!color && labelColor) {
+                onIcons[0][0].parentElement.parentElement.classList.add('entity-label-warm')
+              }else {
+                onIcons[0][0].parentElement.parentElement.classList.remove('entity-label-warm')
+              }
+            }
+            return color || labelColor || "var(--paper-item-icon-active-color)";
+            
+          })()
+
+
+          } !important;
+          
+        }
+      tap_to_slide: true
+      use_accent_color: false
+      allow_light_slider_to_0: true
+      light_transition: false
+      button_action:
+        double_tap_action:
+          action: more-info
+        hold_action:
+          action: more-info
+      scrolling_effect: false
+      grid_options:
+        columns: full
+        rows: 2
+  bubble_slider_adaptive:
+    card:
+      type: custom:bubble-card
+      card_type: button
+      entity: '[[entity]]'
+      button_type: slider
+      grid_options:
+        columns: 6
+        rows: 2
+      card_layout: large
+      tap_action:
+        action: toggle
+      double_tap_action:
+        action: more-info
+      hold_action:
+        action: more-info
+      show_name: true
+      use_accent_color: false
+      scrolling_effect: false
+      tap_to_slide: true
+      AlternativeLayout: false
+      slider_live_update: true
+      sub_button:
+        - show_attribute: false
+          attribute: manual_control
+          show_icon: true
+          icon: mdi:reload
+          state_background: false
+          show_state: false
+          show_name: false
+          show_last_changed: false
+          show_background: true
+          name: Adapt
+          entity: '[[adaptive_switch]]'
+          tap_action:
+            action: call-service
+            service: adaptive_lighting.set_manual_control
+            service_data:
+              manual_control: false
+              lights:
+                - '[[entity]]'
+            target:
+              entity_id: '[[adaptive_switch]]'
+      styles: |-
+        .bubble-button-card {
+          --mdc-icon-size: 60px !important;
+          grid-template-columns: calc(var(--mdc-icon-size)+8) 1fr auto auto !important;
+        }
+        .bubble-sub-button-container {
+          margin-top: 15px !important;
+        }
+        .bubble-icon-container {
+          --mdc-icon-size: 60px !important;
+          padding: 8px;
+        }
+        .bubble-icon {
+          --mdc-icon-size: 50px !important;
+        }
+        .bubble-name-container {
+          line-height: 22px !important;
+        }
+        .bubble-name {
+          font-size: 20px !important;
+        }
+        .bubble-sub-button-container {
+          margin-top: 10px !important;
+          align-self: flex-start !important;
+          position: absolute !important;
+        }
+        .bubble-sub-button,bubble-sub-button-1 {
+          background-color: ${hass.states['[[adaptive_switch]]']?.attributes?.manual_control.length > 0 ?  'var(--bubble-sub-button-light-background-color, var(--accent-color))' : 'var(--bubble-sub-button-background-color, var(--bubble-icon-background-color, var(--bubble-secondary-background-color, var(--card-background-color, var(--ha-card-background)))))' } !important;
+        }
+  toggle_small:
+    template: toggle_button
+    size: 34%
+  toggle_button:
+    size: 80%
+    styles:
+      card:
+        - box-shadow: none;
+        - overflow: unset
+      name:
+        - color: white
+      label:
+        - color: yellow
+    tap_action:
+      action: toggle
+    hold_action:
+      action: more-info
+    double_tap_action:
+      action: more-info
+views:
+  - sections:
+      - type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: Lighting
+            card_layout: large
+            grid_options:
+              columns: full
+              rows: 1
+            sub_button:
+              - icon: mdi:palette
+                tap_action:
+                  action: navigate
+                  navigation_path: '#light_palette'
+              - icon: mdi:image-frame
+                tap_action:
+                  action: navigate
+                  navigation_path: '#lighting_scene'
+              - show_background: false
+                show_state: true
+                entity: sensor.indoor_multi_sensor_illuminance
+                show_name: false
+                name: Illuminance
+                show_attribute: true
+              - icon: mdi:refresh
+                tap_action:
+                  action: call-service
+                  service: script.reset_lighting
+                  target: {}
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.all_off_stateful_scene
+            name: All Off
+            icon: mdi:power
+            grid_options:
+              columns: 3
+              rows: 1
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.evenink_stateful_scene
+            name: Eve
+            icon: ''
+            grid_options:
+              columns: 3
+              rows: 1
+          - type: custom:bubble-card
+            card_type: button
+            button_type: slider
+            entity: light.alive_lights
+            name: Alive Lighting
+            force_icon: true
+            show_name: true
+            show_icon: true
+            show_state: false
+            sub_button:
+              - show_name: true
+                entity: light.tentacle_lamp
+                name: tentacle
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                double_tap_action:
+                  action: more-info
+                show_icon: true
+                show_state: false
+                show_attribute: false
+                hide_when_parent_unavailable: false
+                state_background: true
+              - entity: light.succulent_lamp
+                show_name: true
+                name: Succulent
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                double_tap_action:
+                  action: more-info
+              - entity: light.plant_lamp
+                name: Plant
+                show_name: true
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                double_tap_action:
+                  action: more-info
+              - entity: light.living_fan
+                name: Fan
+                show_name: true
+                tap_action:
+                  action: toggle
+                hold_action:
+                  action: more-info
+                double_tap_action:
+                  action: more-info
+                show_attribute: false
+            tap_action:
+              action: toggle
+            hold_action:
+              action: more-info
+            double_tap_action:
+              action: assist
+            card_layout: large-sub-buttons-grid
+            show_last_changed: false
+            show_attribute: false
+            slider_live_update: true
+            attribute: brightness
+            styles: |
+              .bubble-icon {
+                --mdc-icon-size: 60px !important;
+              }
+              .entity-label-warm.background-on {
+                --bubble-sub-button-light-background-color: rgba(255, 137, 14) !important;
+              }
+              .bubble-range-fill {
+                background-color: ${
+                (function () {
+                  if(state  !== 'on') return 'var(--bubble-sub-button-background-color, var(--bubble-icon-background-color, var(--bubble-secondary-background-color, var(--card-background-color, var(--ha-card-background)))))'
+                  var color;
+                  var labelColor;
+                  console.log(icon)
+                  var onIcons=subButtonIcon?.map(i => 
+                    [i.parentElement, 
+                      hass.entities[i.parentElement?.getAttribute("data-entity")],
+                      hass.states[i.parentElement?.getAttribute("data-entity")]])
+                    ?.filter(d =>
+                    d[0] != null && d[1] != null && d[2].state == 'on');
+                  console.log(icon)
+                    
+                  if(onIcons == null || onIcons.length==0 ) {
+                   onIcons = 
+                     [
+                     [icon.parentElement,
+                      hass.entities[icon.parentElement?.getAttribute("data-entity")],
+                      hass.states[icon.parentElement?.getAttribute("data-entity")]]
+                      ]?.filter(d =>
+                    d[0] != null && d[1] != null && d[2].state == 'on');
+                  }
+                  console.log(onIcons);
+                  onIcons.forEach((d) => {
+                        var realColor = d[2].attributes.rgb_color != null 
+                          || d[2].attributes.rgbw_color;
+                        if(realColor) {
+                          color=realColor;
+                        }
+                        d[1].labels?.forEach(l => {
+                        labelColor = "rgba(255, 137, 14)";
+                        d[0].classList.add('entity-label-' + l);
+                      })});
+                  if(onIcons && onIcons.length) {
+                    if(!color && labelColor) {
+                      onIcons[0][0].parentElement.parentElement.classList.add('entity-label-warm')
+                    }else {
+                      onIcons[0][0].parentElement.parentElement.classList.remove('entity-label-warm')
+                    }
+                  }
+                  return color || labelColor || "var(--paper-item-icon-active-color)";
+                  
+                })()
+
+
+                } !important;
+                
+              }
+            tap_to_slide: true
+            use_accent_color: false
+            allow_light_slider_to_0: true
+            light_transition: false
+            icon: mdi:bottle-tonic-skull-outline
+            button_action:
+              double_tap_action:
+                action: more-info
+              hold_action:
+                action: more-info
+            scrolling_effect: false
+            grid_options:
+              columns: full
+              rows: 2
+          - type: custom:decluttering-card
+            template: bubble_slider_large
+            variables:
+              - entity: light.hammscape
+              - sub_button:
+                  - show_name: true
+                    entity: light.floodlights
+                    tap_action:
+                      action: toggle
+                    hold_action:
+                      action: more-info
+                    double_tap_action:
+                      action: more-info
+                  - entity: light.outdoor_sconce
+                    show_name: true
+                    tap_action:
+                      action: toggle
+                    hold_action:
+                      action: more-info
+                    double_tap_action:
+                      action: more-info
+                  - entity: light.big_deck_bistro
+                    name: Big Bistro
+                    show_name: true
+                    tap_action:
+                      action: toggle
+                    hold_action:
+                      action: more-info
+                    double_tap_action:
+                      action: more-info
+                  - entity: light.hammscape_bistro
+                    show_name: true
+                    tap_action:
+                      action: toggle
+                    hold_action:
+                      action: more-info
+                    double_tap_action:
+                      action: more-info
+                  - entity: light.big_porch
+                    show_name: true
+                    tap_action:
+                      action: toggle
+                    hold_action:
+                      action: more-info
+                    double_tap_action:
+                      action: more-info
+          - type: custom:decluttering-card
+            template: bubble_slider_adaptive
+            variables:
+              - entity: light.kitchen_group
+              - adaptive_switch: switch.adapt_kitchen
+            grid_options:
+              columns: 6
+              rows: 2
+          - type: custom:decluttering-card
+            template: bubble_slider_adaptive
+            variables:
+              - entity: light.liminal_ceiling
+              - adaptive_switch: switch.adapt_liminal
+            grid_options:
+              columns: 6
+              rows: 2
+          - type: custom:decluttering-card
+            template: bubble_slider
+            variables:
+              - entity: light.spamheart
+            grid_options:
+              columns: 6
+              rows: 2
+          - type: custom:decluttering-card
+            template: bubble_slider
+            variables:
+              - entity: light.scarlet_moon
+            grid_options:
+              columns: 6
+              rows: 2
+          - type: custom:bubble-card
+            card_type: button
+            button_type: slider
+            entity: light.bathroom_ceiling
+            grid_options:
+              columns: 6
+              rows: 2
+            sub_button:
+              - entity: light.extra_bulb
+                show_name: true
+                name: MIror
+            button_action: {}
+            card_layout: large
+            use_accent_color: true
+            name: Bathroom
+          - type: custom:decluttering-card
+            template: bubble_slider
+            variables:
+              - entity: light.hammbone_fan_light
+            grid_options:
+              columns: 6
+              rows: 2
+          - shorten_cards: true
+            consolidate_entities: true
+            child_card: false
+            hide_header: false
+            show_header_icon: false
+            header: Current Lighting
+            color_wheel: false
+            persist_features: true
+            brightness: true
+            color_temp: true
+            white_value: false
+            color_picker: true
+            speed: true
+            intensity: true
+            force_features: false
+            show_slider_percent: false
+            full_width_sliders: fakse
+            brightness_icon: weather-sunny
+            white_icon: file-word-box
+            temperature_icon: thermometer
+            speed_icon: speedometer
+            intensity_icon: transit-connection-horizontal
+            type: custom:light-entity-card
+            entity: light.reference_light
+            effects_list: false
+            grid_options:
+              columns: 6
+              rows: 4
+          - type: custom:decluttering-card
+            template: bubble_slider
+            variables:
+              - entity: light.pantry
+            grid_options:
+              columns: 6
+              rows: 2
+          - type: custom:decluttering-card
+            template: bubble_slider
+            variables:
+              - entity: light.extra_bulb
+            grid_options:
+              columns: 6
+              rows: 2
+          - type: custom:bubble-card
+            card_type: button
+            entity: switch.manual_lighting
+        column_span: 1
+      - type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: Climate
+            card_layout: large
+            sub_button:
+              - entity: sensor.indoor_multi_sensor_air_temperature
+                show_state: true
+                state_background: false
+                show_background: false
+                tap_action:
+                  action: more-info
+          - type: custom:clock-weather-card
+            entity: weather.forecast_the_hammlet
+            sun_entity: sun.sun
+            temperature_sensor: sensor.outdoor_temp
+            humidity_sensor: sensor.outdoor_humidity
+            animated_icon: true
+            forecast_rows: 5
+            locale: en-US
+            grid_options:
+              columns: full
+            time_format: 12
+            hide_today_section: false
+            hide_forecast_section: true
+            show_humidity: true
+            hide_clock: false
+            hide_date: false
+            hourly_forecast: false
+            use_browser_time: false
+            show_decimal: false
+            tap_action:
+              action: navigate
+              navigation_path: '#weather'
+            card_mod:
+              style: |
+                clock-weather-card-today {
+                  max-height: calc(var(--row-height)*2)
+                }
+                clock-weather-card-today-left .grow-img {
+                  max-height: 150%;
+                }
+          - type: custom:mushroom-fan-card
+            entity: fan.living_fan
+            name: Alive Fan
+            icon_animation: true
+            fill_container: true
+            primary_info: name
+            icon_type: icon
+            show_oscillate_control: false
+            show_percentage_control: true
+            collapsible_controls: true
+            grid_options:
+              columns: 6
+            card_mod:
+              style:
+                mushroom-state-item$: |
+                  * {
+                    align-items: center;
+                  }
+          - type: custom:mushroom-fan-card
+            entity: fan.living_fan
+            icon_animation: true
+            fill_container: true
+            primary_info: name
+            icon_type: icon
+            show_oscillate_control: false
+            show_percentage_control: true
+            collapsible_controls: true
+            grid_options:
+              columns: 6
+            name: Bedroom
+            card_mod:
+              style:
+                mushroom-state-item$: |
+                  * {
+                    align-items: center;
+                  }
+          - type: custom:bubble-card
+            card_type: separator
+            name: Media
+            card_layout: large
+            sub_button:
+              - icon: mdi:remote-tv
+                name: Remote
+                entity: media_player.alive_tv
+                show_icon: true
+                show_name: true
+                tap_action:
+                  action: navigate
+                  navigation_path: '#tv_remote'
+              - icon: mdi:menu-open
+                show_state: false
+                show_name: false
+                tap_action:
+                  action: navigate
+                  navigation_path: '#tv_details'
+          - type: custom:layout-card
+            layout_type: custom:vertical-layout
+            layout:
+              card_margin: 5px 0px
+            cards:
+              - type: custom:mini-media-player
+                entity: media_player.alive_tv
+                name: TV
+                group: false
+                volume_stateless: true
+                sound_mode: icon
+                info: short
+                artwork: cover
+                toggle_power: false
+                layout_options:
+                  grid_columns: full
+                source: icon
+              - type: custom:bubble-card
+                card_type: button
+                entity: media_player.alive_tv
+                show_attribute: true
+                attribute: volume_level
+                show_state: false
+                force_icon: true
+                card_layout: normal
+                button_type: slider
+                name: Volume
+                sub_button:
+                  - entity: input_select.sound_mode
+                    name: ''
+                    show_icon: true
+                    show_name: false
+                    show_state: true
+                  - entity: switch.speakers
+                    name: Speaker
+                    show_background: true
+                    state_background: true
+                    show_icon: true
+                    show_name: false
+                    show_state: false
+                  - entity: media_player.hifijumper
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#sound_panel'
+                    icon: mdi:waveform
+                  - entity: media_player.ytube_music_player
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#youtube_music'
+                    icon: mdi:youtube
+                show_icon: true
+                icon: mdi:volume-high
+                slider_live_update: true
+          - type: custom:bubble-card
+            card_type: separator
+            name: Health
+            card_layout: large
+            sub_button:
+              - icon: mdi:remote-tv
+                name: Remote
+                entity: media_player.alive_tv
+                show_icon: true
+                show_name: true
+                tap_action:
+                  action: navigate
+                  navigation_path: '#tv_remote'
+              - icon: mdi:menu-open
+                show_state: false
+                show_name: false
+                tap_action:
+                  action: navigate
+                  navigation_path: '#tv_details'
+          - type: tile
+            entity: button.ebdbecoigu0jaldq_push
+          - type: custom:bubble-card
+            card_type: button
+            button_type: switch
+            entity: button.ebdbecoigu0jaldq_push
+            grid_options:
+              columns: 6
+              rows: 2
+            name: Icefinger
+            icon: mdi:snowflake
+          - type: tile
+            entity: timer.iceblast_timer
+      - type: grid
+        cards:
+          - type: custom:bubble-card
+            card_type: separator
+            name: Plants
+            card_layout: large
+          - type: custom:flower-card
+            entity: plant.laser_monstera
+            battery_sensor: sensor.laser_monsterra_battery
+            show_bars:
+              - moisture
+              - temperature
+              - conductivity
+              - illuminance
+            display_type: full
+            grid_options:
+              columns: 6
+              rows: auto
+          - type: custom:flower-card
+            entity: plant.pink_plank_plants
+            battery_sensor: sensor.myflower_battery
+            show_bars:
+              - moisture
+              - temperature
+            display_type: full
+            grid_options:
+              columns: 6
+              rows: auto
+          - type: custom:flower-card
+            entity: plant.succulent_arrangement
+            battery_sensor: sensor.outdoor_succulent_sensor_battery
+            show_bars:
+              - moisture
+              - temperature
+            display_type: full
+            grid_options:
+              columns: 6
+              rows: auto
+          - type: custom:flower-card
+            entity: plant.outdoor_shade_succulent
+            battery_sensor: sensor.outdoor_shade_succulent_battery
+            show_bars:
+              - moisture
+              - temperature
+            display_type: full
+            grid_options:
+              columns: 6
+              rows: auto
+          - type: custom:bubble-card
+            card_type: separator
+            name: Areas
+            card_layout: large
+          - alert_classes: []
+            cover_classes: []
+            sensor_classes:
+              - temperature
+              - humidity
+            toggle_domains:
+              - switch
+              - light
+              - media_player
+              - fan
+            popup_domains:
+              - switch
+              - update
+              - sensor
+              - light
+              - media_player
+              - binary_sensor
+              - button
+              - event
+              - number
+              - select
+              - assist_satellite
+              - fan
+              - plant
+              - remote
+            type: custom:area-card-plus
+            area: living_room
+            columns: 4
+            mirrored: false
+            customization_domain: []
+            customization_alert: []
+            customization_cover: []
+            customization_sensor: []
+            layout: vertical
+            design: V1
+            show_icon: icon
+            area_icon: ''
+            theme: Bubble
+      - type: grid
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#tv_remote'
+                show_header: true
+                button_type: name
+                name: Light Detials
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+                auto_close: '600000'
+                card_layout: normal
+                AlternativeLayout: false
+                width_desktop: 840px
+              - type: horizontal-stack
+                cards:
+                  - type: custom:lg-remote-control
+                    entity: media_player.hammlet_oled_tv
+                    mac: 64:cb:e9:9b:73:24
+                    name: TV
+                    color_buttons: false
+                    av_receiver_family: sonos
+                  - type: custom:firemote-card
+                    entity: media_player.hammlet_cast
+                    device_family: chromecast
+                    device_type: chromecast-4k
+                    compatibility_mode: default
+                    android_tv_remote_entity: remote.hammlet_cast
+                    defaultRemoteStyle_override: ''
+                    visible_name_text: Hammcast
+              - type: custom:firemote-card
+                entity: media_player.frida_s_family_room
+                device_family: chromecast
+                device_type: chromecast-4k
+                compatibility_mode: default
+                android_tv_remote_entity: remote.frida_s_family_room
+                defaultRemoteStyle_override: ''
+                visible_name_text: Fridas Family
+            grid_options:
+              columns: full
+            title: TV Remotes
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#tv_details'
+                show_header: true
+                button_type: name
+                name: Light Detials
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+                auto_close: '600000'
+                card_layout: normal
+                AlternativeLayout: false
+                width_desktop: 840px
+              - type: custom:mini-media-player
+                entity: media_player.hammlet_cast
+              - type: custom:mini-media-player
+                entity: media_player.hammlet_oled_tv
+                artwork: full-cover
+                source: full
+                sound_mode: full
+                info: short
+            grid_options:
+              columns: full
+            title: TV Details
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#chromecast_remote'
+                show_header: false
+                button_type: name
+                name: Chromecast Remot
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+                auto_close: '600000'
+              - type: custom:firemote-card
+                entity: media_player.hammlet_cast
+                device_family: chromecast
+                device_type: chromecast-4k
+                compatibility_mode: default
+                android_tv_remote_entity: remote.hammlet_cast
+                defaultRemoteStyle_override: ''
+                visible_name_text: Hammcast
+            grid_options:
+              columns: full
+            title: Chromecast Remote
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#youtube_music'
+                show_header: false
+                button_type: name
+                name: Youtube Music
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+                auto_close: '600000'
+              - type: custom:bubble-card
+                card_type: button
+                entity: media_player.ytube_music_player
+                show_attribute: true
+                name: Youtube Music
+                show_last_changed: false
+                show_state: true
+                show_name: true
+                sub_button:
+                  - entity: select.ytube_music_player_playlist
+                    show_attribute: false
+                    show_state: false
+                    icon: ''
+                    tap_action:
+                      action: toggle
+                    attribute: friendly_name
+                    show_arrow: true
+                    state_background: true
+                  - entity: media_player.ytube_music_player
+                    tap_action:
+                      action: call-service
+                      target:
+                        entity_id: media_player.ytube_music_player
+                      service: ytube_music_player.start_radio
+                    icon: mdi:radio-tower
+                    state_background: false
+                  - entity: select.ytube_music_player_radio_mode
+                    show_name: false
+                    show_state: false
+                    show_attribute: false
+                    show_arrow: true
+                  - icon: mdi:magnify
+                    name: Search
+                    tap_action:
+                      action: navigate
+                      navigation_path: '#youtube_music'
+                    show_icon: true
+                    state_background: false
+                  - entity: select.ytube_music_player_speaker
+                  - entity: select.ytube_music_player_repeat_mode
+                    show_last_changed: false
+                    show_name: false
+                    show_state: false
+                card_layout: large-2-rows
+                button_type: state
+                attribute: current_playlist_title
+                show_icon: true
+                force_icon: true
+                icon: mdi:playlist-play
+                scrolling_effect: false
+                AlternativeLayout: true
+              - type: custom:polr-ytube-playing-card
+                entity_id: media_player.ytube_music_player
+                coverNavigation: true
+            grid_options:
+              columns: full
+            title: Youtube Music
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#youtube_music_search'
+                show_header: false
+                button_type: name
+                name: Youtube Music
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+                auto_close: '600000'
+              - type: custom:polr-ytube-search-card
+                entity_id: media_player.ytube_music_player
+                coverNavigation: true
+            grid_options:
+              columns: full
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#sound_panel'
+                show_header: false
+                button_type: name
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: false
+                auto_close: '600000'
+                card_layout: normal
+                AlternativeLayout: false
+                width_desktop: 840px
+              - type: vertical-stack
+                cards:
+                  - type: iframe
+                    url: https://hifijumper.infinitebutts.com
+                    aspect_ratio: 50%
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: media_player.hammlet_cast
+                    button_type: slider
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: media_player.hammlet_oled_tv
+                    button_type: slider
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: media_player.hifijumper
+                    button_type: slider
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: media_player.hey_nabu
+                    button_type: slider
+                  - type: custom:bubble-card
+                    card_type: button
+                    entity: media_player.hey_nabu_media_player
+                    button_type: slider
+            grid_optionsgrid_options:
+              columns: full
+              rows: 8
+            title: Hifi Jumper
+      - type: grid
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#weather'
+                show_header: true
+                button_type: name
+                name: Hammlet Weather
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+              - type: custom:clock-weather-card
+                entity: weather.forecast_the_hammlet
+              - type: custom:hourly-weather
+                entity: weather.forecast_the_hammlet
+                show_date: boundary
+                show_precipitation_amounts: true
+                show_precipitation_probability: true
+            grid_options:
+              columns: full
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#light_scene'
+                show_header: false
+                button_type: name
+                name: Light Detials
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+                auto_close: '600000'
+              - type: custom:bubble-card
+                card_type: button
+                entity: scene.night
+                tap_action:
+                  action: toggle
+            grid_options:
+              columns: full
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#light_palette'
+                show_header: false
+                button_type: name
+                name: Light Detials
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+                auto_close: '600000'
+              - shorten_cards: false
+                consolidate_entities: true
+                child_card: false
+                hide_header: false
+                show_header_icon: true
+                header: ''
+                color_wheel: true
+                persist_features: true
+                brightness: true
+                color_temp: true
+                white_value: true
+                color_picker: true
+                speed: true
+                intensity: true
+                force_features: false
+                show_slider_percent: false
+                full_width_sliders: true
+                brightness_icon: weather-sunny
+                white_icon: file-word-box
+                temperature_icon: thermometer
+                speed_icon: speedometer
+                intensity_icon: transit-connection-horizontal
+                type: custom:light-entity-card
+                entity: light.color_bulbs
+                effects_list: true
+              - type: custom:flex-table-card
+                max_rows: 10
+                entities:
+                  include:
+                    - switch.adaptive_lighting_adaptinglighting
+                    - switch.adaptive_lighting_kitchen
+                    - switch.adaptive_lighting_alive_lights
+                columns:
+                  - name: Name
+                    data: name
+                  - name: Manaul
+                    data: attributes
+                    modify: x && x.manual_control?.join() || ""
+            grid_options:
+              columns: full
+          - type: vertical-stack
+            cards:
+              - type: custom:bubble-card
+                card_type: pop-up
+                hash: '#big_deck'
+                show_header: true
+                button_type: name
+                name: Big Deck
+                icon: ''
+                sub_button: []
+                show_icon: false
+                show_name: true
+              - type: custom:bubble-card
+                card_type: button
+                button_type: slider
+                entity: light.big_porch
+                sub_button:
+                  - entity: switch.adapt_big_porch
+                    show_attribute: false
+                    attribute: manual_control
+                    show_icon: true
+                    icon: mdi:reload
+                    state_background: false
+                    show_state: false
+                    show_name: false
+                    show_last_changed: false
+                    show_background: true
+                    name: Adapt
+                    tap_action:
+                      action: call-service
+                      service: adaptive_lighting.set_manual_control
+                      target:
+                        entity_id: switch.adapt_big_porch
+                      data:
+                        entity_id: switch.adapt_big_porch
+                        lights:
+                          - light.big_porch
+                          - light.big_porch_1
+                          - light.big_porch_2
+                        manual_control: false
+                card_layout: large
+                tap_action:
+                  action: toggle
+                double_tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+                styles: |-
+                  .bubble-wrapper {
+                    margin-top: 50px !important;
+                    padding-top: 50px !important;
+                  }
+                  .bubble-icon-container {
+                    margin-top: 50px !important;
+                    margin-left: 10px !important;
+                    padding: 8px;
+                  }
+                  .bubble-icon {
+                    --mdc-icon-size: 60px !important;
+                  }
+                  .bubble-name-container {
+                    margin-top: 15px !important;
+                    margin-left: 30px !important;
+                  }
+                  .bubble-name {
+                    font-size: 20px !important;
+                  }
+                  .bubble-sub-button-container {
+                    justify-self: right !important;
+                    margin-right: 10px
+                  }
+                  .bubble-sub-button {
+                    font-size: 10px;
+                  }
+                  .bubble-sub-button,bubble-sub-button-1 {
+                    background-color: ${hass.states['switch.adapt_big_porch']?.attributes.manual_control.length > 0 ?  'var(--bubble-sub-button-light-background-color, var(--accent-color))' : 'var(--bubble-sub-button-background-color, var(--bubble-icon-background-color, var(--bubble-secondary-background-color, var(--card-background-color, var(--ha-card-background)))))' } !important;
+                  }
+                use_accent_color: false
+                show_attribute: true
+                AlternativeLayout: false
+                slider_live_update: false
+                name: Big Deck
+              - type: custom:bubble-card
+                card_type: button
+                button_type: slider
+                entity: light.big_deck_bistro
+                sub_button:
+                  - entity: switch.adapt_big_porch
+                    show_attribute: false
+                    attribute: manual_control
+                    show_icon: true
+                    icon: mdi:reload
+                    state_background: false
+                    show_state: false
+                    show_name: false
+                    show_last_changed: false
+                    show_background: true
+                    name: Adapt
+                    tap_action:
+                      action: call-service
+                      service: adaptive_lighting.set_manual_control
+                      target:
+                        entity_id: switch.adapt_big_porch
+                      data:
+                        entity_id: switch.adapt_big_porch
+                        lights:
+                          - light.big_porch
+                          - light.big_deck_1
+                          - light.big_deck_2
+                          - light.big_deck_bistro
+                        manual_control: false
+                grid_options:
+                  columns: 6
+                  rows: 2
+                card_layout: large
+                tap_action:
+                  action: toggle
+                double_tap_action:
+                  action: more-info
+                hold_action:
+                  action: more-info
+                styles: |-
+                  .bubble-wrapper {
+                    margin-top: 50px !important;
+                    padding-top: 50px !important;
+                  }
+                  .bubble-icon-container {
+                    margin-top: 50px !important;
+                    margin-left: 10px !important;
+                    padding: 8px;
+                  }
+                  .bubble-icon {
+                    --mdc-icon-size: 60px !important;
+                  }
+                  .bubble-name-container {
+                    margin-top: 15px !important;
+                    margin-left: 30px !important;
+                  }
+                  .bubble-name {
+                    font-size: 20px !important;
+                  }
+                  .bubble-sub-button-container {
+                    justify-self: right !important;
+                    margin-right: 10px
+                  }
+                  .bubble-sub-button {
+                    font-size: 10px;
+                  }
+                  .bubble-sub-button,bubble-sub-button-1 {
+                    background-color: ${hass.states['switch.adapt_big_porch']?.attributes.manual_control.length > 0 ?  'var(--bubble-sub-button-light-background-color, var(--accent-color))' : 'var(--bubble-sub-button-background-color, var(--bubble-icon-background-color, var(--bubble-secondary-background-color, var(--card-background-color, var(--ha-card-background)))))' } !important;
+                  }
+                use_accent_color: false
+                show_attribute: true
+                AlternativeLayout: false
+                slider_live_update: false
+                name: Big Deck
+            grid_options:
+              columns: full
+    type: sections
+    max_columns: 3
+    cards: []
+    subview: false
+    badges:
+      - type: custom:mushroom-template-badge
+        content: ''
+        icon: mdi:magnify-scan
+        color: ''
+        label: ''
+        tap_action:
+          action: navigate
+          navigation_path: /developer-tools
+      - type: custom:mushroom-template-badge
+        content: ''
+        icon: mdi:cog
+        color: '='
+        tap_action:
+          action: navigate
+          navigation_path: /config
+        label: Settings
+      - type: custom:mushroom-template-badge
+        content: ''
+        icon: mdi:devices
+        color: ''
+        tap_action:
+          action: navigate
+          navigation_path: /config/integrations
+        label: Devices
+      - type: custom:mushroom-template-badge
+        content: ''
+        icon: mdi:palette
+        color: ''
+        tap_action:
+          action: navigate
+          navigation_path: /config/scene
+        label: Devices
+      - type: custom:mushroom-template-badge
+        content: ''
+        icon: mdi:home-automation
+        color: ''
+        tap_action:
+          action: navigate
+          navigation_path: /config/automation
+        label: Automations
+      - type: custom:mushroom-template-badge
+        content: ''
+        icon: mdi:puzzle
+        color: ''
+        tap_action:
+          action: navigate
+          navigation_path: /hassio
+        label: Add-Ins
+      - type: custom:mushroom-template-badge
+        content: ''
+        icon: mdi:power
+        color: ''
+        tap_action:
+          action: perform-action
+          perform_action: homeassistant.restart
+          target: {}
+      - type: entity
+        show_name: true
+        show_state: false
+        show_icon: true
+        entity: binary_sensor.updates_available
+        name: Updates
+        icon: mdi:update
+        tap_action:
+          action: navigate
+          navigation_path: /config/updates
+        visibility:
+          - condition: state
+            entity: binary_sensor.updates_available
+            state: 'on'
+      - type: custom:mushroom-template-badge
+        content: Entities
+        icon: mdi:circle-multiple-outline
+        color: ''
+        tap_action:
+          action: navigate
+          navigation_path: /config/entities
+        label: ''
+    theme: jumper-dark-mode-blue-red
+    dense_section_placement: false
+    header:
+      layout: center
+      badges_position: top

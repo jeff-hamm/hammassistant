@@ -1,0 +1,8 @@
+set_sound_mode:
+  url: http://hifijumper.local/interact/trigger/mode
+  method: POST
+  headers:
+    accept: "application/json"
+  payload: '{ "data": "{{ mode }}" }'
+  content_type: "application/json; charset=utf-8"
+  verify_ssl: false

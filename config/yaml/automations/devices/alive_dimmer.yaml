@@ -1,0 +1,25 @@
+id: '1742401610599'
+alias: Alive dimmer
+description: ''
+triggers:
+- entity_id:
+  - event.alive_dimmer
+  trigger: state
+actions:
+- action: script.dimmer_rotate_control
+  data:
+    event_entity: event.alive_dimmer
+    target_light: light.alive_lights
+    toggle_state: press
+    state_actions:
+    - state: long_press
+      action: button.press
+      target:
+        entity_id: button.google_pixel_8_google_pixel_8_play_sound
+- action: script.dimmer_rotate_control
+  data:
+    event_entity: event.alive_dimmer
+    target_light: light.hammscape
+    dim_state: rotate_left_pressed
+    brighten_state: rotate_right_pressed
+mode: restart

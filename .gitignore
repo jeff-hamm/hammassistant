@@ -222,7 +222,9 @@ mosquitto/data/*.db
 *.cer
 *.p12
 *.pfx
-
+log
+**/.history
+**/zwavejs/db/**/*
 # Ignore Zigbee2MQTT backup configs (may contain passwords)
 **/zigbee2mqtt/configuration*.yaml
 

@@ -1,0 +1,1266 @@
+- id: '1710321043920'
+  name: Evenink
+  entities:
+    light.alive_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - A Style
+      - Addressable Flicker
+      - Beautiful
+      - Birthday
+      - Christmas
+      - Color Wipe
+      - Colorful
+      - Default
+      - Dream
+      - F Style
+      - Fireworks
+      - Forest
+      - Halloween
+      - Leisure 1
+      - Leisure 2
+      - Meeting
+      - Mode Color
+      - Mode Scene
+      - Music
+      - Night 1
+      - Night 2
+      - Pulse
+      - Rainbow
+      - Random Twinkle
+      - Read 1
+      - Read 2
+      - Soft
+      - Twinkle
+      - Wedding Anniversary
+      - Working
+      supported_color_modes:
+      - color_temp
+      - hs
+      - rgb
+      effect: None
+      color_mode: rgb
+      brightness: 157
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 325.789
+      - 67.857
+      rgb_color:
+      - 168
+      - 54
+      - 119
+      xy_color:
+      - 0.473
+      - 0.231
+      entity_id:
+      - light.alive_fan
+      - light.living_fan
+      - light.plant_lamp
+      - light.spamheart
+      - light.succulent_lamp
+      - light.tentacle_lamp
+      icon: mdi:skull-scan-outline
+      friendly_name: Alive Lights
+      supported_features: 44
+      state: 'on'
+    light.hammscape:
+      min_color_temp_kelvin: 2700
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode: hs
+      brightness: 159
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 299
+      - 84
+      rgb_color:
+      - 251
+      - 41
+      - 255
+      xy_color:
+      - 0.379
+      - 0.158
+      entity_id:
+      - light.floodlights
+      - light.hammscape_bistro
+      - light.outdoor_sconce
+      icon: mdi:palm-tree
+      friendly_name: Hammscape
+      supported_features: 4
+      state: 'on'
+    light.scarlet_moon:
+      min_color_temp_kelvin: 2700
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Default
+      - Mode Color
+      - Mode Scene
+      - Night 1
+      - Night 2
+      - Read 1
+      - Read 2
+      - Meeting
+      - Working
+      - Leisure 1
+      - Leisure 2
+      - Soft
+      - Rainbow
+      - Colorful
+      - Beautiful
+      - Forest
+      - Dream
+      - F Style
+      - A Style
+      - Halloween
+      - Christmas
+      - Birthday
+      - Wedding Anniversary
+      - Music
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Mode Color
+      color_mode: hs
+      brightness: 220
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.701
+      - 0.299
+      raw_state: true
+      raw_color_mode: colour
+      raw_color: 000003e80360
+      raw_brightness: 449
+      raw_color_temp: 10
+      icon: mdi:moon-waning-crescent
+      friendly_name: Scarlet Moon
+      supported_features: 4
+      state: 'on'
+    light.spamheart:
+      effect_list:
+      - None
+      - Addressable Flicker
+      - Color Wipe
+      - Fireworks
+      - Pulse
+      - Rainbow
+      - Random Twinkle
+      - Twinkle
+      supported_color_modes:
+      - rgb
+      effect: None
+      color_mode: rgb
+      brightness: 235
+      hs_color:
+      - 325.789
+      - 67.857
+      rgb_color:
+      - 168
+      - 54
+      - 119
+      xy_color:
+      - 0.473
+      - 0.231
+      entity_id:
+      - light.hammlet_wled_music_spamheart_vein_2
+      - light.spamheart_1
+      icon: mdi:heart-multiple-outline
+      friendly_name: Spamheart
+      supported_features: 44
+      state: 'on'
+  icon: mdi:weather-night
+  metadata:
+    light.alive_lights:
+      entity_only: true
+    light.hammscape:
+      entity_only: true
+    light.scarlet_moon:
+      entity_only: true
+    light.spamheart:
+      entity_only: true
+- id: '1710321509087'
+  name: All Off
+  entities:
+    light.bedroom_fan_light:
+      restored: true
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      icon: mdi:ceiling-fan-light
+      friendly_name: Bedroom Fan Light
+      supported_features: 32
+      state: unavailable
+    light.alive_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.laser_lamp
+      - light.living_fan
+      - light.plant_lamp
+      - light.stripper_light
+      - light.succulent_lamp
+      - light.tentacle_lamp
+      icon: mdi:skull-scan-outline
+      friendly_name: Alive Lights
+      supported_features: 32
+      state: 'off'
+    switch.outdoor_switch:
+      icon: mdi:wall-sconce-outline
+      friendly_name: Outdoor Switch
+      state: 'off'
+    fan.living_fan:
+      preset_modes:
+      percentage: 100
+      percentage_step: 33.333333333333336
+      preset_mode:
+      icon: mdi:fan
+      friendly_name: Alive Fan
+      supported_features: 49
+      state: 'off'
+    light.kitchen_group:
+      min_color_temp_kelvin: 2700
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.kitchen_switch
+      - light.kitchen_light
+      icon: mdi:ceiling-light-outline
+      friendly_name: Kitchen
+      supported_features: 4
+      state: 'off'
+    light.spamheart:
+      effect_list:
+      - None
+      - Addressable Flicker
+      - Color Wipe
+      - Fireworks
+      - Pulse
+      - Random Twinkle
+      - Twinkle
+      supported_color_modes:
+      - rgb
+      effect:
+      color_mode:
+      brightness:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.hammlet_wled_music_spamheart_vein_2
+      - light.spamheart_1
+      icon: mdi:heart-multiple-outline
+      friendly_name: Spamheart
+      supported_features: 44
+      state: 'off'
+    media_player.hammlet_oled_tv:
+      source_list:
+      - HBO Max
+      - HDMI 1
+      - HDMI 4
+      - Max
+      - Netflix
+      - Prime Video
+      - YouTube
+      - YouTube TV
+      assumed_state: true
+      device_class: tv
+      friendly_name: TV
+      supported_features: 24509
+      state: 'off'
+    media_player.alive_tv:
+      source_list:
+      - HBO Max
+      - HDMI 1
+      - HDMI 4
+      - Max
+      - Netflix
+      - Prime Video
+      - YouTube
+      - YouTube TV
+      device_class: tv
+      friendly_name: Alive TV
+      supported_features: 2464
+      state: 'off'
+    light.hammscape:
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      effect_list:
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.outdoor_sconce
+      - light.floodlights
+      - light.big_deck_bistro
+      - light.hammscape_bistro
+      - light.big_deck_1
+      - light.big_deck_2
+      icon: mdi:palm-tree
+      friendly_name: Hammscape
+      supported_features: 36
+      state: 'off'
+    light.spamheart_4_spamheart_vein:
+      effect_list:
+      - None
+      - Pulse
+      - Color Wipe
+      - Twinkle
+      - Random Twinkle
+      - Fireworks
+      - Addressable Flicker
+      supported_color_modes:
+      - rgb
+      icon: mdi:heart-multiple-outline
+      friendly_name: Spamheart
+      supported_features: 44
+      state: unavailable
+    light.living:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      entity_id:
+      - light.plant_lamp
+      - light.tentacle_lamp
+      - light.stripper_light
+      - light.succulent_lamp
+      - light.laser_lamp
+      icon: mdi:lifebuoy
+      friendly_name: Alive
+      supported_features: 32
+      state: 'off'
+    light.big_porch:
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.big_deck_1
+      - light.big_deck_2
+      icon: mdi:floor-lamp-torchiere-variant-outline
+      friendly_name: Big Deck
+      supported_features: 32
+      state: 'off'
+    light.outdoor_sconce:
+      supported_color_modes:
+      - onoff
+      color_mode:
+      icon: mdi:outdoor-lamp
+      friendly_name: Sconce
+      supported_features: 0
+      state: 'off'
+    light.scarlet_moon:
+      min_color_temp_kelvin: 2700
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 370
+      effect_list:
+      - Default
+      - Mode Color
+      - Mode Scene
+      - Night 1
+      - Night 2
+      - Read 1
+      - Read 2
+      - Meeting
+      - Working
+      - Leisure 1
+      - Leisure 2
+      - Soft
+      - Rainbow
+      - Colorful
+      - Beautiful
+      - Forest
+      - Dream
+      - F Style
+      - A Style
+      - Halloween
+      - Christmas
+      - Birthday
+      - Wedding Anniversary
+      - Music
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      raw_state: false
+      raw_color_mode: colour
+      raw_color: 000603e801e0
+      raw_brightness: 480
+      raw_color_temp: 0
+      icon: mdi:moon-waning-crescent
+      friendly_name: Scarlet Moon
+      supported_features: 4
+      state: 'off'
+    light.extra_bulb:
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Extra Bulb
+      supported_features: 32
+      state: 'off'
+  icon: mdi:lightbulb-group-off-outline
+  metadata:
+    light.bedroom_fan_light:
+      entity_only: true
+    light.alive_lights:
+      entity_only: true
+    switch.outdoor_switch:
+      entity_only: true
+    fan.living_fan:
+      entity_only: true
+    light.kitchen_group:
+      entity_only: true
+    light.spamheart:
+      entity_only: true
+    media_player.hammlet_oled_tv:
+      entity_only: true
+    media_player.alive_tv:
+      entity_only: true
+    light.hammscape:
+      entity_only: true
+    light.spamheart_4_spamheart_vein:
+      entity_only: true
+    light.living:
+      entity_only: true
+    light.big_porch:
+      entity_only: true
+    light.outdoor_sconce:
+      entity_only: true
+    light.scarlet_moon:
+      entity_only: true
+    light.extra_bulb:
+      entity_only: true
+- id: '1710683702560'
+  name: Late
+  entities:
+    light.hammlet_bathroom:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - brightness
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 3
+      color_temp_kelvin: 2000
+      color_temp: 500
+      hs_color:
+      - 30.601
+      - 94.547
+      rgb_color:
+      - 255
+      - 136
+      - 13
+      xy_color:
+      - 0.599
+      - 0.382
+      icon: mdi:ceiling-light
+      friendly_name: Hammlet Bathroom
+      supported_features: 0
+      state: 'on'
+    light.hammlet_living_fan_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - brightness
+      - color_temp
+      - hs
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      icon: mdi:ceiling-fan
+      friendly_name: Fan Light
+      supported_features: 0
+      state: 'off'
+    light.stripper_light:
+      effect_list:
+      - None
+      - Pulse
+      - Color Wipe
+      - Twinkle
+      - Random Twinkle
+      - Fireworks
+      - Addressable Flicker
+      supported_color_modes:
+      - rgbw
+      effect: None
+      color_mode: rgbw
+      brightness: 99
+      hs_color:
+      - 325.789
+      - 67.857
+      rgb_color:
+      - 168
+      - 54
+      - 119
+      xy_color:
+      - 0.473
+      - 0.231
+      rgbw_color:
+      - 168
+      - 54
+      - 119
+      - 0
+      icon: mdi:led-strip-variant
+      friendly_name: Stripper Light
+      supported_features: 44
+      state: 'on'
+    light.kitchen_ceiling:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      icon: mdi:ceiling-light
+      friendly_name: Kitchen
+      supported_features: 32
+      color_mode: color_temp
+      brightness: 18
+      color_temp_kelvin: 2941
+      color_temp: 340
+      hs_color:
+      - 27.925
+      - 58.522
+      rgb_color:
+      - 255
+      - 175
+      - 105
+      xy_color:
+      - 0.502
+      - 0.384
+      state: 'on'
+  icon: mdi:weather-night
+  metadata:
+    light.hammlet_bathroom:
+      entity_only: true
+    light.hammlet_living_fan_light:
+      entity_only: true
+    light.stripper_light:
+      entity_only: true
+    light.kitchen_ceiling:
+      entity_only: true
+- id: '1710927459363'
+  name: Bright
+  entities:
+    light.stripper_light:
+      effect_list:
+      - None
+      - Pulse
+      - Color Wipe
+      - Twinkle
+      - Random Twinkle
+      - Fireworks
+      - Addressable Flicker
+      supported_color_modes:
+      - rgbw
+      effect: None
+      color_mode: rgbw
+      brightness: 255
+      hs_color:
+      - 48
+      - 1.961
+      rgb_color:
+      - 255
+      - 254
+      - 250
+      xy_color:
+      - 0.326
+      - 0.333
+      rgbw_color:
+      - 5
+      - 4
+      - 0
+      - 255
+      icon: mdi:led-strip-variant
+      friendly_name: Stripper Light
+      supported_features: 44
+      state: 'on'
+    light.tentacle_lamp:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      icon: mdi:jellyfish-outline
+      friendly_name: Tentacle Lamp
+      supported_features: 32
+      state: 'on'
+    light.plant_lamp:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      icon: mdi:flower-outline
+      friendly_name: Plant Lamp
+      supported_features: 32
+      state: 'on'
+    light.hammlet_living_fan_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - brightness
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 3610
+      color_temp: 277
+      hs_color:
+      - 27.07
+      - 42.435
+      rgb_color:
+      - 255
+      - 195
+      - 146
+      xy_color:
+      - 0.447
+      - 0.372
+      icon: mdi:ceiling-fan
+      friendly_name: Fan Light
+      supported_features: 0
+      state: 'on'
+    light.kitchen_ceiling:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      icon: mdi:ceiling-light
+      friendly_name: Kitchen
+      supported_features: 32
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 5524
+      color_temp: 181
+      hs_color:
+      - 28.004
+      - 12.556
+      rgb_color:
+      - 255
+      - 237
+      - 222
+      xy_color:
+      - 0.354
+      - 0.343
+      state: 'on'
+    light.hammlet_bathroom:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - brightness
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 252
+      color_temp_kelvin: 3773
+      color_temp: 265
+      hs_color:
+      - 26.943
+      - 39.144
+      rgb_color:
+      - 255
+      - 200
+      - 155
+      xy_color:
+      - 0.434
+      - 0.369
+      icon: mdi:ceiling-light
+      friendly_name: Hammlet Bathroom
+      supported_features: 0
+      state: 'on'
+    light.pantry_ceiling:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - brightness
+      - color_temp
+      - hs
+      icon: mdi:ceiling-light
+      friendly_name: Pantry
+      supported_features: 0
+      color_mode: color_temp
+      brightness: 126
+      color_temp_kelvin: 3012
+      color_temp: 332
+      hs_color:
+      - 27.806
+      - 56.57
+      rgb_color:
+      - 255
+      - 177
+      - 110
+      xy_color:
+      - 0.496
+      - 0.383
+      state: 'on'
+    light.bedroom_fan_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 3906
+      color_temp: 256
+      hs_color:
+      - 26.859
+      - 36.599
+      rgb_color:
+      - 255
+      - 203
+      - 161
+      xy_color:
+      - 0.427
+      - 0.367
+      icon: mdi:ceiling-fan-light
+      friendly_name: Bedroom Fan Light
+      supported_features: 32
+      state: 'on'
+  icon: mdi:brightness-7
+  metadata:
+    light.stripper_light:
+      entity_only: true
+    light.tentacle_lamp:
+      entity_only: true
+    light.plant_lamp:
+      entity_only: true
+    light.hammlet_living_fan_light:
+      entity_only: true
+    light.kitchen_ceiling:
+      entity_only: true
+    light.hammlet_bathroom:
+      entity_only: true
+    light.pantry_ceiling:
+      entity_only: true
+    light.bedroom_fan_light:
+      entity_only: true
+- id: '1720585449947'
+  name: Dinner Time
+  entities:
+    light.kitchen_ceiling:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 150
+      color_temp_kelvin: 4048
+      color_temp: 247
+      hs_color:
+      - 26.792
+      - 34.008
+      rgb_color:
+      - 255
+      - 207
+      - 168
+      xy_color:
+      - 0.417
+      - 0.364
+      icon: mdi:ceiling-light
+      friendly_name: Kitchen
+      supported_features: 32
+      state: 'on'
+  metadata: {}
+- id: '1730512878509'
+  name: Working
+  entities:
+    light.stripper_light:
+      effect_list:
+      - None
+      - Pulse
+      - Color Wipe
+      - Twinkle
+      - Random Twinkle
+      - Fireworks
+      - Addressable Flicker
+      supported_color_modes:
+      - rgbw
+      icon: mdi:led-strip-variant
+      friendly_name: Stripper Light
+      supported_features: 44
+      state: unavailable
+    light.tentacle_lamp:
+      restored: true
+      supported_color_modes:
+      - brightness
+      icon: mdi:jellyfish-outline
+      friendly_name: Tentacle Lamp
+      supported_features: 32
+      state: unavailable
+    light.plant_lamp:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      icon: mdi:flower-outline
+      friendly_name: Plant Lamp
+      supported_features: 32
+      state: 'on'
+    light.hammlet_living_fan_light:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 89
+      color_temp_kelvin: 3610
+      color_temp: 277
+      hs_color:
+      - 27.07
+      - 42.435
+      rgb_color:
+      - 255
+      - 195
+      - 146
+      xy_color:
+      - 0.447
+      - 0.372
+      icon: mdi:ceiling-fan
+      friendly_name: Fan Light
+      supported_features: 0
+      state: 'on'
+    light.kitchen_ceiling:
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 5524
+      color_temp: 181
+      hs_color:
+      - 28.004
+      - 12.556
+      rgb_color:
+      - 255
+      - 237
+      - 222
+      xy_color:
+      - 0.354
+      - 0.343
+      icon: mdi:ceiling-light
+      friendly_name: Kitchen
+      supported_features: 32
+      state: 'on'
+    light.hammlet_bathroom:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 3773
+      color_temp: 265
+      hs_color:
+      - 26.943
+      - 39.144
+      rgb_color:
+      - 255
+      - 200
+      - 155
+      xy_color:
+      - 0.434
+      - 0.369
+      icon: mdi:ceiling-light
+      friendly_name: Hammlet Bathroom
+      supported_features: 0
+      state: 'on'
+    light.pantry_ceiling:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - hs
+      icon: mdi:ceiling-light
+      friendly_name: Pantry
+      supported_features: 0
+      state: unavailable
+    light.bedroom_fan_light:
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      supported_color_modes:
+      - color_temp
+      - hs
+      - xy
+      color_mode: color_temp
+      brightness: 176
+      color_temp_kelvin: 3906
+      color_temp: 256
+      hs_color:
+      - 26.859
+      - 36.599
+      rgb_color:
+      - 255
+      - 203
+      - 161
+      xy_color:
+      - 0.427
+      - 0.367
+      icon: mdi:ceiling-fan-light
+      friendly_name: Bedroom Fan Light
+      supported_features: 32
+      state: 'on'
+  icon: mdi:brightness-7
+  metadata:
+    light.stripper_light:
+      entity_only: true
+    light.tentacle_lamp:
+      entity_only: true
+    light.plant_lamp:
+      entity_only: true
+    light.hammlet_living_fan_light:
+      entity_only: true
+    light.kitchen_ceiling:
+      entity_only: true
+    light.hammlet_bathroom:
+      entity_only: true
+    light.pantry_ceiling:
+      entity_only: true
+    light.bedroom_fan_light:
+      entity_only: true
+- id: '1733298080108'
+  name: Hangout
+  entities:
+    light.plant_lamp:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 38
+      icon: mdi:flower-outline
+      friendly_name: Plant Lamp
+      supported_features: 0
+      state: 'on'
+    light.tentacle_lamp:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 112
+      icon: mdi:jellyfish-outline
+      friendly_name: Tentacle Lamp
+      supported_features: 32
+      state: 'on'
+    switch.tentacle_lamp:
+      friendly_name: Tentacle Lamp
+      state: 'on'
+    light.hammbone_fan_light:
+      min_color_temp_kelvin: 1800
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 555
+      supported_color_modes:
+      - color_temp
+      - rgbw
+      icon: mdi:ceiling-fan-light
+      friendly_name: Hammbone Fan
+      supported_features: 0
+      color_mode: color_temp
+      brightness: 127.5
+      color_temp_kelvin: 1985
+      color_temp: 503
+      hs_color:
+      - 30.67
+      - 95.368
+      rgb_color:
+      - 255
+      - 136
+      - 12
+      xy_color:
+      - 0.599
+      - 0.382
+      rgbw_color:
+      state: 'on'
+    light.kitchen_group:
+      min_color_temp_kelvin: 1500
+      max_color_temp_kelvin: 6499
+      min_mireds: 153
+      max_mireds: 666
+      effect_list:
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode: color_temp
+      brightness: 118
+      color_temp_kelvin: 3195
+      color_temp: 312
+      hs_color:
+      - 27.532
+      - 51.841
+      rgb_color:
+      - 255
+      - 183
+      - 123
+      xy_color:
+      - 0.478
+      - 0.379
+      entity_id:
+      - light.kitchen_switch
+      - light.kitchen
+      icon: mdi:ceiling-light-outline
+      friendly_name: Kitchen
+      supported_features: 4
+      state: 'on'
+    light.liminal_ceiling:
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      supported_color_modes:
+      - color_temp
+      - hs
+      color_mode: color_temp
+      brightness: 136
+      color_temp_kelvin: 2232
+      color_temp: 448
+      hs_color:
+      - 29.684
+      - 83.214
+      rgb_color:
+      - 255
+      - 148
+      - 43
+      xy_color:
+      - 0.575
+      - 0.389
+      icon: mdi:ceiling-light
+      friendly_name: Liminal Ceiling
+      supported_features: 32
+      state: 'on'
+  metadata:
+    light.plant_lamp:
+      entity_only: true
+    light.hammbone_fan_light:
+      entity_only: true
+    light.kitchen_group:
+      entity_only: true
+    light.liminal_ceiling:
+      entity_only: true
+- id: '1735296992200'
+  name: Pink and sexy
+  entities:
+    light.alive_lights:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - None
+      - Addressable Flicker
+      - Color Wipe
+      - Fireworks
+      - Pulse
+      - Random Twinkle
+      - Twinkle
+      supported_color_modes:
+      - color_temp
+      - hs
+      - rgbw
+      effect:
+      color_mode: hs
+      brightness: 23
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 328
+      - 82.4
+      rgb_color:
+      - 255
+      - 45
+      - 157
+      xy_color:
+      - 0.526
+      - 0.231
+      rgbw_color:
+      entity_id:
+      - light.living_fan
+      - light.hammlet_extra
+      - light.plant_lamp
+      - light.stripper_light
+      - light.tentacle_lamp
+      - light.succulent_lamp
+      icon: mdi:bottle-tonic-skull-outline
+      friendly_name: Alive Lights
+      supported_features: 44
+      state: 'on'
+    light.color_bulbs:
+      min_color_temp_kelvin: 1801
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 555
+      effect_list:
+      - None
+      - Addressable Flicker
+      - Color Wipe
+      - Fireworks
+      - Pulse
+      - Random Twinkle
+      - Twinkle
+      supported_color_modes:
+      - color_temp
+      - hs
+      - rgbw
+      - xy
+      effect:
+      color_mode: hs
+      brightness: 23
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 327.9
+      - 82.377
+      rgb_color:
+      - 255
+      - 45
+      - 157
+      xy_color:
+      - 0.526
+      - 0.231
+      rgbw_color:
+      entity_id:
+      - light.alive_lights
+      - light.hammlet_bathroom
+      - light.bedroom_fan_light
+      - light.living_fan
+      - light.hammlet_pantry
+      - light.kitchen_light
+      icon: mdi:lightbulb-group
+      friendly_name: Color Bulbs
+      supported_features: 44
+      state: 'on'
+  metadata:
+    light.alive_lights:
+      entity_only: true
+    light.color_bulbs:
+      entity_only: true

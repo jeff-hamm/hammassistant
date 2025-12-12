@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_datetime",
+  "data": {
+    "items": [
+      {
+        "id": "sunset_lights_time",
+        "has_date": true,
+        "name": "Sunset Lights Time",
+        "has_time": true
+      },
+      {
+        "id": "late_time",
+        "name": "Late Time",
+        "has_date": true,
+        "has_time": true
+      }
+    ]
+  }
+}

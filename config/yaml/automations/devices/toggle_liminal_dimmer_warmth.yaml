@@ -1,0 +1,60 @@
+id: '1745455408687'
+alias: Toggle Liminal Dimmer Warmth
+description: Toggles the warmth of a light on double-tap of its corresponding event.
+triggers:
+- event_type: '{{ event_name }}'
+  trigger: event
+conditions: []
+actions:
+- wait_for_trigger:
+  - event_type: '{{ event_name }}'
+    trigger: event
+  timeout: '{{ timeout_ms }}'
+- choose:
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.event.data.event_type == "s" }}'
+    sequence:
+    - wait_for_trigger:
+      - event_type: '{{ event_name }}'
+        trigger: event
+      timeout: '{{ timeout_ms }}'
+    - target:
+        entity_id: '{{ light_entity }}'
+      data:
+        brightness_pct: 100
+      action: light.turn_on
+- choose:
+  - conditions:
+    - condition: template
+      value_template: '{{ trigger.event.data.event_type == "s" }}'
+    sequence:
+    - choose:
+      - conditions:
+        - condition: template
+          value_template: '{{ state_attr(light_entity, color_temp_key) | int > kelvin_threshold
+            }}'
+        sequence:
+        - target:
+            entity_id: '{{ light_entity }}'
+          data:
+            '{{ color_temp_key }}': '{{ warm_color_temp }}'
+          action: light.turn_on
+      - conditions:
+        - condition: template
+          value_template: '{{ state_attr(light_entity, color_temp_key) | int <=
+            kelvin_threshold }}'
+        sequence:
+        - target:
+            entity_id: '{{ light_entity }}'
+          data:
+            '{{ color_temp_key }}': '{{ cool_color_temp }}'
+          action: light.turn_on
+variables:
+  light_entity: light.liminal_dimmer
+  event_name: '{{ light_entity.replace(''light.'', ''event.'') + ''_input_0'' }}'
+  timeout_ms: '00:00:00.350'
+  kelvin_threshold: 3500
+  warm_color_temp: 2200
+  cool_color_temp: 6000
+  color_temp_key: color_temp_kelvin

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "input_select",
+  "data": {
+    "items": [
+      {
+        "id": "lighting_mode",
+        "name": "lighting_mode",
+        "options": [
+          "Sunset",
+          "Bright",
+          "Off",
+          "Evenink",
+          "Late"
+        ]
+      },
+      {
+        "id": "sound_mode",
+        "name": "Sound Mode",
+        "icon": "mdi:waveform",
+        "options": [
+          "Optimal",
+          "Clear",
+          "Dark",
+          "Podcast",
+          "Wub"
+        ]
+      }
+    ]
+  }
+}

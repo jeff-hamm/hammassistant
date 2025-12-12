@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01JCD9HGMCGFRX1JRV5FMSSV69",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "spamheart-2",
+      "friendly_name": "Spamheart 2",
+      "mac_address": "08:3A:8D:D1:D3:67",
+      "compilation_time": "Nov 11 2024, 01:04:05",
+      "model": "d1_mini",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2024.10.3",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": ""
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "update": [],
+    "light": [
+      {
+        "object_id": "spamheart_2",
+        "key": 2236460317,
+        "name": "Spamheart 2",
+        "unique_id": "spamheart-2lightspamheart_2",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "supported_color_modes": [
+          39
+        ],
+        "min_mireds": 0.0,
+        "max_mireds": 0.0,
+        "effects": [
+          "None",
+          "Pulse",
+          "Color Wipe",
+          "Twinkle",
+          "Random Twinkle",
+          "Fireworks",
+          "Addressable Flicker"
+        ],
+        "legacy_supports_brightness": true,
+        "legacy_supports_rgb": true,
+        "legacy_supports_white_value": true,
+        "legacy_supports_color_temperature": false
+      }
+    ]
+  }
+}

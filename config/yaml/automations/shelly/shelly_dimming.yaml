@@ -1,0 +1,85 @@
+id: '1737203187044'
+alias: Shelly Dimming
+description: This allows the shelly to dim the lights
+triggers:
+  - platform: state
+    entity_id: binary_sensor.liminal_dimmer_input_0
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0.1
+  - platform: state
+    entity_id: binary_sensor.liminal_dimmer_input_1
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0.1
+actions:
+  - variables:
+      light_entity_id: light.{{ trigger.to_state.object_id|replace('_input_0','')|replace('_input_1','')
+        }}
+      trigger_timeout: 100
+      transition_time: 100
+      brightness_delta: 20
+  - alias: Turn on light
+    repeat:
+      while:
+      - condition: template
+        value_template: '{{ is_state(''light.'' ~ trigger.to_state.object_id|replace(''_input_0'','''')|replace(''_input_1'',''''),
+          ''off'') }}'
+      sequence:
+      - data: {}
+        target:
+          entity_id: '{{ light_entity_id }}'
+        action: light.turn_on
+  - choose:
+    - conditions:
+      - condition: template
+        value_template: '{{ (''_input_0'' in trigger.entity_id) == true }}'
+      - condition: template
+        value_template: '{{ is_state (trigger.entity_id, ''on'') }}'
+      sequence:
+      - alias: Increase light
+        repeat:
+          while:
+          - condition: template
+            value_template: '{{ is_state (trigger.entity_id, ''on'') }}'
+          sequence:
+          - data:
+              brightness_step: '{{brightness_delta}}'
+              transition: '{{transition_time}}'
+            target:
+              entity_id: '{{ light_entity_id }}'
+            action: light.turn_on
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 0
+              milliseconds: '{{ trigger_timeout }}'
+    - conditions:
+      - condition: template
+        value_template: '{{ (''_input_1'' in trigger.entity_id) == true }}'
+      - condition: template
+        value_template: '{{ is_state (trigger.entity_id, ''on'') }}'
+      sequence:
+      - repeat:
+          while:
+          - condition: template
+            value_template: '{{ is_state (trigger.entity_id, ''on'') }}'
+          sequence:
+          - data:
+              brightness_step: '{{brightness_delta * -1}}'
+              transition: '{{transition_time}}'
+            target:
+              entity_id: '{{ light_entity_id }}'
+            action: light.turn_on
+          - delay:
+              hours: 0
+              minutes: 0
+              seconds: 0
+              milliseconds: '{{ trigger_timeout }}'
+    default:
+    - stop: Nothing to do
+mode: single

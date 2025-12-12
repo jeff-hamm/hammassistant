@@ -1,0 +1,47 @@
+- platform: universal
+  name: Alive TV
+  children:
+    - media_player.alive_cast
+    - media_player.hammlet_oled_tv
+  device_class: tv
+  unique_id: alive_tv
+  commands:
+    turn_on:
+      action: media_player.turn_on
+      target:
+        entity_id: media_player.hammlet_oled_tv
+    turn_off:
+      action: media_player.turn_off
+      target:
+        entity_id: media_player.hammlet_oled_tv
+    volume_up:
+      action: media_player.volume_up
+      target:
+        entity_id: media_player.hammlet_oled_tv
+    volume_down:
+      action: media_player.volume_down
+      target:
+        entity_id: media_player.hammlet_oled_tv
+    volume_mute:
+      action: media_player.volume_mute
+      target:
+        entity_id: media_player.hammlet_oled_tv
+    media_next_track:
+      action: media_player.media_next_track
+      target:
+        entity_id: >-
+          {% if states['media_player.ytube_music_player'].state == "playing" -%}
+            media_player.ytube_music_player
+          {%- else -%} 
+            {{active_child}}
+          {%- endif %}
+    select_source:
+      action: media_player.select_source
+      target:
+        entity_id: media_player.hammlet_oled_tv
+      data:
+        source: "{{ source }}"
+  attributes:
+    state: media_player.hammlet_oled_tv
+    source: media_player.hammlet_oled_tv|source
+    source_list: media_player.hammlet_oled_tv|source_list

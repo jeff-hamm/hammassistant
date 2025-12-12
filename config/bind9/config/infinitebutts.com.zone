@@ -1,0 +1,14 @@
+$TTL 2d
+ 
+$ORIGIN infinitebutts.com.
+ 
+@      IN  SOA infinitebutts.com. ns.infinitebutts.com. (
+             2022052603  ; serial
+             12h     ; refresh
+             15m     ; retry
+             3w      ; expire
+             2h )     ; minimum TTL
+;
+@ IN NS ns.infinitebutts.com.
+ns IN A 192.168.0.124
+infinitebutts.com. IN A 192.168.0.124

@@ -1,0 +1,19 @@
+id: shellies_discovery
+alias: Shellies Discovery
+mode: queued
+max: 999
+trigger:
+  platform: mqtt
+  topic: shellies/announce
+condition:
+- condition: template
+  value_template: '{{ trigger.payload_json.gen is not defined }}'
+action:
+  service: python_script.shellies_discovery
+  data:
+    id: '{{ trigger.payload_json.id }}'
+    mac: '{{ trigger.payload_json.mac }}'
+    fw_ver: '{{ trigger.payload_json.fw_ver }}'
+    model: '{{ trigger.payload_json.model | default }}'
+    mode: '{{ trigger.payload_json.mode | default }}'
+    host: '{{ trigger.payload_json.ip }}'

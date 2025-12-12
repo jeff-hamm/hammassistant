@@ -1,0 +1,316 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "bluetooth.passive_update_processor",
+  "data": {
+    "01JK6B42MNPFXGARGX95PCYB6D": {
+      "binary_sensor": {
+        "devices": {
+          "": {
+            "name": "Plant Sensor 45C9",
+            "manufacturer": "Xiaomi",
+            "model": "HHCCJCY01"
+          }
+        },
+        "entity_descriptions": {},
+        "entity_names": {},
+        "entity_data": {}
+      },
+      "sensor": {
+        "devices": {
+          "": {
+            "name": "Plant Sensor 45C9",
+            "manufacturer": "Xiaomi",
+            "model": "HHCCJCY01"
+          }
+        },
+        "entity_descriptions": {
+          "temperature___": {
+            "key": "temperature_°C",
+            "device_class": "temperature",
+            "entity_registry_enabled_default": null,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "°C",
+            "state_class": "measurement"
+          },
+          "signal_strength___": {
+            "key": "signal_strength_dBm",
+            "device_class": "signal_strength",
+            "entity_category": "diagnostic",
+            "entity_registry_enabled_default": false,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "dBm",
+            "state_class": "measurement"
+          },
+          "conductivity___": {
+            "key": "µS/cm",
+            "device_class": "conductivity",
+            "entity_registry_enabled_default": null,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "µS/cm",
+            "state_class": "measurement"
+          },
+          "illuminance___": {
+            "key": "illuminance_lx",
+            "device_class": "illuminance",
+            "entity_registry_enabled_default": null,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "lx",
+            "state_class": "measurement"
+          },
+          "battery___": {
+            "key": "battery_%",
+            "device_class": "battery",
+            "entity_category": "diagnostic",
+            "entity_registry_enabled_default": null,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "%",
+            "state_class": "measurement"
+          },
+          "moisture___": {
+            "key": "moisture_%",
+            "device_class": "moisture",
+            "entity_registry_enabled_default": null,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "%",
+            "state_class": "measurement"
+          }
+        },
+        "entity_names": {
+          "temperature___": "Temperature",
+          "signal_strength___": "Signal Strength",
+          "conductivity___": "Conductivity",
+          "illuminance___": "Illuminance",
+          "battery___": "Battery",
+          "moisture___": "Moisture"
+        },
+        "entity_data": {
+          "temperature___": 23.5,
+          "signal_strength___": -80,
+          "conductivity___": 171,
+          "illuminance___": 817,
+          "battery___": 0,
+          "moisture___": 13
+        }
+      }
+    },
+    "0fd3edba978409a32fab5a56d16b0bea": {
+      "binary_sensor": {
+        "devices": {
+          "": {
+            "name": "Dimmer Switch 9E2D",
+            "manufacturer": "Xiaomi",
+            "model": "YLKG07YL/YLKG08YL"
+          }
+        },
+        "entity_descriptions": {},
+        "entity_names": {},
+        "entity_data": {}
+      },
+      "sensor": {
+        "devices": {
+          "": {
+            "name": "Dimmer Switch 9E2D",
+            "manufacturer": "Xiaomi",
+            "model": "YLKG07YL/YLKG08YL"
+          }
+        },
+        "entity_descriptions": {
+          "signal_strength___": {
+            "key": "signal_strength_dBm",
+            "device_class": "signal_strength",
+            "entity_category": "diagnostic",
+            "entity_registry_enabled_default": false,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "dBm",
+            "state_class": "measurement"
+          }
+        },
+        "entity_names": {
+          "signal_strength___": "Signal Strength"
+        },
+        "entity_data": {
+          "signal_strength___": -60
+        }
+      }
+    },
+    "9902ed4f89791a844535ea0773f6352d": {
+      "binary_sensor": {
+        "devices": {
+          "": {
+            "name": "Wireless Switch 6105",
+            "manufacturer": "Xiaomi",
+            "model": "YLAI003"
+          }
+        },
+        "entity_descriptions": {},
+        "entity_names": {},
+        "entity_data": {}
+      },
+      "sensor": {
+        "devices": {
+          "": {
+            "name": "Wireless Switch 6105",
+            "manufacturer": "Xiaomi",
+            "model": "YLAI003"
+          }
+        },
+        "entity_descriptions": {
+          "battery___": {
+            "key": "battery_%",
+            "device_class": "battery",
+            "entity_category": "diagnostic",
+            "native_unit_of_measurement": "%",
+            "state_class": "measurement"
+          },
+          "voltage___": {
+            "key": "voltage_V",
+            "device_class": "voltage",
+            "entity_category": "diagnostic",
+            "native_unit_of_measurement": "V",
+            "state_class": "measurement"
+          },
+          "signal_strength___": {
+            "key": "signal_strength_dBm",
+            "device_class": "signal_strength",
+            "entity_category": "diagnostic",
+            "entity_registry_enabled_default": false,
+            "native_unit_of_measurement": "dBm",
+            "state_class": "measurement"
+          }
+        },
+        "entity_names": {
+          "battery___": "Battery",
+          "voltage___": "Voltage",
+          "signal_strength___": "Signal Strength"
+        },
+        "entity_data": {
+          "battery___": 74,
+          "voltage___": 2.866,
+          "signal_strength___": -72
+        }
+      }
+    },
+    "54f98a66a21f104809c4bee984ce087d": {
+      "binary_sensor": {
+        "devices": {
+          "": {
+            "name": "Wireless Switch 3241",
+            "manufacturer": "Xiaomi",
+            "model": "YLAI003"
+          }
+        },
+        "entity_descriptions": {},
+        "entity_names": {},
+        "entity_data": {}
+      },
+      "sensor": {
+        "devices": {
+          "": {
+            "name": "Wireless Switch 3241",
+            "manufacturer": "Xiaomi",
+            "model": "YLAI003"
+          }
+        },
+        "entity_descriptions": {
+          "signal_strength___": {
+            "key": "signal_strength_dBm",
+            "device_class": "signal_strength",
+            "entity_category": "diagnostic",
+            "entity_registry_enabled_default": false,
+            "native_unit_of_measurement": "dBm",
+            "state_class": "measurement"
+          },
+          "battery___": {
+            "key": "battery_%",
+            "device_class": "battery",
+            "entity_category": "diagnostic",
+            "native_unit_of_measurement": "%",
+            "state_class": "measurement"
+          },
+          "voltage___": {
+            "key": "voltage_V",
+            "device_class": "voltage",
+            "entity_category": "diagnostic",
+            "native_unit_of_measurement": "V",
+            "state_class": "measurement"
+          }
+        },
+        "entity_names": {
+          "signal_strength___": "Signal Strength",
+          "battery___": "Battery",
+          "voltage___": "Voltage"
+        },
+        "entity_data": {
+          "signal_strength___": -68,
+          "battery___": 0,
+          "voltage___": 2.2
+        }
+      }
+    },
+    "38c834b43cb59b7c8e0f85aef7d3f9a3": {
+      "binary_sensor": {
+        "devices": {
+          "": {
+            "name": "Dimmer Switch 96FA",
+            "manufacturer": "Xiaomi",
+            "model": "YLKG07YL/YLKG08YL"
+          }
+        },
+        "entity_descriptions": {},
+        "entity_names": {},
+        "entity_data": {}
+      },
+      "sensor": {
+        "devices": {
+          "": {
+            "name": "Dimmer Switch 96FA",
+            "manufacturer": "Xiaomi",
+            "model": "YLKG07YL/YLKG08YL"
+          }
+        },
+        "entity_descriptions": {
+          "signal_strength___": {
+            "key": "signal_strength_dBm",
+            "device_class": "signal_strength",
+            "entity_category": "diagnostic",
+            "entity_registry_enabled_default": false,
+            "entity_registry_visible_default": null,
+            "force_update": null,
+            "has_entity_name": null,
+            "name": null,
+            "native_unit_of_measurement": "dBm",
+            "state_class": "measurement"
+          }
+        },
+        "entity_names": {
+          "signal_strength___": "Signal Strength"
+        },
+        "entity_data": {
+          "signal_strength___": -72
+        }
+      }
+    }
+  }
+}

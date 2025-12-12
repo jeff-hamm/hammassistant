@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "auth_provider.homeassistant",
+  "data": {
+    "users": [
+      {
+        "username": "jumper",
+        "password": "JDJiJDEyJGhPUXpXcXZKWi94dy5kT1owc3dyMU9vMVF3M01TWVZjV1VlMi9PTGp2YlM3cDg0Z1llYVhH"
+      },
+      {
+        "username": "wallfire",
+        "password": "JDJiJDEyJFlRbTVueEE4ZW1BMFdwSzl1UWZwVk91dEhvQ01TeG5nLjJNcTF1TTlkdlVrRVZ6NGRsN3Bl"
+      },
+      {
+        "username": "mikaela",
+        "password": "JDJiJDEyJGw1aU9WazB1Q2pDTy5sUW1CcWlNTHVQWFBUY3BmTkRHcWtiaE8waFkzbjY4Sy8yMUFsTDlT"
+      },
+      {
+        "username": "snick",
+        "password": "JDJiJDEyJEZRS2hQaXNtaGtYQnFnSlV2U2ZVbC5kNGViU1B4N1g0YnAxYUI5TWxrdlRRYUpFbkNRekZl"
+      },
+      {
+        "username": "asia",
+        "password": "JDJiJDEyJDFiWnVNa3hyLk4wdzQwZm1qSzgyRE8ya3MyZFVERWVMLnlmOVlLY24yWGtOaHZVdnByNUQu"
+      }
+    ]
+  }
+}

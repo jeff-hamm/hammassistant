@@ -1,0 +1,6 @@
+flags:
+  zha_toolkit:
+  python_script:
+  wake_on_lan:
+global: !include_dir_named global
+components: !include_dir_merge_named components

@@ -1,0 +1,214 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_resources",
+  "data": {
+    "items": [
+      {
+        "id": "2f47e43722814cca9eeda0414348b5ac",
+        "url": "/hacsfiles/decluttering-card/decluttering-card.js?hacstag=188686483100",
+        "type": "module"
+      },
+      {
+        "id": "c9c0d008ea154fe7ad4df18d17b470bc",
+        "url": "/hacsfiles/lovelace-digital-clock/digital-clock.js?hacstag=373832981124",
+        "type": "module"
+      },
+      {
+        "id": "545f2d5607b84cf48079c8104c579821",
+        "url": "/hacsfiles/button-card/button-card.js?hacstag=146194325411",
+        "type": "module"
+      },
+      {
+        "id": "6dc19a56628d4f27ad6da22e9e15bcff",
+        "url": "/hacsfiles/light-entity-card/light-entity-card.js?hacstag=168744428610",
+        "type": "module"
+      },
+      {
+        "id": "185ecc72c8fb47c09cdc50e122b33c0d",
+        "url": "/hacsfiles/lovelace-slider-entity-row/slider-entity-row.js?hacstag=1448997001741",
+        "type": "module"
+      },
+      {
+        "id": "c7e780b9cf574bfbb684cb8bd294746c",
+        "url": "/hacsfiles/mini-media-player/mini-media-player-bundle.js?hacstag=1485208381169",
+        "type": "module"
+      },
+      {
+        "id": "6d43ebfb457c444ea9df65dd3b339ed2",
+        "url": "/hacsfiles/lovelace-layout-card/layout-card.js?hacstag=156434866245",
+        "type": "module"
+      },
+      {
+        "id": "2179bcfc0220485e913a3966f5170d33",
+        "url": "/hacsfiles/o365-card/o365-card.js?hacstag=667615978106",
+        "type": "module"
+      },
+      {
+        "id": "4d7468ec758d4966b5a0061bc2382535",
+        "url": "/hacsfiles/fan-percent-button-row/fan-percent-button-row.js?hacstag=34575320531",
+        "type": "module"
+      },
+      {
+        "id": "cf76d681197746939bd8d331ff126a2d",
+        "url": "/hacsfiles/polr-ytube-media-card/polr-ytube-media-card.js?hacstag=735178946170",
+        "type": "module"
+      },
+      {
+        "id": "911e947ad9304741940a490351e592d1",
+        "url": "/hacsfiles/lovelace-collapsable-cards/collapsable-cards.js?hacstag=364978303070",
+        "type": "module"
+      },
+      {
+        "id": "86e8b696d41f4b76978e984ebfef23b5",
+        "url": "/hacsfiles/select-list-card/select-list-card.js?hacstag=275672933120",
+        "type": "module"
+      },
+      {
+        "id": "d652956b87f046df8f32ef06d75822e9",
+        "url": "/hacsfiles/config-template-card/config-template-card.js?hacstag=172177543136",
+        "type": "module"
+      },
+      {
+        "id": "f28cd68c8f194c5392c5bb29df519274",
+        "url": "/hacsfiles/lovelace-card-mod/card-mod.js?hacstag=190927524343",
+        "type": "module"
+      },
+      {
+        "id": "9b93bc52165c4365999595edef9870e8",
+        "url": "/hacsfiles/LG-WebOS-Remote-Control/lg-remote-control.js?hacstag=257005990203",
+        "type": "module"
+      },
+      {
+        "id": "3d6fddfdd46b4aa985b67accf99ae919",
+        "url": "/hacsfiles/HA-Firemote/HA-Firemote.js?hacstag=536329656415",
+        "type": "module"
+      },
+      {
+        "id": "92c0ed8b71de4668a0bc02d3a79c87ad",
+        "url": "/hacsfiles/lovelace-mushroom/mushroom.js?hacstag=444350375421",
+        "type": "module"
+      },
+      {
+        "id": "7acc2df421a24effb80753ddcbe27cac",
+        "url": "/hacsfiles/kiosk-mode/kiosk-mode.js?hacstag=497319128640",
+        "type": "module"
+      },
+      {
+        "id": "de3ddf6ad7c4478496c15ae7aebce706",
+        "url": "/hacsfiles/clock-weather-card/clock-weather-card.js?hacstag=522634019287",
+        "type": "module"
+      },
+      {
+        "id": "0e3245c77a3644e0b458459f0151dfa3",
+        "url": "/hacsfiles/lovelace-hourly-weather/hourly-weather.js?hacstag=499270202650",
+        "type": "module"
+      },
+      {
+        "id": "919064bcd36444118b9b1a204f0384a2",
+        "url": "/hacsfiles/lovelace-weather-icons/weather-icons.js?hacstag=870917427012",
+        "type": "module"
+      },
+      {
+        "id": "0ddb925b7d4848b0addc4966c4e7af11",
+        "url": "/hacsfiles/stack-in-card/stack-in-card.js?hacstag=248954055020",
+        "type": "module"
+      },
+      {
+        "id": "a446373b019940a390e61496881bebe4",
+        "url": "/hacsfiles/Bubble-Card/bubble-card.js?hacstag=680112919303",
+        "type": "module"
+      },
+      {
+        "id": "1d05ce92973f45ffb052774afe711349",
+        "url": "/hacsfiles/miflora-card/miflora-card.js?hacstag=197715418010",
+        "type": "module"
+      },
+      {
+        "id": "c75d4c24ff124706844360c23e8b22dd",
+        "url": "/hacsfiles/swipe-card/swipe-card.js?hacstag=192732887500",
+        "type": "module"
+      },
+      {
+        "id": "72c9503610ac42ea84e3c72a622b745f",
+        "url": "/hacsfiles/lovelace-flower-card/flower-card.js?hacstag=297423025202510",
+        "type": "module"
+      },
+      {
+        "id": "e93b67e4517d4c5aa95c4d8bc83ae6a4",
+        "url": "/hacsfiles/PlantPictureCard/PlantPictureCard.js?hacstag=271886611014",
+        "type": "module"
+      },
+      {
+        "id": "8741da73900743eaaf512766aa5fe735",
+        "url": "/hacsfiles/flex-table-card/flex-table-card.js?hacstag=15629205812",
+        "type": "module"
+      },
+      {
+        "id": "1c293f48fb22481ba97ccd3d898a66ca",
+        "url": "/hacsfiles/entity-attributes-card/entity-attributes-card.js?hacstag=187245461012",
+        "type": "module"
+      },
+      {
+        "id": "2aa53ca230ee4d84a669ea63273cdf4f",
+        "url": "/hacsfiles/yt_dlp-card/yt_dlp-card.js?hacstag=73233141256",
+        "type": "module"
+      },
+      {
+        "id": "20c673f5ad89422380e4f9d99947c0a6",
+        "url": "/hacsfiles/mini-graph-card/mini-graph-card-bundle.js?hacstag=1512800620130",
+        "type": "module"
+      },
+      {
+        "id": "8303ff3682f540f4b19b47c74a07a6e2",
+        "url": "/hacsfiles/advanced-camera-card/advanced-camera-card.js?hacstag=3940825527170",
+        "type": "module"
+      },
+      {
+        "id": "68217c9e484346bb864b7eee42635055",
+        "url": "/hacsfiles/better-miflora-card/better-miflora-card.js?hacstag=776846977111",
+        "type": "module"
+      },
+      {
+        "id": "44f1ae395c8a428eb557b5e5adf1da9a",
+        "url": "/hacsfiles/custom-attributes/custom-attributes.js?hacstag=728990161100",
+        "type": "module"
+      },
+      {
+        "id": "0d2dd116e7bd44de98e722a5d9cbbd3b",
+        "url": "/hacsfiles/surveillance-card/surveillance-card.js?hacstag=147764937007",
+        "type": "module"
+      },
+      {
+        "id": "d53b62c43b644b4884364af9643b3f86",
+        "url": "/hacsfiles/hass-swipe-navigation/swipe-navigation.js?hacstag=5017254791156",
+        "type": "module"
+      },
+      {
+        "id": "edd5f1e1ebb34f179e10730061ba231f",
+        "url": "/hacsfiles/lovelace-multiple-entity-row/multiple-entity-row.js?hacstag=178921037451",
+        "type": "module"
+      },
+      {
+        "id": "2d0e962987ac44b68f981882b980a788",
+        "url": "/browser_mod.js?automatically-added&2.5.3",
+        "type": "module"
+      },
+      {
+        "id": "7de74bc7be1640e7bfc360e06949bc63",
+        "url": "/hacsfiles/numberbox-card/numberbox-card.js?hacstag=304967918417",
+        "type": "module"
+      },
+      {
+        "id": "150ca9514f1547b7bf088dae4f1fb7c4",
+        "url": "/hacsfiles/apexcharts-card/apexcharts-card.js?hacstag=331701152223",
+        "type": "module"
+      },
+      {
+        "id": "fce026d040ad4e3b89f629dc67217546",
+        "url": "/hacsfiles/area-card-plus/area-card-plus.js?hacstag=91136959906",
+        "type": "module"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+esphome:
+  name: garfunkle-leds-controller
+  friendly_name: Garfunkle LEDs Controller
+
+esp8266:
+  board: d1_mini
+
+
+binary_sensor:
+  - platform: gpio
+    name: "Garfunkle Big Green LED"
+    id: garfunkle_big_green_button_led
+    pin: D4
+  - platform: gpio
+    name: "Garfunkle Big Blue LED"
+    id: garfunkle_big_blue_button_led
+    pin: D3
+  - platform: gpio
+    id: garfunkle_small_red_led
+    name: "Garfunkle Small Red LED"
+    pin: D7
+  - platform: gpio
+    id: garfunkle_small_yellow_led
+    name: "Garfunkle Small Yellow LED"
+    pin: D6
+  - platform: gpio
+    id: garfunkle_small_green_led
+    name: "Garfunkle Small Green LED"
+    pin: D5
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "zvLj1BFMkE0pzzc+2ZwFUZAIrwn57Mn+ONIuz4C4vCw="
+
+ota:
+  password: "bf50b82efce171d8b6e5a9b00d3e0641"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Garfunkle Direct"
+    password: !secret fallback_wifi_password
+
+
+captive_portal:
+    

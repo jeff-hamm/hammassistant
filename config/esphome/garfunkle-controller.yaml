@@ -1,0 +1,72 @@
+esphome:
+  name: garfunkle-controller
+  friendly_name: Garfunkle Controller
+
+esp8266:
+  board: d1_mini
+
+binary_sensor:
+  - platform: gpio
+    name: "Garfunkle Big Green"
+    id: garfunkle_big_green_button
+    pin:
+      number: D4
+      mode:
+        input: true
+        pullup: true
+  - platform: gpio
+    name: "Garfunkle Big Blue"
+    id: garfunkle_big_blue_button
+    pin:
+      number: D3
+      mode:
+        input: true
+        pullup: true
+  - platform: gpio
+    id: garfunkle_small_red
+    name: "Garfunkle Small Red"
+    pin:
+      number: D7
+      mode:
+        input: true
+        pullup: true
+  - platform: gpio
+    id: garfunkle_small_yellow
+    name: "Garfunkle Small Yellow"
+    pin:
+      number: D6
+      mode:
+        input: true
+        pullup: true
+  - platform: gpio
+    id: garfunkle_small_green
+    name: "Garfunkle Small Green"
+    pin:
+      number: D5
+      mode:
+        input: true
+        pullup: true
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "Acd4wGAUOJUidO43j7ftv70eah3og51CnDhjlapO47Y="
+
+ota:
+  password: "0d179accf44f0026577bec7c04186406"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Garfunkle Direct"
+    password: !secret fallback_wifi_password
+
+
+captive_portal:
+    

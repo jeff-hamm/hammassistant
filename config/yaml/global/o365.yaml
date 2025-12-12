@@ -1,0 +1,9 @@
+# accounts:
+#   - account_name: jeff_hamm # Do not use email address or spaces
+#     client_id: "a03a022d-925c-4639-a637-3dd06d44bbf8"
+#     client_secret: !secret o365_client_secret
+#     alt_auth_method: False
+#     enable_update: True
+#     todo_sensors:
+#       enabled: True
+#       enable_update: True # set this to true if you want to be able to create new todos

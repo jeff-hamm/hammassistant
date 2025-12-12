@@ -1,0 +1,64 @@
+title: Hamm Assistant
+sidebar_editable: true
+order:
+  - item: overview
+  - item: Entrypanel
+  - item: Zigbee2MQTT
+  - item: Z-Wave JS
+  - new_item: true
+    item: Integrations
+    href: "/config/integrations"
+    icon: mdi:puzzle
+  - new_item: true
+    item: Entities
+    href: "/config/entities"
+    icon: mdi:hexagon-multiple
+  - new_item: true
+    item: Automations
+    href: "/config/automation"
+    icon: mdi:robot
+  - item: terminal
+  - item: hacs
+    notification: |
+      [[[
+        const outdatedHacsEntities = Object.values(entities.update).filter(
+          (entity) => entity.platform === 'hacs' && is_state(entity.entity_id, 'on')
+        );
+        return outdatedHacsEntities.length || '';
+      ]]]\
+  - new_item: true
+    item: divider
+  - new_item: true
+    bottom: true
+    item: Updates
+    href: "/config/updates"
+    icon: mdi:update
+  - item: config
+    bottom: true
+  - item: developer tools
+    name: Dev tools
+    icon: mdi:tools
+    bottom: true
+  - new_item: true
+    item: Server Controls
+    href: "/config/server_control"
+    icon: mdi:server
+    bottom: true
+  - new_item: true
+    item: Logs
+    bottom: true
+    href: "/config/logs"
+    icon: mdi:math-log
+  - item: history
+    hide: true
+  - item: snapshots
+    hide: true
+  - item: backups
+    hide: true
+  - item: map
+    hide: true
+  - item: energy
+    hide: true
+  - item: media
+    hide: true
+id: hammlet_yaml

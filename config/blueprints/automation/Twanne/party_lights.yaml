@@ -1,0 +1,428 @@
+blueprint:
+  name: Party Lights
+  author: AntonH
+  description: '**Version 3.0**
+
+
+    Lights go to party mode (color loops or fade-in-and-out)
+
+
+    ⚠️ **NOTE:** ⚠️
+
+    *This automation is triggered by the status of a switch or an input_boolean entity.*
+
+    *You can create this input_boolean by going to Settings > Devices & services >
+    Helpers*
+
+    *There you click on ''Create helper and choose ''Toggle''.*
+
+    '
+  source_url: https://gist.github.com/Twanne/fe33ab8466f9a4e94b3f8e21f745a377
+  domain: automation
+  input:
+    party_mode_trigger:
+      name: Party mode trigger
+      description: "The trigger you want to use to turn the party mode on.\nThe automation
+        will keep running until this is turned off.\nSupported entity types:\n  -
+        input_boolean\n  - switch\n"
+      default: []
+      selector:
+        entity:
+          filter:
+          - domain:
+            - input_boolean
+            - switch
+          multiple: false
+    target_lights:
+      name: Target lights
+      description: Which lights do you want to control?
+      selector:
+        entity:
+          multiple: true
+          filter:
+          - domain:
+            - light
+    sync_lights:
+      name: Synchronize lights
+      description: 'If more than 1 target light is selected, choose if they will all
+        change to the same state or if they each get their own random values.
+
+        **NOTE:**
+
+        *Light groups will be seen an a single entity.*
+
+        '
+      default: true
+      selector:
+        boolean: {}
+    time_between_changes:
+      name: Time between changes
+      description: Change the lights setting after this duration
+      default:
+        hours: 0
+        minutes: 0
+        seconds: 0
+        milliseconds: 0
+      selector:
+        duration:
+          enable_millisecond: true
+    transition_time:
+      name: Transition time
+      description: "The time it takes for the light to transition to the assigned
+        value when it's triggered.\nWARNING!: \n  This value should not be greater
+        than the time between changes\n"
+      default: 0
+      selector:
+        number:
+          min: 0.0
+          max: 300.0
+          step: 1.0
+          unit_of_measurement: s
+          mode: slider
+    color_mode:
+      name: Color mode
+      description: "Select how the lights need to change\n  \n  1. ⬛ **NO COLOR CHANGE:**\n
+        \ Don't change colors.\n  2. \U0001F500 **RANDOM COLOR MODE :**\n  Change
+        all RGB values randomly.\n  3. \U0001F308 **SATURATED COLOR MODE**\n  Random,
+        but deeply saturated, colors only.\n  4. \U0001F384 **CHRISTMAS COLORS :**\n
+        \ Change only between Christmas colors.\n  3. \U0001F7E5 **REDS ONLY MODE:**\n
+        \ Change only red value randomly.\n  4. \U0001F7E9 **GREENS ONLY MODE:**\n
+        \ Change only green value randomly.\n  5. \U0001F7E6 **BLUES ONLY MODE:**\n
+        \ Change only blue value randomly.\n  6. \U0001F7E6 **TEALS ONLY MODE:**\n
+        \ Change only teal shades randomly.\n  7. \U0001F338 **PINKS ONLY MODE:**\n
+        \ Change only pink shades randomly.\n  8. \U0001F7E8 **YELLOWS ONLY MODE:**\n
+        \ Change only yellow shades randomly.\n"
+      default: no_color_change
+      selector:
+        select:
+          mode: dropdown
+          options:
+          - label: NO COLOR CHANGE
+            value: no_color_change
+          - label: RANDOM COLOR MODE
+            value: random
+          - label: SATURATED COLOR MODE
+            value: deep
+          - label: CHRISTMAS COLORS
+            value: christmas
+          - label: REDS ONLY MODE
+            value: red
+          - label: GREENS ONLY MODE
+            value: green
+          - label: BLUES ONLY MODE
+            value: blue
+          - label: TEALS ONLY MODE
+            value: teal
+          - label: PINKS ONLY MODE
+            value: pink
+          - label: YELLOWS ONLY MODE
+            value: yellow
+          multiple: false
+          sort: false
+          custom_value: false
+    brightness_mode:
+      name: Brightness mode
+      description: "Select how the lights need to change\n  1. **RANDOM BRIGHTNESS:**\n
+        \ Change the brightness randomly within a set range\n  \n  2. **FIXED BRIGHTNESS:**\n
+        \ Keep the light at a user defined brightness\n"
+      default: random
+      selector:
+        select:
+          mode: dropdown
+          options:
+          - label: RANDOM BRIGHTNESS
+            value: random
+          - label: FIXED BRIGHTNESS
+            value: fixed
+          multiple: false
+          sort: false
+          custom_value: false
+    min_brightness_pct:
+      name: Minimum brightness (RANDOM BRIGHTNESS MODE)
+      description: Don't set the brightness of the light below this value
+      default: 0
+      selector:
+        number:
+          min: 0.0
+          max: 100.0
+          step: 1.0
+          mode: slider
+          unit_of_measurement: '%'
+    max_brightness_pct:
+      name: Maximum brightness (RANDOM BRIGHTNESS MODE)
+      description: Don't set the brightness of the light above this value
+      default: 100
+      selector:
+        number:
+          min: 0.0
+          max: 100.0
+          step: 1.0
+          mode: slider
+          unit_of_measurement: '%'
+    fixed_brightness_pct:
+      name: Brightness (FIXED BRIGHTNESS MODE)
+      description: Keep the light at this percentage (color changes might affect this
+        somewhat)
+      default: 0
+      selector:
+        number:
+          min: 0.0
+          max: 100.0
+          step: 1.0
+          mode: slider
+          unit_of_measurement: '%'
+    light_effect:
+      name: Effects (All modes)
+      description: 'Which light effect do you want to run?
+
+        **NOTE:**
+
+        it''s recommended to set the time between changes long enough for the effects
+        to loop at least once.
+
+        '
+      default: ''
+      selector:
+        text: {}
+    after_party_state:
+      name: After party state
+      description: "What state should the lights have when the party mode is turned
+        off.\n  \n  1. **NO CHANGE:**\n  Keep the lights in the state they are at
+        the end of the party.\n  \n  2. **TURN OFF:**\n  Turn the lights off.\n  3.
+        **RETURN TO PREVIOUS STATE:**\n  Return the lights to the state they were
+        before the party began.\n  4. **USER DEFINED SCENE:**\n  Activate a scene
+        that determines the state of the lights after the party.\n  5. **SCENE THEN
+        OFF**\n  Set the lights to a specific setting by activating the user defined
+        scene, then turn them off.\n"
+      default: return_to_previous
+      selector:
+        select:
+          mode: dropdown
+          options:
+          - label: NO CHANGE
+            value: no_change
+          - label: LIGHTS OFF
+            value: lights_off
+          - label: RETURN TO PREVIOUS STATE
+            value: return_to_previous
+          - label: USER DEFINED SCENE
+            value: user_defined_scene
+          - label: SCENE THEN OFF
+            value: scene_then_off
+          multiple: false
+          sort: false
+          custom_value: false
+    after_party_scene:
+      name: After party scene
+      description: 'User defined scene that can be activated after the party mode
+        is turned off.
+
+        '
+      default: []
+      selector:
+        entity:
+          filter:
+          - domain:
+            - scene
+          multiple: false
+    turn_off_delay:
+      name: Turn off delay
+      description: 'The time to wait before the lights are turned off.
+
+        **NOTE:**
+
+        This option is only active when the after party state is ''LIGHTS OFF'' or
+        ''SCENE THEN OFF''.
+
+        '
+      default:
+        hours: 0
+        minutes: 0
+        seconds: 0
+      selector:
+        duration: {}
+mode: restart
+variables:
+  party_mode_trigger: !input party_mode_trigger
+  target_lights: !input target_lights
+  sync_lights: !input sync_lights
+  time_between_changes: !input time_between_changes
+  transition_time: !input transition_time
+  color_mode: !input color_mode
+  brightness_mode: !input brightness_mode
+  min_brightness_pct: !input min_brightness_pct
+  max_brightness_pct: !input max_brightness_pct
+  fixed_brightness_pct: !input fixed_brightness_pct
+  light_effect: !input light_effect
+  after_party_state: !input after_party_state
+  after_party_scene: !input after_party_scene
+  turn_off_delay: !input turn_off_delay
+trigger:
+- trigger: state
+  entity_id: !input party_mode_trigger
+  to: 'on'
+action:
+- action: scene.create
+  metadata: {}
+  data:
+    scene_id: before_state
+    snapshot_entities: '{{ target_lights }}'
+- repeat:
+    sequence:
+    - choose:
+      - conditions: '{{ sync_lights is true }}'
+        sequence:
+        - variables:
+            brightness_value: "{% if brightness_mode == \"random\" %}\n  {{ range(min_brightness_pct,
+              max_brightness_pct) | random }}\n{% else %}\n  {{ fixed_brightness_pct
+              }}\n{% endif %}\n"
+            rgb_value: "{% if color_mode == \"random\" %}\n  {{ range(0,255) | random,
+              range(0,255) | random, range(0,255) | random }}\n{% elif color_mode
+              == \"deep\" %}\n  {% set current_hs = state_attr(target_lights | first,
+              'hs_color') %}\n  {% set current_rgb = state_attr(target_lights | first,
+              'rgb_color') %}\n  {% set range_low = range(-45, -14) | random %}\n
+              \ {% set range_high = range(15, 46) | random %}\n  {% set hue_shift
+              = ([range_low, range_high] | random) %}\n  {% set saturation = (range(90,
+              100) | random) / 100 %}\n  {% set lightness = 1 / 100 %}\n  {% if (current_rgb[0]
+              > 200 and current_rgb[1] > 200 and current_rgb[2] > 200) %}\n    {%
+              set new_hue = (range(0, 360) | random) %}\n  {% else %}\n    {% if current_hs
+              %}\n      {% set new_hue = (current_hs[0] + hue_shift) % 360 %}\n    {%
+              else %}\n      {% set new_hue = 0 %}\n    {% endif %}\n  {% endif %}\n
+              \ {% set hue = new_hue / 360 %}\n  \n  {% set c = (1 - (2 * lightness
+              - 1)|abs) * saturation %}\n  {% set x = c * (1 - (((hue * 360) / 60)
+              % 2 - 1)|abs) %}\n  {% set m = lightness - c / 2 %}\n  {% set r = 0
+              %}\n  {% set g = 0 %}\n  {% set b = 0 %}\n  \n  {% if hue >= 0 and hue
+              < 1/6 %}\n    {% set r, g, b = c, x, 0 %}\n  {% elif hue >= 1/6 and
+              hue < 2/6 %}\n    {% set r, g, b = x, c, 0 %}\n  {% elif hue >= 2/6
+              and hue < 3/6 %}\n    {% set r, g, b = 0, c, x %}\n  {% elif hue >=
+              3/6 and hue < 4/6 %}\n    {% set r, g, b = 0, x, c %}\n  {% elif hue
+              >= 4/6 and hue < 5/6 %}\n    {% set r, g, b = x, 0, c %}\n  {% else
+              %}\n    {% set r, g, b = c, 0, x %}\n  {% endif %}\n  \n  {% set r =
+              (r + m) * 255 %}\n  {% set g = (g + m) * 255 %}\n  {% set b = (b + m)
+              * 255 %}\n  \n  {{ r | round(0), g | round(0), b | round(0) }}\n{% elif
+              color_mode == \"christmas\" %}  \n  {% macro random_rgb_component(max)
+              %}\n    {{ range(0, 256) | random }}\n  {% endmacro %}\n  {% macro get_color(color_key)
+              %}\n    {% if color_key == 1 %}\n      [{{ random_rgb_component(256)
+              }}, 0, 0]\n    {% elif color_key == 2 %}\n      [0, {{ random_rgb_component(256)
+              }}, 0]\n    {% elif color_key == 3 %}\n      [0, 0, {{ random_rgb_component(256)
+              }}]\n    {% elif color_key == 4 %}\n      [255, 255, {{ random_rgb_component(50)
+              }}]\n    {% endif %}\n  {% endmacro %}\n  {% set color_key = range(1,
+              5) | random %}\n  {% set random_color = get_color(color_key) %}\n  {{
+              random_color }} \n{% elif color_mode == \"red\" %}\n  {{ range(0,255)
+              | random, 0, 0 }}\n{% elif color_mode == \"green\" %}\n  {{ 0, range(0,255)
+              | random, 0 }}\n{% elif color_mode == \"blue\" %}\n  {{ 0, 0, range(0,255)
+              | random }}\n{% elif color_mode == \"teal\" %}\n  {{ range(0,255) |
+              random, 255, 255 }}\n{% elif color_mode == \"pink\" %}\n  {{ 255, range(0,255)
+              | random, 255 }}\n{% elif color_mode == \"yellow\" %}\n  {{ 255, 255,
+              range(0,255) | random }}\n{% else %}\n  {{ 255, 255, 255 }}\n{% endif
+              %}\n"
+        - action: light.turn_on
+          data: "{% if light_effect == \"\" %}\n  {% if color_mode == \"no_color_change\"
+            %}\n    {{ { \"transition\": transition_time, \"brightness_pct\": brightness_value
+            } }}\n  {% else %}\n    {{ { \"transition\": transition_time, \"brightness_pct\":
+            brightness_value, \"rgb_color\": rgb_value } }}\n  {% endif %}\n{% else
+            %}\n  {% if color_mode == \"no_color_change\" %}\n    {{ { \"transition\":
+            transition_time, \"brightness_pct\": brightness_value, \"effect\": light_effect
+            \ } }}\n  {% else %}\n    {{ { \"transition\": transition_time, \"brightness_pct\":
+            brightness_value, \"rgb_color\": rgb_value, \"effect\": light_effect  }
+            }}\n  {% endif %}\n{% endif %}\n"
+          target:
+            entity_id: '{{ target_lights }}'
+      - conditions: '{{ sync_lights is false }}'
+        sequence:
+        - repeat:
+            for_each: '{{ target_lights }}'
+            sequence:
+            - variables:
+                brightness_value: "{% if brightness_mode == \"random\" %}\n  {{ range(min_brightness_pct,
+                  max_brightness_pct) | random }}\n{% else %}\n  {{ fixed_brightness_pct
+                  }}\n{% endif %}\n"
+                rgb_value: "{% if color_mode == \"random\" %}\n  {{ range(0,255) |
+                  random, range(0,255) | random, range(0,255) | random }}\n{% elif
+                  color_mode == \"deep\" %}\n  {% set current_hs = state_attr(repeat.item,
+                  'hs_color') %}\n  {% set current_rgb = state_attr(repeat.item, 'rgb_color')
+                  %}\n  {% set range_low = range(-45, -14) | random %}\n  {% set range_high
+                  = range(15, 46) | random %}\n  {% set hue_shift = ([range_low, range_high]
+                  | random) %}\n  {% set saturation = (range(90, 100) | random) /
+                  100 %}\n  {% set lightness = 1 / 100 %}\n  {% if (current_rgb[0]
+                  > 200 and current_rgb[1] > 200 and current_rgb[2] > 200) %}\n    {%
+                  set new_hue = (range(0, 360) | random) %}\n  {% else %}\n    {%
+                  if current_hs %}\n      {% set new_hue = (current_hs[0] + hue_shift)
+                  % 360 %}\n    {% else %}\n      {% set new_hue = 0 %}\n    {% endif
+                  %}\n  {% endif %}\n  {% set hue = new_hue / 360 %}\n  \n  {% set
+                  c = (1 - (2 * lightness - 1)|abs) * saturation %}\n  {% set x =
+                  c * (1 - (((hue * 360) / 60) % 2 - 1)|abs) %}\n  {% set m = lightness
+                  - c / 2 %}\n  {% set r = 0 %}\n  {% set g = 0 %}\n  {% set b = 0
+                  %}\n  \n  {% if hue >= 0 and hue < 1/6 %}\n    {% set r, g, b =
+                  c, x, 0 %}\n  {% elif hue >= 1/6 and hue < 2/6 %}\n    {% set r,
+                  g, b = x, c, 0 %}\n  {% elif hue >= 2/6 and hue < 3/6 %}\n    {%
+                  set r, g, b = 0, c, x %}\n  {% elif hue >= 3/6 and hue < 4/6 %}\n
+                  \   {% set r, g, b = 0, x, c %}\n  {% elif hue >= 4/6 and hue <
+                  5/6 %}\n    {% set r, g, b = x, 0, c %}\n  {% else %}\n    {% set
+                  r, g, b = c, 0, x %}\n  {% endif %}\n  \n  {% set r = (r + m) *
+                  255 %}\n  {% set g = (g + m) * 255 %}\n  {% set b = (b + m) * 255
+                  %}\n  \n  {{ r | round(0), g | round(0), b | round(0) }}\n{% elif
+                  color_mode == \"christmas\" %}  \n  {% macro random_rgb_component(max)
+                  %}\n    {{ range(0, max) | random }}\n  {% endmacro %}\n  {% macro
+                  get_color(color_key) %}\n    {% if color_key == 1 %}\n      [{{
+                  random_rgb_component(256) }}, 0, 0]\n    {% elif color_key == 2
+                  %}\n      [0, {{ random_rgb_component(256) }}, 0]\n    {% elif color_key
+                  == 3 %}\n      [0, 0, {{ random_rgb_component(256) }}]\n    {% elif
+                  color_key == 4 %}\n      [255, 255, {{ random_rgb_component(50)
+                  }}]\n    {% endif %}\n  {% endmacro %}\n  {% set color_key = range(1,
+                  5) | random %}\n  {% set random_color = get_color(color_key) %}\n
+                  \ {{ random_color }} \n{% elif color_mode == \"red\" %}\n  {{ range(0,255)
+                  | random, 0, 0 }}\n{% elif color_mode == \"green\" %}\n  {{ 0, range(0,255)
+                  | random, 0 }}\n{% elif color_mode == \"blue\" %}\n  {{ 0, 0, range(0,255)
+                  | random }}\n{% elif color_mode == \"teal\" %}\n  {{ range(0,255)
+                  | random, 255, 255 }}\n{% elif color_mode == \"pink\" %}\n  {{ 255,
+                  range(0,255) | random, 255 }}\n{% elif color_mode == \"yellow\"
+                  %}\n  {{ 255, 255, range(0,255) | random }}\n{% else %}\n  {{ 255,
+                  255, 255 }}\n{% endif %}\n"
+            - action: light.turn_on
+              data: "{% if light_effect == \"\" %}\n  {% if color_mode == \"no_color_change\"
+                %}\n    {{ { \"transition\": transition_time, \"brightness_pct\":
+                brightness_value } }}\n  {% else %}\n    {{ { \"transition\": transition_time,
+                \"brightness_pct\": brightness_value, \"rgb_color\": rgb_value } }}\n
+                \ {% endif %}\n{% else %}\n  {% if color_mode == \"no_color_change\"
+                %}\n    {{ { \"transition\": transition_time, \"brightness_pct\":
+                brightness_value, \"effect\": light_effect  } }}\n  {% else %}\n    {{
+                { \"transition\": transition_time, \"brightness_pct\": brightness_value,
+                \"rgb_color\": rgb_value, \"effect\": light_effect  } }}\n  {% endif
+                %}\n{% endif %}\n"
+              target:
+                entity_id: '{{ repeat.item }}'
+    - delay: !input time_between_changes
+    until:
+    - condition: state
+      entity_id: !input party_mode_trigger
+      state: 'off'
+- choose:
+  - conditions: '{{ "lights_off" in after_party_state }}'
+    sequence:
+    - delay: !input turn_off_delay
+    - action: light.turn_off
+      target:
+        entity_id: '{{ target_lights }}'
+  - conditions: '{{ "return_to_previous" in after_party_state }}'
+    sequence:
+    - action: scene.turn_on
+      metadata: {}
+      target:
+        entity_id: scene.before_state
+  - conditions: '{{ "user_defined_scene" in after_party_state }}'
+    sequence:
+    - action: scene.turn_on
+      metadata: {}
+      target:
+        entity_id: '{{ after_party_scene }}'
+  - conditions: '{{ "scene_then_off" in after_party_state }}'
+    sequence:
+    - action: scene.turn_on
+      metadata: {}
+      target:
+        entity_id: '{{ after_party_scene }}'
+    - delay: !input turn_off_delay
+    - action: light.turn_off
+      target:
+        entity_id: '{{ target_lights }}'

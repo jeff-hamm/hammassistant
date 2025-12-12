@@ -1,0 +1,7 @@
+mode: storage
+dashboards:
+  overview-yaml:
+    mode: yaml
+    title: Overview (YAML)
+    show_in_sidebar: true
+    filename: yaml/dashboards/overview.yaml

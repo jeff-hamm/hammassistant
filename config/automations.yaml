@@ -1,0 +1,70 @@
+- id: '1758710223230'
+  alias: Turn off pump if on too long
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 27891826c583cb6b2432f61495f72d98
+    entity_id: b1bc2ee9c0dec5a5a93725536aefea66
+    domain: switch
+    trigger: device
+    for:
+      hours: 0
+      minutes: 25
+      seconds: 0
+  conditions: []
+  actions:
+  - repeat:
+      while:
+      - condition: device
+        type: is_on
+        device_id: 27891826c583cb6b2432f61495f72d98
+        entity_id: b1bc2ee9c0dec5a5a93725536aefea66
+        domain: switch
+      sequence: []
+    enabled: false
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.relay_switch_1
+  mode: single
+- id: '1758847785743'
+  alias: Turn off water pump after 10 mins
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - switch.water_pump
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  conditions: []
+  actions:
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.water_pump
+  mode: single
+- id: '1759291590014'
+  alias: Press My Knob, Find my phone
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - event.alive_dimmer
+    to:
+  conditions:
+  - condition: state
+    entity_id: event.alive_dimmer
+    attribute: event_type
+    state: long_press
+  actions:
+  - action: button.press
+    metadata: {}
+    data: {}
+    target:
+      entity_id: button.google_pixel_8_google_pixel_8_play_sound
+  mode: single

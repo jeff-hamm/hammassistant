@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.370835b2675f08b5b9911a7174d31063",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "hammlet_wled_music",
+      "friendly_name": "Spamheart Vein 2",
+      "mac_address": "84:F3:EB:59:FC:7B",
+      "compilation_time": "Jan 22 2025, 03:11:19",
+      "model": "d1_mini",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2024.12.4",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 80,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": ""
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "update": [],
+    "light": [
+      {
+        "object_id": "spamheart_vein_2",
+        "key": 3035645820,
+        "name": "Spamheart Vein 2",
+        "unique_id": "hammlet_wled_musiclightspamheart_vein_2",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "supported_color_modes": [
+          35
+        ],
+        "min_mireds": 0.0,
+        "max_mireds": 0.0,
+        "effects": [
+          "None",
+          "Pulse",
+          "Color Wipe",
+          "Twinkle",
+          "Random Twinkle",
+          "Fireworks",
+          "Addressable Flicker"
+        ],
+        "legacy_supports_brightness": true,
+        "legacy_supports_rgb": true,
+        "legacy_supports_white_value": false,
+        "legacy_supports_color_temperature": false
+      }
+    ]
+  }
+}

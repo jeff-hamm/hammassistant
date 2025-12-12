@@ -1,0 +1,19 @@
+id: '1733807195131'
+alias: Party Lights
+description: ''
+use_blueprint:
+  path: Twanne/party_lights.yaml
+  input:
+    target_lights:
+    - light.living_fan
+    - light.kitchen_light
+    color_mode: pink
+    min_brightness_pct: 50
+    party_mode_trigger: input_boolean.party_mode
+    time_between_changes:
+      hours: 0
+      minutes: 0
+      seconds: 20
+      milliseconds: 0
+    transition_time: 20
+    max_brightness_pct: 75

@@ -1,0 +1,21 @@
+id: '1710323727833'
+alias: 'lighting mode: Off'
+description: ''
+trigger:
+- platform: state
+  entity_id:
+  - input_select.lighting_mode
+  to: 'Off'
+  alias: 'lighting mode: Off'
+condition: []
+action:
+- service: scene.turn_on
+  metadata: {}
+  target:
+    entity_id: scene.all_off
+- condition: state
+  entity_id: binary_sensor.projector_ping
+  state: 'on'
+- service: script.toggle_projector
+  data: {}
+mode: single

@@ -1,0 +1,12 @@
+- light:
+    schema: json
+    name: reference_light
+    unique_id: light.reference_light
+    state_topic: "hammlet/light/reference_light"
+    command_topic: "hammlet/light/reference_light"
+    supported_color_modes: ["hs", "color_temp"]
+    effect: true
+    effect_list: [colorfade_slow, colorfade_fast, flash]
+    optimistic: true
+    retain: true
+    qos: 0

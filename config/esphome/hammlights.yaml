@@ -1,0 +1,11 @@
+substitutions:
+  name: hammlet_wled_music
+  description: "Spamheart Vein 2"
+  encryption_key: "YjeJ/WbKU5fgRINPjvguR9ltx7dzdTj2UukDcFM+ZE4="
+  ota_password: "2862bb0ed8a54802aa9fb5a1bbee21b1"
+  num_leds: "400"
+  pin: "D4"
+  board: d1_mini
+    
+packages:
+  common: !include led.template.yaml

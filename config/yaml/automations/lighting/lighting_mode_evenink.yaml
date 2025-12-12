@@ -1,0 +1,15 @@
+id: '1710323779250'
+alias: 'lighting mode: Evenink'
+description: ''
+trigger:
+- platform: state
+  entity_id:
+  - input_select.lighting_mode
+  to: Evenink
+condition: []
+action:
+- service: scene.turn_on
+  metadata: {}
+  target:
+    entity_id: scene.evenink
+mode: single

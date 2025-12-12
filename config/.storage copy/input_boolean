@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_boolean",
+  "data": {
+    "items": [
+      {
+        "id": "controller_flash",
+        "name": "controller_flash"
+      },
+      {
+        "id": "party_mode",
+        "name": "party-mode",
+        "icon": "mdi:party-popper"
+      },
+      {
+        "id": "netdaemon_hammlet_apps_scene_on_button_scene_on_button",
+        "name": "netdaemon_hammlet_apps_scene_on_button_scene_on_button"
+      },
+      {
+        "id": "netdaemon_hammlet_apps_lights_watch_reference_light",
+        "name": "netdaemon_hammlet_apps_lights_watch_reference_light"
+      },
+      {
+        "id": "netdaemon_hammlet_apps_assistant_monitor_available_assistants",
+        "name": "netdaemon_hammlet_apps_assistant_monitor_available_assistants"
+      },
+      {
+        "id": "dynamic_color_temp",
+        "name": "Dynamic Color Temp"
+      },
+      {
+        "id": "netdaemon_hammlet_apps_lights_dimmer_sync",
+        "name": "netdaemon_hammlet_apps_lights_dimmer_sync"
+      },
+      {
+        "id": "disable_turn_off_late",
+        "name": "Disable - Turn-Off: Late"
+      },
+      {
+        "id": "manual_lighting",
+        "name": "Manual Lighting"
+      },
+      {
+        "id": "iceblast_loop",
+        "name": "Iceblast Loop",
+        "icon": "mdi:restore"
+      }
+    ]
+  }
+}

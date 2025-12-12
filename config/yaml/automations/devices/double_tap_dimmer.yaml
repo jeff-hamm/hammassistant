@@ -1,0 +1,24 @@
+id: '1737204555543'
+alias: Double Tap Dimmer
+description: ''
+triggers:
+- trigger: state
+  entity_id:
+  - event.liminal_dimmer_button_0
+conditions: []
+actions:
+- wait_for_trigger:
+  - trigger: state
+    entity_id:
+    - event.liminal_dimmer_button_0
+  timeout:
+    hours: 0
+    minutes: 0
+    seconds: 0.5
+  continue_on_timeout: false
+- type: turn_on
+  device_id: 76e04c15cf4e7bb980732aaf004b3500
+  entity_id: c63544f0c83e54597fd5c49af59700da
+  domain: light
+  brightness_pct: 100
+mode: single

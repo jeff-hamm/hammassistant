@@ -1,0 +1,28 @@
+id: '1710644378278'
+alias: 'Transition: Evenink'
+description: ''
+triggers:
+- entity_id:
+  - sun.sun
+  attribute: elevation
+  below: 5
+  trigger: numeric_state
+conditions: []
+actions:
+- metadata: {}
+  target:
+    entity_id: scene.evenink
+  action: scene.turn_on
+  data: {}
+- action: input_select.select_option
+  metadata: {}
+  data:
+    option: Evenink
+  target:
+    entity_id: input_select.lighting_mode
+- action: light.turn_on
+  metadata: {}
+  data: {}
+  target:
+    label_id: turn_on_sunset
+mode: single

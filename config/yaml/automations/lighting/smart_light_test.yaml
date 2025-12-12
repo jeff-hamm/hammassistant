@@ -1,0 +1,14 @@
+id: '1739398052239'
+alias: Smart Light Test
+description: ''
+use_blueprint:
+  path: Blackshome/smart-light.yaml
+  input:
+    light_switch:
+      area_id: living_room
+    include_light_control:
+    - use_transition
+    - use_brightness
+    include_light_colour_control: use_colour_temperature
+    include_dynamic_lighting: enable_sun_elevation_colour_brightness
+    dynamic_lighting_boolean: input_boolean.dynamic_color_temp

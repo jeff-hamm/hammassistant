@@ -1,0 +1,10 @@
+id: '1739396579036'
+alias: Sensor Light Test
+description: ''
+use_blueprint:
+  path: Blackshome/sensor-light.yaml
+  input:
+    include_dynamic_lighting: enable_sun_elevation_colour_brightness
+    light_switch:
+      entity_id: light.color_bulbs
+    include_light_colour_control: use_colour_temperature

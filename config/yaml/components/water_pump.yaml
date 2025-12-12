@@ -1,0 +1,256 @@
+input_number:
+  water_pump_duty_cycle:
+    name: Pump Duty Cycle
+    initial: 40
+    min: 1
+    max: 100
+    step: 1
+    unit_of_measurement: "%"
+
+sensor:
+  - platform: history_stats
+    name: "Water Pump Usage"
+    unique_id: water_pump_usage
+    entity_id: switch.water_pump
+    state: "on"
+    type: ratio
+    duration:
+      minutes: 30
+    end: "{{ now() }}"
+
+input_datetime:
+  water_fill_time:
+    name: Water Fill Time
+    has_date: false
+    has_time: true
+    initial: '00:10:00'
+  water_on_time:
+    name: Water On Time
+    has_date: false
+    has_time: true
+    initial: '00:01:00'
+
+timer:
+  water_fill_timer:
+    name: Water Fill Timer
+    icon: mdi:water-alert
+  water_on_timer:
+    name: Water On Timer
+    icon: mdi:water-alert
+ 
+script:
+  # water_pump_handler:
+  #   alias: "Pumping Timer Fix"
+  #   icon: mdi:hand-pointing-right
+  #   mode: single
+  #   sequence:
+  #     - variables:
+  #         last_pressed: >
+  #           {{ (now() - states('switch.fingerblaster') | as_datetime).total_seconds() | int }}
+  #         is_old: >
+  #           {{ last_pressed > (states('input_datetime.water_fill_time') | as_timedelta).total_seconds() }}
+  #     - if:
+  #         - condition: state
+  #           entity_id: timer.water_fill_timer
+  #           state: active
+  #       then:
+  #         - service: timer.pause
+  #           target:
+  #             entity_id: timer.water_fill_timer
+  #         - if:
+  #             - condition: template
+  #               value_template: >
+  #                 {{ last_pressed + (state_attr('timer.water_fill_timer', 'remaining') | as_timedelta).total_seconds() > (states('input_datetime.water_fill_time') | as_timedelta).total_seconds() }}
+  #           then:
+  #             - service: timer.cancel
+  #               target:
+  #                 entity_id: timer.water_fill_timer
+  #           else:
+  #             - service: timer.change
+  #               data:
+  #                 duration: "{{ last_pressed }}"
+  #               target:
+  #                 entity_id: timer.water_fill_timers
+  #     - if:
+  #       - condition: not
+  #         conditions:
+  #           - condition: state
+  #             entity_id: timer.water_fill_timer
+  #             state: active
+  #       then:
+  #         - service: timer.start
+  #           target:
+  #             entity_id: timer.water_fill_timer
+  #         - service: timer.change
+  #           data:
+  #             duration: "{{ last_pressed * -1 }}"
+  #           target:
+#              entity_id: timer.water_fill_timer
+
+automation:
+  - alias: "Water Pump Control"
+    id: water_pump_control
+    description: "Control water pump based on usage and timer logic"
+    mode: single
+    triggers:
+      - trigger: state
+        entity_id: switch.water_pump
+        to: 'on'
+    conditions: []
+    actions:
+      # Check if usage exceeds duty cycle and turn off if needed
+      - if:
+          - condition: numeric_state
+            entity_id: sensor.water_pump_usage
+            above: input_number.water_pump_duty_cycle
+        then:
+          - service: switch.turn_off
+            target:
+              entity_id: switch.water_pump
+        else:
+          # Check if usage is 0 or timer duration is 0, then start with full duration
+          - if:
+              - condition: or
+                conditions:
+                  - condition: numeric_state
+                    entity_id: sensor.water_pump_usage
+                    below: 0.01  # Effectively 0
+                  - condition: template
+                    value_template: >
+                      {{ state_attr('timer.water_fill_timer', 'duration') == '0:00:00' or 
+                         state_attr('timer.water_fill_timer', 'duration') is none }}
+            then:
+              # Start timer with duration from input_datetime.water_fill_time
+              - service: timer.start
+                target:
+                  entity_id: timer.water_on_timer
+                data:
+                  duration: "{{ states('input_datetime.water_fill_time') }}"
+              - service: timer.start
+                target:
+                  entity_id: timer.water_fill_timer
+                data:
+                  duration: "{{ states('input_datetime.water_fill_time') }}"
+            else:
+              # Just start the timer (will use existing duration)
+              - service: timer.start
+                target:
+                  entity_id: timer.water_fill_timer
+              - service: timer.start
+                target:
+                  entity_id: timer.water_on_timer
+
+  - alias: "Water Pump Off - Pause Timer"
+    id: water_pump_off_pause_timer
+    description: "Pause the water fill timer when water pump turns off"
+    mode: single
+    triggers:
+      - trigger: state
+        entity_id: switch.water_pump
+        to: 'off'
+    conditions: []
+    actions:
+      - service: timer.pause
+        target:
+          entity_id: timer.water_on_timer
+      - condition: template
+        value_template: >
+          {% set remaining = state_attr('timer.water_fill_timer', 'remaining') %}
+          {% if remaining is none %}
+            {% set finishes_at = state_attr('timer.water_fill_timer', 'finishes_at') %}
+            {% if finishes_at is not none %}
+              {% set remaining_seconds = (finishes_at | as_datetime - now()).total_seconds() %}
+              {{ remaining_seconds > 0 }}
+            {% else %}
+              false
+            {% endif %}
+          {% else %}
+            {{ (remaining | as_timedelta).total_seconds() > 0 }}
+          {% endif %}
+      - delay:
+          seconds: >
+            {% set water_on_seconds = (states('input_datetime.water_on_time') | as_timedelta).total_seconds() %}
+            {% set duty_cycle_percent = states('input_number.water_pump_duty_cycle') | float %}
+            {% set duty_cycle_ratio = duty_cycle_percent / 100 %}
+            {% set delay_seconds = water_on_seconds / duty_cycle_ratio %}
+            {{ delay_seconds | int }}
+      - condition: state
+        entity_id: switch.water_pump
+        state: 'off'
+      - service: switch.turn_on
+        target:
+          entity_id: switch.water_pump
+
+  - alias: "Water Fill Timer Finished - Turn Off Pump"
+    id: water_fill_timer_finished_turn_off_pump
+    description: "Turn off water pump when the fill timer finishes"
+    mode: single
+    triggers:
+      - trigger: event
+        event_type: timer.finished
+        event_data:
+          entity_id: timer.water_on_timer
+    conditions: []
+    actions:
+      - service: switch.turn_off
+        target:
+          entity_id: switch.water_pump
+      - service: timer.cancel
+        target:
+          entity_id: timer.water_fill_timer
+
+
+  # - alias: "Pumping Timer"
+  #   description: ""
+  #   mode: single
+  #   triggers:
+  #     - trigger: state
+  #       entity_id:
+  #         - switch.water_pump
+  #       to: 'on'
+  #   conditions: []
+  #   variables:
+  #     timeout_duration: 86400
+  #     seconds_since_last_press: >
+  #       {{ ((trigger.to_state.state | as_datetime) - (trigger.from_state.state | as_datetime)).total_seconds() | int }}
+  #     is_new_loop: >
+  #       {{ seconds_since_last_press > timeout_duration or (not is_state('timer.fingerblast_timer', 'active') and not is_state('timer.fingerblast_timer', 'paused')) }}
+  #     is_fingerblasting: >
+  #       {{ is_state('timer.fingerblast_timer', 'active') }}
+  #   actions:
+  #   - if:
+  #     - condition: template
+  #       value_template: "{{ is_new_loop }}"
+  #   then:
+  #   else:
+  #     - if:
+  #         - condition: template
+  #           value_template: "{{ is_fingerblasting }}"
+  #       then:
+  #         - service: timer.pause
+  #           target:
+  #             entity_id: timer.water_fill_timer
+  #       else:
+  #         - service: timer.start
+  #           target:
+  #             entity_id: timer.water_fill_timer
+
+  # - alias: "Pumping Auto-loop"
+  #   description: "Auto-loop fingerblaster when timer finishes"
+  #   mode: single
+  #   triggers:
+  #     - trigger: event
+  #       event_type: timer.finished
+  #       event_data:
+  #         entity_id: timer.water_fill_timer
+  #   conditions:
+  #     - condition: state
+  #       entity_id: input_boolean.water_loop
+  #       state: "on"
+  #   actions:
+  #     - delay:
+  #         seconds: 5
+  #     - service: button.press
+  #       target:
+  #         entity_id: button.fingerblaster
+

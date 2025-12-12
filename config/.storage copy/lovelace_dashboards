@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "id": "dashboard_entrypanel",
+        "show_in_sidebar": false,
+        "title": "Entrypanel",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-entrypanel"
+      },
+      {
+        "id": "asia_assistant",
+        "show_in_sidebar": true,
+        "icon": "mdi:guitar-electric",
+        "title": "Home",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "asia-assistant"
+      },
+      {
+        "id": "dashboard_details",
+        "show_in_sidebar": true,
+        "title": "Details",
+        "require_admin": true,
+        "mode": "storage",
+        "url_path": "dashboard-details"
+      },
+      {
+        "id": "dashboard_areas",
+        "show_in_sidebar": true,
+        "icon": "mdi:home-account",
+        "title": "Areas",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "dashboard-areas"
+      }
+    ]
+  }
+}

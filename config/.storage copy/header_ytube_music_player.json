@@ -1,0 +1,23 @@
+{
+    "accept": "*/*",
+    "accept-encoding": "gzip, deflate",
+    "accept-language": "en-US,en;q=0.9,es;q=0.8",
+    "authorization": "SAPISIDHASH 1735532779_c0e8db106fd0a426ed61eff111178a6fd4c4253d_u SAPISID3PHASH 1735532779_c0e8db106fd0a426ed61eff111178a6fd4c4253d_u",
+    "cache-control": "no-cache",
+    "content-encoding": "gzip",
+    "content-type": "application/json",
+    "cookie": "VISITOR_INFO1_LIVE=ybCuiox1q04; VISITOR_PRIVACY_METADATA=CgJVUxIEGgAgSg%3D%3D; __Secure-3PAPISID=y9PNQdJgD6QLWppU/AJ74ecsRg7j7GW5NB; __Secure-3PSID=g.a000qQjuEVVpEVEGbzSjfdaMF8Po-MIe31QMtft8QS4aOy4Hg8jT1EcJPpFwbizuwp57QafSagACgYKAckSAQASFQHGX2MiadI_D0_UjfLv1ClDGxiTNRoVAUF8yKq6eMYOsEIyEdcy5JkLcQCK0076; LOGIN_INFO=AFmmF2swRAIgXhAPgUlNomQaYyRljkPLJeCZcvvgCRUOSdyNMO5gaM0CIGfpxg7mrbF8w-pg24uDxtdt-YHteRMF6ySDZzVX2Wcq:QUQ3MjNmd1d3azkxN08wQmg3dGZITnVpMVdHaldVekNNeXJKdUVLRmY3YVhqUFg5Uy00WjJwQmROeE1yZklWQTR1Z0RBRC0wYTZRY3JtRXhnd2ZJc0Ntc3BtSWlxbmlvWVlmejJDTDhsR3JiOU00NXFzdzNLMTFheE1YOC1PR3l3cmpOdVlXMzcyV0tMX0NfeFg4MDdpWHhRQlNBT3FyZ0pR; _gcl_au=1.1.2130128828.1733526962; PREF=f6=80&tz=America.Los_Angeles&repeat=NONE&volume=63&autoplay=true; YSC=EoZq6xVpJWc; __Secure-ROLLOUT_TOKEN=CKjF76ahraSjywEQyqvG1ZCtigMYrMefms_NigM%3D; S=youtube_lounge_remote=mQHjzERbFObENw1JZW60zKUCwp15Fb5ISVlSNWvnRPs; ypm-render=1; remote_sid=b06bd69f-40fb-4642-a8de-e0a8b0d3784a#2; __Secure-1PSIDTS=sidts-CjEB7wV3sVwr9v6lQ8-2cBBaB8ckIU27ga7OGfd9BcDBCbwxaWsP9DqAm1euywvcxTFUEAA; __Secure-3PSIDTS=sidts-CjEB7wV3sVwr9v6lQ8-2cBBaB8ckIU27ga7OGfd9BcDBCbwxaWsP9DqAm1euywvcxTFUEAA; __Secure-3PSIDCC=AKEyXzUAFmdS8fjZtez88hH0P903v82me7LMhGrFp9KXf9yC7jCeYBaX7AhAYi43mujj04rpaZk",
+    "decoded": "message ClientVariations {   // Active Google-visible variation IDs on this client. These are reported for analysis, but do not directly affect any server-side behavior.   repeated int32 variation_id = [3300111, 3300134, 3313321, 3325967, 3330194, 3362821, 3367995, 3379965, 3384017, 3385286, 3385779, 3386363, 3386445];   // Active Google-visible variation IDs on this client that trigger server-side behavior. These are reported for analysis *and* directly affect server-side behavior.   repeated int32 trigger_variation_id = [3369446, 3386463]; }",
+    "origin": "https://music.youtube.com",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "referer": "https://music.youtube.com/",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0",
+    "x-client-data": "CI+2yQEIprbJAQipncoBCI+AywEIkqHLAQiFoM0BCLvIzQEI/aXOAQjRxc4BCMbPzgEIs9POAQj7184BCM3YzgEY5tPNARjf2M4B",
+    "x-goog-authuser": "0",
+    "x-goog-visitor-id": "Cgt5YkN1aW94MXEwNCivpMi7BjIKCgJVUxIEGgAgSg%3D%3D",
+    "x-origin": "https://music.youtube.com",
+    "x-youtube-bootstrap-logged-in": "true",
+    "x-youtube-client-name": "67",
+    "x-youtube-client-version": "1.20241218.01.00"
+}

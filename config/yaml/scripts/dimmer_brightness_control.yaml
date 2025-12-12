@@ -1,0 +1,119 @@
+dimmer_rotate_control:
+  fields:
+    event_entity:
+      description: Event entity that triggers the dimmer
+      example: event.alive_dimmer
+      required: true
+    target_light:
+      description: Light entity to control
+      example: light.alive_lights
+      required: true
+    dim_state:
+      description: Event state that triggers dimming
+      example: rotate_left
+      default: rotate_left
+    brighten_state:
+      description: Event state that triggers brightening
+      example: rotate_right
+      default: rotate_right
+    toggle_state:
+      description: Event state that triggers toggle (optional)
+      example: press
+      required: false
+    scale_factor:
+      description: Multiplier for brightness steps
+      example: 3
+      default: 3
+    state_actions:
+      description: List of custom state/action pairs (optional)
+      example: 
+        - state: long_press
+          action: button.press
+          target:
+            entity_id: button.my_phone_play_sound
+        - state: double_press
+          sequence:
+            - action: light.turn_on
+              target:
+                entity_id: light.some_light
+      required: false
+  sequence:
+    - if:
+      - condition: template
+        value_template: "{{ toggle_state is defined and toggle_state != none }}"
+      - condition: state
+        entity_id: "{{ event_entity }}"
+        state: "{{ toggle_state }}"
+        attribute: event_type
+      then:
+      - action: light.toggle
+        target:
+          entity_id: "{{ target_light }}"
+      - stop: "Handled toggle"
+    - if:
+      - condition: state
+        entity_id: "{{ event_entity }}"
+        state: "{{ dim_state }}"
+        attribute: event_type
+      then:
+      - action: light.turn_on
+        data:
+          brightness_step_pct: "{{ state_attr(event_entity, 'steps') | int * -1 * scale_factor | int }}"
+        target:
+          entity_id: "{{ target_light }}"
+      - stop: "Handled dim"
+    - if:
+      - condition: state
+        entity_id: "{{ event_entity }}"
+        state: "{{ brighten_state }}"
+        attribute: event_type
+      then:
+      - action: light.turn_on
+        data:
+          brightness_step_pct: "{{ state_attr(event_entity, 'steps') | int * scale_factor | int }}"
+        target:
+          entity_id: "{{ target_light }}"
+      - stop: "Handled brighten"
+    - if:
+      - condition: template
+        value_template: "{{ state_actions is defined and state_actions != none }}"
+      then:
+      - repeat:
+          for_each: "{{ state_actions }}"
+          sequence:
+          - if:
+            - condition: state
+              entity_id: "{{ event_entity }}"
+              state: "{{ repeat.item.state }}"
+              attribute: event_type
+            then:
+            - choose:
+              - conditions:
+                - condition: template
+                  value_template: "{{ repeat.item.sequence is defined }}"
+                sequence: "{{ repeat.item.sequence }}"
+              default:
+              - action: "{{ repeat.item.action }}"
+                data: "{{ repeat.item.data | default({}) }}"
+                target: "{{ repeat.item.target | default({}) }}"
+
+dimmer_brightness_control:
+  fields:
+    target_light:
+      description: Light entity to control
+      example: light.alive_lights
+      required: true
+    brightness_step:
+      description: Brightness step percentage
+      example: -15
+      required: true
+    scale_factor:
+      description: Multiplier for brightness steps
+      example: 3
+      default: 3
+  sequence:
+    - action: light.turn_on
+      data:
+        brightness_step_pct: "{{ brightness_step | int * scale_factor | int }}"
+      target:
+        entity_id: "{{ target_light }}"

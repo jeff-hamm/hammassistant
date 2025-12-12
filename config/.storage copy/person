@@ -1,0 +1,62 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "jumper",
+        "name": "Jumper",
+        "user_id": "e913e41567a4444786cb246cd42a777d",
+        "device_trackers": [
+          "device_tracker.pixel_8",
+          "device_tracker.wallfire",
+          "device_tracker.moto_x4"
+        ]
+      },
+      {
+        "id": "stuart",
+        "name": "Stuart",
+        "device_trackers": [
+          "device_tracker.stuarts_iphone"
+        ],
+        "user_id": null,
+        "picture": null
+      },
+      {
+        "id": "wallfire",
+        "name": "Wallfire",
+        "device_trackers": [
+          "device_tracker.wallfire"
+        ],
+        "user_id": "01bd0d9ea44641e188164647eb19143c",
+        "picture": null
+      },
+      {
+        "id": "mikaela",
+        "name": "Mikaela",
+        "device_trackers": [
+          "device_tracker.pixel_6"
+        ],
+        "user_id": "7fc66c944e49455babd861c5e295eb55",
+        "picture": null
+      },
+      {
+        "id": "snick",
+        "name": "Snick",
+        "device_trackers": [
+          "device_tracker.briana_s_iphone"
+        ],
+        "user_id": "aa15b3ce35a24a8f9b692646510cb388",
+        "picture": null
+      },
+      {
+        "id": "asia",
+        "name": "Asia",
+        "device_trackers": [],
+        "user_id": "96266f67dc2c412e8543e56059c6b4b9",
+        "picture": null
+      }
+    ]
+  }
+}

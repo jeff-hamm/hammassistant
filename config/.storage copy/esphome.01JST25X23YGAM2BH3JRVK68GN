@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01JST25X23YGAM2BH3JRVK68GN",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "outdoor-sense",
+      "friendly_name": "Outdoor Sense",
+      "mac_address": "98:3D:AE:ED:10:34",
+      "compilation_time": "Jun 11 2025, 18:42:55",
+      "model": "esp32-s3-devkitc-1",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2025.5.2",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": "",
+      "bluetooth_mac_address": ""
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "update": [],
+    "camera": [
+      {
+        "object_id": "outdoor_camera",
+        "key": 267608487,
+        "name": "Outdoor Camera",
+        "unique_id": "outdoor-sensecameraoutdoor_camera",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0
+      }
+    ],
+    "sensor": [
+      {
+        "object_id": "laeq_1s",
+        "key": 2881202993,
+        "name": "LAeq_1s",
+        "unique_id": "outdoor-sensesensorlaeq_1s",
+        "disabled_by_default": false,
+        "icon": "mdi:waveform",
+        "entity_category": 0,
+        "device_class": "",
+        "unit_of_measurement": "dBA",
+        "accuracy_decimals": 2,
+        "force_update": false,
+        "state_class": 1,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "laeq_1min",
+        "key": 3337287314,
+        "name": "LAeq_1min",
+        "unique_id": "outdoor-sensesensorlaeq_1min",
+        "disabled_by_default": false,
+        "icon": "mdi:waveform",
+        "entity_category": 0,
+        "device_class": "",
+        "unit_of_measurement": "dBA",
+        "accuracy_decimals": 2,
+        "force_update": false,
+        "state_class": 1,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "lamax_125ms_1min",
+        "key": 3678790923,
+        "name": "LAmax_125ms_1min",
+        "unique_id": "outdoor-sensesensorlamax_125ms_1min",
+        "disabled_by_default": false,
+        "icon": "mdi:waveform",
+        "entity_category": 0,
+        "device_class": "",
+        "unit_of_measurement": "dBA",
+        "accuracy_decimals": 2,
+        "force_update": false,
+        "state_class": 1,
+        "legacy_last_reset_type": 0
+      },
+      {
+        "object_id": "lamin_125ms_1min",
+        "key": 442476637,
+        "name": "LAmin_125ms_1min",
+        "unique_id": "outdoor-sensesensorlamin_125ms_1min",
+        "disabled_by_default": false,
+        "icon": "mdi:waveform",
+        "entity_category": 0,
+        "device_class": "",
+        "unit_of_measurement": "dBA",
+        "accuracy_decimals": 2,
+        "force_update": false,
+        "state_class": 1,
+        "legacy_last_reset_type": 0
+      }
+    ],
+    "text_sensor": []
+  }
+}

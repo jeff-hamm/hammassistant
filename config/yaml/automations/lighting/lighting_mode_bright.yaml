@@ -1,0 +1,15 @@
+id: '1710927276263'
+alias: 'lighting mode: Bright'
+description: ''
+trigger:
+- platform: state
+  entity_id:
+  - input_select.lighting_mode
+  to: Bright
+condition: []
+action:
+- service: scene.turn_on
+  metadata: {}
+  target:
+    entity_id: scene.bright
+mode: single

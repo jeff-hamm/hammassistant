@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.74bcebfc759aea3c87c1782780adf9f1",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "hammet-bt-proxy",
+      "friendly_name": "Hammet BT Proxy",
+      "mac_address": "D8:BC:38:E5:6C:24",
+      "compilation_time": "Nov 11 2024, 00:52:01",
+      "model": "esp32dev",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2024.10.3",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 5,
+      "bluetooth_proxy_feature_flags": 63,
+      "suggested_area": ""
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "switch": [
+      {
+        "object_id": "ble_gateway_discovery",
+        "key": 92591640,
+        "name": "BLE Gateway Discovery",
+        "unique_id": "hammet-bt-proxyswitchble_gateway_discovery",
+        "disabled_by_default": true,
+        "icon": "mdi:bluetooth-connect",
+        "entity_category": 1,
+        "assumed_state": false,
+        "device_class": ""
+      }
+    ],
+    "update": []
+  }
+}

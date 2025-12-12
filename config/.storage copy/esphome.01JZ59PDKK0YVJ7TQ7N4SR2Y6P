@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.01JZ59PDKK0YVJ7TQ7N4SR2Y6P",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "spamheart",
+      "friendly_name": "Spamheart",
+      "mac_address": "08:3A:8D:D1:CC:A4",
+      "compilation_time": "Jul 19 2025, 19:02:01",
+      "model": "d1_mini",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2025.7.2",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "legacy_voice_assistant_version": 0,
+      "voice_assistant_feature_flags": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": "",
+      "bluetooth_mac_address": "",
+      "api_encryption_supported": true,
+      "devices": [],
+      "areas": [],
+      "area": {
+        "area_id": 0,
+        "name": ""
+      }
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 10
+    },
+    "update": [],
+    "light": [
+      {
+        "object_id": "spamheart",
+        "key": 3625447022,
+        "name": "Spamheart",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "device_id": 0,
+        "supported_color_modes": [
+          35
+        ],
+        "min_mireds": 0.0,
+        "max_mireds": 0.0,
+        "effects": [
+          "None",
+          "Pulse",
+          "Color Wipe",
+          "Twinkle",
+          "Random Twinkle",
+          "Fireworks",
+          "Addressable Flicker",
+          "Rainbow"
+        ],
+        "legacy_supports_brightness": true,
+        "legacy_supports_rgb": true,
+        "legacy_supports_white_value": false,
+        "legacy_supports_color_temperature": false
+      }
+    ]
+  }
+}

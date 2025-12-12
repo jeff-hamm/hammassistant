@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "esphome.5ac4f29a3a421de6f35eb8f7a7210c1e",
+  "data": {
+    "device_info": {
+      "uses_password": false,
+      "name": "demoled1",
+      "friendly_name": "ESP8266 Demo LED 1",
+      "mac_address": "C8:C9:A3:33:C0:4C",
+      "compilation_time": "Mar 24 2024, 23:18:33",
+      "model": "d1_mini",
+      "manufacturer": "Espressif",
+      "has_deep_sleep": false,
+      "esphome_version": "2024.3.0",
+      "project_name": "",
+      "project_version": "",
+      "webserver_port": 0,
+      "voice_assistant_version": 0,
+      "legacy_bluetooth_proxy_version": 0,
+      "bluetooth_proxy_feature_flags": 0,
+      "suggested_area": ""
+    },
+    "services": [],
+    "api_version": {
+      "major": 1,
+      "minor": 9
+    },
+    "light": [
+      {
+        "object_id": "esp8266_demo_led_1",
+        "key": 2415703167,
+        "name": "ESP8266 Demo LED 1",
+        "unique_id": "demoled1lightesp8266_demo_led_1",
+        "disabled_by_default": false,
+        "icon": "",
+        "entity_category": 0,
+        "supported_color_modes": [
+          35
+        ],
+        "min_mireds": 0.0,
+        "max_mireds": 0.0,
+        "effects": [
+          "None",
+          "Pulse",
+          "Color Wipe",
+          "Twinkle",
+          "Random Twinkle",
+          "Fireworks",
+          "Addressable Flicker"
+        ],
+        "legacy_supports_brightness": true,
+        "legacy_supports_rgb": true,
+        "legacy_supports_white_value": false,
+        "legacy_supports_color_temperature": false
+      }
+    ]
+  }
+}

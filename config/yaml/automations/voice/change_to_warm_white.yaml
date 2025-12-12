@@ -1,0 +1,15 @@
+id: '1738822422449'
+alias: Change Reference to Warm white
+description: ''
+triggers:
+- trigger: conversation
+  command: Change to warm white
+conditions: []
+actions:
+- action: light.turn_on
+  metadata: {}
+  data:
+    kelvin: '{{ input_number.warm_white_kelvin }}'
+  target:
+    entity_id: light.reference_light
+mode: single

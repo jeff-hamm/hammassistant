@@ -1,0 +1,577 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.asia_assistant",
+  "data": {
+    "config": {
+      "decluttering_templates": {
+        "bubble_slider_small": {
+          "default": {
+            "use_accent_color": false
+          },
+          "card": {
+            "type": "custom:bubble-card",
+            "card_type": "button",
+            "entity": "[[entity]]",
+            "button_type": "slider",
+            "grid_options": {
+              "columns": 6,
+              "rows": "auto"
+            },
+            "card_layout": "large-2-rows",
+            "tap_action": {
+              "action": "toggle"
+            },
+            "double_tap_action": {
+              "action": "more-info"
+            },
+            "hold_action": {
+              "action": "more-info"
+            },
+            "show_name": true,
+            "scrolling_effect": false,
+            "AlternativeLayout": false,
+            "tap_to_slide": true,
+            "slider_live_update": true,
+            "show_state": false,
+            "show_attribute": true,
+            "attribute": "brightness",
+            "light_transition": false,
+            "use_accent_color": "[[ use_accent_color ]]",
+            "allow_light_slider_to_0": true,
+            "button_action": {},
+            "sub_button": [
+              {
+                "show_state": false,
+                "tap_action": {
+                  "action": "perform-action",
+                  "perform_action": "light.turn_on",
+                  "target": {
+                    "entity_id": "[[entity]]"
+                  },
+                  "data": {
+                    "brightness_step_pct": 10
+                  }
+                },
+                "name": "+",
+                "icon": "mdi:plus",
+                "state_background": false,
+                "show_name": false,
+                "show_background": false
+              },
+              {
+                "show_state": false,
+                "tap_action": {
+                  "action": "perform-action",
+                  "perform_action": "light.turn_on",
+                  "target": {
+                    "entity_id": "[[entity]]"
+                  },
+                  "data": {
+                    "brightness_step_pct": -10
+                  }
+                },
+                "icon": "mdi:minus",
+                "state_background": false,
+                "show_name": false,
+                "show_background": false
+              }
+            ],
+            "modules": [
+              "Small Bubble"
+            ]
+          }
+        },
+        "bubble_button_small": {
+          "card": {
+            "type": "custom:bubble-card",
+            "card_type": "button",
+            "button_type": "switch",
+            "entity": "[[entity]]",
+            "tap_action": {
+              "action": "toggle"
+            },
+            "double_tap_action": {
+              "action": "more-info"
+            },
+            "hold_action": {
+              "action": "more-info"
+            },
+            "modules": [
+              "Small Bubble"
+            ],
+            "grid_options": {
+              "columns": 6,
+              "rows": "auto"
+            }
+          }
+        },
+        "bubble_slider": {
+          "card": {
+            "type": "custom:bubble-card",
+            "card_type": "button",
+            "entity": "[[entity]]",
+            "button_type": "slider",
+            "grid_options": {
+              "columns": 6,
+              "rows": 2
+            },
+            "card_layout": "large",
+            "tap_action": {
+              "action": "toggle"
+            },
+            "double_tap_action": {
+              "action": "more-info"
+            },
+            "hold_action": {
+              "action": "more-info"
+            },
+            "styles": ".bubble-button-card {\n  --mdc-icon-size: 60px !important;\n  grid-template-columns: calc(var(--mdc-icon-size)+8) 1fr auto auto !important;\n}\n.bubble-sub-button-container {\n  margin-top: 15px !important;\n}\n.bubble-icon-container {\n  --mdc-icon-size: 60px !important;\n  padding: 8px;\n}\n.bubble-icon {\n  --mdc-icon-size: 50px !important;\n}\n.bubble-name-container {\n  line-height: 22px !important;\n}\n.bubble-name {\n  font-size: 20px !important;\n}",
+            "show_name": true,
+            "scrolling_effect": false,
+            "AlternativeLayout": false,
+            "tap_to_slide": true,
+            "slider_live_update": true
+          }
+        },
+        "bubble_slider_large": {
+          "card": {
+            "type": "custom:bubble-card",
+            "card_type": "button",
+            "button_type": "slider",
+            "entity": "[[entity]]",
+            "force_icon": true,
+            "show_name": true,
+            "show_icon": true,
+            "show_state": false,
+            "sub_button": "[[sub_button]]",
+            "tap_action": {
+              "action": "toggle"
+            },
+            "hold_action": {
+              "action": "more-info"
+            },
+            "double_tap_action": {
+              "action": "assist"
+            },
+            "card_layout": "large-sub-buttons-grid",
+            "show_last_changed": false,
+            "show_attribute": false,
+            "slider_live_update": true,
+            "attribute": "brightness",
+            "styles": ".bubble-icon {\n  --mdc-icon-size: 60px !important;\n}\n.entity-label-warm.background-on {\n  --bubble-sub-button-light-background-color: rgba(255, 137, 14) !important;\n}\n.bubble-range-fill {\n  background-color: ${\n  (function () {\n    if(state  !== 'on') return 'var(--bubble-sub-button-background-color, var(--bubble-icon-background-color, var(--bubble-secondary-background-color, var(--card-background-color, var(--ha-card-background)))))'\n    var color;\n    var labelColor;\n    console.log(icon)\n    var onIcons=subButtonIcon?.map(i => \n      [i.parentElement, \n        hass.entities[i.parentElement?.getAttribute(\"data-entity\")],\n        hass.states[i.parentElement?.getAttribute(\"data-entity\")]])\n      ?.filter(d =>\n      d[0] != null && d[1] != null && d[2].state == 'on');\n    console.log(icon)\n      \n    if(onIcons == null || onIcons.length==0 ) {\n     onIcons = \n       [\n       [icon.parentElement,\n        hass.entities[icon.parentElement?.getAttribute(\"data-entity\")],\n        hass.states[icon.parentElement?.getAttribute(\"data-entity\")]]\n        ]?.filter(d =>\n      d[0] != null && d[1] != null && d[2].state == 'on');\n    }\n    console.log(onIcons);\n    if(onIcons && onIcons.length) {\n      onIcons?.forEach((d) => {\n            var realColor = d[2].attributes.rgb_color != null \n              || d[2].attributes.rgbw_color;\n            if(realColor) {\n              color=realColor;\n            }\n            d[1].labels?.forEach(l => {\n            labelColor = \"rgba(255, 137, 14)\";\n            d[0].classList.add('entity-label-' + l);\n          })});\n      if(!color && labelColor) {\n        onIcons[0][0].parentElement.parentElement.classList.add('entity-label-warm')\n      }else {\n        onIcons[0][0].parentElement.parentElement.classList.remove('entity-label-warm')\n      }\n    }\n    return color || labelColor || \"var(--paper-item-icon-active-color)\";\n    \n  })()\n\n\n  } !important;\n  \n}\n",
+            "tap_to_slide": true,
+            "use_accent_color": false,
+            "allow_light_slider_to_0": true,
+            "light_transition": false,
+            "button_action": {
+              "double_tap_action": {
+                "action": "more-info"
+              },
+              "hold_action": {
+                "action": "more-info"
+              }
+            },
+            "scrolling_effect": false,
+            "grid_options": {
+              "columns": "full",
+              "rows": 2
+            }
+          }
+        },
+        "bubble_slider_adaptive": {
+          "card": {
+            "type": "custom:bubble-card",
+            "card_type": "button",
+            "entity": "[[entity]]",
+            "button_type": "slider",
+            "grid_options": {
+              "columns": 6,
+              "rows": 2
+            },
+            "card_layout": "large",
+            "tap_action": {
+              "action": "toggle"
+            },
+            "double_tap_action": {
+              "action": "more-info"
+            },
+            "hold_action": {
+              "action": "more-info"
+            },
+            "show_name": true,
+            "use_accent_color": false,
+            "scrolling_effect": false,
+            "tap_to_slide": true,
+            "AlternativeLayout": false,
+            "slider_live_update": true,
+            "sub_button": [
+              {
+                "show_attribute": false,
+                "attribute": "manual_control",
+                "show_icon": true,
+                "icon": "mdi:reload",
+                "state_background": false,
+                "show_state": false,
+                "show_name": false,
+                "show_last_changed": false,
+                "show_background": true,
+                "name": "Adapt",
+                "entity": "[[adaptive_switch]]",
+                "tap_action": {
+                  "action": "call-service",
+                  "service": "adaptive_lighting.set_manual_control",
+                  "service_data": {
+                    "manual_control": false,
+                    "lights": [
+                      "[[entity]]"
+                    ]
+                  },
+                  "target": {
+                    "entity_id": "[[adaptive_switch]]"
+                  }
+                }
+              }
+            ],
+            "styles": ".bubble-button-card {\n  --mdc-icon-size: 60px !important;\n  grid-template-columns: calc(var(--mdc-icon-size)+8) 1fr auto auto !important;\n}\n.bubble-sub-button-container {\n  margin-top: 15px !important;\n}\n.bubble-icon-container {\n  --mdc-icon-size: 60px !important;\n  padding: 8px;\n}\n.bubble-icon {\n  --mdc-icon-size: 50px !important;\n}\n.bubble-name-container {\n  line-height: 22px !important;\n}\n.bubble-name {\n  font-size: 20px !important;\n}\n.bubble-sub-button-container {\n  margin-top: 10px !important;\n  align-self: flex-start !important;\n  position: absolute !important;\n}\n.bubble-sub-button,bubble-sub-button-1 {\n  background-color: ${hass.states['[[adaptive_switch]]']?.attributes?.manual_control.length > 0 ?  'var(--bubble-sub-button-light-background-color, var(--accent-color))' : 'var(--bubble-sub-button-background-color, var(--bubble-icon-background-color, var(--bubble-secondary-background-color, var(--card-background-color, var(--ha-card-background)))))' } !important;\n}"
+          }
+        }
+      },
+      "views": [
+        {
+          "icon": "mdi:home",
+          "path": "home",
+          "type": "sections",
+          "max_columns": 3,
+          "sections": [
+            {
+              "max_columns": 3,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "🍆 Asia's Big Deck",
+                  "card_layout": "large",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  },
+                  "sub_button": [
+                    {
+                      "icon": "mdi:palette",
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#light_palette"
+                      }
+                    },
+                    {
+                      "icon": "mdi:image-frame",
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#lighting_scene"
+                      }
+                    },
+                    {
+                      "icon": "mdi:refresh",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.reset_lighting",
+                        "target": {}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_slider_large",
+                  "variables": [
+                    {
+                      "entity": "light.asia_big_deck"
+                    },
+                    {
+                      "sub_button": [
+                        {
+                          "show_state": false,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "light.turn_on",
+                            "target": {
+                              "entity_id": "light.asia_big_deck"
+                            },
+                            "data": {
+                              "brightness_step_pct": 10
+                            }
+                          },
+                          "name": "+",
+                          "icon": "mdi:plus",
+                          "state_background": false,
+                          "show_name": false,
+                          "show_background": false
+                        },
+                        {
+                          "show_state": false,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "light.turn_on",
+                            "target": {
+                              "entity_id": "light.asia_big_deck"
+                            },
+                            "data": {
+                              "brightness_step_pct": -10
+                            }
+                          },
+                          "icon": "mdi:minus",
+                          "state_background": false,
+                          "show_name": false,
+                          "show_background": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_slider_small",
+                  "variables": [
+                    {
+                      "entity": "light.big_deck_bistro"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_slider_small",
+                  "variables": [
+                    {
+                      "entity": "light.big_deck_2"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_slider_small",
+                  "variables": [
+                    {
+                      "entity": "light.big_deck_1"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "separator",
+                  "name": "🍖 Hammsterdam",
+                  "card_layout": "large",
+                  "grid_options": {
+                    "columns": "full",
+                    "rows": 1
+                  },
+                  "sub_button": [
+                    {
+                      "icon": "mdi:palette",
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#light_palette"
+                      }
+                    },
+                    {
+                      "icon": "mdi:image-frame",
+                      "tap_action": {
+                        "action": "navigate",
+                        "navigation_path": "#lighting_scene"
+                      }
+                    },
+                    {
+                      "icon": "mdi:refresh",
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.reset_lighting",
+                        "target": {}
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_slider_large",
+                  "variables": [
+                    {
+                      "entity": "light.hammscape"
+                    },
+                    {
+                      "sub_button": [
+                        {
+                          "show_state": false,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "light.turn_on",
+                            "target": {
+                              "entity_id": "light.hammscape"
+                            },
+                            "data": {
+                              "brightness_step_pct": 10
+                            }
+                          },
+                          "name": "+",
+                          "icon": "mdi:plus",
+                          "state_background": false,
+                          "show_name": false,
+                          "show_background": false
+                        },
+                        {
+                          "show_state": false,
+                          "tap_action": {
+                            "action": "perform-action",
+                            "perform_action": "light.turn_on",
+                            "target": {
+                              "entity_id": "light.hammscape"
+                            },
+                            "data": {
+                              "brightness_step_pct": -10
+                            }
+                          },
+                          "icon": "mdi:minus",
+                          "state_background": false,
+                          "show_name": false,
+                          "show_background": false
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_slider_small",
+                  "variables": [
+                    {
+                      "entity": "light.floodlights"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_slider_small",
+                  "variables": [
+                    {
+                      "entity": "light.hammscape_bistro"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "custom:decluttering-card",
+                  "template": "bubble_button_small",
+                  "variables": [
+                    {
+                      "entity": "light.outdoor_sconce"
+                    }
+                  ],
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "custom:bubble-card",
+                  "card_type": "button",
+                  "entity": "light.hammscape_bistro",
+                  "button_type": "slider",
+                  "grid_options": {
+                    "columns": 6,
+                    "rows": "auto"
+                  },
+                  "card_layout": "large-2-rows",
+                  "tap_action": {
+                    "action": "toggle"
+                  },
+                  "double_tap_action": {
+                    "action": "more-info"
+                  },
+                  "hold_action": {
+                    "action": "more-info"
+                  },
+                  "show_name": true,
+                  "scrolling_effect": false,
+                  "AlternativeLayout": false,
+                  "tap_to_slide": true,
+                  "slider_live_update": true,
+                  "show_state": false,
+                  "show_attribute": true,
+                  "attribute": "brightness",
+                  "light_transition": false,
+                  "use_accent_color": true,
+                  "allow_light_slider_to_0": true,
+                  "button_action": {},
+                  "sub_button": [
+                    {
+                      "show_state": false,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "light.turn_on",
+                        "target": {
+                          "entity_id": "[[entity]]"
+                        },
+                        "data": {
+                          "brightness_step_pct": -10
+                        }
+                      },
+                      "icon": "mdi:minus",
+                      "state_background": false,
+                      "show_name": false,
+                      "show_background": false
+                    },
+                    {
+                      "show_state": false,
+                      "tap_action": {
+                        "action": "perform-action",
+                        "perform_action": "light.turn_on",
+                        "target": {
+                          "entity_id": "[[entity]]"
+                        },
+                        "data": {
+                          "brightness_step_pct": 10
+                        }
+                      },
+                      "name": "+",
+                      "icon": "mdi:plus",
+                      "state_background": false,
+                      "show_name": false,
+                      "show_background": false
+                    }
+                  ],
+                  "modules": [
+                    "Small Bubble"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,571 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "bluetooth.remote_scanners",
+  "data": {
+    "8C:90:2D:E8:22:44": {
+      "connectable": true,
+      "expire_seconds": 195.0,
+      "discovered_device_advertisement_datas": {
+        "E1:24:3A:DC:21:43": {
+          "device": {
+            "address": "E1:24:3A:DC:21:43",
+            "name": null,
+            "rssi": -66,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_E1_24_3A_DC_21_43",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "2409": "e1243adc2143020a0011000159"
+            },
+            "service_data": {},
+            "service_uuids": [],
+            "rssi": -66,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "CB:DD:41:12:A0:BC": {
+          "device": {
+            "address": "CB:DD:41:12:A0:BC",
+            "name": null,
+            "rssi": -60,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_CB_DD_41_12_A0_BC",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "2409": "cbdd4112a0bc020a001100015b"
+            },
+            "service_data": {},
+            "service_uuids": [],
+            "rssi": -60,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "1C:D6:BD:F9:25:B8": {
+          "device": {
+            "address": "1C:D6:BD:F9:25:B8",
+            "name": null,
+            "rssi": -82,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_1C_D6_BD_F9_25_B8",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "00001828-0000-1000-8000-00805f9b34fb": "0154dd0e7206e2bbe9bbffc86fa4bf75ab"
+            },
+            "service_uuids": [
+              "00001828-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -82,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "1C:D6:BD:F8:7B:01": {
+          "device": {
+            "address": "1C:D6:BD:F8:7B:01",
+            "name": null,
+            "rssi": -86,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_1C_D6_BD_F8_7B_01",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "00001828-0000-1000-8000-00805f9b34fb": "0159ab99ea9c3009c59ca26ad21bdc786c"
+            },
+            "service_uuids": [
+              "00001828-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -86,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "1C:D6:BD:F5:6A:69": {
+          "device": {
+            "address": "1C:D6:BD:F5:6A:69",
+            "name": null,
+            "rssi": -56,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_1C_D6_BD_F5_6A_69",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {},
+            "service_uuids": [],
+            "rssi": -56,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "5E:17:D5:F7:96:05": {
+          "device": {
+            "address": "5E:17:D5:F7:96:05",
+            "name": null,
+            "rssi": -76,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_5E_17_D5_F7_96_05",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "196": "1934141216fd80"
+            },
+            "service_data": {},
+            "service_uuids": [
+              "0000feb9-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -76,
+            "tx_power": -44,
+            "platform_data": []
+          }
+        },
+        "1C:D6:BD:F8:7D:DC": {
+          "device": {
+            "address": "1C:D6:BD:F8:7D:DC",
+            "name": null,
+            "rssi": -86,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_1C_D6_BD_F8_7D_DC",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "00001828-0000-1000-8000-00805f9b34fb": "0197bea98ae76580a8fd78e02d5eed9966"
+            },
+            "service_uuids": [
+              "00001828-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -86,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "EC:81:93:75:D8:AA": {
+          "device": {
+            "address": "EC:81:93:75:D8:AA",
+            "name": "\u0000",
+            "rssi": -88,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_EC_81_93_75_D8_AA",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": "\u0000",
+            "manufacturer_data": {
+              "3": "04325100600000000000000022"
+            },
+            "service_data": {},
+            "service_uuids": [
+              "0000fe61-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -88,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "1C:D6:BD:F8:74:CA": {
+          "device": {
+            "address": "1C:D6:BD:F8:74:CA",
+            "name": null,
+            "rssi": -78,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_1C_D6_BD_F8_74_CA",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "00001828-0000-1000-8000-00805f9b34fb": "010d99259d2f8de06a323bc814aaa1f7d8"
+            },
+            "service_uuids": [
+              "00001828-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -78,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "1C:D6:BD:F8:FE:4F": {
+          "device": {
+            "address": "1C:D6:BD:F8:FE:4F",
+            "name": null,
+            "rssi": -88,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_1C_D6_BD_F8_FE_4F",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "00001828-0000-1000-8000-00805f9b34fb": "018a5d9fbb00bb93d3b0ab664fa208598c"
+            },
+            "service_uuids": [
+              "00001828-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -88,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "1C:D6:BD:F8:75:FE": {
+          "device": {
+            "address": "1C:D6:BD:F8:75:FE",
+            "name": null,
+            "rssi": -76,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_1C_D6_BD_F8_75_FE",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "00001828-0000-1000-8000-00805f9b34fb": "0161ca88eb4acc61231e98941e60a1192f"
+            },
+            "service_uuids": [
+              "00001828-0000-1000-8000-00805f9b34fb"
+            ],
+            "rssi": -76,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "6D:5A:A7:BA:AD:A8": {
+          "device": {
+            "address": "6D:5A:A7:BA:AD:A8",
+            "name": null,
+            "rssi": -56,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_6D_5A_A7_BA_AD_A8",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fe2c-0000-1000-8000-00805f9b34fb": "104081836010214074"
+            },
+            "service_uuids": [],
+            "rssi": -56,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "68:59:A1:5C:BB:96": {
+          "device": {
+            "address": "68:59:A1:5C:BB:96",
+            "name": null,
+            "rssi": -60,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_68_59_A1_5C_BB_96",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "3787": "dd2001d3e4000047040000505e5c50556d00410000000000"
+            },
+            "service_data": {},
+            "service_uuids": [],
+            "rssi": -60,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "0E:22:7A:FF:28:65": {
+          "device": {
+            "address": "0E:22:7A:FF:28:65",
+            "name": null,
+            "rssi": -76,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_0E_22_7A_FF_28_65",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fcf1-0000-1000-8000-00805f9b34fb": "0470aac17d8aec84d88fe97f4c0504d178962e30c515"
+            },
+            "service_uuids": [],
+            "rssi": -76,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "19:AA:10:5C:26:BF": {
+          "device": {
+            "address": "19:AA:10:5C:26:BF",
+            "name": null,
+            "rssi": -76,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_19_AA_10_5C_26_BF",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fef3-0000-1000-8000-00805f9b34fb": "4a1723305439531132880ad823da071f5afda70b2a682ece32101f"
+            },
+            "service_uuids": [],
+            "rssi": -76,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "12:A4:44:4D:92:2E": {
+          "device": {
+            "address": "12:A4:44:4D:92:2E",
+            "name": null,
+            "rssi": -58,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_12_A4_44_4D_92_2E",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "6": "01092022ccb8727ae14ef29aa69ae983ad139a3ac8e6d9db96b40e"
+            },
+            "service_data": {},
+            "service_uuids": [],
+            "rssi": -58,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "22:4B:C6:81:39:43": {
+          "device": {
+            "address": "22:4B:C6:81:39:43",
+            "name": null,
+            "rssi": -60,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_22_4B_C6_81_39_43",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fcf1-0000-1000-8000-00805f9b34fb": "0470aac17d8aec84d88fe97f4c0504d178962e30c515"
+            },
+            "service_uuids": [],
+            "rssi": -60,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "3E:DE:54:CF:BD:69": {
+          "device": {
+            "address": "3E:DE:54:CF:BD:69",
+            "name": null,
+            "rssi": -98,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_3E_DE_54_CF_BD_69",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "76": "13084a5d76d3b49dff00"
+            },
+            "service_data": {},
+            "service_uuids": [],
+            "rssi": -98,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "60:56:B8:F8:F1:E1": {
+          "device": {
+            "address": "60:56:B8:F8:F1:E1",
+            "name": null,
+            "rssi": -68,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_60_56_B8_F8_F1_E1",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {},
+            "service_data": {
+              "0000fe2c-0000-1000-8000-00805f9b34fb": "1040c0d1200121ec85"
+            },
+            "service_uuids": [],
+            "rssi": -68,
+            "tx_power": -127,
+            "platform_data": []
+          }
+        },
+        "7D:A7:CF:65:88:7A": {
+          "device": {
+            "address": "7D:A7:CF:65:88:7A",
+            "name": null,
+            "rssi": -96,
+            "details": {
+              "source": "8C:90:2D:E8:22:44",
+              "path": "/org/bluez/hci0/dev_7D_A7_CF_65_88_7A",
+              "props": {
+                "Adapter": "/org/bluez/hci0"
+              }
+            }
+          },
+          "advertisement_data": {
+            "local_name": null,
+            "manufacturer_data": {
+              "76": "10055b1cfc4b39"
+            },
+            "service_data": {},
+            "service_uuids": [],
+            "rssi": -96,
+            "tx_power": 12,
+            "platform_data": []
+          }
+        }
+      },
+      "discovered_device_timestamps": {
+        "E1:24:3A:DC:21:43": 1758400273.602423,
+        "CB:DD:41:12:A0:BC": 1758400273.602423,
+        "1C:D6:BD:F9:25:B8": 1758400271.36831,
+        "1C:D6:BD:F8:7B:01": 1758400273.6954277,
+        "1C:D6:BD:F5:6A:69": 1758400267.949137,
+        "5E:17:D5:F7:96:05": 1758400273.602423,
+        "1C:D6:BD:F8:7D:DC": 1758400273.602423,
+        "EC:81:93:75:D8:AA": 1758400273.6964278,
+        "1C:D6:BD:F8:74:CA": 1758400273.602423,
+        "1C:D6:BD:F8:FE:4F": 1758400273.527419,
+        "1C:D6:BD:F8:75:FE": 1758400273.602423,
+        "6D:5A:A7:BA:AD:A8": 1758400252.7503679,
+        "68:59:A1:5C:BB:96": 1758400273.6954277,
+        "0E:22:7A:FF:28:65": 1758400148.3760853,
+        "19:AA:10:5C:26:BF": 1758400273.5914223,
+        "12:A4:44:4D:92:2E": 1758400273.7664313,
+        "22:4B:C6:81:39:43": 1758400273.602423,
+        "3E:DE:54:CF:BD:69": 1758400196.0734997,
+        "60:56:B8:F8:F1:E1": 1758400273.602423,
+        "7D:A7:CF:65:88:7A": 1758400260.2767487
+      },
+      "discovered_device_raw": {
+        "E1:24:3A:DC:21:43": "02010610ff6909e1243adc2143020a0011000159",
+        "CB:DD:41:12:A0:BC": "02010610ff6909cbdd4112a0bc020a001100015b",
+        "1C:D6:BD:F9:25:B8": "02010603032818141628180154dd0e7206e2bbe9bbffc86fa4bf75ab",
+        "1C:D6:BD:F8:7B:01": "02010603032818141628180159ab99ea9c3009c59ca26ad21bdc786c",
+        "1C:D6:BD:F5:6A:69": "172b010053f35bcb8408abe9000000000c5181e63c553c1b",
+        "5E:17:D5:F7:96:05": "02011a0affc4001934141216fd80020ad40303b9fe081b0025739be9cb64",
+        "1C:D6:BD:F8:7D:DC": "02010603032818141628180197bea98ae76580a8fd78e02d5eed9966",
+        "EC:81:93:75:D8:AA": "02011a020800030361fe10ff030004325100600000000000000022",
+        "1C:D6:BD:F8:74:CA": "0201060303281814162818010d99259d2f8de06a323bc814aaa1f7d8",
+        "1C:D6:BD:F8:FE:4F": "0201060303281814162818018a5d9fbb00bb93d3b0ab664fa208598c",
+        "1C:D6:BD:F8:75:FE": "02010603032818141628180161ca88eb4acc61231e98941e60a1192f",
+        "6D:5A:A7:BA:AD:A8": "0201180c162cfe104081836010214074",
+        "68:59:A1:5C:BB:96": "0201180316dffd17094a424c205061727479426f782053746167652033323003164f18051655182000041653180003164418",
+        "0E:22:7A:FF:28:65": "0201021916f1fc0470aac17d8aec84d88fe97f4c0504d178962e30c515",
+        "19:AA:10:5C:26:BF": "1e16f3fe4a1723305439531132880ad823da071f5afda70b2a682ece32101f",
+        "12:A4:44:4D:92:2E": "1eff060001092022ccb8727ae14ef29aa69ae983ad139a3ac8e6d9db96b40e",
+        "22:4B:C6:81:39:43": "0201021916f1fc0470aac17d8aec84d88fe97f4c0504d178962e30c515",
+        "3E:DE:54:CF:BD:69": "02011a0dff4c0013084a5d76d3b49dff00",
+        "60:56:B8:F8:F1:E1": "0201180c162cfe1040c0d1200121ec85",
+        "7D:A7:CF:65:88:7A": "02011a020a0c0aff4c0010055b1cfc4b39"
+      }
+    }
+  }
+}

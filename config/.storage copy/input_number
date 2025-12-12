@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_number",
+  "data": {
+    "items": [
+      {
+        "id": "stripper_light_brightness",
+        "min": 0.0,
+        "max": 100.0,
+        "name": "Stripper Light Brightness",
+        "step": 1.0,
+        "mode": "slider"
+      },
+      {
+        "id": "alive_lights_last_temperature",
+        "min": 2000.0,
+        "max": 7000.0,
+        "name": "alive lights last temperature",
+        "icon": "mdi:temperature-kelvin",
+        "unit_of_measurement": "K",
+        "step": 100.0,
+        "mode": "slider"
+      },
+      {
+        "id": "warm_white_kelvin",
+        "min": 2200.0,
+        "max": 5500.0,
+        "name": "Warm White Kelvin",
+        "icon": "mdi:heat-wave",
+        "step": 100.0,
+        "unit_of_measurement": "ºK",
+        "mode": "slider"
+      }
+    ]
+  }
+}

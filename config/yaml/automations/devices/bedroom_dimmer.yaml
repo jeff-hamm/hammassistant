@@ -1,0 +1,47 @@
+id: '1711883405969'
+alias: 'Bedroom: Dimmer'
+description: ''
+triggers:
+  - platform: state
+    entity_id:
+      - event.bedroom_dimmer
+    to:
+conditions: []
+actions:
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: event.bedroom_dimmer
+            attribute: event_type
+            state: rotate_left
+        sequence:
+          - service: light.turn_on
+            metadata: {}
+            data:
+              brightness_step_pct: '{{(state_attr(''event.bedroom_dimmer'', ''steps'')|int)*-2}}'
+            target:
+              entity_id: light.bedroom_fan_light
+      - conditions:
+          - condition: state
+            entity_id: event.bedroom_dimmer
+            attribute: event_type
+            state: rotate_right
+        sequence:
+          - service: light.turn_on
+            metadata: {}
+            data:
+              brightness_step_pct: '{{(state_attr(''event.bedroom_dimmer'', ''steps'')|int)*2}}'
+            target:
+              entity_id: light.bedroom_fan_light
+      - conditions:
+          - condition: state
+            entity_id: event.bedroom_dimmer
+            attribute: event_type
+            state: press
+        sequence:
+          - service: light.toggle
+            metadata: {}
+            data: {}
+            target:
+              entity_id: light.bedroom_fan_light
+mode: single
