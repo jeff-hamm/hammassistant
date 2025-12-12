@@ -56,7 +56,9 @@ services:
       - TZ=${TZ}
     volumes:
       - ${COMPOSE_ROOT}/config:/config
+      - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
+      - /mnt/user/jumpdrive:/share/jumpdrive  # For yt_dlp
     # Bluetooth via DBus (BlueZ on host)
     # BlueZ installed and auto-starts on boot via boot.d/install-bluez.sh
     # Requires NET_ADMIN, NET_RAW, and SYS_ADMIN capabilities for full BLE support
