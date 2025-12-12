@@ -1,0 +1,2037 @@
+{
+  "domains": [
+    {
+      "domain": "light",
+      "entities": [
+        {
+          "id": "light.bulb_rgbcw_6ddfa9",
+          "friendlyName": "Egg",
+          "cSharpName": "BulbRgbcw6ddfa9"
+        },
+        {
+          "id": "light.bulb_rgbcw_a350f3",
+          "friendlyName": "Bulb RGBCW A350F3",
+          "cSharpName": "BulbRgbcwA350f3"
+        },
+        {
+          "id": "light.bulb_rgbcw_fe8ceb",
+          "friendlyName": "Bulb RGBCW FE8CEB",
+          "cSharpName": "BulbRgbcwFe8ceb"
+        },
+        {
+          "id": "light.desk_lamp",
+          "friendlyName": "Desk Lamp",
+          "cSharpName": "DeskLamp"
+        },
+        {
+          "id": "light.garage_ceiling_1",
+          "friendlyName": "Garage Ceiling 1",
+          "cSharpName": "GarageCeiling1"
+        },
+        {
+          "id": "light.garage_ceiling_2",
+          "friendlyName": "Garage Ceiling 2",
+          "cSharpName": "GarageCeiling2"
+        },
+        {
+          "id": "light.mikaela_ceiling_1",
+          "friendlyName": "Mikaela Ceiling 1",
+          "cSharpName": "MikaelaCeiling1"
+        },
+        {
+          "id": "light.mikaela_ceiling_2",
+          "friendlyName": "Mikaela Ceiling 2",
+          "cSharpName": "MikaelaCeiling2"
+        },
+        {
+          "id": "light.mikaela_dimmer",
+          "friendlyName": "Mikaela Dimmer",
+          "cSharpName": "MikaelaDimmer"
+        },
+        {
+          "id": "light.mikaela_s_ceiling",
+          "friendlyName": "Mikaela\u0027s Ceiling",
+          "cSharpName": "MikaelaSCeiling"
+        },
+        {
+          "id": "light.mikaela_s_room",
+          "friendlyName": "Mikaela\u0027s Room",
+          "cSharpName": "MikaelaSRoom"
+        },
+        {
+          "id": "light.wicker_lamp_switch_socket_1",
+          "friendlyName": "Wicker Lamp Switch Socket 1",
+          "cSharpName": "WickerLampSwitchSocket1"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "supported_color_modes",
+          "cSharpName": "SupportedColorModes",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u003CHammlet.Models.Enums.ColorMode\u003E",
+          "values": [
+            "brightness",
+            "color_temp",
+            "hs",
+            "onoff",
+            "rgb"
+          ],
+          "isList": true,
+          "toGenerate": false,
+          "toParse": true
+        },
+        {
+          "jsonName": "color_mode",
+          "cSharpName": "ColorMode",
+          "clrType": "Hammlet.Models.Enums.ColorMode",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "min_color_temp_kelvin",
+          "cSharpName": "MinColorTempKelvin",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "max_color_temp_kelvin",
+          "cSharpName": "MaxColorTempKelvin",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "min_mireds",
+          "cSharpName": "MinMireds",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "max_mireds",
+          "cSharpName": "MaxMireds",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "brightness",
+          "cSharpName": "Brightness",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "color_temp_kelvin",
+          "cSharpName": "ColorTempKelvin",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "color_temp",
+          "cSharpName": "ColorTemp",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "hs_color",
+          "cSharpName": "HsColor",
+          "clrType": "IReadOnlyList\u003Cdouble\u003E",
+          "values": null,
+          "isList": true,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "rgb_color",
+          "cSharpName": "RgbColor",
+          "clrType": "IReadOnlyList\u003Cdouble\u003E",
+          "values": null,
+          "isList": true,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "xy_color",
+          "cSharpName": "XyColor",
+          "clrType": "IReadOnlyList\u003Cdouble\u003E",
+          "values": null,
+          "isList": true,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "entity_id",
+          "cSharpName": "EntityId",
+          "clrType": "LightEntityId",
+          "values": [
+            "light.desk_lamp",
+            "light.mikaela_ceiling_1",
+            "light.mikaela_ceiling_2",
+            "light.mikaela_s_ceiling",
+            "light.wicker_lamp_switch_socket_1"
+          ],
+          "isList": true,
+          "toGenerate": true,
+          "toParse": true
+        },
+        {
+          "jsonName": "effect_list",
+          "cSharpName": "EffectList",
+          "clrType": "LightEffectList",
+          "values": [
+            "blue_fade",
+            "blue_strobe",
+            "colorjump",
+            "colorloop",
+            "colorstrobe",
+            "cyan_fade",
+            "cyan_strobe",
+            "cycle_rgb",
+            "cycle_seven_colors",
+            "gb_cross_fade",
+            "green_fade",
+            "green_strobe",
+            "purple_fade",
+            "purple_strobe",
+            "random",
+            "rb_cross_fade",
+            "red_fade",
+            "red_strobe",
+            "rg_cross_fade",
+            "rgb_cross_fade",
+            "white_fade",
+            "white_strobe",
+            "yellow_fade",
+            "yellow_strobe"
+          ],
+          "isList": true,
+          "toGenerate": true,
+          "toParse": true
+        },
+        {
+          "jsonName": "color",
+          "cSharpName": "Color",
+          "clrType": "System.Object",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "effect",
+          "cSharpName": "Effect",
+          "clrType": null,
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "ip_address",
+          "cSharpName": "IpAddress",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "media_player",
+      "entities": [
+        {
+          "id": "media_player.bedroom_speaker",
+          "friendlyName": "Bedroom Speaker",
+          "cSharpName": "BedroomSpeaker"
+        },
+        {
+          "id": "media_player.frida_s_family_room_tv",
+          "friendlyName": "Frida\u0027s Family Room",
+          "cSharpName": "FridaSFamilyRoomTv"
+        },
+        {
+          "id": "media_player.kitchen_mini",
+          "friendlyName": "Kitchen Mini",
+          "cSharpName": "KitchenMini"
+        },
+        {
+          "id": "media_player.living_room_mini",
+          "friendlyName": "Living Room Mini",
+          "cSharpName": "LivingRoomMini"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "app_id",
+          "cSharpName": "AppId",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "app_name",
+          "cSharpName": "AppName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "entity_picture_local",
+          "cSharpName": "EntityPictureLocal",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "entity_picture",
+          "cSharpName": "EntityPicture",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "System.String",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "volume_level",
+          "cSharpName": "VolumeLevel",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "is_volume_muted",
+          "cSharpName": "IsVolumeMuted",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_content_id",
+          "cSharpName": "MediaContentId",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_content_type",
+          "cSharpName": "MediaContentType",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_duration",
+          "cSharpName": "MediaDuration",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_position",
+          "cSharpName": "MediaPosition",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_position_updated_at",
+          "cSharpName": "MediaPositionUpdatedAt",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_title",
+          "cSharpName": "MediaTitle",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_album_name",
+          "cSharpName": "MediaAlbumName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_image_url",
+          "cSharpName": "MediaImageUrl",
+          "clrType": "System.String",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_artist",
+          "cSharpName": "MediaArtist",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "sound_mode_list",
+          "cSharpName": "SoundModeList",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "media_track",
+          "cSharpName": "MediaTrack",
+          "clrType": "System.Object",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "shuffle",
+          "cSharpName": "Shuffle",
+          "clrType": "System.Boolean",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "repeat",
+          "cSharpName": "Repeat",
+          "clrType": "System.String",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "source_list",
+          "cSharpName": "SourceList",
+          "clrType": "System.Collections.Generic.IReadOnlyList\u00601[System.String]",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "source",
+          "cSharpName": "Source",
+          "clrType": "System.String",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "adb_response",
+          "cSharpName": "AdbResponse",
+          "clrType": "System.Object",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "hdmi_input",
+          "cSharpName": "HdmiInput",
+          "clrType": "System.Object",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "sound_mode",
+          "cSharpName": "SoundMode",
+          "clrType": "System.String",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "sound_mode_raw",
+          "cSharpName": "SoundModeRaw",
+          "clrType": "System.String",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "automation",
+      "entities": [
+        {
+          "id": "automation.double_tap_dimmer",
+          "friendlyName": "Double Tap Dimmer",
+          "cSharpName": "DoubleTapDimmer"
+        },
+        {
+          "id": "automation.mikaela_dimmer_sync",
+          "friendlyName": "Mikaela Dimmer Sync",
+          "cSharpName": "MikaelaDimmerSync"
+        },
+        {
+          "id": "automation.mikaela_dimming",
+          "friendlyName": "Mikaela Dimming",
+          "cSharpName": "MikaelaDimming"
+        },
+        {
+          "id": "automation.set_default_theme_on_start",
+          "friendlyName": "Set default theme on start",
+          "cSharpName": "SetDefaultThemeOnStart"
+        },
+        {
+          "id": "automation.shellies_announce",
+          "friendlyName": "Shellies Announce",
+          "cSharpName": "ShelliesAnnounce"
+        },
+        {
+          "id": "automation.shellies_discovery",
+          "friendlyName": "Shellies Discovery",
+          "cSharpName": "ShelliesDiscovery"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "id",
+          "cSharpName": "Id",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "last_triggered",
+          "cSharpName": "LastTriggered",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "current",
+          "cSharpName": "Current",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "max",
+          "cSharpName": "Max",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "binary_sensor",
+      "entities": [
+        {
+          "id": "binary_sensor.mikaela_dimmer_input_0",
+          "friendlyName": "Mikaela Dimmer Input 0",
+          "cSharpName": "MikaelaDimmerInput0"
+        },
+        {
+          "id": "binary_sensor.mikaela_dimmer_input_1",
+          "friendlyName": "Mikaela Dimmer Input 1",
+          "cSharpName": "MikaelaDimmerInput1"
+        },
+        {
+          "id": "binary_sensor.mikaela_dimmer_overtemperature",
+          "friendlyName": "Mikaela Dimmer Overtemperature",
+          "cSharpName": "MikaelaDimmerOvertemperature"
+        },
+        {
+          "id": "binary_sensor.rpi_power_status",
+          "friendlyName": "RPi Power status",
+          "cSharpName": "RpiPowerStatus"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "button",
+      "entities": [
+        {
+          "id": "button.bulb_rgbcw_6ddfa9_restart",
+          "friendlyName": "Egg Restart",
+          "cSharpName": "BulbRgbcw6ddfa9Restart"
+        },
+        {
+          "id": "button.bulb_rgbcw_6ddfa9_unpair_remotes",
+          "friendlyName": "Egg Unpair remotes",
+          "cSharpName": "BulbRgbcw6ddfa9UnpairRemotes"
+        },
+        {
+          "id": "button.bulb_rgbcw_a350f3_restart",
+          "friendlyName": "Bulb RGBCW A350F3 Restart",
+          "cSharpName": "BulbRgbcwA350f3Restart"
+        },
+        {
+          "id": "button.bulb_rgbcw_a350f3_unpair_remotes",
+          "friendlyName": "Bulb RGBCW A350F3 Unpair remotes",
+          "cSharpName": "BulbRgbcwA350f3UnpairRemotes"
+        },
+        {
+          "id": "button.bulb_rgbcw_fe8ceb_restart",
+          "friendlyName": "Bulb RGBCW FE8CEB Restart",
+          "cSharpName": "BulbRgbcwFe8cebRestart"
+        },
+        {
+          "id": "button.bulb_rgbcw_fe8ceb_unpair_remotes",
+          "friendlyName": "Bulb RGBCW FE8CEB Unpair remotes",
+          "cSharpName": "BulbRgbcwFe8cebUnpairRemotes"
+        },
+        {
+          "id": "button.mikaela_dimmer_restart",
+          "friendlyName": "Mikaela Dimmer Restart",
+          "cSharpName": "MikaelaDimmerRestart"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "conversation",
+      "entities": [
+        {
+          "id": "conversation.home_assistant",
+          "friendlyName": "Home Assistant",
+          "cSharpName": "HomeAssistant"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "event",
+      "entities": [
+        {
+          "id": "event.mikaela_dimmer_button_0",
+          "friendlyName": "Mikaela Dimmer Button 0",
+          "cSharpName": "MikaelaDimmerButton0"
+        },
+        {
+          "id": "event.mikaela_dimmer_button_1",
+          "friendlyName": "Mikaela Dimmer Button 1",
+          "cSharpName": "MikaelaDimmerButton1"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "event_types",
+          "cSharpName": "EventTypes",
+          "clrType": "EventEventTypes",
+          "values": [
+            "l",
+            "ls",
+            "s",
+            "sl",
+            "ss",
+            "sss"
+          ],
+          "isList": true,
+          "toGenerate": true,
+          "toParse": true
+        },
+        {
+          "jsonName": "event_type",
+          "cSharpName": "EventType",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "input_boolean",
+      "entities": [
+        {
+          "id": "input_boolean.netdaemon_hammlet_apps_assistant_monitor_available_assistants",
+          "friendlyName": "netdaemon_hammlet_apps_assistant_monitor_available_assistants",
+          "cSharpName": "NetdaemonHammletAppsAssistantMonitorAvailableAssistants"
+        },
+        {
+          "id": "input_boolean.netdaemon_hammlet_apps_lights_liminal_dimmer",
+          "friendlyName": "netdaemon_hammlet_apps_lights_liminal_dimmer",
+          "cSharpName": "NetdaemonHammletAppsLightsLiminalDimmer"
+        },
+        {
+          "id": "input_boolean.netdaemon_hammlet_apps_lights_set_to_warm_white",
+          "friendlyName": "netdaemon_hammlet_apps_lights_set_to_warm_white",
+          "cSharpName": "NetdaemonHammletAppsLightsSetToWarmWhite"
+        },
+        {
+          "id": "input_boolean.netdaemon_hammlet_apps_lights_watch_reference_light",
+          "friendlyName": "netdaemon_hammlet_apps_lights_watch_reference_light",
+          "cSharpName": "NetdaemonHammletAppsLightsWatchReferenceLight"
+        },
+        {
+          "id": "input_boolean.netdaemon_hammlet_apps_scene_on_button_scene_on_button",
+          "friendlyName": "netdaemon_hammlet_apps_scene_on_button_scene_on_button",
+          "cSharpName": "NetdaemonHammletAppsSceneOnButtonSceneOnButton"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "input_number",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "input_number.mikaela_s_room",
+          "friendlyName": "Mikaela\u0027s Room",
+          "cSharpName": "MikaelaSRoom"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "initial",
+          "cSharpName": "Initial",
+          "clrType": null,
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "min",
+          "cSharpName": "Min",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "max",
+          "cSharpName": "Max",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "step",
+          "cSharpName": "Step",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "number",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "number.bulb_rgbcw_6ddfa9_effect_speed",
+          "friendlyName": "Egg Effect speed",
+          "cSharpName": "BulbRgbcw6ddfa9EffectSpeed"
+        },
+        {
+          "id": "number.bulb_rgbcw_a350f3_effect_speed",
+          "friendlyName": "Bulb RGBCW A350F3 Effect speed",
+          "cSharpName": "BulbRgbcwA350f3EffectSpeed"
+        },
+        {
+          "id": "number.bulb_rgbcw_fe8ceb_effect_speed",
+          "friendlyName": "Bulb RGBCW FE8CEB Effect speed",
+          "cSharpName": "BulbRgbcwFe8cebEffectSpeed"
+        },
+        {
+          "id": "number.mikaela_dimmer_pct",
+          "friendlyName": "Mikaela\u0027s Dimmer",
+          "cSharpName": "MikaelaDimmerPct"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "min",
+          "cSharpName": "Min",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "max",
+          "cSharpName": "Max",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "step",
+          "cSharpName": "Step",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "mode",
+          "cSharpName": "Mode",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "ip_address",
+          "cSharpName": "IpAddress",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "unit_of_measurement",
+          "cSharpName": "UnitOfMeasurement",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "person",
+      "entities": [
+        {
+          "id": "person.jumper",
+          "friendlyName": "Jumper",
+          "cSharpName": "Jumper"
+        },
+        {
+          "id": "person.services",
+          "friendlyName": "Services",
+          "cSharpName": "Services"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "id",
+          "cSharpName": "Id",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "device_trackers",
+          "cSharpName": "DeviceTrackers",
+          "clrType": "IReadOnlyList\u003Cobject\u003E",
+          "values": null,
+          "isList": true,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "user_id",
+          "cSharpName": "UserId",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "select",
+      "entities": [
+        {
+          "id": "select.bulb_rgbcw_6ddfa9_remote_config",
+          "friendlyName": "Egg Remote config",
+          "cSharpName": "BulbRgbcw6ddfa9RemoteConfig"
+        },
+        {
+          "id": "select.bulb_rgbcw_a350f3_remote_config",
+          "friendlyName": "Bulb RGBCW A350F3 Remote config",
+          "cSharpName": "BulbRgbcwA350f3RemoteConfig"
+        },
+        {
+          "id": "select.bulb_rgbcw_fe8ceb_remote_config",
+          "friendlyName": "Bulb RGBCW FE8CEB Remote config",
+          "cSharpName": "BulbRgbcwFe8cebRemoteConfig"
+        },
+        {
+          "id": "select.wicker_lamp_switch_indicator_light_mode",
+          "friendlyName": "Wicker Lamp Switch Indicator light mode",
+          "cSharpName": "WickerLampSwitchIndicatorLightMode"
+        },
+        {
+          "id": "select.wicker_lamp_switch_power_on_behavior",
+          "friendlyName": "Wicker Lamp Switch Power on behavior",
+          "cSharpName": "WickerLampSwitchPowerOnBehavior"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "options",
+          "cSharpName": "Options",
+          "clrType": "SelectOptions",
+          "values": [
+            "disabled",
+            "last",
+            "none",
+            "open",
+            "paired only",
+            "pos",
+            "power_off",
+            "power_on",
+            "relay"
+          ],
+          "isList": true,
+          "toGenerate": true,
+          "toParse": true
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "ip_address",
+          "cSharpName": "IpAddress",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "entities": [
+        {
+          "id": "sensor.bulb_rgbcw_6ddfa9_paired_remotes",
+          "friendlyName": "Egg Paired remotes",
+          "cSharpName": "BulbRgbcw6ddfa9PairedRemotes"
+        },
+        {
+          "id": "sensor.bulb_rgbcw_a350f3_paired_remotes",
+          "friendlyName": "Bulb RGBCW A350F3 Paired remotes",
+          "cSharpName": "BulbRgbcwA350f3PairedRemotes"
+        },
+        {
+          "id": "sensor.bulb_rgbcw_fe8ceb_paired_remotes",
+          "friendlyName": "Bulb RGBCW FE8CEB Paired remotes",
+          "cSharpName": "BulbRgbcwFe8cebPairedRemotes"
+        },
+        {
+          "id": "sensor.sun_next_dawn",
+          "friendlyName": "Sun Next dawn",
+          "cSharpName": "SunNextDawn"
+        },
+        {
+          "id": "sensor.sun_next_dusk",
+          "friendlyName": "Sun Next dusk",
+          "cSharpName": "SunNextDusk"
+        },
+        {
+          "id": "sensor.sun_next_midnight",
+          "friendlyName": "Sun Next midnight",
+          "cSharpName": "SunNextMidnight"
+        },
+        {
+          "id": "sensor.sun_next_noon",
+          "friendlyName": "Sun Next noon",
+          "cSharpName": "SunNextNoon"
+        },
+        {
+          "id": "sensor.sun_next_rising",
+          "friendlyName": "Sun Next rising",
+          "cSharpName": "SunNextRising"
+        },
+        {
+          "id": "sensor.sun_next_setting",
+          "friendlyName": "Sun Next setting",
+          "cSharpName": "SunNextSetting"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "ip_address",
+          "cSharpName": "IpAddress",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "sensor",
+      "isNumeric": true,
+      "entities": [
+        {
+          "id": "sensor.mikaela_dimmer_energy_0",
+          "friendlyName": "Mikaela Dimmer Energy 0",
+          "cSharpName": "MikaelaDimmerEnergy0"
+        },
+        {
+          "id": "sensor.mikaela_dimmer_temperature",
+          "friendlyName": "Mikaela Dimmer Temperature",
+          "cSharpName": "MikaelaDimmerTemperature"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "state_class",
+          "cSharpName": "StateClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "unit_of_measurement",
+          "cSharpName": "UnitOfMeasurement",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "sun",
+      "entities": [
+        {
+          "id": "sun.sun",
+          "friendlyName": "Sun",
+          "cSharpName": "Sun"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "next_dawn",
+          "cSharpName": "NextDawn",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "next_dusk",
+          "cSharpName": "NextDusk",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "next_midnight",
+          "cSharpName": "NextMidnight",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "next_noon",
+          "cSharpName": "NextNoon",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "next_rising",
+          "cSharpName": "NextRising",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "next_setting",
+          "cSharpName": "NextSetting",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "elevation",
+          "cSharpName": "Elevation",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "azimuth",
+          "cSharpName": "Azimuth",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "rising",
+          "cSharpName": "Rising",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "switch",
+      "entities": [
+        {
+          "id": "switch.wicker_lamp_switch_child_lock",
+          "friendlyName": "Wicker Lamp Switch Child lock",
+          "cSharpName": "WickerLampSwitchChildLock"
+        },
+        {
+          "id": "switch.wicker_lamp_switch_socket_1",
+          "friendlyName": "Wicker Lamp Switch Socket 1",
+          "cSharpName": "WickerLampSwitchSocket1"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "todo",
+      "entities": [
+        {
+          "id": "todo.shopping_list",
+          "friendlyName": "Shopping List",
+          "cSharpName": "ShoppingList"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "tts",
+      "entities": [
+        {
+          "id": "tts.google_translate_en_com",
+          "friendlyName": "Google Translate en com",
+          "cSharpName": "GoogleTranslateEnCom"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "update",
+      "entities": [
+        {
+          "id": "update.advanced_ssh_web_terminal_update",
+          "friendlyName": "Advanced SSH \u0026 Web Terminal Update",
+          "cSharpName": "AdvancedSshWebTerminalUpdate"
+        },
+        {
+          "id": "update.bubble_card_update",
+          "friendlyName": "Bubble Card update",
+          "cSharpName": "BubbleCardUpdate"
+        },
+        {
+          "id": "update.clock_weather_card_update",
+          "friendlyName": "Clock Weather Card update",
+          "cSharpName": "ClockWeatherCardUpdate"
+        },
+        {
+          "id": "update.filebrowser_update",
+          "friendlyName": "Filebrowser Update",
+          "cSharpName": "FilebrowserUpdate"
+        },
+        {
+          "id": "update.get_hacs_update",
+          "friendlyName": "Get HACS Update",
+          "cSharpName": "GetHacsUpdate"
+        },
+        {
+          "id": "update.hacs_update",
+          "friendlyName": "HACS update",
+          "cSharpName": "HacsUpdate"
+        },
+        {
+          "id": "update.home_assistant_core_update",
+          "friendlyName": "Home Assistant Core Update",
+          "cSharpName": "HomeAssistantCoreUpdate"
+        },
+        {
+          "id": "update.home_assistant_operating_system_update",
+          "friendlyName": "Home Assistant Operating System Update",
+          "cSharpName": "HomeAssistantOperatingSystemUpdate"
+        },
+        {
+          "id": "update.home_assistant_supervisor_update",
+          "friendlyName": "Home Assistant Supervisor Update",
+          "cSharpName": "HomeAssistantSupervisorUpdate"
+        },
+        {
+          "id": "update.ios_themes_dark_mode_and_light_mode_update",
+          "friendlyName": "iOS Themes - Dark Mode and Light Mode update",
+          "cSharpName": "IosThemesDarkModeAndLightModeUpdate"
+        },
+        {
+          "id": "update.layout_card_update",
+          "friendlyName": "layout-card update",
+          "cSharpName": "LayoutCardUpdate"
+        },
+        {
+          "id": "update.light_entity_card_update",
+          "friendlyName": "Light Entity Card update",
+          "cSharpName": "LightEntityCardUpdate"
+        },
+        {
+          "id": "update.lightener_update",
+          "friendlyName": "Lightener update",
+          "cSharpName": "LightenerUpdate"
+        },
+        {
+          "id": "update.local_tuya_update",
+          "friendlyName": "Local Tuya update",
+          "cSharpName": "LocalTuyaUpdate"
+        },
+        {
+          "id": "update.matter_server_update",
+          "friendlyName": "Matter Server Update",
+          "cSharpName": "MatterServerUpdate"
+        },
+        {
+          "id": "update.mikaela_dimmer_firmware",
+          "friendlyName": "Mikaela Dimmer Firmware",
+          "cSharpName": "MikaelaDimmerFirmware"
+        },
+        {
+          "id": "update.mini_media_player_update",
+          "friendlyName": "Mini Media Player update",
+          "cSharpName": "MiniMediaPlayerUpdate"
+        },
+        {
+          "id": "update.mosquitto_broker_update",
+          "friendlyName": "Mosquitto broker Update",
+          "cSharpName": "MosquittoBrokerUpdate"
+        },
+        {
+          "id": "update.mushroom_update",
+          "friendlyName": "Mushroom update",
+          "cSharpName": "MushroomUpdate"
+        },
+        {
+          "id": "update.netdaemon_v5_net_9_update",
+          "friendlyName": "NetDaemon V5 (.NET 9) Update",
+          "cSharpName": "NetdaemonV5Net9Update"
+        },
+        {
+          "id": "update.samba_share_update",
+          "friendlyName": "Samba share Update",
+          "cSharpName": "SambaShareUpdate"
+        },
+        {
+          "id": "update.studio_code_server_update",
+          "friendlyName": "Studio Code Server Update",
+          "cSharpName": "StudioCodeServerUpdate"
+        },
+        {
+          "id": "update.z_wave_js_ui_update",
+          "friendlyName": "Z-Wave JS UI Update",
+          "cSharpName": "ZWaveJsUiUpdate"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "auto_update",
+          "cSharpName": "AutoUpdate",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "display_precision",
+          "cSharpName": "DisplayPrecision",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "installed_version",
+          "cSharpName": "InstalledVersion",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "in_progress",
+          "cSharpName": "InProgress",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "latest_version",
+          "cSharpName": "LatestVersion",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "release_summary",
+          "cSharpName": "ReleaseSummary",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "release_url",
+          "cSharpName": "ReleaseUrl",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "skipped_version",
+          "cSharpName": "SkippedVersion",
+          "clrType": null,
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "title",
+          "cSharpName": "Title",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "update_percentage",
+          "cSharpName": "UpdatePercentage",
+          "clrType": null,
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "entity_picture",
+          "cSharpName": "EntityPicture",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "device_class",
+          "cSharpName": "DeviceClass",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "weather",
+      "entities": [
+        {
+          "id": "weather.forecast_home",
+          "friendlyName": "Forecast The Dreamhouse",
+          "cSharpName": "ForecastHome"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "temperature",
+          "cSharpName": "Temperature",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "dew_point",
+          "cSharpName": "DewPoint",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "temperature_unit",
+          "cSharpName": "TemperatureUnit",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "humidity",
+          "cSharpName": "Humidity",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "cloud_coverage",
+          "cSharpName": "CloudCoverage",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "uv_index",
+          "cSharpName": "UvIndex",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "pressure",
+          "cSharpName": "Pressure",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "pressure_unit",
+          "cSharpName": "PressureUnit",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "wind_bearing",
+          "cSharpName": "WindBearing",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "wind_speed",
+          "cSharpName": "WindSpeed",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "wind_speed_unit",
+          "cSharpName": "WindSpeedUnit",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "visibility_unit",
+          "cSharpName": "VisibilityUnit",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "precipitation_unit",
+          "cSharpName": "PrecipitationUnit",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "attribution",
+          "cSharpName": "Attribution",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "supported_features",
+          "cSharpName": "SupportedFeatures",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    },
+    {
+      "domain": "zone",
+      "entities": [
+        {
+          "id": "zone.home",
+          "friendlyName": "The Dreamhouse",
+          "cSharpName": "Home"
+        }
+      ],
+      "attributes": [
+        {
+          "jsonName": "latitude",
+          "cSharpName": "Latitude",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "longitude",
+          "cSharpName": "Longitude",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "radius",
+          "cSharpName": "Radius",
+          "clrType": "double",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "passive",
+          "cSharpName": "Passive",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "persons",
+          "cSharpName": "Persons",
+          "clrType": "IReadOnlyList\u003Cobject\u003E",
+          "values": null,
+          "isList": true,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "editable",
+          "cSharpName": "Editable",
+          "clrType": "bool",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "icon",
+          "cSharpName": "Icon",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        },
+        {
+          "jsonName": "friendly_name",
+          "cSharpName": "FriendlyName",
+          "clrType": "string",
+          "values": null,
+          "isList": false,
+          "toGenerate": false,
+          "toParse": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[submodule "submodules/NetDaemon.Extensions.Observables"]
+	path = submodules/NetDaemon.Extensions.Observables
+	url = https://github.com/DevJasperNL/NetDaemon.Extensions.Observables.git
+[submodule "submodules/NetDaemonPs"]
+	path = submodules/NetDaemonPs
+	url = https://github.com/jeff-hamm/NetDaemonPs.git
+[submodule "submodules/netdaemon"]
+	path = submodules/netdaemon
+	url = https://github.com/jeff-hamm/netdaemon.git

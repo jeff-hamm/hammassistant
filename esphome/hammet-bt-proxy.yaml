@@ -1,0 +1,94 @@
+esphome:
+  name: hammet-bt-proxy
+  friendly_name: Hammet BT Proxy
+
+esp32:
+  board: esp32dev
+  framework:
+    type: esp-idf
+
+# Enable logging
+logger:
+  level: DEBUG
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "/pcPWoglGwme1w/ManTA/w2BIavInhB3Qaw20+9Cvu0="
+
+ota:
+  password: "1e5346a52c3a7944349a5b762d88acf2"
+  platform: esphome
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Hammet-Bt-Proxy Fallback Hotspot"
+    password: "jKZwqmDNzUk5"
+
+esp32_ble_tracker:
+  scan_parameters:
+    interval: 1100ms
+    window: 1100ms
+    active: true
+
+bluetooth_proxy:
+  active: true
+# external_components:
+#   - source: github://myhomeiot/esphome-components
+
+# ble_gateway:
+#   id: blegateway
+#   devices:
+#     - mac_address: B4:60:ED:A6:61:05
+
+#   on_ble_advertise:
+#     then:
+#       homeassistant.event:
+#         event: esphome.on_ble_advertise
+#         data:
+#           packet: !lambda return packet;
+# #          gateway_id: ${device_id}
+
+# binary_sensor:
+#   - platform: homeassistant
+#     id: ble_gateway_discovery
+#     entity_id: binary_sensor.ble_gateway
+#     attribute: discovery
+#     on_state:
+#       then:
+#         lambda: id(blegateway).set_discovery(x);
+
+# text_sensor:
+#   - platform: homeassistant
+#     id: ble_gateway_devices
+#     entity_id: binary_sensor.ble_gateway
+#     attribute: devices
+#     on_value:
+#       then:
+#         lambda: id(blegateway).set_devices(x);
+
+# switch:
+#   - platform: template
+#     id: switch_ble_gateway_discovery
+#     name: BLE Gateway Discovery
+#     icon: mdi:bluetooth-connect
+#     lambda: return id(blegateway).get_discovery();
+#     turn_on_action: [lambda: id(blegateway).set_discovery(true);]
+#     turn_off_action: [lambda: id(blegateway).set_discovery(false);]
+#     disabled_by_default: true
+#     entity_category: config
+
+# automation:
+#   - alias: ESPHome BLE Advertise
+#     mode: queued
+#     trigger:
+#       - platform: event
+#         event_type: esphome.on_ble_advertise
+#     action:
+#       - service: ble_monitor.parse_data
+#         data:
+#           packet: "{{ trigger.event.data.packet }}"

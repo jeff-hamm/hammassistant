@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"name": "Hammassistant",
+			"path": "."
+		},
+		{
+			"path": "D:/OneDrive/Documents/Powershell"
+		},
+		{
+			"path": "./submodules/netdaemon"
+		},
+		{
+			"path": "Z:/"
+		},
+	],
+	"settings": {
+		"task.allowAutomaticTasks": "on",
+		"task.verboseLogging": true,
+		"platformio-ide.autoPreloadEnvTasks": false,
+		"files.associations": {
+			"*.yaml": "home-assistant"
+		},
+		"vscode-home-assistant.hostUrl": "http://${Env:HomeAssistant__Host}:${Env:HomeAssistant__Port}",
+		"vscode-home-assistant.longLivedAccessToken": "${Env:HomeAssistant__Token}",
+		"postman.settings.dotenv-detection-notification-visibility": false
+	}
+}

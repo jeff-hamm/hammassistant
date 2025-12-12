@@ -1,0 +1,13 @@
+substitutions:
+  encryption_key: "kdgv3ghduSOGdROFi5fK+30xxN1aIVbt9b0n381eHaM="
+  name: spamheart-4
+  description: "Spamheart Vein"
+  num_leds: "420"
+  pin: "D4"
+
+  
+esp8266:
+  board: d1_mini
+
+packages:
+  common: !include led.template.yaml

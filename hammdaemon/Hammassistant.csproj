@@ -1,0 +1,112 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>13.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Hammlet</RootNamespace>
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    </PropertyGroup>
+    <ItemGroup>
+      <Compile Remove="Data\**" />
+      <Compile Remove="Models\Framework\**" />
+      <Compile Remove="Models\Reference\**" />
+      <Compile Remove="NetDaemon.Extensions.Hammlet\**" />
+      <Compile Remove="Scripts\**" />
+      <EmbeddedResource Remove="Data\**" />
+      <EmbeddedResource Remove="Models\Framework\**" />
+      <EmbeddedResource Remove="Models\Reference\**" />
+      <EmbeddedResource Remove="NetDaemon.Extensions.Hammlet\**" />
+      <EmbeddedResource Remove="Scripts\**" />
+      <None Remove="Data\**" />
+      <None Remove="Models\Framework\**" />
+      <None Remove="Models\Reference\**" />
+      <None Remove="NetDaemon.Extensions.Hammlet\**" />
+      <None Remove="Scripts\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Apps\Lights\WatchForReferenceLights.yaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="*.yaml">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Remove="Data\**" />
+      <Content Remove="Scripts\**" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <None Update="$(MSBuildProjectDir)appsettings.Development.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+        </None>        
+        <None Update="$(MSBuildProjectDir)appsettings.json">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </None>
+        <None Update="$(MSBuildProjectDir)**\*.yaml">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+            <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </None>
+    </ItemGroup>
+        
+    <ItemGroup>
+        <PackageReference Include="Copycat" Version="1.0.0" />
+        <PackageReference Include="Fineboym.Logging.Generator" Version="1.10.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.2" />
+        <PackageReference Include="NetDaemon.AppModel" Version="25.6.0" />
+        <PackageReference Include="NetDaemon.Extensions.Mqtt" Version="25.6.0" />
+        <PackageReference Include="NetDaemon.Runtime" Version="25.6.0" />
+        <PackageReference Include="NetDaemon.HassModel" Version="25.6.0" />
+        <PackageReference Include="NetDaemon.Client" Version="25.6.0" />
+        <PackageReference Include="NetDaemon.Extensions.Scheduling" Version="25.6.0" />
+        <PackageReference Include="NetDaemon.Extensions.Logging" Version="25.6.0" />
+        <PackageReference Include="NetDaemon.Extensions.Tts" Version="25.6.0" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+
+    </ItemGroup>
+        
+    <ItemGroup>
+      <ProjectReference Include="..\..\submodules\NetDaemon.Extensions.Observables\src\NetDaemon.Extensions.Observables\NetDaemon.Extensions.Observables.csproj" />
+      <ProjectReference Include="..\NetDaemon.Extensions.Hammlet\NetDaemon.Extensions.Hammlet.csproj" />
+    </ItemGroup>
+        
+<!--         
+    <ItemGroup>
+      <Folder Include="Environment\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="..\..\Environments\Hammlet\DimmerSync.yaml" Link="Environment\DimmerSync.yaml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+        
+    <ItemGroup>
+      <Content Include="..\..\Environments\Hammlet\ReferenceLight.yaml" Link="Environment\ReferenceLight.yaml" >
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup> -->
+
+    <PropertyGroup>
+      <NetDaemon__ApplicationConfigurationFolder Condition="'$(NetDaemon__ApplicationConfigurationFolder)' == ''">$(MSBuildProjectDir)\Config</NetDaemon__ApplicationConfigurationFolder>
+    </PropertyGroup>
+    <!--<Target Name="CopyCustomContent" BeforeTargets="AfterBuild">
+      <ItemGroup>
+            <ApplicationConfigurationFiles Include="$(NetDaemon__ApplicationConfigurationFolder)\**\*.*"/>
+        </ItemGroup>
+        <Message Text="Build from $(NetDaemon__ApplicationConfigurationFolder) to $(OutDir)\Config" Importance="high" />
+      <Copy SourceFiles="@(ApplicationConfigurationFiles)" DestinationFolder="$(OutDir)\Config" SkipUnchangedFiles="true" />
+    </Target>-->
+    <Target Name="CopyCustomContentOnPublish" AfterTargets="Publish">
+      <ItemGroup>
+            <ApplicationConfigurationFiles Include="$(NetDaemon__ApplicationConfigurationFolder)\**\*.*" />
+        </ItemGroup>
+        <Message Text="Publishing application configuration from $(NetDaemon__ApplicationConfigurationFolder) to $(PublishDir)"  />
+      <Copy SourceFiles="@(ApplicationConfigurationFiles)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="true" />
+    </Target>
+  <PropertyGroup>
+    <DomainPrimitiveGenerator_GenerateSwaggerConverters>false</DomainPrimitiveGenerator_GenerateSwaggerConverters>
+  </PropertyGroup>
+</Project>
