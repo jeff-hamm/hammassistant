@@ -2,7 +2,7 @@ serilog:
   title: Logs
   require_admin: true
   icon: mdi:file-document
-  url: http://192.168.1.179:8341/
+  url: http://localhost:8341/
 
 proxmox:
   require_admin: true
