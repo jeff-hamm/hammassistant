@@ -59,8 +59,10 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /run/dbus:/run/dbus:ro
       - /mnt/user/jumpdrive:/share/jumpdrive  # For yt_dlp
-    # Bluetooth via DBus (BlueZ on host)
-    # BlueZ installed and auto-starts on boot via boot.d/install-bluez.sh
+    devices:
+      - /dev/bus/usb/003/004:/dev/bus/usb/003/004  # TP-Link Bluetooth USB Adapter
+    # Bluetooth via USB passthrough
+    # Device: TP-Link Bluetooth USB Adapter (2357:0604)
     # Requires NET_ADMIN, NET_RAW, and SYS_ADMIN capabilities for full BLE support
     # depends_on:
     #   - mosquitto
