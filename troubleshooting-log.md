@@ -80,3 +80,60 @@ Date: 2025-12-12
 - Fix configuration-based issues only
 - Don't modify external component code
 - Test after each restart
+
+## Issues Fixed (Update 2025-12-12 16:20)
+
+### 1. MQTT Authentication and Connectivity ✅
+**Status**: COMPLETE
+- **Problem**: MQTT integration couldn't connect - "Name does not resolve", "Connection refused", "Not authorized"
+- **Root Cause**: 
+  1. Broker hostname "core-mosquitto" doesn't exist in Docker setup
+  2. No authentication credentials configured
+  3. Ports not bound to 0.0.0.0 in shared network namespace
+- **Solution**:
+  1. Updated broker address from "core-mosquitto" to "127.0.0.1" in `.storage/core.config_entries`
+  2. Added homeassistant user to `/mosquitto/config/passwd` with hashed password
+  3. Changed listener directives in `mosquitto.conf` to bind 0.0.0.0:1883 and 0.0.0.0:9001
+  4. Documented mosquitto restart requirement: `docker restart mosquitto` after HA restarts
+- **Verification**: MQTT entities now appearing, Zigbee2MQTT devices discovered
+
+### 2. yt_dlp Directory Missing ✅
+**Status**: COMPLETE
+- **Problem**: `/share/jumpdrive/yt-dl` directory not found
+- **Root Cause**: /share path convention from HAOS doesn't exist in Docker, requires explicit mount
+- **Solution**: Added volume mount in docker-compose.yml: `/mnt/user/jumpdrive:/share/jumpdrive`
+- **Verification**: No more FileNotFoundError for yt_dlp
+
+### 3. ESPHome Dashboard ✅
+**Status**: DISABLED (non-critical)
+- **Problem**: Cannot connect to 127.0.0.1:65298
+- **Root Cause**: Dashboard port changed from 65298 to 6052, integration trying SSL on HTTP port
+- **Solution**: Removed `.storage/esphome.dashboard` file to disable the integration
+- **Note**: ESPHome dashboard not critical for operation, individual devices still work
+
+### 4. Bluetooth/alive_dimmer ⚠️
+**Status**: PARTIAL - Requires ESPHome Bluetooth Proxy or Network Fix
+- **Problem**: Xiaomi BLE dimmer (A4:C1:38:92:9E:2D) events not firing, "Unable to open PF_BLUETOOTH socket"
+- **Root Cause**: BlueZ D-Bus interface doesn't allow socket creation from Docker container with macvlan network
+- **Attempted**: 
+  1. Added USB device passthrough `/dev/bus/usb/003/004` - device visible but no BlueZ in container
+  2. D-Bus socket mounted but HA can't create Bluetooth sockets through it
+- **Next Steps**: 
+  1. Enable hammet-bt-proxy ESPHome device (192.168.8.111) - currently unreachable
+  2. Check if hammet-bt-proxy is powered on and has network access
+  3. Verify dimmer battery level (may need replacement)
+  4. Consider using different ESPHome Bluetooth proxy if bt-proxy unavailable
+- **Workaround**: alive_dimmer automation won't trigger until Bluetooth connectivity restored
+- **Technical Details**: 
+  - Device: Xiaomi BLE Dimmer Switch (YLKG08YL)
+  - Integration: xiaomi_ble
+  - Config Entry ID: 0fd3edba978409a32fab5a56d16b0bea
+  - Bind Key: 5cda19e590c68be23c5d4067ffffffff
+  - Known Events: dimmer (press, long_press, rotate_left, rotate_right, rotate_left_pressed, rotate_right_pressed)
+
+## Git Commits Made
+1. "Config updates" - Initial migration fixes
+2. "Fixes: MQTT bind config" - MQTT listener bind addresses  
+3. "Add /share/jumpdrive volume mount" - yt_dlp directory mount
+4. "Fix Bluetooth access and ESPHome dashboard" - USB passthrough and dashboard removal
+
