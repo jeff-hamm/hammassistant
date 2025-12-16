@@ -8,8 +8,17 @@
   - `components/` - Helper entities (input_datetime, input_boolean, etc.)
   - `dashboards/` - Dashboard configurations
   - `global/` - Global settings
+  - `.entities/` - **Entity reference documentation** (auto-generated from API)
 - **Custom components**: `/root/hammassistant/custom_components/`
 - **ESPHome**: `/root/hammassistant/esphome/`
+
+## Entity Reference
+When you need to see available entities, refer to `/root/hammassistant/yaml/.entities/entities.md`. This document contains:
+- All lights, switches, sensors, and other entities
+- Current states and attributes
+- Organized by domain for easy reference
+
+**IMPORTANT**: If you find outdated or incorrect information in the entities document, regenerate it using the Home Assistant API (`/api/states` endpoint). The document should be kept up-to-date as entities are added/removed.
 
 ## API Access
 - **URLs**: `http://192.168.1.216:8123` (local) and `https://hammlet.infinitebutts.com` (remote)
