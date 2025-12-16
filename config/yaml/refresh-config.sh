@@ -105,6 +105,21 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+commit_if_requested() {
+  if [[ -n "$commit_message" ]]; then
+    echo
+    echo "Committing changes to git..."
+    cd "$script_dir/.."
+    git add -A
+    if git diff --staged --quiet; then
+      echo "✓ No changes to commit"
+    else
+      git commit -m "$commit_message"
+      echo "✓ Changes committed: $commit_message"
+    fi
+  fi
+}
+
 # Treat 'all' as reload_all
 reload_all=false
 for t in "${config_types[@]:-}"; do
@@ -129,6 +144,7 @@ if [[ "$reload_all" == "true" || ${#config_types[@]} -gt 3 ]]; then
 
   [[ "$code" == "200" ]] || die "Failed to reload all configuration (HTTP $code)"
   echo "✓ All YAML configuration reloaded successfully!"
+  commit_if_requested
   exit 0
 fi
 
@@ -155,16 +171,4 @@ if [[ "$all_success" != "true" ]]; then
   die "Some configuration types failed to reload"
 fi
 
-# If commit message provided, git add and commit
-if [[ -n "$commit_message" ]]; then
-  echo
-  echo "Committing changes to git..."
-  cd "$script_dir/.."
-  git add -A
-  if git diff --staged --quiet; then
-    echo "✓ No changes to commit"
-  else
-    git commit -m "$commit_message"
-    echo "✓ Changes committed: $commit_message"
-  fi
-fi
+commit_if_requested
