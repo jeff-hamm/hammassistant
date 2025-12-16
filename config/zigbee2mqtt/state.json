@@ -82,9 +82,9 @@
         "linkquality": 120
     },
     "0xffffb40e0605cdfb": {
-        "temperature": 20.7,
-        "humidity": 40.61,
-        "soil_moisture": 40.61,
+        "temperature": 20.5,
+        "humidity": 40.5,
+        "soil_moisture": 40.5,
         "battery": 73,
         "linkquality": 212,
         "update": {

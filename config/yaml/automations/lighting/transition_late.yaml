@@ -55,7 +55,7 @@ actions:
     lampBrightnessScale: zeroToTwoFiftyFive
     transitionTime:
       hours: 0
-      minutes: 1
+      minutes: 30
       seconds: 0
     easingTypeInput: auto
     endBrightnessPercent: 0
