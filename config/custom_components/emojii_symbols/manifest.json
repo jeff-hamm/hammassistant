@@ -1,0 +1,13 @@
+{
+  "domain": "emojii_symbols",
+  "name": "Emojii Symbols",
+  "config_flow": true,
+  "dependencies": [
+    "http",
+    "frontend"
+  ],
+  "documentation": "https://github.com/local/emojii_symbols",
+  "iot_class": "local_polling",
+  "requirements": [],
+  "version": "0.1.1"
+}

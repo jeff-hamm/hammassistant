@@ -68,7 +68,7 @@ services:
     container_name: mosquitto
     image: eclipse-mosquitto:2
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     # ports:
     #   - "1883:1883"
     #   - "9001:9001"
@@ -80,13 +80,33 @@ services:
       - TZ=${TZ}
 
   # ============================================
+  # MQTT Explorer (Web UI)
+  # ============================================
+  mqtt-explorer:
+    container_name: mqtt-explorer
+    image: smeagolworms4/mqtt-explorer:browser-1.0.3
+    restart: unless-stopped
+    # Runs on bridge networking and publishes a host port.
+    ports:
+      - "4000:4000"
+    volumes:
+      - ${COMPOSE_ROOT}/mqtt-explorer:/mqtt-explorer/config
+    environment:
+      - TZ=${TZ}
+      - HTTP_PORT=4000
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - mosquitto
+
+  # ============================================
   # Z-Wave JS UI
   # ============================================
   zwavejs:
     container_name: zwavejs
     image: zwavejs/zwave-js-ui:latest
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     # ports:
     #   - "8091:8091"   # Web UI
     #   - "3000:3000"   # WebSocket for HA
@@ -110,7 +130,7 @@ services:
     container_name: zigbee2mqtt
     image: koenkk/zigbee2mqtt:latest
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     # ports:
     #   - "8099:8099"   # Web frontend
     environment:
@@ -127,7 +147,7 @@ services:
     container_name: esphome
     image: ghcr.io/esphome/esphome:latest
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     # ports:
     #   - "6052:6052"   # Web dashboard
     environment:
@@ -146,7 +166,7 @@ services:
     container_name: matter-server
     image: ghcr.io/home-assistant-libs/python-matter-server:stable
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     # ports:
     #   - "5580:5580"   # Matter server API
     security_opt:
@@ -166,7 +186,7 @@ services:
     container_name: netdaemon
     image: netdaemon/netdaemon5:latest
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     profiles:
       - netdaemon
     environment:
@@ -180,40 +200,6 @@ services:
       - ${COMPOSE_ROOT}/netdaemon:/data
     depends_on:
       - homeassistant
-  # # ============================================
-  # # Cloudflared Tunnel
-  # # ============================================
-  # cloudflared:
-  #   container_name: cloudflared
-  #   image: cloudflare/cloudflared:latest
-  #   restart: unless-stopped
-  #   network_mode: host
-  #   command: tunnel run
-  #   environment:
-  #     - TZ=${TZ}
-  #     - TUNNEL_TOKEN=${CLOUDFLARE_TUNNEL_TOKEN}
-  #   # Note: You'll need to set up a new tunnel or migrate the token
-  #   # Original hostnames:
-  #   #   - hammlet.infinitebutts.com -> HA
-  #   #   - proxmox.infinitebutts.com -> https://192.168.1.201:8006
-  #   #   - network.infinitebutts.com -> http://192.168.1.254
-  #   #   - jumpdrive.infinitebutts.com -> http://192.168.1.216
-  #   #   - jumpcloud.infinitebutts.com -> http://192.168.1.186
-  #   #   - archive.infinitebutts.com -> http://192.168.1.190:8000
-  #   #   - hifijumper.infinitebutts.com -> http://192.168.1.127
-  #   #   - jumpflix.infinitebutts.com -> http://192.168.1.99:8096
-  #   #   - jumptube.infinitebutts.com -> http://192.168.1.205:8096
-  #   #   - jumpdock.infinitebutts.com -> http://192.168.1.99:9120
-  #   #   - jackett.infinitebutts.com -> http://192.168.1.218:9117
-  #   #   - vpn.infinitebutts.com -> http://192.168.1.226:8090
-  #   #   - jumptorrents.infinitebutts.com -> http://192.168.1.99:8080
-  #   #   - jumpphotos.infinitebutts.com -> http://192.168.1.253:2283
-  #   #   - jumparr.infinitebutts.com -> http://192.168.1.99:8989
-  #   #   - jumpflx.infinitebutts.com -> http://192.168.1.99:5055
-  #   #   - junmpradarr.infinitebutts.com -> http://192.168.1.99:7878
-  #   #   - prowlarr.infinitebutts.com -> http://192.168.1.99:9696
-  #   #   - library.infinitebutts.com -> http://192.168.1.99:5299
-
 
   # ============================================
   # Voice Assistant Stack
@@ -222,7 +208,7 @@ services:
     container_name: whisper
     image: rhasspy/wyoming-whisper:latest
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     profiles:
       - voice-assistant
     # ports:
@@ -241,7 +227,7 @@ services:
     restart: unless-stopped
     profiles:
       - voice-assistant
-    network_mode: "service:homeassistant"
+    network_mode: host
     # ports:
     #   - "10200:10200"
     command: --voice en_US-lessac-medium
@@ -256,7 +242,7 @@ services:
     container_name: openwakeword
     image: rhasspy/wyoming-openwakeword:latest
     restart: unless-stopped
-    network_mode: "service:homeassistant"
+    network_mode: host
     profiles:
       - voice-assistant
     # ports:

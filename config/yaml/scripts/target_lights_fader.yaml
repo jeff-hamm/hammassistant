@@ -285,33 +285,55 @@ target_lights_fader:
       required: true
       default: false
   sequence:
+    - variables:
+        # Pre-compute fade time in seconds so we pass an integer, not a dict that gets stringified
+        fadeTimeInSecondsComputed: >
+          {% set tt = transitionTime %}
+          {% if tt is mapping %}
+            {{ ((tt.hours | default(0) | int) * 3600) + ((tt.minutes | default(0) | int) * 60) + (tt.seconds | default(0) | int) }}
+          {% elif tt is string and ':' in tt %}
+            {{ as_timedelta(tt).total_seconds() | int }}
+          {% elif tt is number %}
+            {{ tt | int }}
+          {% else %}
+            {{ 60 }}
+          {% endif %}
     - action: script.get_target_lights
       data:
-        lights_sources: '{{ lights }}'
+        lights_sources: "{{ lights }}"
         domain: light.
       response_variable: light_entities
+    - variables:
+        # Build a list of script call data for each light
+        light_list: '{{ light_entities.entities | default([]) }}'
     - repeat:
-        for_each: '{{ light_entities.entities }}'
+        for_each: '{{ light_list }}'
         sequence:
-          - action: script.ashley_s_light_fader
+          - action: script.turn_on
+            target:
+              entity_id: script.ashley_s_light_fader
             data:
-              light: '{{ repeat.item }}'
-              lampBrightnessScale: '{{ lampBrightnessScale }}'
-              transitionTime: '{{ transitionTime }}'
-              easingTypeInput: '{{ easingTypeInput }}'
-              endBrightnessPercent: '{{ endBrightnessPercent }}'
-              endBrightnessEntity: '{{ endBrightnessEntity }}'
-              endBrightnessEntityScale: '{{ endBrightnessEntityScale }}'
-              endColorTemperatureKelvin: '{{ endColorTemperatureKelvin }}'
-              endColorTemperatureKelvinEntity: '{{ endColorTemperatureKelvinEntity }}'
-              autoCancelThreshold: '{{ autoCancelThreshold }}'
-              shouldStopIfTheLampIsTurnedOffDuringTheFade: '{{ shouldStopIfTheLampIsTurnedOffDuringTheFade }}'
-              stopEntity: '{{ stopEntity }}'
-              shouldResetTheStopEntityToOffAtStart: '{{ shouldResetTheStopEntityToOffAtStart }}'
-              shouldInvertTheValueOfTheStopEntity: '{{ shouldInvertTheValueOfTheStopEntity }}'
-              minimumStepDelayInMilliseconds: '{{ minimumStepDelayInMilliseconds }}'
-              shouldTryToUseNativeLampTransitionsToo: '{{ shouldTryToUseNativeLampTransitionsToo }}'
-              isDebugMode: '{{ isDebugMode }}'      
+              variables:
+                light: '{{ repeat.item }}'
+                lampBrightnessScale: '{{ lampBrightnessScale | default("zeroToTwoFiftyFive") }}'
+                transitionTime:
+                  hours: 0
+                  minutes: 0
+                  seconds: '{{ fadeTimeInSecondsComputed | int }}'
+                easingTypeInput: '{{ easingTypeInput | default("auto") }}'
+                endBrightnessPercent: '{{ endBrightnessPercent | default(0) }}'
+                endBrightnessEntity: '{{ endBrightnessEntity if endBrightnessEntity is defined and endBrightnessEntity else "" }}'
+                endBrightnessEntityScale: '{{ endBrightnessEntityScale | default("zeroToOneHundred") }}'
+                endColorTemperatureKelvin: '{{ endColorTemperatureKelvin if endColorTemperatureKelvin is defined and endColorTemperatureKelvin else "" }}'
+                endColorTemperatureKelvinEntity: '{{ endColorTemperatureKelvinEntity if endColorTemperatureKelvinEntity is defined and endColorTemperatureKelvinEntity else "" }}'
+                autoCancelThreshold: '{{ autoCancelThreshold | default(10) }}'
+                shouldStopIfTheLampIsTurnedOffDuringTheFade: '{{ shouldStopIfTheLampIsTurnedOffDuringTheFade | default(true) }}'
+                stopEntity: '{{ stopEntity if stopEntity is defined and stopEntity else "" }}'
+                shouldResetTheStopEntityToOffAtStart: '{{ shouldResetTheStopEntityToOffAtStart | default(false) }}'
+                shouldInvertTheValueOfTheStopEntity: '{{ shouldInvertTheValueOfTheStopEntity | default(false) }}'
+                minimumStepDelayInMilliseconds: '{{ minimumStepDelayInMilliseconds | default(50) }}'
+                shouldTryToUseNativeLampTransitionsToo: '{{ shouldTryToUseNativeLampTransitionsToo | default(true) }}'
+                isDebugMode: '{{ isDebugMode | default(false) }}'
   mode: parallel
   max: 15
   icon: mdi:lightbulb-on-50

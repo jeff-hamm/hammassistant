@@ -7,5 +7,6 @@
         "**/.hg": false,
         "**/.svn": false
     },
-    "search.useIgnoreFiles": false
+    "search.useIgnoreFiles": false,
+    "vscode-home-assistant.autoRenderTemplates": true
 }

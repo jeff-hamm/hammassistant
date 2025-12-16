@@ -291,26 +291,28 @@ ashley_s_light_fader:
         lightFriendlyName: "{{ state_attr(light, 'friendly_name') }}"
         startTimestamp: "{{ as_timestamp(now()) }}"
         fadeTimeInSeconds: >
-          {{ ((transitionTime.hours | int) * 60 * 60) + ((transitionTime.minutes |
-          int) * 60) + (transitionTime.seconds | int) }}
+          {% set tt = transitionTime %}
+          {% if tt is mapping %}
+            {{ ((tt.hours | int) * 60 * 60) + ((tt.minutes | int) * 60) + (tt.seconds | int) }}
+          {% else %}
+            {{ as_timedelta(tt).total_seconds() | int }}
+          {% endif %}
         endTimestamp: "{{ startTimestamp + fadeTimeInSeconds }}"
         fadeTimeInMilliseconds: "{{ fadeTimeInSeconds * 1000 }}"
         shouldIgnoreTheEndBrightnessValueAndUseAnEntityForTheEndBrightnessInstead: >
-          {% if (endBrightnessEntity is defined) and
-          (has_value(endBrightnessEntity)) %}
+          {% if endBrightnessEntity is defined and endBrightnessEntity and endBrightnessEntity != '' and endBrightnessEntity != 'None' and has_value(endBrightnessEntity) %}
             {{ true }}
           {% else %}
             {{ false }}
           {% endif %}
         shouldIgnoreTheEndColorTemperatureValueAndUseAnEntityForTheEndColorTemperatureInstead: >
-          {% if (endColorTemperatureKelvinEntity is defined) and
-          (has_value(endColorTemperatureKelvinEntity)) %}
+          {% if endColorTemperatureKelvinEntity is defined and endColorTemperatureKelvinEntity and endColorTemperatureKelvinEntity != '' and endColorTemperatureKelvinEntity != 'None' and has_value(endColorTemperatureKelvinEntity) %}
             {{ true }}
           {% else %}
             {{ false }}
           {% endif %}
         isStopEntityEnabled: |
-          {% if (stopEntity is defined) and (has_value(stopEntity)) %}
+          {% if stopEntity is defined and stopEntity and stopEntity != 'None' and stopEntity != '' and has_value(stopEntity) %}
             {{ true }}
           {% else %}
             {{ false }}

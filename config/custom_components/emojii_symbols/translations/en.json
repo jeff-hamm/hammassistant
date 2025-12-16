@@ -1,0 +1,9 @@
+{
+  "title": "Emojii Symbols",
+  "config": {
+    "abort": {
+      "single_instance_allowed": "Only a single configuration of Emojii Symbols is allowed."
+    },
+    "step": {}
+  }
+}

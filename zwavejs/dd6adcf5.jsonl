@@ -4,7 +4,6 @@
 {"k":"node.1.isRouting","v":true}
 {"k":"node.1.supportedDataRates","v":[40000,100000]}
 {"k":"node.1.protocolVersion","v":3}
-{"k":"node.1.nodeType","v":"Controller"}
 {"k":"node.1.supportsSecurity","v":false}
 {"k":"node.1.supportsBeaming","v":true}
 {"k":"node.1.deviceClass","v":{"basic":2,"generic":2,"specific":1}}
@@ -40,10 +39,5 @@
 {"k":"node.256.supportsBeaming","v":false}
 {"k":"node.256.deviceClass","v":{"basic":3,"generic":17,"specific":0}}
 {"k":"node.256.interviewStage","v":"ProtocolInfo"}
-{"k":"node.2.lastSeen","v":1765541677092}
+{"k":"node.2.lastSeen","v":1765759502335}
 {"k":"node.2.endpoint.0.commandClass.0x84","v":{"isSupported":true,"isControlled":false,"secure":false,"version":1}}
-{"k":"node.2.lastSeen","v":1765541678084}
-{"k":"node.2.lastSeen","v":1765541678828}
-{"k":"node.2.lastSeen","v":1765585012220}
-{"k":"node.2.lastSeen","v":1765585013230}
-{"k":"node.2.lastSeen","v":1765585014860}

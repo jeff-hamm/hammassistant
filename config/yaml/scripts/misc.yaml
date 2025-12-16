@@ -60,16 +60,42 @@ reset_lighting:
 get_target_lights:
   sequence:
   - variables:
-      entities: '{{lights_sources.entity_id if lights_sources.entity_id is list else
-        [] if [lights_sources.entity_id] is defined else []}}'
-      areas: '{{(lights_sources.area_id | map(''area_entities'') | list) | sum(start=[])
-        if lights_sources.area_id is list else area_entities(lights_sources.area_id)}}'
-      devices: '{{(lights_sources.device_id | map(''device_entities'') | list) | sum(start=[])
-        if lights_sources.device_id is list else device_entities(lights_sources.device_id)
-        }}'
-      labels: '{{(lights_sources.label_id | map(''label_entities'') | list) | sum(start=[])
-        if lights_sources.label_id is list else label_entities(lights_sources.label_id)
-        }}'
+      entities: >
+        {% set eid = lights_sources.entity_id | default(none) %}
+        {% if eid is none %}
+          {{ [] }}
+        {% elif eid is iterable and eid is not string %}
+          {{ eid | list }}
+        {% else %}
+          {{ [eid] }}
+        {% endif %}
+      areas: >
+        {% set aid = lights_sources.area_id | default(none) %}
+        {% if aid is none %}
+          {{ [] }}
+        {% elif aid is iterable and aid is not string %}
+          {{ aid | map('area_entities') | sum(start=[]) }}
+        {% else %}
+          {{ area_entities(aid) | default([]) }}
+        {% endif %}
+      devices: >
+        {% set did = lights_sources.device_id | default(none) %}
+        {% if did is none %}
+          {{ [] }}
+        {% elif did is iterable and did is not string %}
+          {{ did | map('device_entities') | sum(start=[]) }}
+        {% else %}
+          {{ device_entities(did) | default([]) }}
+        {% endif %}
+      labels: >
+        {% set lid = lights_sources.label_id | default(none) %}
+        {% if lid is none %}
+          {{ [] }}
+        {% elif lid is iterable and lid is not string %}
+          {{ lid | map('label_entities') | sum(start=[]) }}
+        {% else %}
+          {{ label_entities(lid) | default([]) }}
+        {% endif %}
       source: '{{ "label_id" if lights_sources.label_id is defined
         else "device_id" if lights_sources.device_id is defined
         else "area_id" if lights_sources.area_id is defined

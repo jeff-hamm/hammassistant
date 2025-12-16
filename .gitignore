@@ -146,6 +146,8 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+.backup-empty
+.backup
 
 # Ignore Python cache files
 __pycache__/
