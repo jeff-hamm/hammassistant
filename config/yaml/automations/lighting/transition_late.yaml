@@ -2,12 +2,22 @@ id: '1742786991496'
 alias: 'Transition: Late (11pm)'
 description: ''
 triggers:
-- trigger: time
-  at: input_datetime.transition_late_weeknight_time
+- trigger: template
   id: weeknight
-- trigger: time
-  at: input_datetime.transition_late_weekend_time
+  value_template: >
+    {% set dur = states('input_datetime.deck_fade_duration') %}
+    {% set dt = strptime(dur, '%H:%M:%S') %}
+    {% set dur_s = (dt.hour * 3600) + (dt.minute * 60) + dt.second %}
+    {% set start = (today_at(states('input_datetime.transition_late_weeknight_time')) - timedelta(seconds=dur_s)).strftime('%H:%M') %}
+    {{ now().strftime('%H:%M') == start }}
+- trigger: template
   id: weekend
+  value_template: >
+    {% set dur = states('input_datetime.deck_fade_duration') %}
+    {% set dt = strptime(dur, '%H:%M:%S') %}
+    {% set dur_s = (dt.hour * 3600) + (dt.minute * 60) + dt.second %}
+    {% set start = (today_at(states('input_datetime.transition_late_weekend_time')) - timedelta(seconds=dur_s)).strftime('%H:%M') %}
+    {{ now().strftime('%H:%M') == start }}
 conditions:
 - condition: or
   conditions:
@@ -54,9 +64,9 @@ actions:
       label_id: turn_off_sleep
     lampBrightnessScale: zeroToTwoFiftyFive
     transitionTime:
-      hours: 0
-      minutes: 30
-      seconds: 0
+      hours: "{{ strptime(states('input_datetime.deck_fade_duration'), '%H:%M:%S').hour }}"
+      minutes: "{{ strptime(states('input_datetime.deck_fade_duration'), '%H:%M:%S').minute }}"
+      seconds: "{{ strptime(states('input_datetime.deck_fade_duration'), '%H:%M:%S').second }}"
     easingTypeInput: auto
     endBrightnessPercent: 0
     endBrightnessEntityScale: zeroToOneHundred

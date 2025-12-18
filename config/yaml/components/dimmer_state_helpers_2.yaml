@@ -1,0 +1,6 @@
+input_text:
+  alive_dimmer_state_json:
+    name: Alive Dimmer State (JSON)
+    min: 0
+    max: 255
+    mode: text

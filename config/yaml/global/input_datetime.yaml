@@ -1,11 +1,17 @@
 transition_late_weeknight_time:
-  name: Late Transition Time (Weeknights)
+  name: Weeknight Off Time
   has_date: false
   has_time: true
   initial: '22:30:00'
 
 transition_late_weekend_time:
-  name: Late Transition Time (Weekends)
+  name: Weekend Off Time
   has_date: false
   has_time: true
   initial: '00:00:00'
+
+deck_fade_duration:
+  name: Light Fade Duration
+  has_date: false
+  has_time: true
+  initial: '00:30:00'

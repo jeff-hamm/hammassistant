@@ -27,9 +27,75 @@ EOF
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+log_file_default="$script_dir/../home-assistant.log"
+HA_LOG_FILE="${HA_LOG_FILE:-$log_file_default}"
+
 die() {
   echo "ERROR: $*" >&2
   exit 1
+}
+
+log_line_count() {
+  local f="$1"
+  if [[ -f "$f" ]]; then
+    wc -l < "$f" | tr -d ' '
+  else
+    echo 0
+  fi
+}
+
+check_ha_log_for_parse_errors() {
+  local config_type="$1"
+  local before_lines="$2"
+
+  # Allow opting out if desired
+  if [[ "${REFRESH_CONFIG_SKIP_LOG_CHECK:-}" == "1" ]]; then
+    return 0
+  fi
+
+  if [[ ! -f "$HA_LOG_FILE" ]]; then
+    return 0
+  fi
+
+  # Give HA a moment to write errors to disk
+  sleep "${REFRESH_CONFIG_LOG_SLEEP_S:-0.6}"
+
+  local start_line=$((before_lines + 1))
+  local new_log
+  new_log="$(tail -n +"$start_line" "$HA_LOG_FILE" 2>/dev/null || true)"
+  [[ -n "$new_log" ]] || return 0
+
+  # YAML parse errors often span multiple lines; match on common markers.
+  # Example:
+  #   while parsing a block mapping
+  #   expected <block end>, but found '<block mapping start>'
+  local parse_pat='while parsing a block mapping|expected <block end>|mapping values are not allowed|found character that cannot start any token|ScannerError|ParserError|Invalid config for \['
+
+  # Narrow to relevant component where possible, but always catch generic YAML parser errors.
+  local component_pat=""
+  if [[ "$config_type" != "all" && -n "$config_type" ]]; then
+    component_pat="\\[homeassistant\\.components\\.${config_type}\\]"
+  fi
+
+  local has_parse_error=false
+  if echo "$new_log" | grep -Eqi "$parse_pat"; then
+    has_parse_error=true
+  fi
+
+  # If component is known and any error line from that component occurred, show it too.
+  local component_err=false
+  if [[ -n "$component_pat" ]] && echo "$new_log" | grep -Eqi "ERROR .*${component_pat}"; then
+    component_err=true
+  fi
+
+  if [[ "$has_parse_error" == "true" || "$component_err" == "true" ]]; then
+    echo "✗ Home Assistant logged errors during reload ($config_type)." >&2
+    echo "--- log excerpt ($HA_LOG_FILE) ---" >&2
+    # Print the tail of new log to include multi-line YAML parser context.
+    echo "$new_log" | tail -n 80 >&2
+    echo "--- end excerpt ---" >&2
+    return 1
+  fi
 }
 
 # Load env from secret.env if needed
@@ -136,6 +202,7 @@ fi
 if [[ "$reload_all" == "true" || ${#config_types[@]} -gt 3 ]]; then
   echo
   echo "Reloading all YAML configuration..."
+  before_lines="$(log_line_count "$HA_LOG_FILE")"
   code="$(curl -sS -o /dev/null -w '%{http_code}' \
     -X POST \
     -H "$auth_header" -H "$ct_header" \
@@ -143,6 +210,7 @@ if [[ "$reload_all" == "true" || ${#config_types[@]} -gt 3 ]]; then
     "$base_url/api/services/homeassistant/reload_all")"
 
   [[ "$code" == "200" ]] || die "Failed to reload all configuration (HTTP $code)"
+  check_ha_log_for_parse_errors "all" "$before_lines" || die "Home Assistant reported errors during reload_all"
   echo "✓ All YAML configuration reloaded successfully!"
   commit_if_requested
   exit 0
@@ -153,6 +221,8 @@ for config_type in "${config_types[@]}"; do
   echo
   echo "Reloading $config_type from configuration files..."
 
+  before_lines="$(log_line_count "$HA_LOG_FILE")"
+
   code="$(curl -sS -o /dev/null -w '%{http_code}' \
     -X POST \
     -H "$auth_header" -H "$ct_header" \
@@ -161,6 +231,9 @@ for config_type in "${config_types[@]}"; do
 
   if [[ "$code" == "200" ]]; then
     echo "✓ $config_type reloaded successfully!"
+    if ! check_ha_log_for_parse_errors "$config_type" "$before_lines"; then
+      all_success=false
+    fi
   else
     echo "✗ Failed to reload $config_type (HTTP $code)" >&2
     all_success=false

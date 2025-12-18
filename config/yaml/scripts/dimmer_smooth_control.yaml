@@ -1,0 +1,225 @@
+dimmer_smooth_control:
+  fields:
+    event_type:
+      description: Optional override for event_type (useful to avoid queued/backlog reading updated entity attrs)
+      example: rotate_left_pressed
+      required: false
+    steps:
+      description: Optional override for steps (useful to avoid queued/backlog reading updated entity attrs)
+      example: 3
+      required: false
+    event_ts:
+      description: Optional override event timestamp (seconds since epoch) captured at trigger time
+      example: 1734480000.123
+      required: false
+    event_entity:
+      description: Event entity that triggers the dimmer
+      example: event.alive_dimmer
+      required: true
+    target_light:
+      description: Light entity to control
+      example: light.alive_lights
+      required: true
+    state_helper:
+      description: input_text that stores JSON accumulator state
+      example: input_text.alive_dimmer_state
+      required: true
+    state_key:
+      description: JSON key used within state_helper for this specific target
+      example: alive_lights
+      required: true
+    dim_state:
+      description: Event state that triggers dimming
+      example: rotate_left
+      default: rotate_left
+    brighten_state:
+      description: Event state that triggers brightening
+      example: rotate_right
+      default: rotate_right
+    toggle_state:
+      description: Event state that triggers toggle (optional)
+      example: press
+      required: false
+    ignore_toggle_after_ms:
+      description: Ignore toggle_state if a recent rotate event occurred (debounce)
+      example: 1000
+      default: 1000
+    ignore_toggle_after_states:
+      description: Additional event_types that should suppress toggle_state when recent
+      example: "['rotate_left_pressed', 'rotate_right_pressed']"
+      required: false
+    revolutions_full_range:
+      description: Number of knob revolutions to go from 0% to 100%
+      example: 2
+      default: 2
+    steps_per_revolution:
+      description: Detents (steps) per physical revolution for this dimmer
+      example: 24
+      default: 24
+    scale_factor:
+      description: Optional speed multiplier on top of revolution-based scaling
+      example: 1
+      default: 1
+    min_send_interval_ms:
+      description: Minimum interval between light.turn_on calls (rate-limit for slow/Wi-Fi groups)
+      example: 350
+      default: 350
+    fade_ms:
+      description: Fade duration in milliseconds for each update
+      example: 600
+      default: 600
+    state_actions:
+      description: List of custom state/action pairs (optional)
+      required: false
+  sequence:
+    - variables:
+        event_type: >
+          {{ (event_type | string)
+              if (event_type is defined and event_type != none)
+              else (state_attr(event_entity, 'event_type') | string) }}
+        steps: >
+          {{ (steps | int(0))
+              if (steps is defined and steps != none)
+              else (state_attr(event_entity, 'steps') | int(0)) }}
+        event_ts: >
+          {{ (event_ts | float(0))
+              if (event_ts is defined and event_ts != none)
+              else (as_timestamp(states[event_entity].last_updated) | float(0)) }}
+
+    - variables:
+        now_ts: "{{ as_timestamp(now()) }}"
+        state_obj: >
+          {% set raw = states(state_helper) %}
+          {% if raw is string and (raw | trim) is match('^\\{') %}
+            {{ raw | from_json }}
+          {% else %}
+            {{ dict() }}
+          {% endif %}
+        global_state: "{{ state_obj.get('_global', dict()) if state_obj is mapping else dict() }}"
+        global_last_type: "{{ global_state.get('last_event_type', '') }}"
+        global_last_ts: "{{ global_state.get('last_event_ts', global_state.get('last_event', 0)) | float(0) }}"
+        ignore_toggle_s: "{{ ((ignore_toggle_after_ms | default(1000)) | int) / 1000 }}"
+        ignore_toggle_list: >
+          {% set base = [dim_state, brighten_state, 'rotate_left_pressed', 'rotate_right_pressed'] %}
+          {% set extra = ignore_toggle_after_states if (ignore_toggle_after_states is defined and ignore_toggle_after_states != none) else [] %}
+          {{ (base + extra) | unique | list }}
+        should_ignore_toggle: "{{ (event_ts - global_last_ts) < ignore_toggle_s and (global_last_type in ignore_toggle_list) }}"
+
+    - if:
+        - condition: template
+          value_template: "{{ toggle_state is defined and toggle_state != none and event_type == toggle_state }}"
+      then:
+        - if:
+            - condition: template
+              value_template: "{{ should_ignore_toggle }}"
+          then:
+            - stop: Ignored toggle (recent rotate)
+
+        - action: light.toggle
+          target:
+            entity_id: "{{ target_light }}"
+
+        - variables:
+            toggled_state_json: >
+              {% set existing = state_obj if state_obj is mapping else dict() %}
+              {{ existing | combine({ '_global': { 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float) } }, recursive=True) | to_json }}
+
+        - action: input_text.set_value
+          target:
+            entity_id: "{{ state_helper }}"
+          data:
+            value: "{{ toggled_state_json }}"
+
+        - stop: Handled toggle
+
+    - variables:
+        delta_pct: >
+          {% set dir = (-1 if event_type == dim_state else (1 if event_type == brighten_state else 0)) %}
+          {% if dir == 0 %}
+            0
+          {% else %}
+            {% set spr = (steps_per_revolution | float(24)) %}
+            {% set rev = (revolutions_full_range | float(2)) %}
+            {% set mult = (scale_factor | float(1)) %}
+            {% set pct_per_step = (100 / (spr * rev)) %}
+            {{ (steps | float(0) * dir * pct_per_step * mult) | round(0) | int }}
+          {% endif %}
+
+    - if:
+        - condition: template
+          value_template: "{{ delta_pct | int != 0 }}"
+      then:
+        - variables:
+            per_target: "{{ state_obj.get(state_key, dict()) if state_obj is mapping else dict() }}"
+            last_input_ts: "{{ per_target.get('last_input_ts', 0) | float(0) }}"
+            last_event_ts: "{{ per_target.get('last_event_ts', per_target.get('last_event', 0)) | float(0) }}"
+            last_send_ts: "{{ per_target.get('last_send', 0) | float(0) }}"
+            saved_target: "{{ per_target.get('target', 0) | float(0) }}"
+            current_pct: >
+              {% set b = state_attr(target_light, 'brightness') %}
+              {% if b is number %}
+                {{ ((b | float) / 255 * 100) | round(0) | int }}
+              {% else %}
+                {{ 0 }}
+              {% endif %}
+            base_pct: "{{ (saved_target | round(0) | int) if (last_event_ts | float(0)) > 0 else (current_pct | int) }}"
+            new_target_pct: "{{ [0, [100, (base_pct | int + delta_pct | int)] | min] | max }}"
+            min_send_interval_s: "{{ (min_send_interval_ms | int(350)) / 1000 }}"
+            should_send: "{{ (now_ts - last_send_ts) >= min_send_interval_s }}"
+            transition_s: "{{ ([ (fade_ms | int(600)) / 1000, min_send_interval_s ] | max) }}"
+            base_state_json: >
+              {% set existing = state_obj if state_obj is mapping else dict() %}
+              {{ existing
+                | combine({ '_global': { 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float) } }, recursive=True)
+                | combine({ state_key: { 'target': (new_target_pct | int), 'last_input_ts': (event_ts | float), 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float), 'last_send': (last_send_ts | float) } }, recursive=True)
+                | to_json }}
+            sent_state_json: >
+              {% set existing = state_obj if state_obj is mapping else dict() %}
+              {{ existing
+                | combine({ '_global': { 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float) } }, recursive=True)
+                | combine({ state_key: { 'target': (new_target_pct | int), 'last_input_ts': (event_ts | float), 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float), 'last_send': (now_ts | float) } }, recursive=True)
+                | to_json }}
+
+        - action: input_text.set_value
+          target:
+            entity_id: "{{ state_helper }}"
+          data:
+            value: "{{ base_state_json }}"
+
+        - if:
+            - condition: template
+              value_template: "{{ should_send }}"
+          then:
+            # Smooth brightness via native transition (rate-limited for slow/Wi-Fi groups)
+            - action: light.turn_on
+              target:
+                entity_id: "{{ target_light }}"
+              data:
+                brightness_pct: "{{ new_target_pct }}"
+                transition: "{{ transition_s }}"
+
+            - action: input_text.set_value
+              target:
+                entity_id: "{{ state_helper }}"
+              data:
+                value: "{{ sent_state_json }}"
+
+        - stop: Handled dim/brighten
+
+    - if:
+        - condition: template
+          value_template: "{{ state_actions is defined and state_actions != none }}"
+      then:
+        - repeat:
+            for_each: "{{ state_actions }}"
+            sequence:
+              - if:
+                  - condition: template
+                    value_template: "{{ event_type == repeat.item.state }}"
+                then:
+                  - action: "{{ repeat.item.action }}"
+                    data: "{{ repeat.item.data | default({}) }}"
+                    target: "{{ repeat.item.target | default({}) }}"
+
+  mode: queued
+  max: 50
