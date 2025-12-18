@@ -74,7 +74,7 @@
         "linkquality": 152
     },
     "0xa4c1388cd45b293d": {
-        "temperature": 13.4,
+        "temperature": 16.8,
         "battery": 25,
         "battery_state": "medium",
         "temperature_unit": "celsius",
@@ -82,11 +82,23 @@
         "linkquality": 120
     },
     "0xffffb40e0605cdfb": {
-        "temperature": 20.5,
-        "humidity": 40.61,
-        "soil_moisture": 40.61,
-        "battery": 74,
-        "linkquality": 212,
+        "temperature": 22.9,
+        "humidity": 42.35,
+        "soil_moisture": 42.35,
+        "battery": 76.5,
+        "linkquality": 204,
+        "update": {
+            "state": "idle",
+            "installed_version": 46,
+            "latest_version": 46
+        }
+    },
+    "0xffffb40e0605c9d3": {
+        "temperature": 24.4,
+        "humidity": 11.1,
+        "soil_moisture": 11.1,
+        "battery": 100,
+        "linkquality": 255,
         "update": {
             "state": "idle",
             "installed_version": 46,
