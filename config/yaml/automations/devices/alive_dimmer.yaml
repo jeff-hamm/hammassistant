@@ -10,6 +10,8 @@ actions:
   data:
     event_entity: event.alive_dimmer
     target_light: light.alive_lights
+    dim_state: rotate_left_pressed
+    brighten_state: rotate_right_pressed
     toggle_state: press
     scale_factor: 3
     state_actions:
