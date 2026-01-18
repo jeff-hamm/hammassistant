@@ -16,6 +16,7 @@ from homeassistant.core import HomeAssistant, callback
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.helpers.restore_state import RestoreEntity
+from homeassistant.helpers.entity import EntityCategory
 
 from .const import DOMAIN
 from .tile_api import TileDevice
@@ -339,7 +340,7 @@ class TileProgramRingtoneButton(CoordinatorEntity, ButtonEntity):
 
     _attr_has_entity_name = True
     _attr_icon = "mdi:music-note-plus"
-    _attr_entity_category = "config"
+    _attr_entity_category = EntityCategory.CONFIG
     _attr_entity_registry_enabled_default = False  # Disabled by default - advanced feature
 
     def __init__(
