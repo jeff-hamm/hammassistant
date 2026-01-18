@@ -21,4 +21,9 @@ actions:
   data: {}
   target:
     label_id: turn_off_sleep
+- action: light.turn_off
+  metadata: {}
+  data: {}
+  target:
+    label_id: turn_off_late
 mode: single

@@ -56,12 +56,12 @@ actions:
     transition: 120
   target:
     label_id: turn_off_late
-  enabled: true
+  enabled: false
 - action: script.target_lights_fader
   metadata: {}
   data:
     lights:
-      label_id: turn_off_sleep
+      label_id: turn_off_late
     lampBrightnessScale: zeroToTwoFiftyFive
     transitionTime:
       hours: "{{ strptime(states('input_datetime.deck_fade_duration'), '%H:%M:%S').hour }}"

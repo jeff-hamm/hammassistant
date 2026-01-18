@@ -1,28 +1,20 @@
 id: '1742401610600'
 alias: Asia's Dimmer
 description: ''
-triggers:
-  - trigger: state
-    entity_id:
-      - event.big_deck_dimmer
-actions:
-  - action: script.dimmer_smooth_control
-    data:
-      event_type: "{{ trigger.to_state.attributes.event_type }}"
-      steps: "{{ trigger.to_state.attributes.steps | int(0) }}"
-      event_ts: "{{ as_timestamp(trigger.to_state.last_updated) }}"
-      event_entity: event.big_deck_dimmer
-      target_light: light.asia_big_deck
-      state_helper: input_text.alive_dimmer_state
-      state_key: asia_big_deck
-      dim_state: rotate_left
-      brighten_state: rotate_right
-      toggle_state: press
-      ignore_toggle_after_ms: 1000
-      revolutions_full_range: 2
-      steps_per_revolution: 24
-      scale_factor: 1
-      min_send_interval_ms: 350
-      fade_ms: 900
-mode: queued
-max: 20
+use_blueprint:
+  path: dimmer_smooth_event.yaml
+  input:
+    event_entity: event.big_deck_dimmer
+    target_light: light.asia_big_deck
+    global_state_prefix: big_deck_dimmer
+    target_state_prefix: big_deck_dimmer_asia_big_deck
+    dim_state: rotate_left
+    brighten_state: rotate_right
+    toggle_state: press
+    ignore_toggle_after_ms: 1000
+    revolutions_full_range: 2
+    steps_per_revolution: 24
+    scale_factor: 1
+    min_send_interval_ms: 150
+    fade_ms: 300
+    state_actions: []

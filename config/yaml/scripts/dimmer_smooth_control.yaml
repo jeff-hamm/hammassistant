@@ -20,13 +20,13 @@ dimmer_smooth_control:
       description: Light entity to control
       example: light.alive_lights
       required: true
-    state_helper:
-      description: input_text that stores JSON accumulator state
-      example: input_text.alive_dimmer_state
+    global_state_prefix:
+      description: Prefix for global helpers that track last event type/timestamp (debounce)
+      example: alive_dimmer
       required: true
-    state_key:
-      description: JSON key used within state_helper for this specific target
-      example: alive_lights
+    target_state_prefix:
+      description: Prefix for per-target helpers (target brightness + timestamps)
+      example: alive_dimmer_alive_lights
       required: true
     dim_state:
       description: Event state that triggers dimming
@@ -88,16 +88,13 @@ dimmer_smooth_control:
 
     - variables:
         now_ts: "{{ as_timestamp(now()) }}"
-        state_obj: >
-          {% set raw = states(state_helper) %}
-          {% if raw is string and (raw | trim) is match('^\\{') %}
-            {{ raw | from_json }}
-          {% else %}
-            {{ dict() }}
-          {% endif %}
-        global_state: "{{ state_obj.get('_global', dict()) if state_obj is mapping else dict() }}"
-        global_last_type: "{{ global_state.get('last_event_type', '') }}"
-        global_last_ts: "{{ global_state.get('last_event_ts', global_state.get('last_event', 0)) | float(0) }}"
+        global_type_helper: "{{ 'input_text.' ~ (global_state_prefix | string) ~ '_last_event_type' }}"
+        global_ts_helper: "{{ 'input_number.' ~ (global_state_prefix | string) ~ '_last_event_ts' }}"
+        target_target_helper: "{{ 'input_number.' ~ (target_state_prefix | string) ~ '_target' }}"
+        target_last_send_helper: "{{ 'input_number.' ~ (target_state_prefix | string) ~ '_last_send_ts' }}"
+        target_last_event_ts_helper: "{{ 'input_number.' ~ (target_state_prefix | string) ~ '_last_event_ts' }}"
+        global_last_type: "{{ states(global_type_helper) | string }}"
+        global_last_ts: "{{ states(global_ts_helper) | float(0) }}"
         ignore_toggle_s: "{{ ((ignore_toggle_after_ms | default(1000)) | int) / 1000 }}"
         ignore_toggle_list: >
           {% set base = [dim_state, brighten_state, 'rotate_left_pressed', 'rotate_right_pressed'] %}
@@ -119,21 +116,22 @@ dimmer_smooth_control:
           target:
             entity_id: "{{ target_light }}"
 
-        - variables:
-            toggled_state_json: >
-              {% set existing = state_obj if state_obj is mapping else dict() %}
-              {{ existing | combine({ '_global': { 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float) } }, recursive=True) | to_json }}
-
         - action: input_text.set_value
           target:
-            entity_id: "{{ state_helper }}"
+            entity_id: "{{ global_type_helper }}"
           data:
-            value: "{{ toggled_state_json }}"
+            value: "{{ event_type | string }}"
+
+        - action: input_number.set_value
+          target:
+            entity_id: "{{ global_ts_helper }}"
+          data:
+            value: "{{ event_ts | float(0) }}"
 
         - stop: Handled toggle
 
     - variables:
-        delta_pct: >
+        delta_bri: >
           {% set dir = (-1 if event_type == dim_state else (1 if event_type == brighten_state else 0)) %}
           {% if dir == 0 %}
             0
@@ -141,68 +139,82 @@ dimmer_smooth_control:
             {% set spr = (steps_per_revolution | float(24)) %}
             {% set rev = (revolutions_full_range | float(2)) %}
             {% set mult = (scale_factor | float(1)) %}
-            {% set pct_per_step = (100 / (spr * rev)) %}
-            {{ (steps | float(0) * dir * pct_per_step * mult) | round(0) | int }}
+            {% set bri_per_step = (255 / (spr * rev)) %}
+            {{ (steps | float(0) * dir * bri_per_step * mult) | round(0) | int }}
           {% endif %}
 
     - if:
         - condition: template
-          value_template: "{{ delta_pct | int != 0 }}"
+          value_template: "{{ delta_bri | int != 0 }}"
       then:
         - variables:
-            per_target: "{{ state_obj.get(state_key, dict()) if state_obj is mapping else dict() }}"
-            last_input_ts: "{{ per_target.get('last_input_ts', 0) | float(0) }}"
-            last_event_ts: "{{ per_target.get('last_event_ts', per_target.get('last_event', 0)) | float(0) }}"
-            last_send_ts: "{{ per_target.get('last_send', 0) | float(0) }}"
-            saved_target: "{{ per_target.get('target', 0) | float(0) }}"
-            current_pct: >
+            last_event_ts: "{{ states(target_last_event_ts_helper) | float(0) }}"
+            last_send_ts: "{{ states(target_last_send_helper) | float(0) }}"
+            saved_target_bri: "{{ states(target_target_helper) | int(0) }}"
+            current_bri: >
               {% set b = state_attr(target_light, 'brightness') %}
               {% if b is number %}
-                {{ ((b | float) / 255 * 100) | round(0) | int }}
+                {{ b | int }}
               {% else %}
                 {{ 0 }}
               {% endif %}
-            base_pct: "{{ (saved_target | round(0) | int) if (last_event_ts | float(0)) > 0 else (current_pct | int) }}"
-            new_target_pct: "{{ [0, [100, (base_pct | int + delta_pct | int)] | min] | max }}"
+            base_bri: "{{ (saved_target_bri | int) if (last_event_ts | float(0)) > 0 else (current_bri | int) }}"
+            new_target_bri: "{{ [0, [255, (base_bri | int + delta_bri | int)] | min] | max }}"
             min_send_interval_s: "{{ (min_send_interval_ms | int(350)) / 1000 }}"
             should_send: "{{ (now_ts - last_send_ts) >= min_send_interval_s }}"
-            transition_s: "{{ ([ (fade_ms | int(600)) / 1000, min_send_interval_s ] | max) }}"
-            base_state_json: >
-              {% set existing = state_obj if state_obj is mapping else dict() %}
-              {{ existing
-                | combine({ '_global': { 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float) } }, recursive=True)
-                | combine({ state_key: { 'target': (new_target_pct | int), 'last_input_ts': (event_ts | float), 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float), 'last_send': (last_send_ts | float) } }, recursive=True)
-                | to_json }}
-            sent_state_json: >
-              {% set existing = state_obj if state_obj is mapping else dict() %}
-              {{ existing
-                | combine({ '_global': { 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float) } }, recursive=True)
-                | combine({ state_key: { 'target': (new_target_pct | int), 'last_input_ts': (event_ts | float), 'last_event_type': (event_type | string), 'last_event_ts': (event_ts | float), 'last_event': (event_ts | float), 'last_send': (now_ts | float) } }, recursive=True)
-                | to_json }}
+            transition_s: "{{ (fade_ms | int(600)) / 1000 }}"
 
         - action: input_text.set_value
           target:
-            entity_id: "{{ state_helper }}"
+            entity_id: "{{ global_type_helper }}"
           data:
-            value: "{{ base_state_json }}"
+            value: "{{ event_type | string }}"
+
+        - action: input_number.set_value
+          target:
+            entity_id: "{{ global_ts_helper }}"
+          data:
+            value: "{{ event_ts | float(0) }}"
+
+        - action: input_number.set_value
+          target:
+            entity_id: "{{ target_target_helper }}"
+          data:
+            value: "{{ new_target_bri | int }}"
+
+        - action: input_number.set_value
+          target:
+            entity_id: "{{ target_last_event_ts_helper }}"
+          data:
+            value: "{{ event_ts | float(0) }}"
 
         - if:
             - condition: template
               value_template: "{{ should_send }}"
           then:
             # Smooth brightness via native transition (rate-limited for slow/Wi-Fi groups)
-            - action: light.turn_on
-              target:
-                entity_id: "{{ target_light }}"
-              data:
-                brightness_pct: "{{ new_target_pct }}"
-                transition: "{{ transition_s }}"
+            - if:
+                - condition: template
+                  value_template: "{{ (new_target_bri | int) <= 0 }}"
+              then:
+                - action: light.turn_off
+                  target:
+                    entity_id: "{{ target_light }}"
+                  data:
+                    transition: "{{ transition_s }}"
+              else:
+                - action: light.turn_on
+                  target:
+                    entity_id: "{{ target_light }}"
+                  data:
+                    brightness: "{{ new_target_bri | int }}"
+                    transition: "{{ transition_s }}"
 
-            - action: input_text.set_value
+            - action: input_number.set_value
               target:
-                entity_id: "{{ state_helper }}"
+                entity_id: "{{ target_last_send_helper }}"
               data:
-                value: "{{ sent_state_json }}"
+                value: "{{ now_ts | float(0) }}"
 
         - stop: Handled dim/brighten
 

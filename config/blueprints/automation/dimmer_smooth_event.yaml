@@ -1,0 +1,138 @@
+blueprint:
+  name: Smooth Dimmer (event entity)
+  description: >
+    Calls script.dimmer_smooth_control when an event entity updates.
+    Uses per-target helper entities (input_number/input_text) for persistent state.
+  domain: automation
+  input:
+    event_entity:
+      name: Event entity
+      selector:
+        entity:
+          domain: event
+    target_light:
+      name: Target light
+      selector:
+        entity:
+          domain: light
+    global_state_prefix:
+      name: Global state prefix
+      description: >
+        Prefix used for global helpers:
+        input_text.<prefix>_last_event_type and input_number.<prefix>_last_event_ts
+      default: alive_dimmer
+      selector:
+        text:
+    target_state_prefix:
+      name: Target state prefix
+      description: >
+        Prefix used for per-target helpers:
+        input_number.<prefix>_target, _last_send_ts, _last_event_ts
+      default: alive_dimmer_alive_lights
+      selector:
+        text:
+    dim_state:
+      name: Dim event_type
+      default: rotate_left
+      selector:
+        text:
+    brighten_state:
+      name: Brighten event_type
+      default: rotate_right
+      selector:
+        text:
+    toggle_state:
+      name: Toggle event_type (optional)
+      default: press
+      selector:
+        text:
+    ignore_toggle_after_ms:
+      name: Ignore toggle after ms
+      default: 1000
+      selector:
+        number:
+          min: 0
+          max: 5000
+          step: 50
+          mode: box
+    revolutions_full_range:
+      name: Revolutions for 0→100%
+      default: 2
+      selector:
+        number:
+          min: 0.5
+          max: 10
+          step: 0.5
+          mode: box
+    steps_per_revolution:
+      name: Steps per revolution
+      default: 24
+      selector:
+        number:
+          min: 8
+          max: 96
+          step: 1
+          mode: box
+    scale_factor:
+      name: Scale factor
+      default: 1
+      selector:
+        number:
+          min: 0.1
+          max: 5
+          step: 0.1
+          mode: box
+    min_send_interval_ms:
+      name: Minimum send interval (ms)
+      default: 150
+      selector:
+        number:
+          min: 50
+          max: 2000
+          step: 25
+          mode: box
+    fade_ms:
+      name: Fade duration (ms)
+      default: 300
+      selector:
+        number:
+          min: 0
+          max: 3000
+          step: 50
+          mode: box
+    state_actions:
+      name: Extra state actions (optional)
+      description: >
+        Optional list of {state, action, target, data} entries passed to script.dimmer_smooth_control.
+        Useful for long_press actions, etc.
+      default: []
+      selector:
+        object:
+
+trigger:
+  - platform: state
+    entity_id: !input event_entity
+
+action:
+  - service: script.dimmer_smooth_control
+    data:
+      event_type: "{{ trigger.to_state.attributes.get('event_type', '') }}"
+      steps: "{{ trigger.to_state.attributes.get('steps', 0) | int(0) }}"
+      event_ts: "{{ as_timestamp(trigger.to_state.last_updated) }}"
+      event_entity: !input event_entity
+      target_light: !input target_light
+      global_state_prefix: !input global_state_prefix
+      target_state_prefix: !input target_state_prefix
+      dim_state: !input dim_state
+      brighten_state: !input brighten_state
+      toggle_state: !input toggle_state
+      ignore_toggle_after_ms: !input ignore_toggle_after_ms
+      revolutions_full_range: !input revolutions_full_range
+      steps_per_revolution: !input steps_per_revolution
+      scale_factor: !input scale_factor
+      min_send_interval_ms: !input min_send_interval_ms
+      fade_ms: !input fade_ms
+      state_actions: !input state_actions
+
+mode: queued
+max: 20

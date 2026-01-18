@@ -28,12 +28,12 @@
         "color_temp": 500
     },
     "0xa4c1380cf616e594": {
-        "temperature": 24.3,
-        "battery": 22,
+        "temperature": 21.2,
+        "battery": 70,
         "battery_state": "medium",
         "temperature_unit": "fahrenheit",
         "linkquality": 255,
-        "soil_moisture": 51
+        "soil_moisture": 100
     },
     "0x28dba7fffe829ea9": {
         "state": "OFF",
@@ -66,27 +66,27 @@
         "linkquality": 188
     },
     "0xa4c1383bcd4c2065": {
-        "temperature": 36.9,
-        "battery": 13,
-        "battery_state": "low",
-        "temperature_unit": "fahrenheit",
-        "soil_moisture": 9,
-        "linkquality": 152
-    },
-    "0xa4c1388cd45b293d": {
-        "temperature": 13,
-        "battery": 25,
+        "temperature": 16.2,
+        "battery": 64,
         "battery_state": "medium",
         "temperature_unit": "celsius",
-        "soil_moisture": 100,
-        "linkquality": 120
+        "soil_moisture": 91,
+        "linkquality": 92
+    },
+    "0xa4c1388cd45b293d": {
+        "temperature": 20.1,
+        "battery": 73,
+        "battery_state": "medium",
+        "temperature_unit": "fahrenheit",
+        "soil_moisture": 30,
+        "linkquality": 92
     },
     "0xffffb40e0605cdfb": {
-        "temperature": 23.6,
-        "humidity": 42.24,
-        "soil_moisture": 42.24,
-        "battery": 76.5,
-        "linkquality": 204,
+        "temperature": 20.8,
+        "humidity": 0,
+        "soil_moisture": 0,
+        "battery": 72,
+        "linkquality": 232,
         "update": {
             "state": "idle",
             "installed_version": 46,
@@ -94,11 +94,11 @@
         }
     },
     "0xffffb40e0605c9d3": {
-        "temperature": 24.4,
-        "humidity": 12.6,
-        "soil_moisture": 12.6,
-        "battery": 100,
-        "linkquality": 255,
+        "temperature": 22.7,
+        "humidity": 45.59,
+        "soil_moisture": 45.59,
+        "battery": 93,
+        "linkquality": 156,
         "update": {
             "state": "idle",
             "installed_version": 46,

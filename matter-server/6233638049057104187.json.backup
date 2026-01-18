@@ -1562,7 +1562,7 @@
     },
     "5242": {
       "vendor_id": 5242,
-      "vendor_name": "Shenzhen Realwe Innovation Technology  Co., Ltd.",
+      "vendor_name": "Realwe Innovation",
       "company_legal_name": "Shenzhen Realwe Innovation Technology  Co., Ltd.",
       "company_preferred_name": "",
       "vendor_landing_page_url": "",
@@ -1586,7 +1586,7 @@
     },
     "5245": {
       "vendor_id": 5245,
-      "vendor_name": "Wenzhou Morning Electronics Co., Ltd.",
+      "vendor_name": "MS",
       "company_legal_name": "Wenzhou Morning Electronics Co., Ltd.",
       "company_preferred_name": "",
       "vendor_landing_page_url": "",
@@ -3040,6 +3040,70 @@
       "vendor_landing_page_url": "",
       "creator": "cosmos1kelvhh6cy2vmaj5zczxj52k4nys2w4e2u3awvq"
     },
+    "5647": {
+      "vendor_id": 5647,
+      "vendor_name": "POYAL",
+      "company_legal_name": "Zhejiang General Light Curtain Co.,Ltd.",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1xjed6glv33ukalqxwd8uhgf5a02sxvwqj0rtkj"
+    },
+    "5669": {
+      "vendor_id": 5669,
+      "vendor_name": "UNITED ELECTRIC",
+      "company_legal_name": "UNITED ELECTRIC CO.,LTD",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1ae8dc4h4qjmm4gvtx7l78vfv2dszya4hndcnq8"
+    },
+    "4653": {
+      "vendor_id": 4653,
+      "vendor_name": "AduroSmart",
+      "company_legal_name": "Aduro Technologies LLC",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1u52savkcl3jhwa26escwvan92svr6j94mghmw2"
+    },
+    "5583": {
+      "vendor_id": 5583,
+      "vendor_name": "Globe",
+      "company_legal_name": "Globe Electric Company Inc.",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos19er5k43zw42rd28lv8qmqzw4975e4ers2vkpvn"
+    },
+    "5594": {
+      "vendor_id": 5594,
+      "vendor_name": "JEM",
+      "company_legal_name": "JEM ACCESSORIES INC",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1k7l8x64s79g3y2vry5txgfzvmfnjfnckljy94y"
+    },
+    "5648": {
+      "vendor_id": 5648,
+      "vendor_name": "Zhuhai Shengchang",
+      "company_legal_name": "Zhuhai Shengchang Electronics Co., Ltd.",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1xzlrfz728vw58snq09xdvylkc3ffpqtygxvz5d"
+    },
+    "5663": {
+      "vendor_id": 5663,
+      "vendor_name": "Fatboy the original",
+      "company_legal_name": "Fatboy the original b.v",
+      "company_preferred_name": "Fatboy the original ",
+      "vendor_landing_page_url": "https://www.fatboy.com/nl-nl/",
+      "creator": "cosmos1kcy7p56ez8vvaxnwuapfwr26sc7gwpc6q4yqja"
+    },
+    "5668": {
+      "vendor_id": 5668,
+      "vendor_name": "ZH",
+      "company_legal_name": "Shenzhen Zhenghui Technology Co., Ltd",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1jpdc22k8ulck7evng68es7d6yukewq0cl4ngss"
+    },
     "1": {
       "vendor_id": 1,
       "vendor_name": "Panasonic",
@@ -3343,6 +3407,14 @@
       "company_preferred_name": "",
       "vendor_landing_page_url": "",
       "creator": "cosmos1eq7jwgdfcjafjlj5eq607p7j50yyl9dyw6fzw5"
+    },
+    "4653": {
+      "vendor_id": 4653,
+      "vendor_name": "AduroSmart",
+      "company_legal_name": "Aduro Technologies LLC",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1u52savkcl3jhwa26escwvan92svr6j94mghmw2"
     },
     "4662": {
       "vendor_id": 4662,
@@ -4570,7 +4642,7 @@
     },
     "5242": {
       "vendor_id": 5242,
-      "vendor_name": "Shenzhen Realwe Innovation Technology  Co., Ltd.",
+      "vendor_name": "Realwe Innovation",
       "company_legal_name": "Shenzhen Realwe Innovation Technology  Co., Ltd.",
       "company_preferred_name": "",
       "vendor_landing_page_url": "",
@@ -4594,7 +4666,7 @@
     },
     "5245": {
       "vendor_id": 5245,
-      "vendor_name": "Wenzhou Morning Electronics Co., Ltd.",
+      "vendor_name": "MS",
       "company_legal_name": "Wenzhou Morning Electronics Co., Ltd.",
       "company_preferred_name": "",
       "vendor_landing_page_url": "",
@@ -5824,6 +5896,14 @@
       "vendor_landing_page_url": "",
       "creator": "cosmos16k4se9gsvk9nhmyfa0sd46djcknk6ekqqvrc76"
     },
+    "5574": {
+      "vendor_id": 5574,
+      "vendor_name": "Wozart",
+      "company_legal_name": "Wozart Technologies Private Limited",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "https://wozart.com",
+      "creator": "cosmos1jzx6a4lje548yhgwq8rrdaqf8uamu6strvxu3f"
+    },
     "5575": {
       "vendor_id": 5575,
       "vendor_name": "Homewell Technology Co., Ltd. ",
@@ -5864,6 +5944,14 @@
       "vendor_landing_page_url": "",
       "creator": "cosmos1frmdkzxlxdgu0knkstvfzawjeshdyc0zh46jes"
     },
+    "5583": {
+      "vendor_id": 5583,
+      "vendor_name": "Globe",
+      "company_legal_name": "Globe Electric Company Inc.",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos19er5k43zw42rd28lv8qmqzw4975e4ers2vkpvn"
+    },
     "5584": {
       "vendor_id": 5584,
       "vendor_name": "Vantiva USA LLC",
@@ -5879,6 +5967,14 @@
       "company_preferred_name": "Boldr",
       "vendor_landing_page_url": "https://shopboldr.com/",
       "creator": "cosmos1q5ekg6ak6q7px92w786hk8lckruwmye2z56qee"
+    },
+    "5594": {
+      "vendor_id": 5594,
+      "vendor_name": "JEM",
+      "company_legal_name": "JEM ACCESSORIES INC",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1k7l8x64s79g3y2vry5txgfzvmfnjfnckljy94y"
     },
     "5597": {
       "vendor_id": 5597,
@@ -6000,6 +6096,22 @@
       "vendor_landing_page_url": "",
       "creator": "cosmos1nxjhp3mp32t70f0hngf6fsr9ytfcksf92v8tc7"
     },
+    "5647": {
+      "vendor_id": 5647,
+      "vendor_name": "POYAL",
+      "company_legal_name": "Zhejiang General Light Curtain Co.,Ltd.",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1xjed6glv33ukalqxwd8uhgf5a02sxvwqj0rtkj"
+    },
+    "5648": {
+      "vendor_id": 5648,
+      "vendor_name": "Zhuhai Shengchang",
+      "company_legal_name": "Zhuhai Shengchang Electronics Co., Ltd.",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1xzlrfz728vw58snq09xdvylkc3ffpqtygxvz5d"
+    },
     "5651": {
       "vendor_id": 5651,
       "vendor_name": "Calex",
@@ -6039,6 +6151,30 @@
       "company_preferred_name": "",
       "vendor_landing_page_url": "",
       "creator": "cosmos1wfn35z35tt34yep3e9l2mtsgfwvxrtpmd5u20w"
+    },
+    "5663": {
+      "vendor_id": 5663,
+      "vendor_name": "Fatboy the original",
+      "company_legal_name": "Fatboy the original b.v",
+      "company_preferred_name": "Fatboy the original ",
+      "vendor_landing_page_url": "https://www.fatboy.com/nl-nl/",
+      "creator": "cosmos1kcy7p56ez8vvaxnwuapfwr26sc7gwpc6q4yqja"
+    },
+    "5668": {
+      "vendor_id": 5668,
+      "vendor_name": "ZH",
+      "company_legal_name": "Shenzhen Zhenghui Technology Co., Ltd",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1jpdc22k8ulck7evng68es7d6yukewq0cl4ngss"
+    },
+    "5669": {
+      "vendor_id": 5669,
+      "vendor_name": "UNITED ELECTRIC",
+      "company_legal_name": "UNITED ELECTRIC CO.,LTD",
+      "company_preferred_name": "",
+      "vendor_landing_page_url": "",
+      "creator": "cosmos1ae8dc4h4qjmm4gvtx7l78vfv2dszya4hndcnq8"
     },
     "24582": {
       "vendor_id": 24582,
@@ -7230,7 +7366,7 @@
       "date_commissioned": "2025-12-13T04:42:43.151842",
       "last_interview": "2025-12-13T04:42:43.151847",
       "interview_version": 6,
-      "available": true,
+      "available": false,
       "is_bridge": false,
       "attributes": {
         "0/29/0": [
@@ -7288,8 +7424,8 @@
         "0/31/2": 4,
         "0/31/3": 3,
         "0/31/4": 4,
-        "0/31/65532": 0,
-        "0/31/65533": 1,
+        "0/31/65532": 1,
+        "0/31/65533": 2,
         "0/31/65528": [],
         "0/31/65529": [],
         "0/31/65531": [
@@ -7304,7 +7440,7 @@
           65532,
           65533
         ],
-        "0/40/0": 17,
+        "0/40/0": 18,
         "0/40/1": "Leedarson",
         "0/40/2": 4456,
         "0/40/3": "Smart RGBTW Bulb",
@@ -7313,8 +7449,8 @@
         "0/40/6": "XX",
         "0/40/7": 1,
         "0/40/8": "1.0.0",
-        "0/40/9": 1,
-        "0/40/10": "1.00.00",
+        "0/40/9": 3,
+        "0/40/10": "3.00.00",
         "0/40/11": "20250708",
         "0/40/14": "Smart RGBTW Bulb",
         "0/40/15": "00007144224",
@@ -7324,10 +7460,10 @@
           "0": 3,
           "1": 3
         },
-        "0/40/21": 16973824,
+        "0/40/21": 17039616,
         "0/40/22": 1,
         "0/40/65532": 0,
-        "0/40/65533": 3,
+        "0/40/65533": 4,
         "0/40/65528": [],
         "0/40/65529": [],
         "0/40/65531": [
@@ -7386,7 +7522,7 @@
         "0/48/3": 0,
         "0/48/4": true,
         "0/48/65532": 0,
-        "0/48/65533": 1,
+        "0/48/65533": 2,
         "0/48/65528": [
           1,
           3,
@@ -7417,7 +7553,7 @@
           }
         ],
         "0/49/2": 10,
-        "0/49/3": 30,
+        "0/49/3": 60,
         "0/49/4": true,
         "0/49/5": 0,
         "0/49/6": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
@@ -7471,7 +7607,7 @@
             "7": 1
           }
         ],
-        "0/51/1": 8,
+        "0/51/1": 49,
         "0/51/2": 2,
         "0/51/8": false,
         "0/51/65532": 0,
@@ -7497,8 +7633,8 @@
         "0/54/0": "AF9ncvRB",
         "0/54/1": 4,
         "0/54/2": 2,
-        "0/54/3": 3,
-        "0/54/4": -46,
+        "0/54/3": 6,
+        "0/54/4": -44,
         "0/54/65532": 0,
         "0/54/65533": 1,
         "0/54/65528": [],
@@ -7689,7 +7825,7 @@
           65532,
           65533
         ],
-        "1/8/0": 10,
+        "1/8/0": 145,
         "1/8/1": 0,
         "1/8/2": 1,
         "1/8/3": 254,
@@ -7731,10 +7867,10 @@
           65532,
           65533
         ],
-        "1/768/0": 0,
-        "1/768/1": 0,
+        "1/768/0": 215,
+        "1/768/1": 210,
         "1/768/2": 0,
-        "1/768/7": 370,
+        "1/768/7": 518,
         "1/768/8": 2,
         "1/768/15": 0,
         "1/768/16": 0,
@@ -8006,7 +8142,7 @@
           }
         ],
         "0/49/2": 10,
-        "0/49/3": 30,
+        "0/49/3": 60,
         "0/49/4": true,
         "0/49/5": 0,
         "0/49/6": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
@@ -8061,8 +8197,8 @@
             "7": 1
           }
         ],
-        "0/51/1": 3,
-        "0/51/2": 47,
+        "0/51/1": 7,
+        "0/51/2": 875038,
         "0/51/8": false,
         "0/51/65532": 0,
         "0/51/65533": 2,
@@ -8087,8 +8223,8 @@
         "0/54/0": "AF9ncvRB",
         "0/54/1": 4,
         "0/54/2": 2,
-        "0/54/3": 3,
-        "0/54/4": -57,
+        "0/54/3": 9,
+        "0/54/4": -45,
         "0/54/65532": 0,
         "0/54/65533": 1,
         "0/54/65528": [],
@@ -8279,7 +8415,7 @@
           65532,
           65533
         ],
-        "1/8/0": 105,
+        "1/8/0": 238,
         "1/8/1": 0,
         "1/8/2": 1,
         "1/8/3": 254,
@@ -8321,14 +8457,14 @@
           65532,
           65533
         ],
-        "1/768/0": 0,
-        "1/768/1": 0,
+        "1/768/0": 82,
+        "1/768/1": 233,
         "1/768/2": 0,
         "1/768/7": 370,
-        "1/768/8": 2,
+        "1/768/8": 0,
         "1/768/15": 0,
         "1/768/16": 0,
-        "1/768/16385": 2,
+        "1/768/16385": 0,
         "1/768/16394": 17,
         "1/768/16395": 153,
         "1/768/16396": 555,
@@ -8409,7 +8545,7 @@
       "date_commissioned": "2025-12-14T01:20:30.119519",
       "last_interview": "2025-12-14T01:20:30.119525",
       "interview_version": 6,
-      "available": false,
+      "available": true,
       "is_bridge": false,
       "attributes": {
         "0/29/0": [
@@ -8453,9 +8589,6 @@
           65533
         ],
         "0/31/0": [
-          {
-            "254": 1
-          },
           {
             "1": 5,
             "2": 2,
@@ -8592,14 +8725,9 @@
           65533
         ],
         "0/49/0": 1,
-        "0/49/1": [
-          {
-            "0": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
-            "1": true
-          }
-        ],
+        "0/49/1": [],
         "0/49/2": 10,
-        "0/49/3": 30,
+        "0/49/3": 60,
         "0/49/4": true,
         "0/49/5": 0,
         "0/49/6": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
@@ -8654,8 +8782,8 @@
             "7": 1
           }
         ],
-        "0/51/1": 1,
-        "0/51/2": 29,
+        "0/51/1": 5,
+        "0/51/2": 874971,
         "0/51/8": false,
         "0/51/65532": 0,
         "0/51/65533": 2,
@@ -8680,7 +8808,1771 @@
         "0/54/0": "AF9ncvRB",
         "0/54/1": 4,
         "0/54/2": 2,
-        "0/54/3": 3,
+        "0/54/3": 9,
+        "0/54/4": -65,
+        "0/54/65532": 0,
+        "0/54/65533": 1,
+        "0/54/65528": [],
+        "0/54/65529": [],
+        "0/54/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/60/0": 0,
+        "0/60/1": null,
+        "0/60/2": null,
+        "0/60/65532": 1,
+        "0/60/65533": 1,
+        "0/60/65528": [],
+        "0/60/65529": [
+          0,
+          1,
+          2
+        ],
+        "0/60/65531": [
+          0,
+          1,
+          2,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/62/0": [
+          {
+            "1": "FTABAQEkAgE3AyQTAhgmBIAigScmBYAlTTo3BiQVASQRBRgkBwEkCAEwCUEEAIKE+jUKElYc/jJ1WS3VRycrSe/OGi1uRP/VgolsEyHpK5n/O98tRiidDAuvTYyyvLJMzkaGKEnv57ZfstbbOzcKNQEoARgkAgE2AwQCBAEYMAQUAcp7c48RWcO74hNGdcLa8pu//B4wBRQpU1R00uJglNvDJ8jQ/P1pVdcfrxgwC0BTjUiru+h1mQ/51+6eMdqU/CFiL7vIB8OFv1FlwlH6nq8ic6g+lbbVw7oaO3Kwbi2VQ9rL5llpluBZDnXi4BS3GA==",
+            "2": "FTABAQEkAgE3AyQUARgmBIAigScmBYAlTTo3BiQTAhgkBwEkCAEwCUEE54ChjmxfaG9ZinuEy5f1ReTDJCAGQ5uhv5VXitNV5e79rt3rDIcN2HR1Kh5d4+nhqQo8tRqcd8qG4d6TRFfgpTcKNQEpARgkAmAwBBQpU1R00uJglNvDJ8jQ/P1pVdcfrzAFFDxD45513/KUl1NPvgnCpsZAmwAmGDALQBx1IRbEOamgGNJZ9WW5Uf90kDffoCx7Gg57VNszds7o0ulDO8Oa2hVfHRiuo/aqxc7Ql5BnrK44KGoL4XgLLjQY",
+            "254": 2
+          }
+        ],
+        "0/62/1": [
+          {
+            "1": "BJ7AqjriC7qryP8PfATp51IsXy15wIUrrnDtmQSAWqdmjeay30vsVr/uutYqeUa5wD3HeGvia3kOu52dBAwqMXw=",
+            "2": 65521,
+            "3": 1,
+            "4": 5,
+            "5": "The Hammlet",
+            "254": 2
+          }
+        ],
+        "0/62/2": 5,
+        "0/62/3": 2,
+        "0/62/4": [
+          "FTABAQEkAgE3AycUceAJ94JD5DgYJgSAbnotJgWAdBJTNwYnFHHgCfeCQ+Q4GCQHASQIATAJQQTANdaKzMG7ypZsPnaN1ooo4mCpiOKrVm99fWDfrW60JNpQOGJeiZ3JBXH8hEV8Xy5/uLX1rZgA77uWxA8x3cMJNwo1ASkBGCQCYDAEFOlpJZHo4K9zdZDQn2a7tIf8Rz/GMAUU6Wklkejgr3N1kNCfZru0h/xHP8YYMAtA+GN/k873FFdWCuwd5n/bCZCQBWK0MYF4dL09EyzZIPdzkcreLT0GDcFgCBVNhKhzYA3HLqifGpH0MuYeuI5jZhg=",
+          "FTABAQEkAgE3AyQUARgmBIAigScmBYAlTTo3BiQUARgkBwEkCAEwCUEEnsCqOuILuqvI/w98BOnnUixfLXnAhSuucO2ZBIBap2aN5rLfS+xWv+661ip5RrnAPcd4a+JreQ67nZ0EDCoxfDcKNQEpARgkAmAwBBQ8Q+Oedd/ylJdTT74JwqbGQJsAJjAFFDxD45513/KUl1NPvgnCpsZAmwAmGDALQHfXszLexALM7zcfbP1N22uEkWc1mpCwFVDk1C1II8dfOVAKq8d5I6Vpu4wXrwlcsNL0fJPU6oJWXObBQg2GQVcY"
+        ],
+        "0/62/5": 2,
+        "0/62/65532": 0,
+        "0/62/65533": 1,
+        "0/62/65528": [
+          1,
+          3,
+          5,
+          8
+        ],
+        "0/62/65529": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          11
+        ],
+        "0/62/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/63/0": [],
+        "0/63/1": [],
+        "0/63/2": 4,
+        "0/63/3": 3,
+        "0/63/65532": 0,
+        "0/63/65533": 2,
+        "0/63/65528": [
+          2,
+          5
+        ],
+        "0/63/65529": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "0/63/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/3/0": 0,
+        "1/3/1": 1,
+        "1/3/65532": 0,
+        "1/3/65533": 4,
+        "1/3/65528": [],
+        "1/3/65529": [
+          0,
+          64
+        ],
+        "1/3/65531": [
+          0,
+          1,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/4/0": 128,
+        "1/4/65532": 1,
+        "1/4/65533": 4,
+        "1/4/65528": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "1/4/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "1/4/65531": [
+          0,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/6/0": false,
+        "1/6/16384": true,
+        "1/6/16385": 0,
+        "1/6/16386": 0,
+        "1/6/16387": null,
+        "1/6/65532": 1,
+        "1/6/65533": 4,
+        "1/6/65528": [],
+        "1/6/65529": [
+          0,
+          1,
+          2,
+          64,
+          65,
+          66
+        ],
+        "1/6/65531": [
+          0,
+          16384,
+          16385,
+          16386,
+          16387,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/8/0": 208,
+        "1/8/1": 0,
+        "1/8/2": 1,
+        "1/8/3": 254,
+        "1/8/15": 0,
+        "1/8/16": 0,
+        "1/8/17": null,
+        "1/8/18": null,
+        "1/8/19": null,
+        "1/8/20": null,
+        "1/8/16384": null,
+        "1/8/65532": 3,
+        "1/8/65533": 5,
+        "1/8/65528": [],
+        "1/8/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "1/8/65531": [
+          0,
+          1,
+          2,
+          3,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          16384,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/768/0": 66,
+        "1/768/1": 241,
+        "1/768/2": 0,
+        "1/768/7": 441,
+        "1/768/8": 2,
+        "1/768/15": 0,
+        "1/768/16": 0,
+        "1/768/16385": 2,
+        "1/768/16394": 17,
+        "1/768/16395": 153,
+        "1/768/16396": 555,
+        "1/768/16397": 370,
+        "1/768/16400": null,
+        "1/768/65532": 17,
+        "1/768/65533": 5,
+        "1/768/65528": [],
+        "1/768/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          71,
+          10,
+          75,
+          76
+        ],
+        "1/768/65531": [
+          0,
+          1,
+          2,
+          7,
+          8,
+          15,
+          16,
+          16385,
+          16394,
+          16395,
+          16396,
+          16397,
+          16400,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/29/0": [
+          {
+            "0": 269,
+            "1": 4
+          }
+        ],
+        "1/29/1": [
+          3,
+          4,
+          6,
+          8,
+          768,
+          29
+        ],
+        "1/29/2": [],
+        "1/29/3": [],
+        "1/29/65532": 0,
+        "1/29/65533": 2,
+        "1/29/65528": [],
+        "1/29/65529": [],
+        "1/29/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ]
+      },
+      "attribute_subscriptions": []
+    },
+    "6": {
+      "node_id": 6,
+      "date_commissioned": "2026-01-01T05:13:07.907414",
+      "last_interview": "2026-01-01T05:13:07.907676",
+      "interview_version": 6,
+      "available": true,
+      "is_bridge": false,
+      "attributes": {
+        "0/29/0": [
+          {
+            "0": 22,
+            "1": 1
+          }
+        ],
+        "0/29/1": [
+          29,
+          31,
+          40,
+          42,
+          48,
+          49,
+          51,
+          54,
+          60,
+          62,
+          63
+        ],
+        "0/29/2": [
+          41
+        ],
+        "0/29/3": [
+          1
+        ],
+        "0/29/65532": 0,
+        "0/29/65533": 2,
+        "0/29/65528": [],
+        "0/29/65529": [],
+        "0/29/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/31/0": [
+          {
+            "1": 5,
+            "2": 2,
+            "3": [
+              112233
+            ],
+            "4": null,
+            "254": 2
+          }
+        ],
+        "0/31/1": [],
+        "0/31/2": 4,
+        "0/31/3": 3,
+        "0/31/4": 4,
+        "0/31/65532": 1,
+        "0/31/65533": 2,
+        "0/31/65528": [],
+        "0/31/65529": [],
+        "0/31/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/40/0": 18,
+        "0/40/1": "Leedarson",
+        "0/40/2": 4456,
+        "0/40/3": "Smart RGBTW Bulb",
+        "0/40/4": 1000,
+        "0/40/5": "",
+        "0/40/6": "XX",
+        "0/40/7": 1,
+        "0/40/8": "1.0.0",
+        "0/40/9": 3,
+        "0/40/10": "3.00.00",
+        "0/40/11": "20241122",
+        "0/40/14": "Smart RGBTW Bulb",
+        "0/40/15": "00004660877",
+        "0/40/16": false,
+        "0/40/18": "9D6E3396EC8442C5",
+        "0/40/19": {
+          "0": 3,
+          "1": 3
+        },
+        "0/40/21": 17039616,
+        "0/40/22": 1,
+        "0/40/65532": 0,
+        "0/40/65533": 4,
+        "0/40/65528": [],
+        "0/40/65529": [],
+        "0/40/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14,
+          15,
+          16,
+          18,
+          19,
+          21,
+          22,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/42/0": [],
+        "0/42/1": true,
+        "0/42/2": 1,
+        "0/42/3": null,
+        "0/42/65532": 0,
+        "0/42/65533": 1,
+        "0/42/65528": [],
+        "0/42/65529": [
+          0
+        ],
+        "0/42/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/48/0": 0,
+        "0/48/1": {
+          "0": 60,
+          "1": 900
+        },
+        "0/48/2": 0,
+        "0/48/3": 0,
+        "0/48/4": true,
+        "0/48/65532": 0,
+        "0/48/65533": 2,
+        "0/48/65528": [
+          1,
+          3,
+          5
+        ],
+        "0/48/65529": [
+          0,
+          2,
+          4
+        ],
+        "0/48/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/49/0": 1,
+        "0/49/1": [],
+        "0/49/2": 10,
+        "0/49/3": 60,
+        "0/49/4": true,
+        "0/49/5": 0,
+        "0/49/6": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
+        "0/49/7": null,
+        "0/49/8": [
+          0
+        ],
+        "0/49/65532": 1,
+        "0/49/65533": 2,
+        "0/49/65528": [
+          1,
+          5,
+          7
+        ],
+        "0/49/65529": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ],
+        "0/49/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/51/0": [
+          {
+            "0": "WIFI_STA_DEF",
+            "1": true,
+            "2": null,
+            "3": null,
+            "4": "zLqXicTk",
+            "5": [
+              "wKgBVw=="
+            ],
+            "6": [
+              "/oAAAAAAAADOupf//onE5A==",
+              "JgAXAC7KBgDOupf//onE5A=="
+            ],
+            "7": 1
+          }
+        ],
+        "0/51/1": 55,
+        "0/51/2": 18701,
+        "0/51/8": false,
+        "0/51/65532": 0,
+        "0/51/65533": 2,
+        "0/51/65528": [
+          2
+        ],
+        "0/51/65529": [
+          0,
+          1
+        ],
+        "0/51/65531": [
+          0,
+          1,
+          2,
+          8,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/54/0": "AF9ncvRB",
+        "0/54/1": 4,
+        "0/54/2": 2,
+        "0/54/3": 9,
+        "0/54/4": -38,
+        "0/54/65532": 0,
+        "0/54/65533": 1,
+        "0/54/65528": [],
+        "0/54/65529": [],
+        "0/54/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/60/0": 0,
+        "0/60/1": null,
+        "0/60/2": null,
+        "0/60/65532": 1,
+        "0/60/65533": 1,
+        "0/60/65528": [],
+        "0/60/65529": [
+          0,
+          1,
+          2
+        ],
+        "0/60/65531": [
+          0,
+          1,
+          2,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/62/0": [
+          {
+            "1": "FTABAQEkAgE3AyQTAhgmBIAigScmBYAlTTo3BiQVASQRBhgkBwEkCAEwCUEEFyWWgsmwCE7ODgezxnyABdhMLLmCXORH/eYWLSHHZqeh/vIHPUmJCZprEmrJpn/fMHHwp7Qjkj8jxPG+fDJDdjcKNQEoARgkAgE2AwQCBAEYMAQUL+DkDJa3cr+RLF4Qc0K7GGqvlhYwBRQpU1R00uJglNvDJ8jQ/P1pVdcfrxgwC0B6+KQKRGtGGtC7tNgMHywBeeN6nFbGdl6KE9gwXYm4cEUMnu/P2Wg9PrmFD+hLxniyyXSeJ7sp5AzsC4RrlgytGA==",
+            "2": "FTABAQEkAgE3AyQUARgmBIAigScmBYAlTTo3BiQTAhgkBwEkCAEwCUEE54ChjmxfaG9ZinuEy5f1ReTDJCAGQ5uhv5VXitNV5e79rt3rDIcN2HR1Kh5d4+nhqQo8tRqcd8qG4d6TRFfgpTcKNQEpARgkAmAwBBQpU1R00uJglNvDJ8jQ/P1pVdcfrzAFFDxD45513/KUl1NPvgnCpsZAmwAmGDALQBx1IRbEOamgGNJZ9WW5Uf90kDffoCx7Gg57VNszds7o0ulDO8Oa2hVfHRiuo/aqxc7Ql5BnrK44KGoL4XgLLjQY",
+            "254": 2
+          }
+        ],
+        "0/62/1": [
+          {
+            "1": "BJ7AqjriC7qryP8PfATp51IsXy15wIUrrnDtmQSAWqdmjeay30vsVr/uutYqeUa5wD3HeGvia3kOu52dBAwqMXw=",
+            "2": 65521,
+            "3": 1,
+            "4": 6,
+            "5": "The Hammlet",
+            "254": 2
+          }
+        ],
+        "0/62/2": 5,
+        "0/62/3": 2,
+        "0/62/4": [
+          "FTABAQEkAgE3AycUceAJ94JD5DgYJgSAbnotJgWAdBJTNwYnFHHgCfeCQ+Q4GCQHASQIATAJQQTANdaKzMG7ypZsPnaN1ooo4mCpiOKrVm99fWDfrW60JNpQOGJeiZ3JBXH8hEV8Xy5/uLX1rZgA77uWxA8x3cMJNwo1ASkBGCQCYDAEFOlpJZHo4K9zdZDQn2a7tIf8Rz/GMAUU6Wklkejgr3N1kNCfZru0h/xHP8YYMAtA+GN/k873FFdWCuwd5n/bCZCQBWK0MYF4dL09EyzZIPdzkcreLT0GDcFgCBVNhKhzYA3HLqifGpH0MuYeuI5jZhg=",
+          "FTABAQEkAgE3AyQUARgmBIAigScmBYAlTTo3BiQUARgkBwEkCAEwCUEEnsCqOuILuqvI/w98BOnnUixfLXnAhSuucO2ZBIBap2aN5rLfS+xWv+661ip5RrnAPcd4a+JreQ67nZ0EDCoxfDcKNQEpARgkAmAwBBQ8Q+Oedd/ylJdTT74JwqbGQJsAJjAFFDxD45513/KUl1NPvgnCpsZAmwAmGDALQHfXszLexALM7zcfbP1N22uEkWc1mpCwFVDk1C1II8dfOVAKq8d5I6Vpu4wXrwlcsNL0fJPU6oJWXObBQg2GQVcY"
+        ],
+        "0/62/5": 2,
+        "0/62/65532": 0,
+        "0/62/65533": 1,
+        "0/62/65528": [
+          1,
+          3,
+          5,
+          8
+        ],
+        "0/62/65529": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          11
+        ],
+        "0/62/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/63/0": [],
+        "0/63/1": [],
+        "0/63/2": 4,
+        "0/63/3": 3,
+        "0/63/65532": 0,
+        "0/63/65533": 2,
+        "0/63/65528": [
+          2,
+          5
+        ],
+        "0/63/65529": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "0/63/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/3/0": 0,
+        "1/3/1": 1,
+        "1/3/65532": 0,
+        "1/3/65533": 4,
+        "1/3/65528": [],
+        "1/3/65529": [
+          0,
+          64
+        ],
+        "1/3/65531": [
+          0,
+          1,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/4/0": 128,
+        "1/4/65532": 1,
+        "1/4/65533": 4,
+        "1/4/65528": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "1/4/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "1/4/65531": [
+          0,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/6/0": true,
+        "1/6/16384": true,
+        "1/6/16385": 0,
+        "1/6/16386": 0,
+        "1/6/16387": null,
+        "1/6/65532": 1,
+        "1/6/65533": 4,
+        "1/6/65528": [],
+        "1/6/65529": [
+          0,
+          1,
+          2,
+          64,
+          65,
+          66
+        ],
+        "1/6/65531": [
+          0,
+          16384,
+          16385,
+          16386,
+          16387,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/8/0": 18,
+        "1/8/1": 0,
+        "1/8/2": 1,
+        "1/8/3": 254,
+        "1/8/15": 0,
+        "1/8/16": 0,
+        "1/8/17": null,
+        "1/8/18": null,
+        "1/8/19": null,
+        "1/8/20": null,
+        "1/8/16384": null,
+        "1/8/65532": 3,
+        "1/8/65533": 5,
+        "1/8/65528": [],
+        "1/8/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "1/8/65531": [
+          0,
+          1,
+          2,
+          3,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          16384,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/768/0": 0,
+        "1/768/1": 0,
+        "1/768/2": 0,
+        "1/768/7": 340,
+        "1/768/8": 2,
+        "1/768/15": 0,
+        "1/768/16": 0,
+        "1/768/16385": 2,
+        "1/768/16394": 17,
+        "1/768/16395": 153,
+        "1/768/16396": 555,
+        "1/768/16397": 370,
+        "1/768/16400": null,
+        "1/768/65532": 17,
+        "1/768/65533": 5,
+        "1/768/65528": [],
+        "1/768/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          71,
+          10,
+          75,
+          76
+        ],
+        "1/768/65531": [
+          0,
+          1,
+          2,
+          7,
+          8,
+          15,
+          16,
+          16385,
+          16394,
+          16395,
+          16396,
+          16397,
+          16400,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/29/0": [
+          {
+            "0": 269,
+            "1": 4
+          }
+        ],
+        "1/29/1": [
+          3,
+          4,
+          6,
+          8,
+          768,
+          29
+        ],
+        "1/29/2": [],
+        "1/29/3": [],
+        "1/29/65532": 0,
+        "1/29/65533": 2,
+        "1/29/65528": [],
+        "1/29/65529": [],
+        "1/29/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ]
+      },
+      "attribute_subscriptions": []
+    },
+    "7": {
+      "node_id": 7,
+      "date_commissioned": "2026-01-01T05:19:18.925612",
+      "last_interview": "2026-01-01T05:40:36.625475",
+      "interview_version": 6,
+      "available": false,
+      "is_bridge": false,
+      "attributes": {
+        "0/29/0": [
+          {
+            "0": 22,
+            "1": 1
+          }
+        ],
+        "0/29/1": [
+          29,
+          31,
+          40,
+          42,
+          48,
+          49,
+          51,
+          54,
+          60,
+          62,
+          63
+        ],
+        "0/29/2": [
+          41
+        ],
+        "0/29/3": [
+          1
+        ],
+        "0/29/65532": 0,
+        "0/29/65533": 2,
+        "0/29/65528": [],
+        "0/29/65529": [],
+        "0/29/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/31/0": [
+          {
+            "1": 5,
+            "2": 2,
+            "3": [
+              112233
+            ],
+            "4": null,
+            "254": 2
+          }
+        ],
+        "0/31/1": [],
+        "0/31/2": 4,
+        "0/31/3": 3,
+        "0/31/4": 4,
+        "0/31/65532": 1,
+        "0/31/65533": 2,
+        "0/31/65528": [],
+        "0/31/65529": [],
+        "0/31/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/40/0": 18,
+        "0/40/1": "Leedarson",
+        "0/40/2": 4456,
+        "0/40/3": "Smart RGBTW Bulb",
+        "0/40/4": 1000,
+        "0/40/5": "",
+        "0/40/6": "XX",
+        "0/40/7": 1,
+        "0/40/8": "1.0.0",
+        "0/40/9": 3,
+        "0/40/10": "3.00.00",
+        "0/40/11": "20250708",
+        "0/40/14": "Smart RGBTW Bulb",
+        "0/40/15": "00007144840",
+        "0/40/16": false,
+        "0/40/18": "11475B8E0DC5F755",
+        "0/40/19": {
+          "0": 3,
+          "1": 3
+        },
+        "0/40/21": 17039616,
+        "0/40/22": 1,
+        "0/40/65532": 0,
+        "0/40/65533": 4,
+        "0/40/65528": [],
+        "0/40/65529": [],
+        "0/40/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14,
+          15,
+          16,
+          18,
+          19,
+          21,
+          22,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/42/0": [],
+        "0/42/1": true,
+        "0/42/2": 1,
+        "0/42/3": null,
+        "0/42/65532": 0,
+        "0/42/65533": 1,
+        "0/42/65528": [],
+        "0/42/65529": [
+          0
+        ],
+        "0/42/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/48/0": 0,
+        "0/48/1": {
+          "0": 60,
+          "1": 900
+        },
+        "0/48/2": 0,
+        "0/48/3": 0,
+        "0/48/4": true,
+        "0/48/65532": 0,
+        "0/48/65533": 2,
+        "0/48/65528": [
+          1,
+          3,
+          5
+        ],
+        "0/48/65529": [
+          0,
+          2,
+          4
+        ],
+        "0/48/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/49/0": 1,
+        "0/49/1": [
+          {
+            "0": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
+            "1": true
+          }
+        ],
+        "0/49/2": 10,
+        "0/49/3": 60,
+        "0/49/4": true,
+        "0/49/5": 0,
+        "0/49/6": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
+        "0/49/7": null,
+        "0/49/8": [
+          0
+        ],
+        "0/49/65532": 1,
+        "0/49/65533": 2,
+        "0/49/65528": [
+          1,
+          5,
+          7
+        ],
+        "0/49/65529": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ],
+        "0/49/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/51/0": [
+          {
+            "0": "WIFI_STA_DEF",
+            "1": true,
+            "2": null,
+            "3": null,
+            "4": "DE6gFtkY",
+            "5": [
+              "wKgBfQ=="
+            ],
+            "6": [
+              "/oAAAAAAAAAOTqD//hbZGA==",
+              "JgAXAC7KBgAOTqD//hbZGA=="
+            ],
+            "7": 1
+          }
+        ],
+        "0/51/1": 16,
+        "0/51/2": 4,
+        "0/51/8": false,
+        "0/51/65532": 0,
+        "0/51/65533": 2,
+        "0/51/65528": [
+          2
+        ],
+        "0/51/65529": [
+          0,
+          1
+        ],
+        "0/51/65531": [
+          0,
+          1,
+          2,
+          8,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/54/0": "AF9ncvRB",
+        "0/54/1": 4,
+        "0/54/2": 2,
+        "0/54/3": 9,
+        "0/54/4": -45,
+        "0/54/65532": 0,
+        "0/54/65533": 1,
+        "0/54/65528": [],
+        "0/54/65529": [],
+        "0/54/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/60/0": 0,
+        "0/60/1": null,
+        "0/60/2": null,
+        "0/60/65532": 1,
+        "0/60/65533": 1,
+        "0/60/65528": [],
+        "0/60/65529": [
+          0,
+          1,
+          2
+        ],
+        "0/60/65531": [
+          0,
+          1,
+          2,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/62/0": [
+          {
+            "1": "FTABAQEkAgE3AyQTAhgmBIAigScmBYAlTTo3BiQVASQRBxgkBwEkCAEwCUEEDJUNvvUUBAK4XNNtQk0gHlWD5nG1wSo1uGCZ1bkPkh8tM47534gqaWipe+s/+oBlxTO2sV76jM1AKjG/M3bg/TcKNQEoARgkAgE2AwQCBAEYMAQUmBtWOPq8PAZbzsQVe4wqTvAw7I8wBRQpU1R00uJglNvDJ8jQ/P1pVdcfrxgwC0BsvFXcOB9dRa6PlqXK6wIJNguvWUQKHQrS2QDZpLbTCOW+yp8zJ3UxLg7AJt6Fdp+WJEWUkiM3ZZJpa4lL8FW2GA==",
+            "2": "FTABAQEkAgE3AyQUARgmBIAigScmBYAlTTo3BiQTAhgkBwEkCAEwCUEE54ChjmxfaG9ZinuEy5f1ReTDJCAGQ5uhv5VXitNV5e79rt3rDIcN2HR1Kh5d4+nhqQo8tRqcd8qG4d6TRFfgpTcKNQEpARgkAmAwBBQpU1R00uJglNvDJ8jQ/P1pVdcfrzAFFDxD45513/KUl1NPvgnCpsZAmwAmGDALQBx1IRbEOamgGNJZ9WW5Uf90kDffoCx7Gg57VNszds7o0ulDO8Oa2hVfHRiuo/aqxc7Ql5BnrK44KGoL4XgLLjQY",
+            "254": 2
+          }
+        ],
+        "0/62/1": [
+          {
+            "1": "BJ7AqjriC7qryP8PfATp51IsXy15wIUrrnDtmQSAWqdmjeay30vsVr/uutYqeUa5wD3HeGvia3kOu52dBAwqMXw=",
+            "2": 65521,
+            "3": 1,
+            "4": 7,
+            "5": "The Hammlet",
+            "254": 2
+          }
+        ],
+        "0/62/2": 5,
+        "0/62/3": 2,
+        "0/62/4": [
+          "FTABAQEkAgE3AycUceAJ94JD5DgYJgSAbnotJgWAdBJTNwYnFHHgCfeCQ+Q4GCQHASQIATAJQQTANdaKzMG7ypZsPnaN1ooo4mCpiOKrVm99fWDfrW60JNpQOGJeiZ3JBXH8hEV8Xy5/uLX1rZgA77uWxA8x3cMJNwo1ASkBGCQCYDAEFOlpJZHo4K9zdZDQn2a7tIf8Rz/GMAUU6Wklkejgr3N1kNCfZru0h/xHP8YYMAtA+GN/k873FFdWCuwd5n/bCZCQBWK0MYF4dL09EyzZIPdzkcreLT0GDcFgCBVNhKhzYA3HLqifGpH0MuYeuI5jZhg=",
+          "FTABAQEkAgE3AyQUARgmBIAigScmBYAlTTo3BiQUARgkBwEkCAEwCUEEnsCqOuILuqvI/w98BOnnUixfLXnAhSuucO2ZBIBap2aN5rLfS+xWv+661ip5RrnAPcd4a+JreQ67nZ0EDCoxfDcKNQEpARgkAmAwBBQ8Q+Oedd/ylJdTT74JwqbGQJsAJjAFFDxD45513/KUl1NPvgnCpsZAmwAmGDALQHfXszLexALM7zcfbP1N22uEkWc1mpCwFVDk1C1II8dfOVAKq8d5I6Vpu4wXrwlcsNL0fJPU6oJWXObBQg2GQVcY"
+        ],
+        "0/62/5": 2,
+        "0/62/65532": 0,
+        "0/62/65533": 1,
+        "0/62/65528": [
+          1,
+          3,
+          5,
+          8
+        ],
+        "0/62/65529": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          9,
+          10,
+          11
+        ],
+        "0/62/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/63/0": [],
+        "0/63/1": [],
+        "0/63/2": 4,
+        "0/63/3": 3,
+        "0/63/65532": 0,
+        "0/63/65533": 2,
+        "0/63/65528": [
+          2,
+          5
+        ],
+        "0/63/65529": [
+          0,
+          1,
+          3,
+          4
+        ],
+        "0/63/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/3/0": 0,
+        "1/3/1": 1,
+        "1/3/65532": 0,
+        "1/3/65533": 4,
+        "1/3/65528": [],
+        "1/3/65529": [
+          0,
+          64
+        ],
+        "1/3/65531": [
+          0,
+          1,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/4/0": 128,
+        "1/4/65532": 1,
+        "1/4/65533": 4,
+        "1/4/65528": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "1/4/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "1/4/65531": [
+          0,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/6/0": true,
+        "1/6/16384": true,
+        "1/6/16385": 0,
+        "1/6/16386": 0,
+        "1/6/16387": null,
+        "1/6/65532": 1,
+        "1/6/65533": 4,
+        "1/6/65528": [],
+        "1/6/65529": [
+          0,
+          1,
+          2,
+          64,
+          65,
+          66
+        ],
+        "1/6/65531": [
+          0,
+          16384,
+          16385,
+          16386,
+          16387,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/8/0": 3,
+        "1/8/1": 0,
+        "1/8/2": 1,
+        "1/8/3": 254,
+        "1/8/15": 0,
+        "1/8/16": 0,
+        "1/8/17": null,
+        "1/8/18": null,
+        "1/8/19": null,
+        "1/8/20": null,
+        "1/8/16384": null,
+        "1/8/65532": 3,
+        "1/8/65533": 5,
+        "1/8/65528": [],
+        "1/8/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "1/8/65531": [
+          0,
+          1,
+          2,
+          3,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          16384,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/768/0": 0,
+        "1/768/1": 0,
+        "1/768/2": 0,
+        "1/768/7": 210,
+        "1/768/8": 2,
+        "1/768/15": 0,
+        "1/768/16": 0,
+        "1/768/16385": 2,
+        "1/768/16394": 17,
+        "1/768/16395": 153,
+        "1/768/16396": 555,
+        "1/768/16397": 370,
+        "1/768/16400": null,
+        "1/768/65532": 17,
+        "1/768/65533": 5,
+        "1/768/65528": [],
+        "1/768/65529": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          71,
+          10,
+          75,
+          76
+        ],
+        "1/768/65531": [
+          0,
+          1,
+          2,
+          7,
+          8,
+          15,
+          16,
+          16385,
+          16394,
+          16395,
+          16396,
+          16397,
+          16400,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "1/29/0": [
+          {
+            "0": 269,
+            "1": 4
+          }
+        ],
+        "1/29/1": [
+          3,
+          4,
+          6,
+          8,
+          768,
+          29
+        ],
+        "1/29/2": [],
+        "1/29/3": [],
+        "1/29/65532": 0,
+        "1/29/65533": 2,
+        "1/29/65528": [],
+        "1/29/65529": [],
+        "1/29/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ]
+      },
+      "attribute_subscriptions": []
+    },
+    "8": {
+      "node_id": 8,
+      "date_commissioned": "2026-01-01T06:22:18.602994",
+      "last_interview": "2026-01-01T06:22:18.603011",
+      "interview_version": 6,
+      "available": true,
+      "is_bridge": false,
+      "attributes": {
+        "0/29/0": [
+          {
+            "0": 22,
+            "1": 1
+          }
+        ],
+        "0/29/1": [
+          29,
+          31,
+          40,
+          42,
+          48,
+          49,
+          51,
+          54,
+          60,
+          62,
+          63
+        ],
+        "0/29/2": [
+          41
+        ],
+        "0/29/3": [
+          1
+        ],
+        "0/29/65532": 0,
+        "0/29/65533": 2,
+        "0/29/65528": [],
+        "0/29/65529": [],
+        "0/29/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/31/0": [
+          {
+            "1": 5,
+            "2": 2,
+            "3": [
+              112233
+            ],
+            "4": null,
+            "254": 2
+          }
+        ],
+        "0/31/1": [],
+        "0/31/2": 4,
+        "0/31/3": 3,
+        "0/31/4": 4,
+        "0/31/65532": 1,
+        "0/31/65533": 2,
+        "0/31/65528": [],
+        "0/31/65529": [],
+        "0/31/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/40/0": 18,
+        "0/40/1": "Leedarson",
+        "0/40/2": 4456,
+        "0/40/3": "Smart RGBTW Bulb",
+        "0/40/4": 1000,
+        "0/40/5": "",
+        "0/40/6": "XX",
+        "0/40/7": 1,
+        "0/40/8": "1.0.0",
+        "0/40/9": 3,
+        "0/40/10": "3.00.00",
+        "0/40/11": "20250121",
+        "0/40/14": "Smart RGBTW Bulb",
+        "0/40/15": "00005553140",
+        "0/40/16": false,
+        "0/40/18": "5CDE78D89E3780F5",
+        "0/40/19": {
+          "0": 3,
+          "1": 3
+        },
+        "0/40/21": 17039616,
+        "0/40/22": 1,
+        "0/40/65532": 0,
+        "0/40/65533": 4,
+        "0/40/65528": [],
+        "0/40/65529": [],
+        "0/40/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          14,
+          15,
+          16,
+          18,
+          19,
+          21,
+          22,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/42/0": [],
+        "0/42/1": true,
+        "0/42/2": 1,
+        "0/42/3": null,
+        "0/42/65532": 0,
+        "0/42/65533": 1,
+        "0/42/65528": [],
+        "0/42/65529": [
+          0
+        ],
+        "0/42/65531": [
+          0,
+          1,
+          2,
+          3,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/48/0": 0,
+        "0/48/1": {
+          "0": 60,
+          "1": 900
+        },
+        "0/48/2": 0,
+        "0/48/3": 0,
+        "0/48/4": true,
+        "0/48/65532": 0,
+        "0/48/65533": 2,
+        "0/48/65528": [
+          1,
+          3,
+          5
+        ],
+        "0/48/65529": [
+          0,
+          2,
+          4
+        ],
+        "0/48/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/49/0": 1,
+        "0/49/1": [
+          {
+            "0": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
+            "1": true
+          }
+        ],
+        "0/49/2": 10,
+        "0/49/3": 60,
+        "0/49/4": true,
+        "0/49/5": 0,
+        "0/49/6": "VGhlIFVuaXZlcnNhbCBXYXZlZnVuY3Rpb24=",
+        "0/49/7": null,
+        "0/49/8": [
+          0
+        ],
+        "0/49/65532": 1,
+        "0/49/65533": 2,
+        "0/49/65528": [
+          1,
+          5,
+          7
+        ],
+        "0/49/65529": [
+          0,
+          2,
+          4,
+          6,
+          8
+        ],
+        "0/49/65531": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/51/0": [
+          {
+            "0": "WIFI_STA_DEF",
+            "1": true,
+            "2": null,
+            "3": null,
+            "4": "3B7VMlz8",
+            "5": [
+              "wKgB5A=="
+            ],
+            "6": [
+              "/oAAAAAAAADeHtX//jJc/A=="
+            ],
+            "7": 1
+          }
+        ],
+        "0/51/1": 24,
+        "0/51/2": 3,
+        "0/51/8": false,
+        "0/51/65532": 0,
+        "0/51/65533": 2,
+        "0/51/65528": [
+          2
+        ],
+        "0/51/65529": [
+          0,
+          1
+        ],
+        "0/51/65531": [
+          0,
+          1,
+          2,
+          8,
+          65528,
+          65529,
+          65531,
+          65532,
+          65533
+        ],
+        "0/54/0": "AF9ncvRB",
+        "0/54/1": 4,
+        "0/54/2": 2,
+        "0/54/3": 9,
         "0/54/4": -50,
         "0/54/65532": 0,
         "0/54/65533": 1,
@@ -8721,29 +10613,18 @@
         ],
         "0/62/0": [
           {
-            "254": 1
-          },
-          {
-            "1": "FTABAQEkAgE3AyQTAhgmBIAigScmBYAlTTo3BiQVASQRBRgkBwEkCAEwCUEEAIKE+jUKElYc/jJ1WS3VRycrSe/OGi1uRP/VgolsEyHpK5n/O98tRiidDAuvTYyyvLJMzkaGKEnv57ZfstbbOzcKNQEoARgkAgE2AwQCBAEYMAQUAcp7c48RWcO74hNGdcLa8pu//B4wBRQpU1R00uJglNvDJ8jQ/P1pVdcfrxgwC0BTjUiru+h1mQ/51+6eMdqU/CFiL7vIB8OFv1FlwlH6nq8ic6g+lbbVw7oaO3Kwbi2VQ9rL5llpluBZDnXi4BS3GA==",
+            "1": "FTABAQEkAgE3AyQTAhgmBIAigScmBYAlTTo3BiQVASQRCBgkBwEkCAEwCUEEE/PUq4p0wIs9iI3453Xz7RZteVuCWomxPNtXiTqhhqIClgMHFR05/+u7fbJBNC1DjzwV464oGg7P7B5gDjxMjzcKNQEoARgkAgE2AwQCBAEYMAQUuZNZJ+MgSvNrn6X8WKQwrR9tIjowBRQpU1R00uJglNvDJ8jQ/P1pVdcfrxgwC0BFM4G7BsrGWIUTjoOj26Bb0fj3RL1AR/oZyS/oyhu6dJA96iO+6RDiLjHuEvzngkAdJL+CJ/4Q15Zja/rUR0lQGA==",
             "2": "FTABAQEkAgE3AyQUARgmBIAigScmBYAlTTo3BiQTAhgkBwEkCAEwCUEE54ChjmxfaG9ZinuEy5f1ReTDJCAGQ5uhv5VXitNV5e79rt3rDIcN2HR1Kh5d4+nhqQo8tRqcd8qG4d6TRFfgpTcKNQEpARgkAmAwBBQpU1R00uJglNvDJ8jQ/P1pVdcfrzAFFDxD45513/KUl1NPvgnCpsZAmwAmGDALQBx1IRbEOamgGNJZ9WW5Uf90kDffoCx7Gg57VNszds7o0ulDO8Oa2hVfHRiuo/aqxc7Ql5BnrK44KGoL4XgLLjQY",
             "254": 2
           }
         ],
         "0/62/1": [
           {
-            "1": "BMA11orMwbvKlmw+do3WiijiYKmI4qtWb319YN+tbrQk2lA4Yl6JnckFcfyERXxfLn+4tfWtmADvu5bEDzHdwwk=",
-            "2": 24582,
-            "3": 14623366629740274254,
-            "4": 1188385004172895494,
-            "5": "",
-            "254": 1
-          },
-          {
             "1": "BJ7AqjriC7qryP8PfATp51IsXy15wIUrrnDtmQSAWqdmjeay30vsVr/uutYqeUa5wD3HeGvia3kOu52dBAwqMXw=",
             "2": 65521,
             "3": 1,
-            "4": 5,
-            "5": "",
+            "4": 8,
+            "5": "The Hammlet",
             "254": 2
           }
         ],
@@ -8928,7 +10809,7 @@
         "1/768/0": 0,
         "1/768/1": 0,
         "1/768/2": 0,
-        "1/768/7": 370,
+        "1/768/7": 445,
         "1/768/8": 2,
         "1/768/15": 0,
         "1/768/16": 0,
@@ -9009,5 +10890,5 @@
       "attribute_subscriptions": []
     }
   },
-  "last_node_id": 5
+  "last_node_id": 8
 }

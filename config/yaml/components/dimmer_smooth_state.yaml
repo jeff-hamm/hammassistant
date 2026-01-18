@@ -1,6 +1,0 @@
-input_text:
-  dimmer_smooth_state:
-    name: Dimmer Smooth State
-    min: 0
-    max: 255
-    mode: text

@@ -49,13 +49,14 @@ services:
     volumes:
       - ${COMPOSE_ROOT}/config:/config
       - /etc/localtime:/etc/localtime:ro
-      - /run/dbus:/run/dbus:ro
+      - /run/dbus:/run/dbus:rw  # Must be read-write for Bluetooth
       - /mnt/user/jumpdrive:/share/jumpdrive  # For yt_dlp
     devices:
       - /dev/bus/usb/003/004:/dev/bus/usb/003/004  # TP-Link Bluetooth USB Adapter
     # Bluetooth via USB passthrough
     # Device: TP-Link Bluetooth USB Adapter (2357:0604)
     # Requires NET_ADMIN, NET_RAW, and SYS_ADMIN capabilities for full BLE support
+    # dbus must be mounted read-write for BlueZ access
     # depends_on:
     #   - mosquitto
     #   - zwavejs
@@ -118,6 +119,7 @@ services:
       # Zooz 800 Z-Wave Stick (1a86:55d4) -> /dev/ttyACM0
       # Udev rule creates /dev/zwave symlink for convenience
       # Udev rule location: /etc/udev/rules.d/99-zwave-stick.rules
+      # Boot install script: /mnt/pool/appdata/home/boot.d/30-zwave-udev-rule.sh
       - /dev/zwave:/dev/zwave
     tty: true
     stop_signal: SIGINT
