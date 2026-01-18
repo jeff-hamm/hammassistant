@@ -1,8 +1,8 @@
 # Tile Tracker
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub Release](https://img.shields.io/github/v/release/jeff-hamm/ha-tracker-tile)](https://github.com/jeff-hamm/ha-tracker-tile/releases)
-[![GitHub License](https://img.shields.io/github/license/jeff-hamm/ha-tracker-tile)](LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/jeff-hamm/tile-tracker)](https://github.com/jeff-hamm/tile-tracker/releases)
+[![GitHub License](https://img.shields.io/github/license/jeff-hamm/tile-tracker)](LICENSE)
 
 A Home Assistant custom integration for Tile Bluetooth trackers. Track your Tile devices and ring them directly via Bluetooth - no cloud relay needed for ring commands!
 
@@ -13,8 +13,10 @@ A Home Assistant custom integration for Tile Bluetooth trackers. Track your Tile
 - 🔐 **Full BLE Authentication** - Implements the complete Tile authentication handshake
 - ⚡ **Smart Caching** - UUID→MAC mapping and scan results are cached for fast repeat operations
 - 🎵 **Song Selection** - Choose which ringtone to play on your Tiles
+- 🎼 **Song Composer** - Create custom ringtones with notation or visual piano keyboard
 - 🔄 **Cloud Sync** - Automatically syncs device data from the Tile API
-- 🎴 **Custom Lovelace Card** - Beautiful row-based card with ring button and map
+- 🎴 **Built-in Lovelace Card** - Beautiful row-based card with ring button, map, and config panel
+- ⚙️ **Configurable Device Filtering** - Auto-disable old or invisible devices
 
 ## Installation
 
@@ -23,14 +25,14 @@ A Home Assistant custom integration for Tile Bluetooth trackers. Track your Tile
 1. Open HACS in Home Assistant
 2. Click on **Integrations**
 3. Click the **⋮** menu in the top right and select **Custom repositories**
-4. Add `https://github.com/jeff-hamm/ha-tracker-tile` with category **Integration**
+4. Add `https://github.com/jeff-hamm/tile-tracker` with category **Integration**
 5. Click **Add**
 6. Search for "Tile Tracker" and install it
 7. Restart Home Assistant
 
 ### Manual Installation
 
-1. Download the latest release from [GitHub](https://github.com/jeff-hamm/ha-tracker-tile/releases)
+1. Download the latest release from [GitHub](https://github.com/jeff-hamm/tile-tracker/releases)
 2. Extract and copy the `tile_tracker` folder to your `config/custom_components/` directory
 3. Restart Home Assistant
 

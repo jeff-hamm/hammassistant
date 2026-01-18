@@ -10,8 +10,14 @@ from __future__ import annotations
 import asyncio
 from datetime import timedelta, datetime, timezone
 import logging
+import os
 from typing import Any
 
+from homeassistant.components.frontend import async_register_built_in_panel
+from homeassistant.components.http import StaticPathConfig
+from homeassistant.components.lovelace.resources import (
+    ResourceStorageCollection,
+)
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import (
     CONF_EMAIL,
@@ -160,6 +166,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     # Register services
     await _async_setup_services(hass)
     
+    # Register frontend card
+    await _async_register_frontend(hass)
     
     # Handle options updates
     entry.async_on_unload(entry.add_update_listener(_async_update_options))
@@ -187,6 +195,78 @@ async def _async_update_options(hass: HomeAssistant, entry: ConfigEntry) -> None
     """Update options."""
     await hass.config_entries.async_reload(entry.entry_id)
 
+
+# Frontend card URL path
+CARD_URL_PATH = f"/{DOMAIN}/tile-tracker-card.js"
+CARD_RESOURCE_URL = f"/hacsfiles/{DOMAIN}/tile-tracker-card.js"
+
+
+async def _async_register_frontend(hass: HomeAssistant) -> None:
+    """Register the frontend card as a static resource."""
+    # Get the path to the card JS file
+    card_path = os.path.join(
+        os.path.dirname(__file__),
+        "www",
+        "tile-tracker-card.js"
+    )
+    
+    if not os.path.exists(card_path):
+        _LOGGER.warning(
+            "Frontend card not found at %s. Card will not be auto-registered.",
+            card_path
+        )
+        return
+    
+    # Register static path for the JS file
+    try:
+        hass.http.register_static_path(
+            CARD_URL_PATH,
+            card_path,
+            cache_headers=False
+        )
+        _LOGGER.debug("Registered static path for Tile Tracker card at %s", CARD_URL_PATH)
+    except Exception as err:
+        _LOGGER.debug("Static path already registered or error: %s", err)
+    
+    # Try to add as a Lovelace resource automatically
+    try:
+        # Check if lovelace resources are available
+        if "lovelace" not in hass.data:
+            _LOGGER.debug("Lovelace not ready, card resource must be added manually")
+            return
+            
+        resources = hass.data["lovelace"].get("resources")
+        if resources is None:
+            _LOGGER.debug("Lovelace resources not available, card resource must be added manually")
+            return
+        
+        # Check if already registered
+        if isinstance(resources, ResourceStorageCollection):
+            existing = [
+                r for r in resources.async_items()
+                if DOMAIN in r.get("url", "")
+            ]
+            if existing:
+                _LOGGER.debug("Tile Tracker card already registered as Lovelace resource")
+                return
+            
+            # Add the resource
+            await resources.async_create_item({
+                "res_type": "module",
+                "url": CARD_URL_PATH,
+            })
+            _LOGGER.info("Registered Tile Tracker card as Lovelace resource: %s", CARD_URL_PATH)
+        else:
+            _LOGGER.debug(
+                "Lovelace resources in YAML mode. Add manually: "
+                "resources: [{url: '%s', type: module}]",
+                CARD_URL_PATH
+            )
+    except Exception as err:
+        _LOGGER.debug(
+            "Could not auto-register Lovelace resource (manual add may be needed): %s",
+            err
+        )
 
 
 async def _async_setup_services(hass: HomeAssistant) -> None:

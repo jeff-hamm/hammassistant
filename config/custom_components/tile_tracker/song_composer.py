@@ -1,4 +1,12 @@
-"""Song composer for Tile devices."""
+"""Song composer for Tile devices.
+
+Copyright (c) 2024-2026 Jeff Hamm <jeff.hamm@gmail.com>
+Developed with assistance from Claude (Anthropic)
+
+SPDX-License-Identifier: MIT
+
+Binary song format based on reverse-engineering of Tile BLE protocol.
+"""
 from __future__ import annotations
 
 import logging
