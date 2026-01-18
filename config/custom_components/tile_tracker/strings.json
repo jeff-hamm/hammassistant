@@ -27,6 +27,19 @@
       "reauth_successful": "Reauthentication successful"
     }
   },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tile Tracker Options",
+        "description": "Configure Tile Tracker settings",
+        "data": {
+          "scan_interval": "Scan interval (minutes)",
+          "exclude_days": "Disable devices not seen in X days (0 = never disable)",
+          "exclude_invisible": "Disable invisible devices"
+        }
+      }
+    }
+  },
   "services": {
     "refresh_tiles": {
       "name": "Refresh Tiles",

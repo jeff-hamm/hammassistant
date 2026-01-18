@@ -70,6 +70,10 @@ DEFAULT_SONGS: Final = [
 # Config options
 CONF_SCAN_INTERVAL: Final = "scan_interval"
 DEFAULT_SCAN_INTERVAL: Final = 5  # minutes
+CONF_EXCLUDE_DAYS: Final = "exclude_days"
+DEFAULT_EXCLUDE_DAYS: Final = 365  # days
+CONF_EXCLUDE_INVISIBLE: Final = "exclude_invisible"
+DEFAULT_EXCLUDE_INVISIBLE: Final = True
 
 # Attribution
 ATTRIBUTION: Final = "Data provided by Tile"

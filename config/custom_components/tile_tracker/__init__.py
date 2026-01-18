@@ -8,7 +8,7 @@ SPDX-License-Identifier: MIT
 from __future__ import annotations
 
 import asyncio
-from datetime import timedelta
+from datetime import timedelta, datetime, timezone
 import logging
 from typing import Any
 
@@ -31,8 +31,14 @@ import voluptuous as vol
 
 from .const import (
     DOMAIN,
+    CONF_EMAIL,
+    CONF_PASSWORD,
     CONF_SCAN_INTERVAL,
     DEFAULT_SCAN_INTERVAL,
+    CONF_EXCLUDE_DAYS,
+    DEFAULT_EXCLUDE_DAYS,
+    CONF_EXCLUDE_INVISIBLE,
+    DEFAULT_EXCLUDE_INVISIBLE,
     SERVICE_PLAY_SOUND,
     SERVICE_REFRESH_TILES,
     SERVICE_SCAN_TILES,
@@ -116,6 +122,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     email = entry.data[CONF_EMAIL]
     password = entry.data[CONF_PASSWORD]
     scan_interval = entry.options.get(CONF_SCAN_INTERVAL, DEFAULT_SCAN_INTERVAL)
+    exclude_days = entry.options.get(CONF_EXCLUDE_DAYS, DEFAULT_EXCLUDE_DAYS)
+    exclude_invisible = entry.options.get(CONF_EXCLUDE_INVISIBLE, DEFAULT_EXCLUDE_INVISIBLE)
     
     # Create API client
     api = TileApiClient(email, password)
@@ -133,6 +141,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         hass,
         api,
         update_interval=timedelta(minutes=scan_interval),
+        exclude_days=exclude_days,
+        exclude_invisible=exclude_invisible,
     )
     
     # Fetch initial data
@@ -469,6 +479,8 @@ class TileDataUpdateCoordinator(DataUpdateCoordinator[dict[str, TileDevice]]):
         hass: HomeAssistant,
         api: TileApiClient,
         update_interval: timedelta,
+        exclude_days: int = DEFAULT_EXCLUDE_DAYS,
+        exclude_invisible: bool = DEFAULT_EXCLUDE_INVISIBLE,
     ) -> None:
         """Initialize the coordinator."""
         super().__init__(
@@ -478,6 +490,42 @@ class TileDataUpdateCoordinator(DataUpdateCoordinator[dict[str, TileDevice]]):
             update_interval=update_interval,
         )
         self.api = api
+        self.exclude_days = exclude_days
+        self.exclude_invisible = exclude_invisible
+
+    def should_disable_tile(self, tile: TileDevice) -> bool:
+        """Determine if a tile should be disabled based on configuration.
+        
+        Args:
+            tile: The tile device to check
+            
+        Returns:
+            True if the tile should be created but disabled, False if enabled
+        """
+        # Check if invisible tiles should be disabled
+        if self.exclude_invisible and not tile.visible:
+            _LOGGER.debug(
+                "Tile %s (%s) will be disabled: visible=False",
+                tile.name,
+                tile.tile_uuid,
+            )
+            return True
+        
+        # Check if old tiles should be disabled
+        if self.exclude_days > 0 and tile.last_timestamp:
+            now = datetime.now(timezone.utc)
+            age_days = (now - tile.last_timestamp).days
+            if age_days > self.exclude_days:
+                _LOGGER.debug(
+                    "Tile %s (%s) will be disabled: %d days old (threshold: %d)",
+                    tile.name,
+                    tile.tile_uuid,
+                    age_days,
+                    self.exclude_days,
+                )
+                return True
+        
+        return False
 
     async def _async_update_data(self) -> dict[str, TileDevice]:
         """Fetch data from Tile API."""

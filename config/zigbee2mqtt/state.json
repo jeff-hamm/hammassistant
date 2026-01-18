@@ -28,7 +28,7 @@
         "color_temp": 500
     },
     "0xa4c1380cf616e594": {
-        "temperature": 21.2,
+        "temperature": 20.9,
         "battery": 70,
         "battery_state": "medium",
         "temperature_unit": "fahrenheit",
@@ -74,7 +74,7 @@
         "linkquality": 92
     },
     "0xa4c1388cd45b293d": {
-        "temperature": 20.1,
+        "temperature": 19.9,
         "battery": 73,
         "battery_state": "medium",
         "temperature_unit": "fahrenheit",
@@ -82,7 +82,7 @@
         "linkquality": 92
     },
     "0xffffb40e0605cdfb": {
-        "temperature": 20.8,
+        "temperature": 20.7,
         "humidity": 0,
         "soil_moisture": 0,
         "battery": 72,
@@ -94,7 +94,7 @@
         }
     },
     "0xffffb40e0605c9d3": {
-        "temperature": 22.7,
+        "temperature": 22.5,
         "humidity": 45.59,
         "soil_moisture": 45.59,
         "battery": 93,

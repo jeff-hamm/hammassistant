@@ -42,11 +42,14 @@ async def async_setup_entry(
     entities.append(TileRefreshButton(coordinator, entry))
     
     # Add per-device buttons (locate, refresh, and program ringtone)
-    for tile_uuid in coordinator.data.keys():
+    for tile_uuid, tile in coordinator.data.items():
+        # Check if tile should be disabled based on coordinator settings
+        entity_enabled = not coordinator.should_disable_tile(tile)
+        
         entities.extend([
-            TileLocateButton(hass, coordinator, tile_uuid),
-            TileRefreshDeviceButton(coordinator, tile_uuid),
-            TileProgramRingtoneButton(hass, coordinator, tile_uuid),
+            TileLocateButton(hass, coordinator, tile_uuid, entity_enabled),
+            TileRefreshDeviceButton(coordinator, tile_uuid, entity_enabled),
+            TileProgramRingtoneButton(hass, coordinator, tile_uuid, entity_enabled),
         ])
     
     async_add_entities(entities)
@@ -67,12 +70,13 @@ async def async_setup_entry(
                         existing_uuids.add("_".join(parts[1:-1]))
         
         new_entities = []
-        for tile_uuid in coordinator.data.keys():
+        for tile_uuid, tile in coordinator.data.items():
             if tile_uuid not in existing_uuids:
+                entity_enabled = not coordinator.should_disable_tile(tile)
                 new_entities.extend([
-                    TileLocateButton(hass, coordinator, tile_uuid),
-                    TileRefreshDeviceButton(coordinator, tile_uuid),
-                    TileProgramRingtoneButton(hass, coordinator, tile_uuid),
+                    TileLocateButton(hass, coordinator, tile_uuid, entity_enabled),
+                    TileRefreshDeviceButton(coordinator, tile_uuid, entity_enabled),
+                    TileProgramRingtoneButton(hass, coordinator, tile_uuid, entity_enabled),
                 ])
         
         if new_entities:
@@ -129,6 +133,7 @@ class TileLocateButton(CoordinatorEntity, ButtonEntity, RestoreEntity):
         hass: HomeAssistant,
         coordinator,
         tile_uuid: str,
+        entity_enabled: bool = True,
     ) -> None:
         """Initialize the locate button."""
         super().__init__(coordinator)
@@ -136,6 +141,7 @@ class TileLocateButton(CoordinatorEntity, ButtonEntity, RestoreEntity):
         self._tile_uuid = tile_uuid
         self._attr_unique_id = f"tile_{tile_uuid}_locate"
         self._attr_name = "Locate"
+        self._attr_entity_registry_enabled_default = entity_enabled
         self._last_located: datetime | None = None
 
     async def async_added_to_hass(self) -> None:
@@ -273,12 +279,14 @@ class TileRefreshDeviceButton(CoordinatorEntity, ButtonEntity, RestoreEntity):
         self,
         coordinator,
         tile_uuid: str,
+        entity_enabled: bool = True,
     ) -> None:
         """Initialize the refresh button."""
         super().__init__(coordinator)
         self._tile_uuid = tile_uuid
         self._attr_unique_id = f"tile_{tile_uuid}_refresh"
         self._attr_name = "Refresh"
+        self._attr_entity_registry_enabled_default = entity_enabled
         self._last_refreshed: datetime | None = None
 
     async def async_added_to_hass(self) -> None:
@@ -341,13 +349,13 @@ class TileProgramRingtoneButton(CoordinatorEntity, ButtonEntity):
     _attr_has_entity_name = True
     _attr_icon = "mdi:music-note-plus"
     _attr_entity_category = EntityCategory.CONFIG
-    _attr_entity_registry_enabled_default = False  # Disabled by default - advanced feature
 
     def __init__(
         self,
         hass: HomeAssistant,
         coordinator,
         tile_uuid: str,
+        entity_enabled: bool = True,
     ) -> None:
         """Initialize the program ringtone button."""
         super().__init__(coordinator)
@@ -355,6 +363,8 @@ class TileProgramRingtoneButton(CoordinatorEntity, ButtonEntity):
         self._tile_uuid = tile_uuid
         self._attr_unique_id = f"tile_{tile_uuid}_program_ringtone"
         self._attr_name = "Program Ringtone"
+        # Disabled by default if entity_enabled is False, otherwise disabled as advanced feature
+        self._attr_entity_registry_enabled_default = entity_enabled and False
         self._last_programmed: datetime | None = None
 
     @property
